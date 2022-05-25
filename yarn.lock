@@ -628,6 +628,14 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+echarts@^5.3.2:
+  version "5.3.2"
+  resolved "http://172.17.2.22:8081/repository/npm-public/echarts/-/echarts-5.3.2.tgz#0a7b3be8c48a48b2e7cb1b82121df0c208d42d2c"
+  integrity sha512-LWCt7ohOKdJqyiBJ0OGBmE9szLdfA9sGcsMEi+GGoc6+Xo75C+BkcT/6NNGRHAWtnQl2fNow05AQjznpap28TQ==
+  dependencies:
+    tslib "2.3.0"
+    zrender "5.3.1"
+
 element-plus@^2.2.1:
   version "2.2.1"
   resolved "http://172.17.2.22:8081/repository/npm-public/element-plus/-/element-plus-2.2.1.tgz"
@@ -1523,6 +1531,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "http://172.17.2.22:8081/repository/npm-public/minimist/-/minimist-1.2.6.tgz"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+moment@^2.29.3:
+  version "2.29.3"
+  resolved "http://172.17.2.22:8081/repository/npm-public/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
+  integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "http://172.17.2.22:8081/repository/npm-public/ms/-/ms-2.0.0.tgz"
@@ -1947,6 +1960,11 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
+tslib@2.3.0:
+  version "2.3.0"
+  resolved "http://172.17.2.22:8081/repository/npm-public/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
+  integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
+
 tslib@^1.8.1:
   version "1.14.1"
   resolved "http://172.17.2.22:8081/repository/npm-public/tslib/-/tslib-1.14.1.tgz"
@@ -2111,3 +2129,10 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "http://172.17.2.22:8081/repository/npm-public/yallist/-/yallist-4.0.0.tgz"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+
+zrender@5.3.1:
+  version "5.3.1"
+  resolved "http://172.17.2.22:8081/repository/npm-public/zrender/-/zrender-5.3.1.tgz#fa8e63ac7e719cfd563831fe8c42a9756c5af384"
+  integrity sha512-7olqIjy0gWfznKr6vgfnGBk7y4UtdMvdwFmK92vVQsQeDPyzkHW1OlrLEKg6GHz1W5ePf0FeN1q2vkl/HFqhXw==
+  dependencies:
+    tslib "2.3.0"

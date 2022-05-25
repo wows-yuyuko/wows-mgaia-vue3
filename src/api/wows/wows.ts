@@ -44,3 +44,12 @@ export function accountPlatformBindList (data: { platformType : string, platform
 export function accountUserInfo (data: { server: string, accountId: number }) {
   return request.get(apiPath + '/account/user/info', data)
 }
+
+/**
+ * 用户战舰信息-列表
+ * @param data
+ * @returns
+ */
+export function accountShipInfoList (data: { queryType: string, userCode: string, shipType: string, level: string, county: string }) {
+  return request.get(apiPath + '/public/wows/account/ship/info/list', data)
+}
