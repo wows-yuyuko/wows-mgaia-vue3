@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList } from '@/api/wows/wows'
 import usePlayer, { Player } from '@/store/player'
@@ -115,6 +115,9 @@ const getUserInfo = (playerItem: Player) => {
       infoShow.value = true
       loading.value = false
       // echarts.init()
+      nextTick(() => {
+        battlesEchart.resize()
+      })
     }
   ).catch(() => {
     loading.value = false
@@ -317,9 +320,9 @@ const buildEchart = (classifyShip: any) => {
     }
   )
   battlesEchart.setOption(option)
-  setTimeout(() => {
+  nextTick(() => {
     battlesEchart.resize()
-  }, 500)
+  })
 }
 
 // getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
@@ -373,7 +376,7 @@ const buildEchart = (classifyShip: any) => {
         <div class="player-top">
           <div>
             <div>
-              <span>[{{ playerInfo?.clanInfo?.tag }}]</span>
+              <span :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
               {{ playerInfo?.userName }}
               <sup class="like">{{ playerInfo?.karma }}</sup>
               <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
@@ -401,7 +404,16 @@ const buildEchart = (classifyShip: any) => {
                 <img src="@/assets/player/overview/wins.png">
               </div>
               <div class="title">胜率</div>
-              <div class="value">{{ playerInfo?.pvp?.wins }}% <sup>({{ playerInfo?.dwpDataVO?.wins }})</sup></div>
+              <div class="value">
+                {{ playerInfo?.pvp?.wins }}%
+                <el-tooltip
+                  effect="dark"
+                  content="距离上次统计的变化"
+                  placement="bottom-start"
+                >
+                  <sup>({{ playerInfo?.dwpDataVO?.wins }})</sup>
+                </el-tooltip>
+              </div>
               <div style="color: white;">KD: {{ playerInfo?.pvp?.kd }}</div>
             </div>
             <div class="flag">
@@ -423,7 +435,16 @@ const buildEchart = (classifyShip: any) => {
                 <img src="@/assets/player/overview/damage.png">
               </div>
               <div class="title">场均</div>
-              <div class="value">{{ playerInfo?.pvp?.damage }}<sup>({{ playerInfo?.dwpDataVO?.damage }})</sup></div>
+              <div class="value">
+                {{ playerInfo?.pvp?.damage }}
+                <el-tooltip
+                  effect="dark"
+                  content="距离上次统计的变化"
+                  placement="bottom-start"
+                >
+                  <sup>({{ playerInfo?.dwpDataVO?.damage }})</sup>
+                </el-tooltip>
+              </div>
             </div>
           </div>
           <el-divider />
