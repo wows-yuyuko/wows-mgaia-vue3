@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import { ChatLineSquare } from '@element-plus/icons-vue'
 import usePlayer from '@/store/player'
 const player = usePlayer()
+const issues = () => {
+  window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
+}
+
 </script>
 
 <template>
@@ -23,6 +28,11 @@ const player = usePlayer()
           </el-menu>
         </div>
         <div class="right-div">
+          <div style="padding: 0 20px;">
+            <el-tooltip class="item" effect="dark" content="欢迎提Issues" placement="bottom-end">
+              <el-button :icon="ChatLineSquare" circle @click="issues" />
+            </el-tooltip>
+          </div>
           <!-- 服务器选择 -->
           <el-select v-model="player.server" placeholder="Select">
             <el-option
