@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Search } from '@element-plus/icons-vue'
-import { accountSearchUserList, accountPlatformBindList, accountUserInfo } from '@/api/wows/wows'
+import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList } from '@/api/wows/wows'
 import usePlayer, { Player } from '@/store/player'
 import lodash from 'lodash'
 import moment from 'moment'
@@ -12,7 +12,9 @@ const player = usePlayer()
 const query = ref('')
 const queryMode = ref('userName')
 const searchUserListLoading = ref(false)
+// 搜索到的用户列表是否显示
 const playerListShow = ref(true)
+const infoShow = ref(false)
 // 搜索出的用户列表
 const searchUserList = ref<{
   accountId: number,
@@ -59,6 +61,9 @@ const searchUserListByUserName = () => {
 const searchUserListByQq = () => {
   accountPlatformBindList({ platformType: 'QQ', platformId: query.value }).then(
     response => {
+      for (const user of response.data) {
+        user.server = user.serverType
+      }
       searchUserList.value = response.data
       searchUserListLoading.value = false
       playerListShow.value = true
@@ -87,12 +92,7 @@ const translateServer = (server: string) => {
 // 点击选择账号
 const submitPlayer = (playerItem: Player) => {
   if (lodash.isNil(playerItem.server) || playerItem.server === '') playerItem.server = player.server
-  const getHistoryPlayer = (el: Player) => {
-    return (el.userName + el.server + el.accountId) === (playerItem.userName + playerItem.server + playerItem.accountId)
-  }
-  if (!player.historyPlayer.find(getHistoryPlayer)) {
-    player.historyPlayer.unshift(playerItem)
-  }
+  player.addHistoryPlayer(playerItem)
   // 存在qq号的情况 导致服务器不统一   反向覆写一下
   player.server = playerItem.server
   playerListShow.value = false
@@ -100,27 +100,230 @@ const submitPlayer = (playerItem: Player) => {
 }
 
 const playerInfo = ref()
+const loading = ref(false)
 // 查询用户总体信息
 const getUserInfo = (playerItem: Player) => {
+  loading.value = true
   accountUserInfo({ server: playerItem.server, accountId: playerItem.accountId }).then(
     response => {
       console.log(response.data)
       playerInfo.value = response.data
-
+      infoShow.value = true
+      loading.value = false
       // echarts.init()
     }
   )
+  getUserShip(playerItem)
 }
-getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
+
+const battlesDiv = ref<HTMLElement|null>(null)
+let battlesEchart!: echarts.ECharts
+onMounted(() => {
+  battlesEchart = echarts.init(battlesDiv.value as HTMLElement)
+})
+const getUserShip = (playerItem: Player) => {
+  battlesEchart.clear()
+  accountShipInfoList({ queryType: playerItem.server, userCode: playerItem.accountId + '' })
+    .then(response => {
+      console.log(response)
+      const shipList = response.data.recentList
+      // 将船分类整合
+      const classifyShip: any = {}
+      for (const ship of shipList) {
+        // 构建数据结构 先进性判空初始化
+        if (lodash.isNil(classifyShip[ship.shipInfo.level])) {
+          classifyShip[ship.shipInfo.level] = {}
+        }
+        if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType])) {
+          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType] = {}
+        }
+        if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles)) {
+          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles = 0
+          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins = 0
+        }
+        classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles += ship.battles
+        classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins += ship.wins
+      }
+      console.log(classifyShip)
+      buildEchart(classifyShip)
+    })
+}
+
+// 构建战斗图表
+const buildEchart = (classifyShip: any) => {
+  window.onresize = function () {
+    battlesEchart.resize()
+  }
+  const option:any = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow' // 阴影指示器
+      }
+    },
+    legend: {
+      textStyle: {
+        color: 'white'
+      },
+      data: ['DD', 'CA', 'BB', 'CV']
+    },
+    title: {
+      text: '战斗数',
+      textStyle: {
+        color: 'white',
+        fontSize: 24
+      }
+    },
+    yAxis: [{
+      type: 'value',
+      axisLabel: {
+        fontSize: 16,
+        color: 'white'
+      }
+    }],
+    xAxis: [
+      {
+        type: 'category',
+        data: ['Ⅰ', 'Ⅱ', 'Ⅲ', 'Ⅳ', 'Ⅴ', 'Ⅵ', 'Ⅶ', 'Ⅷ', 'Ⅸ', 'X', 'Xl'],
+        axisLabel: {
+          color: 'white'
+        }
+      }
+    ],
+    series: []
+  }
+  option.series.push(
+    {
+      name: 'DD',
+      type: 'bar',
+      stack: 'battles',
+      data: [
+        classifyShip[1]?.Destroyer?.battles,
+        classifyShip[2]?.Destroyer?.battles,
+        classifyShip[3]?.Destroyer?.battles,
+        classifyShip[4]?.Destroyer?.battles,
+        classifyShip[5]?.Destroyer?.battles,
+        classifyShip[6]?.Destroyer?.battles,
+        classifyShip[7]?.Destroyer?.battles,
+        classifyShip[8]?.Destroyer?.battles,
+        classifyShip[9]?.Destroyer?.battles,
+        classifyShip[10]?.Destroyer?.battles,
+        classifyShip[11]?.Destroyer?.battles
+      ]
+      // label: {
+      //   show: true
+      // }
+    }
+  )
+  option.series.push(
+    {
+      name: 'CA',
+      type: 'bar',
+      stack: 'battles',
+      data: [
+        classifyShip[1]?.Cruiser?.battles,
+        classifyShip[2]?.Cruiser?.battles,
+        classifyShip[3]?.Cruiser?.battles,
+        classifyShip[4]?.Cruiser?.battles,
+        classifyShip[5]?.Cruiser?.battles,
+        classifyShip[6]?.Cruiser?.battles,
+        classifyShip[7]?.Cruiser?.battles,
+        classifyShip[8]?.Cruiser?.battles,
+        classifyShip[9]?.Cruiser?.battles,
+        classifyShip[10]?.Cruiser?.battles,
+        classifyShip[11]?.Cruiser?.battles
+      ]
+    }
+  )
+  option.series.push(
+    {
+      name: 'BB',
+      type: 'bar',
+      stack: 'battles',
+      data: [
+        classifyShip[1]?.Battleship?.battles,
+        classifyShip[2]?.Battleship?.battles,
+        classifyShip[3]?.Battleship?.battles,
+        classifyShip[4]?.Battleship?.battles,
+        classifyShip[5]?.Battleship?.battles,
+        classifyShip[6]?.Battleship?.battles,
+        classifyShip[7]?.Battleship?.battles,
+        classifyShip[8]?.Battleship?.battles,
+        classifyShip[9]?.Battleship?.battles,
+        classifyShip[10]?.Battleship?.battles,
+        classifyShip[11]?.Battleship?.battles
+      ]
+    }
+  )
+  option.series.push(
+    {
+      name: 'CV',
+      type: 'bar',
+      stack: 'battles',
+      data: [
+        classifyShip[1]?.AirCarrier?.battles,
+        classifyShip[2]?.AirCarrier?.battles,
+        classifyShip[3]?.AirCarrier?.battles,
+        classifyShip[4]?.AirCarrier?.battles,
+        classifyShip[5]?.AirCarrier?.battles,
+        classifyShip[6]?.AirCarrier?.battles,
+        classifyShip[7]?.AirCarrier?.battles,
+        classifyShip[8]?.AirCarrier?.battles,
+        classifyShip[9]?.AirCarrier?.battles,
+        classifyShip[10]?.AirCarrier?.battles,
+        classifyShip[11]?.AirCarrier?.battles
+      ]
+    }
+  )
+  const count = []
+  function null0 (value: any) {
+    if (lodash.isNumber(value)) {
+      return value
+    } else {
+      return 0
+    }
+  }
+  for (let i = 0; i < 11; i++) {
+    count[i] = null0(classifyShip[i + 1]?.Destroyer?.battles) +
+      null0(classifyShip[i + 1]?.Cruiser?.battles) +
+      null0(classifyShip[i + 1]?.Battleship?.battles) +
+      null0(classifyShip[i + 1]?.AirCarrier?.battles)
+  }
+  option.series.push(
+    {
+      name: '总计',
+      type: 'bar',
+      barGap: '-100%', // 左移100%，stack不再与上面两个在一列,
+      data: count,
+      label: {
+        normal: {
+          show: true, // 显示数值
+          position: 'top', //  位置设为top
+          formatter: '{c}',
+          textStyle: { color: 'white' } // 设置数值颜色
+        }
+      },
+      itemStyle: {
+        normal: {
+          color: 'rgba(128, 128, 128, 0)' // 设置背景颜色为透明
+        }
+      }
+    }
+  )
+  battlesEchart.setOption(option)
+  battlesEchart.resize()
+}
+
+// getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
 
 </script>
 
 <template>
-  <div class="main-content">
+  <div v-loading="loading" class="main-content" element-loading-background="rgba(122, 122, 122, 0.8)">
     <div class="main-content-top">
       <div class="background"></div>
     </div>
-    <div v-show="false" style="position: relative;">
+    <div v-show="!infoShow" style="position: relative;">
       <div style="display: flex;justify-content: center;overflow: hidden;">
         <el-space direction="vertical" class="query-input" fill :size="20">
           <el-input
@@ -132,7 +335,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
               <el-select v-model="queryMode" placeholder="Select" style="width: 130px">
                 <el-option label="用户名" value="userName" />
                 <el-option label="QQ号(限绑定)" value="qq" />
-                <el-option label="accountId" value="accountId" />
+                <!-- <el-option label="accountId" value="accountId" /> -->
               </el-select>
             </template>
             <template #append>
@@ -140,7 +343,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
             </template>
           </el-input>
           <!-- 卡片展示人员列表 -->
-          <el-card v-show="playerListShow">
+          <el-card>
             <template #header>
               <div class="card-header">
                 <span>{{ searchUserList.length>0?'搜索结果':'历史搜索' }}</span>
@@ -156,7 +359,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
         </el-space>
       </div>
     </div>
-    <div style="position: relative; display:flex; justify-content: center;">
+    <div v-show="infoShow" style="position: relative; display:flex; justify-content: center;">
       <div class="palyer-info">
         <!-- 头部基础信息 -->
         <div class="player-top">
@@ -168,7 +371,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
               <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
             </div>
           </div>
-          <el-button :icon="Search" />
+          <el-button :icon="Search" @click="infoShow = false" />
         </div>
         <!-- 概览信息 -->
         <div class="overview">
@@ -368,6 +571,12 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
               </tbody>
             </table>
           </div>
+          <!-- 图表展示 -->
+          <el-divider />
+          <div>
+            <!-- 战斗数图表 -->
+            <div ref="battlesDiv" class="battles-div"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -470,6 +679,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
       color white
       background #318000
       text-align center
+      line-height 40px
 
       >span{
         padding 2px 10px
@@ -600,6 +810,7 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
     .overview-team {
       display flex
       justify-content space-between
+      padding: 0 20px;
       >div{
         width 28%
       }
@@ -620,4 +831,8 @@ getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
   }
 }
 
+.battles-div{
+  height: 500px
+  // background white
+}
 </style>

@@ -33,7 +33,7 @@ export function accountSearchUserList (data: { server: string, userName: string,
  * @returns
  */
 export function accountPlatformBindList (data: { platformType : string, platformId : string }) {
-  return request.get(apiPath + '/account/platform/search/clan/user', data)
+  return request.get(apiPath + '/bind/account/platform/bind/list', data)
 }
 
 /**
@@ -50,6 +50,6 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
  * @param data
  * @returns
  */
-export function accountShipInfoList (data: { queryType: string, userCode: string, shipType: string, level: string, county: string }) {
-  return request.get(apiPath + '/public/wows/account/ship/info/list', data)
+export function accountShipInfoList (data: { queryType: string, userCode: string, shipType?: string, level?: string, county?: string }) {
+  return request.post(apiPath + '/account/ship/info/list', data)
 }

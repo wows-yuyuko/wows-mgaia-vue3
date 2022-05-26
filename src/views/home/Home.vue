@@ -19,7 +19,7 @@ const player = usePlayer()
             :router="true"
           >
             <el-menu-item index="player">玩家</el-menu-item>
-            <el-menu-item index="clan">舰队</el-menu-item>
+            <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
         </div>
         <div class="right-div">

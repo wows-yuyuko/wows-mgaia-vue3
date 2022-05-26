@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { serverList, nationList } from '@/api/wows/wows'
-
+import { setLocalStorage, getLocalStorage } from '@/utils/storage'
+import lodash from 'lodash'
 export interface Player {
   accountId: number
   userName: string
@@ -112,6 +113,18 @@ export default defineStore('player', {
       nationList().then((response) => {
         this.nationList = response.data
       })
+      if (!lodash.isNil(getLocalStorage('historyPlayer'))) {
+        this.historyPlayer = getLocalStorage('historyPlayer')
+      }
+    },
+    addHistoryPlayer (playerItem: Player) {
+      const getHistoryPlayer = (el: Player) => {
+        return (el.userName + el.server + el.accountId) === (playerItem.userName + playerItem.server + playerItem.accountId)
+      }
+      if (!this.historyPlayer.find(getHistoryPlayer)) {
+        this.historyPlayer.unshift(playerItem)
+      }
+      setLocalStorage('historyPlayer', this.historyPlayer)
     }
   }
 })
