@@ -54,7 +54,9 @@ const searchUserListByUserName = () => {
       searchUserListLoading.value = false
       playerListShow.value = true
     }
-  )
+  ).catch(() => {
+    searchUserListLoading.value = false
+  })
 }
 
 // 通过绑定qq查询列表
@@ -68,7 +70,9 @@ const searchUserListByQq = () => {
       searchUserListLoading.value = false
       playerListShow.value = true
     }
-  )
+  ).catch(() => {
+    searchUserListLoading.value = false
+  })
 }
 
 // 通过绑定accountId查询
@@ -112,7 +116,9 @@ const getUserInfo = (playerItem: Player) => {
       loading.value = false
       // echarts.init()
     }
-  )
+  ).catch(() => {
+    loading.value = false
+  })
   getUserShip(playerItem)
 }
 

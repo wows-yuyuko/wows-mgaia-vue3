@@ -20,10 +20,11 @@ service.interceptors.response.use(
   // 如果您想要获取诸如头或状态之类的http信息
   // 请返回response=>response
   response => {
-    if (response?.data?.return_code === '200') {
-      return Promise.reject(response.data)
+    if (response?.data?.code === 200) {
+      return Promise.resolve(response.data)
     }
-    return Promise.resolve(response.data)
+    ElMessage.error(response.data.message)
+    return Promise.reject(response.data)
   },
   error => {
     ElMessage.error(error.message)
