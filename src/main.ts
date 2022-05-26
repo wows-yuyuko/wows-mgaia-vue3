@@ -14,3 +14,8 @@ createApp(App)
 
 const player = usePlayer()
 player.init()
+window.addEventListener('resize', () => {
+  (document.querySelector('body') as HTMLBodyElement).style.height = window.innerHeight + 'px'
+});
+
+(document.querySelector('body') as HTMLBodyElement).style.height = window.innerHeight + 'px'

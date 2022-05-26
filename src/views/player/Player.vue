@@ -157,9 +157,9 @@ const getUserShip = (playerItem: Player) => {
 
 // 构建战斗图表
 const buildEchart = (classifyShip: any) => {
-  window.onresize = function () {
+  window.addEventListener('resize', () => {
     battlesEchart.resize()
-  }
+  })
   const option:any = {
     tooltip: {
       trigger: 'axis',
@@ -317,7 +317,9 @@ const buildEchart = (classifyShip: any) => {
     }
   )
   battlesEchart.setOption(option)
-  battlesEchart.resize()
+  setTimeout(() => {
+    battlesEchart.resize()
+  }, 500)
 }
 
 // getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
@@ -329,7 +331,7 @@ const buildEchart = (classifyShip: any) => {
     <div class="main-content-top">
       <div class="background"></div>
     </div>
-    <div v-show="!infoShow" style="position: relative;">
+    <div v-show="!infoShow" style="position: relative;    padding-bottom: 50px;">
       <div style="display: flex;justify-content: center;overflow: hidden;">
         <el-space direction="vertical" class="query-input" fill :size="20">
           <el-input
@@ -400,7 +402,7 @@ const buildEchart = (classifyShip: any) => {
               </div>
               <div class="title">胜率</div>
               <div class="value">{{ playerInfo?.pvp?.wins }}% <sup>({{ playerInfo?.dwpDataVO?.wins }})</sup></div>
-              <div style="color: white;">KD: 2.53</div>
+              <div style="color: white;">KD: {{ playerInfo?.pvp?.kd }}</div>
             </div>
             <div class="flag">
               <div>
@@ -686,7 +688,7 @@ const buildEchart = (classifyShip: any) => {
       background #318000
       text-align center
       line-height 40px
-
+      font-size: 20px;
       >span{
         padding 2px 10px
       }
