@@ -130,6 +130,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
 <style scoped lang="stylus">
 .main-content {
   background-color: $global-v-page-background-color;
+  background-color: white;
   min-height 100%
   position: relative;
 }
@@ -137,7 +138,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   display flex
   position: relative;
   padding 20px
-  color white
+  // color white
   max-width: $global-v-div-max-width;
   margin: 0 auto;
 
@@ -160,6 +161,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   margin: 0 auto;
   height calc( 100% - 70px )
   position: absolute;
+  // position: relative;
   left: 0;
   right: 0;
 }

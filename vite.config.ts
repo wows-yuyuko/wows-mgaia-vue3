@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
+import viteCompression from 'vite-plugin-compression'
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -14,7 +15,8 @@ export default defineConfig({
     vue(),
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.ts', 'src/**/*.vue', 'src/*.js', 'src/*.ts', 'src/*.vue', 'src/**/*.styl']
-    })
+    }),
+    viteCompression({ threshold: 100 * 1000 })
   ],
   server: {
     host: true
