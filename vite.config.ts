@@ -16,7 +16,7 @@ export default defineConfig({
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.ts', 'src/**/*.vue', 'src/*.js', 'src/*.ts', 'src/*.vue', 'src/**/*.styl']
     }),
-    viteCompression({ threshold: 100 * 1000 })
+    viteCompression({ threshold: 100 * 1000 }) // 超过100k进行压缩
   ],
   server: {
     host: true
