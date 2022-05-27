@@ -118,6 +118,11 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
           </template>
         </el-table-column>
         <el-table-column prop="battles" label="场次" align="right" sortable />
+        <el-table-column prop="wins" label="胜率" align="right" sortable>
+          <template #default="scope">
+            <div>{{ scope.row.wins }}%</div>
+          </template>
+        </el-table-column>
         <el-table-column prop="damage" label="伤害" align="right" sortable />
         <el-table-column prop="extensionDataInfo.maxDamage" label="最大伤害" align="right" sortable />
         <el-table-column prop="xp" label="经验" align="right" sortable />
