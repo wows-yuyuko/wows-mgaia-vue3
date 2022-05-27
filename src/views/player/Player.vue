@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 个人综合
 import { ref, onMounted, nextTick } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList } from '@/api/wows/wows'
@@ -135,10 +136,11 @@ const getUserShip = (playerItem: Player) => {
   accountShipInfoList({ queryType: playerItem.server, userCode: playerItem.accountId + '' })
     .then(response => {
       console.log(response)
-      const shipList = response.data.recentList
+      // 扔store里 方便船只列表用
+      player.playerShips = response.data.recentList
       // 将船分类整合
       const classifyShip: any = {}
-      for (const ship of shipList) {
+      for (const ship of player.playerShips) {
         // 构建数据结构 先进性判空初始化
         if (lodash.isNil(classifyShip[ship.shipInfo.level])) {
           classifyShip[ship.shipInfo.level] = {}
@@ -324,13 +326,17 @@ const buildEchart = (classifyShip: any) => {
     battlesEchart.resize()
   })
 }
+const closeInfoShow = () => {
+  infoShow.value = false
+  player.playerShips = []
+}
 
 // getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
 
 </script>
 
 <template>
-  <div v-loading="loading" class="main-content" element-loading-background="rgba(122, 122, 122, 0.8)">
+  <div v-loading="loading" class="main-content" element-loading-background="rgba(122, 122, 122, 0.5)">
     <div class="main-content-top">
       <div class="background"></div>
     </div>
@@ -382,7 +388,7 @@ const buildEchart = (classifyShip: any) => {
               <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
             </div>
           </div>
-          <el-button :icon="Search" @click="infoShow = false" />
+          <el-button :icon="Search" @click="closeInfoShow()" />
         </div>
         <!-- 概览信息 -->
         <div class="overview">
@@ -614,7 +620,7 @@ const buildEchart = (classifyShip: any) => {
 
 <style scoped lang="stylus">
 .main-content {
-  background-color: #171e49;
+  background-color: $global-v-page-background-color;
   min-height 100%
   position: relative;
 }
@@ -634,7 +640,7 @@ const buildEchart = (classifyShip: any) => {
   }
   .background:after {
     content: ' ';
-    background: linear-gradient(180deg, transparent, transparent 50%, #171e49) 0 0;
+    background: linear-gradient(180deg, transparent, transparent 50%, $global-v-page-background-color) 0 0;
     display: block;
     width: 100%;
     height: 100%;

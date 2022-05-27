@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ChatLineSquare } from '@element-plus/icons-vue'
+import { useRoute } from 'vue-router'
 import usePlayer from '@/store/player'
+const route = useRoute()
 const player = usePlayer()
 const issues = () => {
   window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
@@ -16,14 +18,15 @@ const issues = () => {
         <div class="home-header-logo"></div>
         <div style="width:600px">
           <el-menu
-            default-active="player"
+            :default-active="route.path"
             mode="horizontal"
             background-color="#ffffff00"
             text-color="#fff"
             active-text-color="#ffd04b"
             :router="true"
           >
-            <el-menu-item index="player">玩家</el-menu-item>
+            <el-menu-item index="/player">玩家</el-menu-item>
+            <el-menu-item index="/ships">舰船</el-menu-item>
             <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
         </div>
@@ -46,12 +49,28 @@ const issues = () => {
       </div>
     </el-header>
     <el-main>
-      <router-view />
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </transition>
+      </router-view>
     </el-main>
   </el-container>
 </template>
 
 <style scoped lang="stylus">
+.fade-enter-active,
+.fade-leave-active {
+  transition: filter 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  filter: blur(5px);
+}
+
 .el-header {
   background: #192151;
   .el-menu--horizontal {
@@ -64,6 +83,7 @@ const issues = () => {
 .el-main {
   margin: 0
   padding: 0
+  background-color: $global-v-page-background-color;
 }
 .home-header {
   background: url('@/assets/home/home_header.png');

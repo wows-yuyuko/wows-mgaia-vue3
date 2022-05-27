@@ -19,6 +19,14 @@ export function nationList () {
 }
 
 /**
+ * 获取船只类型
+ * @returns
+ */
+export function shipType () {
+  return request.get(apiPath + '/encyclopedia/ship/type', {})
+}
+
+/**
  * 查找用户-模糊查询
  * @param data
  * @returns
