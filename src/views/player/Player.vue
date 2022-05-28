@@ -338,7 +338,12 @@ const closeInfoShow = () => {
 <template>
   <div v-loading="loading" class="main-content" element-loading-background="rgba(122, 122, 122, 0.5)">
     <div class="main-content-top">
-      <div class="background"></div>
+      <div class="background">
+        <div class="portrait">
+          <img style=" padding-top: 40px;" src="@/assets/portrait/yuyuko_1.png">
+          <img src="@/assets/portrait/mgaia_boom.png">
+        </div>
+      </div>
     </div>
     <div v-show="!infoShow" style="position: relative;    padding-bottom: 50px;">
       <div style="display: flex;justify-content: center;overflow: hidden;">
@@ -619,6 +624,17 @@ const closeInfoShow = () => {
 </template>
 
 <style scoped lang="stylus">
+.portrait{
+  width: 100%
+  height 100%
+  position: absolute;
+  user-select: none;
+  display flex
+  justify-content space-between
+  &>img{
+    height 100%
+  }
+}
 .main-content {
   background-color: $global-v-page-background-color;
   min-height 100%

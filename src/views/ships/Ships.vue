@@ -13,7 +13,7 @@ const showShipList = computed(() => {
   if ((nation.value.length + shipType.value.length + level.value.length) === 0) return player.playerShips
   const showList = []
   for (const ship of player.playerShips) {
-    if (nation.value.length > 0 && !nation.value.includes(ship.shipInfo.country.toLocaleLowerCase())) {
+    if (nation.value.length > 0 && !nation.value.includes(ship.shipInfo.country)) {
       continue
     }
     if (shipType.value.length > 0 && !shipType.value.includes(ship.shipInfo.shipType)) {
@@ -133,6 +133,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   </div>
 </template>
 <style scoped lang="stylus">
+
 .main-content {
   background-color: $global-v-page-background-color;
   background-color: white;

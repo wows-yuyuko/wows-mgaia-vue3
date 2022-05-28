@@ -49,6 +49,7 @@ const issues = () => {
       </div>
     </el-header>
     <el-main>
+      <!-- <router-view></router-view> -->
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <keep-alive>
