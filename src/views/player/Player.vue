@@ -8,6 +8,7 @@ import usePlayer, { Player } from '@/store/player'
 import lodash from 'lodash'
 import moment from 'moment'
 import * as echarts from 'echarts'
+import n404 from '@/assets/404.png'
 
 const player = usePlayer()
 
@@ -359,8 +360,9 @@ const recentDayFormat = (day: number) => {
     <div class="main-content-top">
       <div class="background">
         <div class="portrait">
-          <img style=" padding-top: 40px;" src="@/assets/portrait/yuyuko_1.png">
-          <img src="@/assets/portrait/mgaia_boom.png">
+          <img style=" padding-top: 40px;" src="https://mgaia.oss-cn-hangzhou.aliyuncs.com/wows/yuyuko_3.png">
+          <!-- <img src="@/assets/portrait/mgaia_boom.png"> -->
+          <img src="https://mgaia.oss-cn-hangzhou.aliyuncs.com/wows/mgaia_boom.png">
         </div>
       </div>
     </div>
@@ -636,7 +638,7 @@ const recentDayFormat = (day: number) => {
                 </div>
               </div>
             </div>
-            <el-empty v-else description="暂无数据（缺省图还在做 先将就一下）" />
+            <el-empty v-else description="暂无数据" :image="n404" />
           </div>
         </div>
       </div>
