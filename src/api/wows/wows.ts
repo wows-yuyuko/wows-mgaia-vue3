@@ -61,3 +61,12 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
 export function accountShipInfoList (data: { queryType: string, userCode: string, shipType?: string, level?: string, county?: string }) {
   return request.post(apiPath + '/account/ship/info/list', data)
 }
+
+/**
+ * 查询用户近期数据
+ * @param data
+ * @returns
+ */
+export function accountRecentList (data: { server: string, accountId: number, seconds: number }) {
+  return request.get(apiPath + '/account/recent/list', data)
+}
