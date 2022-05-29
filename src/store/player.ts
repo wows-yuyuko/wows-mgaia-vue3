@@ -12,14 +12,14 @@ interface PlayerStore {
   player: Player
   historyPlayer: Player[]
   server: string
-  serverList: {key: string, value:string}[]
-  nationList: {nation: string, cn:string}[]
-  shipTypeList: {key: string, value:string}[]
+  serverList: { key: string, value: string }[]
+  nationList: { nation: string, cn: string }[]
+  shipTypeList: { key: string, value: string }[]
   playerShips: any[]
 }
 // 玩家数据
 export default defineStore('player', {
-  state: ():PlayerStore => {
+  state: (): PlayerStore => {
     return {
       player: {
         accountId: 0,
@@ -51,58 +51,19 @@ export default defineStore('player', {
         }
       ],
       nationList: [
-        {
-          nation: 'commonwealth',
-          cn: '英联邦'
-        },
-        {
-          nation: 'europe',
-          cn: '欧洲'
-        },
-        {
-          nation: 'france',
-          cn: '法国'
-        },
-        {
-          nation: 'germany',
-          cn: '德国'
-        },
-        {
-          nation: 'italy',
-          cn: '意大利'
-        },
-        {
-          nation: 'japan',
-          cn: '日本'
-        },
-        {
-          nation: 'pan_america',
-          cn: '泛美'
-        },
-        {
-          nation: 'pan_asia',
-          cn: '泛亚'
-        },
-        {
-          nation: 'United_Kingdom',
-          cn: '英国'
-        },
-        {
-          nation: 'usa',
-          cn: '美国'
-        },
-        {
-          nation: 'ussr',
-          cn: '苏联'
-        },
-        {
-          nation: 'netherlands',
-          cn: '荷兰'
-        },
-        {
-          nation: 'spain',
-          cn: '西班牙'
-        }
+        { nation: 'Commonwealth', cn: '英联邦' },
+        { nation: 'Europe', cn: '欧洲' },
+        { nation: 'France', cn: '法国' },
+        { nation: 'Germany', cn: '德国' },
+        { nation: 'Italy', cn: '意大利' },
+        { nation: 'Japan', cn: '日本' },
+        { nation: 'Pan_America', cn: '泛美' },
+        { nation: 'Pan_Asia', cn: '泛亚' },
+        { nation: 'United_Kingdom', cn: '英国' },
+        { nation: 'USA', cn: '美国' },
+        { nation: 'Russia', cn: '苏联' },
+        { nation: 'Netherlands', cn: '荷兰' },
+        { nation: 'Spain', cn: '西班牙' }
       ],
       shipTypeList: [],
       // 用户单船信息

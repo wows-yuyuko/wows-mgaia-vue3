@@ -128,6 +128,7 @@ const getUserInfo = (playerItem: Player) => {
   // 拿用户单船数据
   getUserShip(playerItem)
   // 拿近期数据
+  recentDate.value = {}
   getUserRecent(playerItem)
 }
 
@@ -332,7 +333,6 @@ const buildEchart = (classifyShip: any) => {
 // 获取玩家近期数据
 const recentDate = ref<any>({})
 const getUserRecent = (playerItem: Player) => {
-  recentDate.value = {}
   for (let i = 1; i < 8; i++) {
     accountRecentList({ ...playerItem, seconds: Math.round(moment().subtract(i, 'days').toDate().getTime() / 1000) }).then(response => {
       recentDate.value[i] = response.data
