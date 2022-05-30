@@ -86,8 +86,12 @@ export default defineStore('player', {
         }
         this.shipTypeList = list
       })
+      // 从localStorage中导入历史账号及服务器
       if (!lodash.isNil(getLocalStorage('historyPlayer'))) {
         this.historyPlayer = getLocalStorage('historyPlayer')
+      }
+      if (!lodash.isNil(getLocalStorage('server'))) {
+        this.server = getLocalStorage('server')
       }
     },
     // 添加历史查询
@@ -99,6 +103,11 @@ export default defineStore('player', {
         this.historyPlayer.unshift(playerItem)
       }
       setLocalStorage('historyPlayer', this.historyPlayer)
+    },
+    // 设置服务器
+    setServer (server:string) {
+      this.server = server
+      setLocalStorage('server', server)
     }
   }
 })

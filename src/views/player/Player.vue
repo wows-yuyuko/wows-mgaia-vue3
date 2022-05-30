@@ -101,7 +101,7 @@ const submitPlayer = (playerItem: Player) => {
   if (lodash.isNil(playerItem.server) || playerItem.server === '') playerItem.server = player.server
   player.addHistoryPlayer(playerItem)
   // 存在qq号的情况 导致服务器不统一   反向覆写一下
-  player.server = playerItem.server
+  player.setServer(playerItem.server)
   playerListShow.value = false
   getUserInfo(playerItem)
 }

@@ -12,6 +12,7 @@ dist
 wows
 dist-ssr
 *.local
+yarn.lock
 
 # Editor directories and files
 .vscode
