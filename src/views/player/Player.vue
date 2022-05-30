@@ -5,6 +5,7 @@ import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
 import { Search } from '@element-plus/icons-vue'
 import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentList } from '@/api/wows/wows'
+import { getWinColor, getDamageColor } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
 import lodash from 'lodash'
 import moment from 'moment'
@@ -533,8 +534,8 @@ const recentDayFormat = (day: number) => {
                       {{ playerInfo?.type?.Destroyer?.pr?.value }} {{ playerInfo?.type?.Destroyer?.pr?.name }}
                     </span>
                   </td>
-                  <td class="value">{{ playerInfo?.type?.Destroyer?.wins }}%</td>
-                  <td class="value">{{ playerInfo?.type?.Destroyer?.damage }}</td>
+                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Destroyer?.wins)}">{{ playerInfo?.type?.Destroyer?.wins }}%</td>
+                  <td class="value" :style="{color: getDamageColor('Destroyer', playerInfo?.type?.Destroyer?.damage)}">{{ playerInfo?.type?.Destroyer?.damage }}</td>
                   <td class="value">{{ playerInfo?.type?.Destroyer?.hit }}</td>
                 </tr>
                 <tr>
@@ -546,8 +547,8 @@ const recentDayFormat = (day: number) => {
                       {{ playerInfo?.type?.Cruiser?.pr?.value }} {{ playerInfo?.type?.Cruiser?.pr?.name }}
                     </span>
                   </td>
-                  <td class="value">{{ playerInfo?.type?.Cruiser?.wins }}%</td>
-                  <td class="value">{{ playerInfo?.type?.Cruiser?.damage }}</td>
+                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Cruiser?.wins)}">{{ playerInfo?.type?.Cruiser?.wins }}%</td>
+                  <td class="value" :style="{color: getDamageColor('Cruiser', playerInfo?.type?.Cruiser?.damage)}">{{ playerInfo?.type?.Cruiser?.damage }}</td>
                   <td class="value">{{ playerInfo?.type?.Cruiser?.hit }}</td>
                 </tr>
                 <tr>
@@ -559,8 +560,8 @@ const recentDayFormat = (day: number) => {
                       {{ playerInfo?.type?.Battleship?.pr?.value }} {{ playerInfo?.type?.Battleship?.pr?.name }}
                     </span>
                   </td>
-                  <td class="value">{{ playerInfo?.type?.Battleship?.wins }}%</td>
-                  <td class="value">{{ playerInfo?.type?.Battleship?.damage }}</td>
+                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Battleship?.wins)}">{{ playerInfo?.type?.Battleship?.wins }}%</td>
+                  <td class="value" :style="{color: getDamageColor('Battleship', playerInfo?.type?.Battleship?.damage)}">{{ playerInfo?.type?.Battleship?.damage }}</td>
                   <td class="value">{{ playerInfo?.type?.Battleship?.hit }}</td>
                 </tr>
                 <tr>
@@ -572,8 +573,8 @@ const recentDayFormat = (day: number) => {
                       {{ playerInfo?.type?.AirCarrier?.pr?.value }} {{ playerInfo?.type?.AirCarrier?.pr?.name }}
                     </span>
                   </td>
-                  <td class="value">{{ playerInfo?.type?.AirCarrier?.wins }}%</td>
-                  <td class="value">{{ playerInfo?.type?.AirCarrier?.damage }}</td>
+                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.AirCarrier?.wins)}">{{ playerInfo?.type?.AirCarrier?.wins }}%</td>
+                  <td class="value" :style="{color: getDamageColor('AirCarrier', playerInfo?.type?.AirCarrier?.damage)}">{{ playerInfo?.type?.AirCarrier?.damage }}</td>
                   <td class="value">{{ playerInfo?.type?.AirCarrier?.hit }}</td>
                 </tr>
               </tbody>
@@ -636,8 +637,8 @@ const recentDayFormat = (day: number) => {
                             {{ ship?.pr?.value }} {{ ship?.pr?.name }}
                           </span>
                         </td>
-                        <td class="value">{{ ship.wins }}%</td>
-                        <td class="value">{{ ship.damage }}</td>
+                        <td class="value" :style="{color: getWinColor(ship.wins)}">{{ ship.wins }}%</td>
+                        <td class="value" :style="{color: getDamageColor(ship.shipInfo.shipType, ship)}">{{ ship.damage }}</td>
                         <td class="value">{{ ship.hit }}</td>
                       </tr>
                     </tbody>

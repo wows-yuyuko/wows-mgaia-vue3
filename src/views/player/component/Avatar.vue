@@ -17,7 +17,7 @@ for (const path in imgs) {
 </script>
 <template>
   <div v-if="imgMap[accountId]" style="padding-right: 20px;">
-    <img style="width: 50px;" :src="imgMap[accountId]" />
+    <img style="height: 50px;" :src="imgMap[accountId]" />
   </div>
 </template>
 <style scoped lang="stylus"></style>

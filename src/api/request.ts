@@ -23,6 +23,10 @@ service.interceptors.response.use(
     if (response?.data?.code === 200) {
       return Promise.resolve(response.data)
     }
+    // 如果是近期数据接口  不要弹框报错了
+    if ((response.config.url as string).indexOf('/account/recent/list') > -1) {
+      return Promise.reject(response.data)
+    }
     ElMessage.error(response.data.message)
     return Promise.reject(response.data)
   },

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // 船只列表
 import { ref, computed } from 'vue'
+import { getWinColor } from '@/utils/getColor'
 import usePlayer from '@/store/player'
 
 const player = usePlayer()
@@ -102,7 +103,11 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
       </div>
     </div>
     <div class="table-div">
-      <el-table :data="showShipList" border height="100%" style="width: 100%;">
+      <el-table
+        :data="showShipList" border
+        :default-sort="{ prop: 'shipInfo.level', order: 'descending' }"
+        height="100%" style="width: 100%;"
+      >
         <el-table-column prop="shipInfo.level" label="等级" align="center" width="80" sortable />
         <el-table-column prop="shipInfo.nameCn" label="船名" width="220" sortable>
           <template #default="scope">
@@ -120,7 +125,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         <el-table-column prop="battles" label="场次" align="right" sortable />
         <el-table-column prop="wins" label="胜率" align="right" sortable>
           <template #default="scope">
-            <div>{{ scope.row.wins }}%</div>
+            <div :style="{color: getWinColor(scope.row.wins)}">{{ scope.row.wins }}%</div>
           </template>
         </el-table-column>
         <el-table-column prop="damage" label="伤害" align="right" sortable />
