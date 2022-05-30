@@ -2,6 +2,7 @@
 // 个人综合
 import { ref, onMounted, nextTick } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
+import Avatar from './component/Avatar.vue'
 import { Search } from '@element-plus/icons-vue'
 import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentList } from '@/api/wows/wows'
 import usePlayer, { Player } from '@/store/player'
@@ -102,6 +103,9 @@ const submitPlayer = (playerItem: Player) => {
   player.addHistoryPlayer(playerItem)
   // 存在qq号的情况 导致服务器不统一   反向覆写一下
   player.setServer(playerItem.server)
+  player.player.accountId = playerItem.accountId
+  player.player.server = playerItem.server
+  player.player.userName = playerItem.userName
   playerListShow.value = false
   getUserInfo(playerItem)
 }
@@ -407,11 +411,14 @@ const recentDayFormat = (day: number) => {
         <!-- 头部基础信息 -->
         <div class="player-top">
           <div>
-            <div>
-              <span :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
-              {{ playerInfo?.userName }}
-              <sup class="like">{{ playerInfo?.karma }}</sup>
-              <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
+            <div style="display: flex;">
+              <Avatar :account-id="player.player.accountId" />
+              <div class="name-info">
+                <span :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
+                {{ playerInfo?.userName }}
+                <sup class="like">{{ playerInfo?.karma }}</sup>
+                <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
+              </div>
             </div>
           </div>
           <el-button :icon="Search" @click="closeInfoShow()" />
@@ -735,31 +742,22 @@ const recentDayFormat = (day: number) => {
   .player-top {
     display flex
     justify-content space-between
+    .name-info{
+      font-size: 34px;
+      line-height: 40px;
+      color: #fff;
 
-    &>div:nth-of-type(1){
-      &>div:nth-of-type(1){
-        font-size: 34px;
-        line-height: 40px;
-        color: #fff;
-
-        &>span:nth-of-type(1) {
-          font-weight: bold;
-          margin-right 20px
-        }
-        .like {
-          font-size 12px
-        }
-        .registration-time{
-          font-size: 16px;
-          color: #ccc;
-          line-height: 40px;
-          padding-left 20px
-        }
+      &>span:nth-of-type(1) {
+        font-weight: bold;
       }
-      &>div:nth-of-type(2){
-        font-size: 18px;
-        line-height: 30px;
-        color: #fff;
+      .like {
+        font-size 12px
+      }
+      .registration-time{
+        font-size: 16px;
+        color: #ccc;
+        line-height: 40px;
+        padding-left 20px
       }
     }
   }

@@ -16,7 +16,7 @@ const issues = () => {
       <!-- 左侧logo -->
       <div class="home-header">
         <div class="home-header-logo"></div>
-        <div style="width:600px">
+        <div style="width:600px;padding-left: 20px;">
           <el-menu
             :default-active="route.path"
             mode="horizontal"
