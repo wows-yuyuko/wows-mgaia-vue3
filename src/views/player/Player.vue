@@ -680,7 +680,7 @@ const recentDayFormat = (day: number) => {
                           </span>
                         </td>
                         <td class="value" :style="{color: getWinColor(ship.wins)}">{{ ship.wins }}%</td>
-                        <td class="value" :style="{color: getDamageColor(ship.shipInfo.shipType, ship)}">{{ ship.damage }}</td>
+                        <td class="value" :style="{color: getDamageColor(ship.shipInfo.shipType, ship.damage)}">{{ ship.damage }}</td>
                         <td class="value">{{ ship.hit }}</td>
                       </tr>
                     </tbody>
