@@ -50,7 +50,7 @@ export function accountPlatformBindList (data: { platformType : string, platform
  * @returns
  */
 export function accountUserInfo (data: { server: string, accountId: number }) {
-  return request.get(apiPath + '/account/user/info', data)
+  return request.get(apiPath + '/account/v2/user/info', data)
 }
 
 /**
@@ -59,7 +59,7 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
  * @returns
  */
 export function accountShipInfoList (data: { queryType: string, userCode: string, shipType?: string, level?: string, county?: string }) {
-  return request.post(apiPath + '/account/ship/info/list', data)
+  return request.post(apiPath + '/account/v2/ship/info/list', data)
 }
 
 /**
@@ -69,4 +69,22 @@ export function accountShipInfoList (data: { queryType: string, userCode: string
  */
 export function accountRecentList (data: { server: string, accountId: number, seconds: number }) {
   return request.get(apiPath + '/account/recent/list', data)
+}
+
+/**
+ * 解析获取用户信息请求地址
+ * @param data
+ * @returns
+ */
+export function uploadVortexDataServerUrl (data: { serverType: string, accountIdAndShipId: string[] }) {
+  return request.post(import.meta.env.VITE_TARGET + '/upload/vortex/data/server/url', data)
+}
+
+/**
+ * 用户信息处理
+ * @param data
+ * @returns
+ */
+export function uploadVortexDataUserInfo (data: { serverType: string, accountIdAndShipId: string[] }) {
+  return request.post(import.meta.env.VITE_TARGET + '/upload/vortex/data/user/info', data)
 }

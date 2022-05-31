@@ -17,8 +17,7 @@ const player = usePlayer()
 const query = ref('')
 const queryMode = ref('userName')
 const searchUserListLoading = ref(false)
-// 搜索到的用户列表是否显示
-const playerListShow = ref(true)
+// 详情展示
 const infoShow = ref(false)
 // 搜索出的用户列表
 const searchUserList = ref<{
@@ -57,7 +56,6 @@ const searchUserListByUserName = () => {
     response => {
       searchUserList.value = response.data
       searchUserListLoading.value = false
-      playerListShow.value = true
     }
   ).catch(() => {
     searchUserListLoading.value = false
@@ -73,7 +71,6 @@ const searchUserListByQq = () => {
       }
       searchUserList.value = response.data
       searchUserListLoading.value = false
-      playerListShow.value = true
     }
   ).catch(() => {
     searchUserListLoading.value = false
@@ -107,7 +104,19 @@ const submitPlayer = (playerItem: Player) => {
   player.player.accountId = playerItem.accountId
   player.player.server = playerItem.server
   player.player.userName = playerItem.userName
-  playerListShow.value = false
+
+  // if (player.player.server === 'cn') {
+  //   // 国服走不同路数
+  //   uploadVortexDataServerUrl({ serverType: playerItem.server, accountIdAndShipId: [playerItem.accountId + ''] }).then(
+  //     async response => {
+  //       console.log(response.data[0].accountUrl)
+  //       response.data[0].accountUrl.replace('https://vortex.wowsgame.cn', 'https://wows.mgaia.top/vortex/wowsgame/cn')
+  //       debugger
+  //     }
+  //   )
+  // } else {
+  //   getUserInfo(playerItem)
+  // }
   getUserInfo(playerItem)
 }
 
@@ -147,23 +156,23 @@ const getUserShip = (playerItem: Player) => {
   accountShipInfoList({ queryType: playerItem.server, userCode: playerItem.accountId + '' })
     .then(response => {
       // 扔store里 方便船只列表用
-      player.playerShips = response.data.recentList
+      player.playerShips = response.data.shipInfoList
       // 将船分类整合
       const classifyShip: any = {}
       for (const ship of player.playerShips) {
         // 构建数据结构 先进性判空初始化
-        if (lodash.isNil(classifyShip[ship.shipInfo.level])) {
-          classifyShip[ship.shipInfo.level] = {}
+        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level])) {
+          classifyShip[ship.shipInfo.shipInfo.level] = {}
         }
-        if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType])) {
-          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType] = {}
+        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType])) {
+          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType] = {}
         }
-        if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles)) {
-          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles = 0
-          classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins = 0
+        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles)) {
+          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles = 0
+          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].wins = 0
         }
-        classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles += ship.battles
-        classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins += ship.wins
+        classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles += ship.shipInfo.battles
+        classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].wins += ship.shipInfo.wins
       }
       buildEchart(classifyShip)
     })
@@ -415,10 +424,10 @@ const recentDayFormat = (day: number) => {
             <div style="display: flex;">
               <Avatar :account-id="player.player.accountId" />
               <div class="name-info">
-                <span :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
+                <span v-show="playerInfo?.clanInfo?.tag" :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
                 {{ playerInfo?.userName }}
                 <sup class="like">{{ playerInfo?.karma }}</sup>
-                <span class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
+                <span v-show="playerInfo?.lastDateTime > 0" class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
               </div>
             </div>
           </div>
@@ -428,12 +437,15 @@ const recentDayFormat = (day: number) => {
         <div class="overview">
           <PlayerInfoOverview :pr="playerInfo?.pr" :pvp="playerInfo?.pvp" :dwp-data-v-o="playerInfo?.dwpDataVO" />
           <el-divider />
-          <!-- 组队情况 -->
+          <!-- 组队和排位情况 -->
           <div class="overview-team">
             <div>
               <div class="account-title">单野</div>
               <div class="team-item">
                 <div>场次</div><div>{{ playerInfo?.pvpSolo?.battles }}</div>
+              </div>
+              <div class="team-item">
+                <div>PR</div><div :style="{color:playerInfo?.pvpSolo?.pr?.color}">{{ playerInfo?.pvpSolo?.pr?.value }}</div>
               </div>
               <div class="team-item">
                 <div>经验</div><div>{{ playerInfo?.pvpSolo?.xp }}</div>
@@ -448,13 +460,16 @@ const recentDayFormat = (day: number) => {
                 <div>命中</div><div>{{ playerInfo?.pvpSolo?.hit }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div>{{ playerInfo?.pvpSolo?.wins }}%</div>
+                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpSolo?.wins)}">{{ playerInfo?.pvpSolo?.wins }}%</div>
               </div>
             </div>
             <div>
               <div class="account-title">自行车</div>
               <div class="team-item">
                 <div>场次</div><div>{{ playerInfo?.pvpTwo?.battles }}</div>
+              </div>
+              <div class="team-item">
+                <div>PR</div><div :style="{color:playerInfo?.pvpTwo?.pr?.color}">{{ playerInfo?.pvpTwo?.pr?.value }}</div>
               </div>
               <div class="team-item">
                 <div>经验</div><div>{{ playerInfo?.pvpTwo?.xp }}</div>
@@ -469,13 +484,16 @@ const recentDayFormat = (day: number) => {
                 <div>命中</div><div>{{ playerInfo?.pvpTwo?.hit }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div>{{ playerInfo?.pvpTwo?.wins }}%</div>
+                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpTwo?.wins)}">{{ playerInfo?.pvpTwo?.wins }}%</div>
               </div>
             </div>
             <div>
               <div class="account-title">装甲车</div>
               <div class="team-item">
                 <div>场次</div><div>{{ playerInfo?.pvpThree?.battles }}</div>
+              </div>
+              <div class="team-item">
+                <div>PR</div><div :style="{color:playerInfo?.pvpThree?.pr?.color}">{{ playerInfo?.pvpThree?.pr?.value }}</div>
               </div>
               <div class="team-item">
                 <div>经验</div><div>{{ playerInfo?.pvpThree?.xp }}</div>
@@ -490,7 +508,31 @@ const recentDayFormat = (day: number) => {
                 <div>命中</div><div>{{ playerInfo?.pvpThree?.hit }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div>{{ playerInfo?.pvpThree?.wins }}%</div>
+                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpThree?.wins)}">{{ playerInfo?.pvpThree?.wins }}%</div>
+              </div>
+            </div>
+            <div v-show="playerInfo?.rankSolo?.battles > 0">
+              <div class="account-title">排位赛</div>
+              <div class="team-item">
+                <div>场次</div><div>{{ playerInfo?.rankSolo?.battles }}</div>
+              </div>
+              <div class="team-item">
+                <div>PR</div><div :style="{color:playerInfo?.rankSolo?.pr?.color}">{{ playerInfo?.rankSolo?.pr?.value }}</div>
+              </div>
+              <div class="team-item">
+                <div>经验</div><div>{{ playerInfo?.rankSolo?.xp }}</div>
+              </div>
+              <div class="team-item">
+                <div>场均</div><div>{{ playerInfo?.rankSolo?.damage }}</div>
+              </div>
+              <div class="team-item">
+                <div>K/D</div><div>{{ playerInfo?.rankSolo?.kd }}</div>
+              </div>
+              <div class="team-item">
+                <div>命中</div><div>{{ playerInfo?.rankSolo?.hit }}%</div>
+              </div>
+              <div class="team-item">
+                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.rankSolo?.wins)}">{{ playerInfo?.rankSolo?.wins }}%</div>
               </div>
             </div>
           </div>
@@ -854,7 +896,8 @@ const recentDayFormat = (day: number) => {
       justify-content space-between
       padding: 0 20px;
       >div{
-        width 28%
+        flex-grow 1
+        padding 0 20px
       }
       .account-title{
         margin-bottom: 20px;
