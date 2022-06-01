@@ -7,7 +7,6 @@ const imgs = import.meta.glob('@/assets/avatar/*')
 player.avatarMap = {}
 for (const path in imgs) {
   imgs[path]().then(img => {
-    console.log(img.default)
     const pathArry = (img.default as string).split('/')
     player.avatarMap[parseInt(pathArry[pathArry.length - 1].split('.')[0])] = img.default
   })

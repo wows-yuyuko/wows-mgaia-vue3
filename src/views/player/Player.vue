@@ -346,12 +346,14 @@ const buildEchart = (classifyShip: any) => {
 }
 // 获取玩家近期数据
 const recentDate = ref<any>({})
-const getUserRecent = (playerItem: Player) => {
-  for (let i = 1; i < 8; i++) {
-    accountRecentList({ ...playerItem, seconds: Math.round(moment().subtract(i, 'days').toDate().getTime() / 1000) }).then(response => {
+const getUserRecent = async (playerItem: Player) => {
+  for (let i = 7; i > 0; i--) {
+    // 同步调用  减轻后台压力
+    await accountRecentList({ ...playerItem, seconds: Math.round(moment().subtract(i, 'days').toDate().getTime() / 1000) }).then(response => {
       recentDate.value[i] = response.data
+    }).catch(response => {
+      console.log(response)
     })
-    console.log(recentDate.value)
   }
 }
 const closeInfoShow = () => {
