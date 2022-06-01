@@ -635,7 +635,21 @@ const recentDayFormat = (day: number) => {
             <!-- 近期数据 -->
             <div class="recent-select">
               <div class="label">
-                近{{ recentDay }}天数据
+                <el-tooltip
+                  effect="dark"
+                  content=""
+                  placement="bottom-start"
+                >
+                  <template #content>
+                    需要通过bot在yuyuko平台绑定QQ号才会统计近期数据<br />
+                    recent是基于你绑定账号那天起,服务器会在每日凌晨开始记录你的战绩数据,所以理论上是第一天绑定第二天才可以查询当日的数据.<br />
+                    1.我绑定了为什么查不到,可能是服务器那几天宕机了导致没数据,建议看看公告近期是否有宕机.<br />
+                    2.如果你是以前绑定的现在请重新绑定一次,之前的记录清理了<br />
+                    3.recent会定期清理掉,隐藏战绩的账号,一个月没有玩的账号<br />
+                    4.国服不支持<br />
+                  </template>
+                  <span>近{{ recentDay }}天数据<sup>?</sup></span>
+                </el-tooltip>
               </div>
               <div class="select"><el-slider v-model="recentDay" :format-tooltip="recentDayFormat" :min="1" :max="7" /></div>
             </div>
@@ -695,10 +709,41 @@ const recentDayFormat = (day: number) => {
         </div>
       </div>
     </div>
+    <div style="flex-grow: 1;"></div>
+    <div class="bottom-info">
+      <div style="padding-bottom: 5px;">
+        @本心  yuyuko战绩bot搭建：
+        <a href="https://www.bilibili.com/video/BV1r5411X7pr" target="_Blank">Hikari搭建教程</a>
+        <a href="https://github.com/benx1n/HikariBot" target="_Blank">Hikari(一键安装)github</a>
+        <a href="https://gitee.com/benx1n/HikariBot" target="_Blank">Hikari(一键安装)gitee</a>
+
+        <a href="https://github.com/benx1n/wows-stats-bot" target="_Blank">Hoshino(动手能力较强)github</a>
+        <a href="https://gitee.com/benx1n/wows-stats-bot" target="_Blank">Hoshino(动手能力较强)gitee</a>
+      </div>
+      <div>
+        <span>网页及憨批系列工具反馈群：1050053532</span> &ensp;&ensp;&ensp; <span>战舰世界开发者交流群：967546463</span>
+        &ensp;&ensp;&ensp; <span>@missile_gaia</span>&ensp;&ensp;&ensp;<span>@西行寺雨季</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="stylus">
+.bottom-info {
+  background: #252525;
+  color #a7a7a7
+  padding 10px
+  text-align center
+
+  a{
+    color #a7a7a7
+    padding 0 5px
+    text-decoration:none
+  }
+  a:hover{
+    color #f7f7f7
+  }
+}
 .recent-select{
   display flex
   padding 20px 10px
@@ -731,6 +776,8 @@ const recentDayFormat = (day: number) => {
   background-color: $global-v-page-background-color;
   min-height 100%
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .main-content-top {
   height: 250px;

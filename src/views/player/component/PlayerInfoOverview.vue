@@ -4,9 +4,29 @@ defineProps<{pr: any, pvp:any, dwpDataVO:any}>()
 
 <template>
   <div class="pr" :style="{background: pr?.color}">
-    <span>{{ pr?.name }}</span>
-    <span>{{ pr?.value }} <template v-if="dwpDataVO?.pr">({{ dwpDataVO?.pr }})</template></span>
-    <span>下一级:{{ pr?.nextValue }}</span>
+    <el-tooltip
+      effect="dark"
+      content=""
+      placement="bottom-start"
+    >
+      <template #content>
+        Step 1 - ratios:<br />
+        rDmg = actualDmg/expectedDmg<br />
+        rWins = actualWins/expectedWins<br />
+        rFrags = actualFrags/expectedFrags<br />
+        Step 2 - normalization:<br />
+        nDmg = max(0, (rDmg - 0.4) / (1 - 0.4))<br />
+        nFrags = max(0, (rFrags - 0.1) / (1 - 0.1))<br />
+        nWins = max(0, (rWins - 0.7) / (1 - 0.7))<br />
+        Step 3 - PR value:<br />
+        PR =  700*nDMG + 300*nFrags + 150*nWins<br />
+      </template>
+      <span>
+        <span>{{ pr?.name }}</span>
+        <span>{{ pr?.value }} <template v-if="dwpDataVO?.pr">({{ dwpDataVO?.pr }})</template></span>
+        <span>下一级:{{ pr?.nextValue }}</span>
+      </span>
+    </el-tooltip>
   </div>
   <div class="overview-1">
     <div>
@@ -72,7 +92,7 @@ defineProps<{pr: any, pvp:any, dwpDataVO:any}>()
   text-align center
   line-height 40px
   font-size: 20px;
-  >span{
+  span{
     padding 2px 10px
   }
 }
