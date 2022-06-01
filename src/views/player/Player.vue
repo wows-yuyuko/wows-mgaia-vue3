@@ -425,7 +425,7 @@ const recentDayFormat = (day: number) => {
               <Avatar :account-id="player.player.accountId" />
               <div class="name-info">
                 <span v-show="playerInfo?.clanInfo?.tag" :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
-                {{ playerInfo?.userName }}
+                <span :class="player.avatarMap[player.player.accountId]?'mirage-text':''">{{ playerInfo?.userName }}</span>
                 <sup class="like">{{ playerInfo?.karma }}</sup>
                 <span v-show="playerInfo?.lastDateTime > 0" class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
               </div>
@@ -919,5 +919,21 @@ const recentDayFormat = (day: number) => {
 .battles-div{
   height: 500px
   // background white
+}
+.mirage-text{
+  background: -webkit-linear-gradient(45deg, #00e9f5, #f78651, #f7d73c, #8d67ff, #549bff)
+  color: transparent;
+  /*设置字体颜色透明*/
+  -webkit-background-clip: text;
+  /*背景裁剪为文本形式*/
+  animation: ran 10s linear infinite;
+}
+@keyframes ran {
+  from {
+    backgroud-position: 0 0;
+  }
+  to {
+    background-position: 2000px 0;
+  }
 }
 </style>

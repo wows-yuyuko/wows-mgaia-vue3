@@ -16,6 +16,7 @@ interface PlayerStore {
   nationList: { nation: string, cn: string }[]
   shipTypeList: { key: string, value: string }[]
   playerShips: any[]
+  avatarMap: {[key:number]:string}
 }
 // 玩家数据
 export default defineStore('player', {
@@ -26,6 +27,7 @@ export default defineStore('player', {
         userName: '',
         server: ''
       },
+      avatarMap: {},
       historyPlayer: [],
       server: 'eu',
       serverList: [

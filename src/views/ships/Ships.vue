@@ -110,6 +110,36 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         :default-sort="{ prop: 'shipInfo.shipInfo.level', order: 'descending' }"
         height="100%" style="width: 100%;"
       >
+        <el-table-column type="expand">
+          <!-- 展开船只详情 -->
+          <template #default="props">
+            <div class="ship-details">
+              <table>
+                <tr><th style="width:75px;text-align:left;">类型</th><th>场次</th><th>PR</th><th>胜率</th><th>伤害</th><th>经验</th><th>命中</th><th>KD</th></tr>
+                <tr v-show="props.row.shipSolo.battles>0">
+                  <td style="text-align:left;">单野</td><td>{{ props.row.shipSolo.battles }}</td><td :style="{color: props.row.shipSolo.pr.color}">{{ props.row.shipSolo.pr.value }}</td>
+                  <td :style="{color: getWinColor(props.row.shipSolo.wins)}">{{ props.row.shipSolo.wins }}%</td><td>{{ props.row.shipSolo.damage }}</td><td>{{ props.row.shipSolo.xp }}</td>
+                  <td>{{ props.row.shipSolo.hit }}</td><td>{{ props.row.shipSolo.kd }}</td>
+                </tr>
+                <tr v-show="props.row.shipTwo.battles>0">
+                  <td style="text-align:left;">自行车</td><td>{{ props.row.shipTwo.battles }}</td><td :style="{color: props.row.shipTwo.pr.color}">{{ props.row.shipTwo.pr.value }}</td>
+                  <td :style="{color: getWinColor(props.row.shipTwo.wins)}">{{ props.row.shipTwo.wins }}%</td><td>{{ props.row.shipTwo.damage }}</td><td>{{ props.row.shipTwo.xp }}</td>
+                  <td>{{ props.row.shipTwo.hit }}</td><td>{{ props.row.shipTwo.kd }}</td>
+                </tr>
+                <tr v-show="props.row.shipThree.battles>0">
+                  <td style="text-align:left;">装甲车</td><td>{{ props.row.shipThree.battles }}</td><td :style="{color: props.row.shipThree.pr.color}">{{ props.row.shipThree.pr.value }}</td>
+                  <td :style="{color: getWinColor(props.row.shipThree.wins)}">{{ props.row.shipThree.wins }}%</td><td>{{ props.row.shipThree.damage }}</td><td>{{ props.row.shipThree.xp }}</td>
+                  <td>{{ props.row.shipThree.hit }}</td><td>{{ props.row.shipThree.kd }}</td>
+                </tr>
+                <tr v-show="props.row.rankSolo.battles>0">
+                  <td style="text-align:left;">排位赛</td><td>{{ props.row.rankSolo.battles }}</td><td :style="{color: props.row.rankSolo.pr.color}">{{ props.row.rankSolo.pr.value }}</td>
+                  <td :style="{color: getWinColor(props.row.rankSolo.wins)}">{{ props.row.rankSolo.wins }}%</td><td>{{ props.row.rankSolo.damage }}</td><td>{{ props.row.rankSolo.xp }}</td>
+                  <td>{{ props.row.rankSolo.hit }}</td><td>{{ props.row.rankSolo.kd }}</td>
+                </tr>
+              </table>
+            </div>
+          </template>
+        </el-table-column>
         <el-table-column prop="shipInfo.shipInfo.level" label="等级" align="center" width="80" sortable />
         <el-table-column prop="shipInfo.shipInfo.nameCn" label="船名" width="220" sortable>
           <template #default="scope">
@@ -119,12 +149,12 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         </el-table-column>
         <el-table-column prop="shipInfo.shipInfo.shipType" label="类别" width="100" :formatter="shipTypeFormatter" sortable />
         <el-table-column prop="shipInfo.shipInfo.country" label="国家" width="100" :formatter="countryFormatter" sortable />
+        <el-table-column prop="shipInfo.battles" label="场次" align="right" sortable />
         <el-table-column prop="shipInfo.pr.value" label="PR" align="right" sortable>
           <template #default="scope">
             <div :style="{color: scope.row.shipInfo.pr.color}">{{ scope.row.shipInfo.pr.value }}</div>
           </template>
         </el-table-column>
-        <el-table-column prop="shipInfo.battles" label="场次" align="right" sortable />
         <el-table-column prop="shipInfo.wins" label="胜率" align="right" sortable>
           <template #default="scope">
             <div :style="{color: getWinColor(scope.row.shipInfo.wins)}">{{ scope.row.shipInfo.wins }}%</div>
@@ -177,5 +207,15 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   // position: relative;
   left: 0;
   right: 0;
+}
+.ship-details{
+  padding 10px 50px
+  tr{
+    text-align right
+
+    th{
+      width:60px
+    }
+  }
 }
 </style>
