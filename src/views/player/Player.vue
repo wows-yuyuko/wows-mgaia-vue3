@@ -11,6 +11,7 @@ import lodash from 'lodash'
 import moment from 'moment'
 import * as echarts from 'echarts'
 import n404 from '@/assets/404.png'
+import { ElMessage } from 'element-plus'
 
 const player = usePlayer()
 
@@ -372,6 +373,21 @@ const recentDayFormat = (day: number) => {
 
 // getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
 
+// 复制文字信息
+const copyCommand = (text:string) => {
+  console.log(text)
+  navigator.clipboard.writeText(text).then(() => {
+    // 剪贴板设置成功
+    ElMessage({
+      message: '复制成功',
+      type: 'success'
+    })
+  }, () => {
+    // 剪贴板写入失败
+    ElMessage.error('复制失败！ 可能没开权限 请手打命令吧')
+    ElMessage.error(text)
+  })
+}
 </script>
 
 <template>
@@ -412,10 +428,22 @@ const recentDayFormat = (day: number) => {
                 <el-button v-show="searchUserList.length>0" class="button" text @click="searchUserList = [];">清空</el-button>
               </div>
             </template>
-            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" class="player-item" @click="submitPlayer(user)">
-              <div style="width: 50%;">{{ user.userName }}</div>
-              <div>{{ translateServer(user.server?user.server:player.server) }}</div>
-              <div>{{ user.accountId }}</div>
+            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;">
+              <div class="player-item" @click="submitPlayer(user)">
+                <div style="width: 50%;">{{ user.userName }}</div>
+                <div>{{ translateServer(user.server?user.server:player.server) }}</div>
+                <div>{{ user.accountId }}</div>
+              </div>
+              <div style="padding-left: 20px;">
+                <el-button
+                  link
+                  type="primary"
+                  size="small"
+                  @click="copyCommand('wws 特殊绑定 '+(user.server?user.server:player.server)+' '+user.accountId)"
+                >
+                  复制绑定命令
+                </el-button>
+              </div>
             </div>
           </el-card>
         </el-space>
@@ -820,7 +848,7 @@ const recentDayFormat = (day: number) => {
   .player-item {
     display: flex;
     justify-content space-between
-    max-width 400px
+    width 400px
     line-height: 24px;
     cursor:pointer
     padding: 0 5px
