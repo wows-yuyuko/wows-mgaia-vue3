@@ -22,6 +22,6 @@ window.addEventListener('resize', () => {
 (document.querySelector('body') as HTMLBodyElement).style.height = window.innerHeight + 'px'
 
 if (window.console) {
-  console.log('%c水下小人血妈爆炸，', 'color:red')
+  console.log('%c水下小人血妈爆炸', 'color:red')
 }
 wowsLog({ type: '打开页面' })
