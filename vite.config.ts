@@ -10,6 +10,7 @@ export default defineConfig({
   build: {
     outDir: 'wows'
   },
+  // logLevel: 'error',
   plugins:
   [
     vue(),

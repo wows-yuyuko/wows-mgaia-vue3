@@ -1,4 +1,14 @@
 import request from '@/api/request'
+import axios from 'axios'
+
+/**
+ * 日志
+ * @param data
+ * @returns
+ */
+export function wowsLog (data:any) {
+  return axios.post('/wows/wowsLog', data)
+}
 
 const apiPath: string = import.meta.env.VITE_TARGET + import.meta.env.VITE_PUBLIC_PATH
 

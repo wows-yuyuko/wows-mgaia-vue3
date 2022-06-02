@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
 import usePlayer from '@/store/player'
-
+import { wowsLog } from '@/api/wows/wows'
 createApp(App)
   .use(createPinia())
   .use(router)
@@ -20,3 +20,8 @@ window.addEventListener('resize', () => {
 });
 
 (document.querySelector('body') as HTMLBodyElement).style.height = window.innerHeight + 'px'
+
+if (window.console) {
+  console.log('%c水下小人血妈爆炸，', 'color:red')
+}
+wowsLog({ type: '打开页面' })

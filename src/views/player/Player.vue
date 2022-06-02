@@ -4,7 +4,7 @@ import { ref, onMounted, nextTick } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
 import { Search } from '@element-plus/icons-vue'
-import { accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentList } from '@/api/wows/wows'
+import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentList } from '@/api/wows/wows'
 import { getWinColor, getDamageColor } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
 import lodash from 'lodash'
@@ -52,6 +52,7 @@ const remoteMethodAccountSearchUserList = () => {
 
 // 通过用户名模糊查询列表
 const searchUserListByUserName = () => {
+  wowsLog({ type: '查用户', server: player.server, userName: query.value })
   accountSearchUserList({ server: player.server, userName: query.value, limit: 5 }).then(
     response => {
       searchUserList.value = response.data
@@ -64,6 +65,7 @@ const searchUserListByUserName = () => {
 
 // 通过绑定qq查询列表
 const searchUserListByQq = () => {
+  wowsLog({ type: '查用户', platformType: 'QQ', platformId: query.value })
   accountPlatformBindList({ platformType: 'QQ', platformId: query.value }).then(
     response => {
       for (const user of response.data) {
@@ -117,6 +119,7 @@ const submitPlayer = (playerItem: Player) => {
   // } else {
   //   getUserInfo(playerItem)
   // }
+  wowsLog({ type: '查信息', ...playerItem })
   getUserInfo(playerItem)
 }
 
