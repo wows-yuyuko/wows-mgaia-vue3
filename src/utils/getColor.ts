@@ -14,7 +14,7 @@ const colorData = {
  * @param value
  * @returns 颜色值
  */
-export const getWinColor = (value:number) => {
+export const getWinColor = (value: number) => {
   if (value < 45) return colorData.bad
   if (value < 50) return colorData.belowAverage
   if (value < 55) return colorData.average
@@ -55,5 +55,82 @@ export const getDamageColor = (type: string, value: number) => {
     if (value < 84000) return colorData.great
     if (value < 113000) return colorData.unicum
     return colorData.superUnicum
+  }
+}
+
+const prSelect = [
+  {
+    value: 0,
+    name: '还需努力',
+    englishName: 'Bad',
+    color: '#FE0E00'
+  },
+  {
+    value: 750,
+    name: '低于平均',
+    englishName: 'Below Average',
+    color: '#FE7903'
+  },
+  {
+    value: 1100,
+    name: '平均水平',
+    englishName: 'Average',
+    color: '#FFC71F'
+  },
+  {
+    value: 1350,
+    name: '好',
+    englishName: 'Good',
+    color: '#44B300'
+  },
+  {
+    value: 1550,
+    name: '很好',
+    englishName: 'Very Good',
+    color: '#318000'
+  },
+  {
+    value: 1750,
+    name: '非常好',
+    englishName: 'Great',
+    color: '#02C9B3'
+  },
+  {
+    value: 2100,
+    name: '大佬水平',
+    englishName: 'Unicum',
+    color: '#D042F3'
+  },
+  {
+    value: 2450,
+    name: '神佬水平',
+    englishName: 'Super Unicum',
+    color: '#A00DC5'
+  }
+]
+/**
+ * 获取pr显示信息
+ * @param value
+ */
+export const getPrShowObj = (value: number) => {
+  for (let i = 0; i < prSelect.length; i++) {
+    if (prSelect[i + 1]) {
+      if (value > prSelect[i + 1].value) continue
+      return {
+        value,
+        nextValue: prSelect[i + 1].value - value,
+        name: prSelect[i].name,
+        englishName: prSelect[i].englishName,
+        color: prSelect[i].color
+      }
+    } else {
+      return {
+        value,
+        nextValue: 0,
+        name: prSelect[i].name,
+        englishName: prSelect[i].englishName,
+        color: prSelect[i].color
+      }
+    }
   }
 }

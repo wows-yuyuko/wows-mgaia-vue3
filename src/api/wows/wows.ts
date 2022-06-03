@@ -73,12 +73,12 @@ export function accountShipInfoList (data: { queryType: string, userCode: string
 }
 
 /**
- * 查询用户近期数据
+ * 查询用户近期数据v2
  * @param data
  * @returns
  */
-export function accountRecentList (data: { server: string, accountId: number, seconds: number }) {
-  return request.get(apiPath + '/account/recent/list', data)
+export function accountRecentListV2 (data: { server: string, accountId: number }) {
+  return request.get(apiPath + '/account/v2/recent/list', data)
 }
 
 /**

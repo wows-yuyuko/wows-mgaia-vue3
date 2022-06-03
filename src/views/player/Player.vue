@@ -4,8 +4,8 @@ import { ref, onMounted, nextTick } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
 import { Search } from '@element-plus/icons-vue'
-import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentList } from '@/api/wows/wows'
-import { getWinColor, getDamageColor } from '@/utils/getColor'
+import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentListV2 } from '@/api/wows/wows'
+import { getWinColor, getDamageColor, getPrShowObj } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
 import lodash from 'lodash'
 import moment from 'moment'
@@ -107,19 +107,6 @@ const submitPlayer = (playerItem: Player) => {
   player.player.accountId = playerItem.accountId
   player.player.server = playerItem.server
   player.player.userName = playerItem.userName
-
-  // if (player.player.server === 'cn') {
-  //   // 国服走不同路数
-  //   uploadVortexDataServerUrl({ serverType: playerItem.server, accountIdAndShipId: [playerItem.accountId + ''] }).then(
-  //     async response => {
-  //       console.log(response.data[0].accountUrl)
-  //       response.data[0].accountUrl.replace('https://vortex.wowsgame.cn', 'https://wows.mgaia.top/vortex/wowsgame/cn')
-  //       debugger
-  //     }
-  //   )
-  // } else {
-  //   getUserInfo(playerItem)
-  // }
   wowsLog({ type: '查信息', ...playerItem })
   getUserInfo(playerItem)
 }
@@ -137,7 +124,7 @@ const getUserInfo = (playerItem: Player) => {
       loading.value = false
       // echarts.init()
       nextTick(() => {
-        battlesEchart.resize()
+        echartsResize()
       })
     }
   ).catch(() => {
@@ -145,8 +132,10 @@ const getUserInfo = (playerItem: Player) => {
   })
   // 拿用户单船数据
   getUserShip(playerItem)
-  // 拿近期数据
+  // 拿近期数据 先做清空
   recentDate.value = {}
+  recentDay.value = ''
+  recentSevenDate.value = {}
   getUserRecent(playerItem)
 }
 
@@ -184,9 +173,6 @@ const getUserShip = (playerItem: Player) => {
 
 // 构建战斗图表
 const buildEchart = (classifyShip: any) => {
-  window.addEventListener('resize', () => {
-    battlesEchart.resize()
-  })
   const option:any = {
     tooltip: {
       trigger: 'axis',
@@ -345,37 +331,161 @@ const buildEchart = (classifyShip: any) => {
   )
   battlesEchart.setOption(option)
   nextTick(() => {
-    battlesEchart.resize()
+    echartsResize()
   })
+}
+// 刷新图表操作
+const echartsResize = () => {
+  recentBattlesEchart?.resize()
+  battlesEchart?.resize()
 }
 // 获取玩家近期数据
 const recentDate = ref<any>({})
+const recentDay = ref('') // 当前选中的日期
+const recentSevenDate = ref<any>({}) // 近七天数据统计
+const recentBattlesDiv = ref<HTMLElement|null>(null)
+let recentBattlesEchart!: echarts.ECharts
+// 页面变动时刷新图表
+window.addEventListener('resize', () => {
+  echartsResize()
+})
 const getUserRecent = async (playerItem: Player) => {
-  for (let i = 7; i > 0; i--) {
-    // 同步调用  减轻后台压力
-    await accountRecentList({ ...playerItem, seconds: Math.round(moment().subtract(i, 'days').toDate().getTime() / 1000) }).then(response => {
-      recentDate.value[i] = response.data
-    }).catch(response => {
-      console.log(response)
-    })
-  }
+  // 获取近期数据
+  accountRecentListV2({ ...playerItem }).then(
+    response => {
+      // 近七天各种数据统计
+      let countBattles = 0
+      let countPr = 0
+      let countDamage = 0
+      let countWins = 0
+      let countXp = 0
+      let countKd = 0
+      let countHit = 0
+      // 场次图表所需要的数据
+      const battlesEchartData: any[] = []
+      for (const dayData of response.data.shipData) {
+        // 统计七天均值
+        countBattles += dayData.pvpInfo.battles
+        countPr += dayData.pvpInfo.pr.value * dayData.pvpInfo.battles
+        countWins += dayData.pvpInfo.wins * dayData.pvpInfo.battles
+        countDamage += dayData.pvpInfo.damage * dayData.pvpInfo.battles
+        countXp += dayData.pvpInfo.xp * dayData.pvpInfo.battles
+        countKd += dayData.pvpInfo.kd * dayData.pvpInfo.battles
+        countHit += dayData.pvpInfo.hit * dayData.pvpInfo.battles
+
+        const dateKey = moment(dayData.recordDateTime).format('YYYY-MM-DD')
+        // 构建图表详情所需数据
+        battlesEchartData.push({
+          battles: dayData.pvpInfo.battles,
+          winColor: getWinColor(dayData.pvpInfo.wins),
+          date: dateKey
+        })
+        // 单船数据收集
+        recentDate.value[dateKey] = dayData
+        // 默认取最后一个
+        recentDay.value = dateKey
+      }
+      recentSevenDate.value.pr = getPrShowObj(lodash.floor(countPr / countBattles))
+      recentSevenDate.value.pvp = {
+        battles: countBattles,
+        wins: lodash.round(countWins / countBattles, 2),
+        damage: lodash.floor(countDamage / countBattles),
+        xp: lodash.floor(countXp / countBattles),
+        kd: lodash.round(countKd / countBattles, 2),
+        hit: lodash.round(countHit / countBattles, 2)
+      }
+      // 配置近期战斗图表
+      recentBattlesEchart = echarts.init(recentBattlesDiv.value as HTMLElement)
+      const recentBattlesOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow' // 阴影指示器
+          },
+          formatter: (params: any) => {
+            let text = '<div style="display: flex;justify-content:space-between;"><div>' + params[0].name + '</div></div>'
+            text += `<div style="display: flex;justify-content:space-between;"><div>PR： </div><div style="color:${recentDate.value[params[0].name].pvpInfo.pr.color}">${recentDate.value[params[0].name].pvpInfo.pr.value}</div></div>`
+            text += `<div style="display: flex;justify-content:space-between;"><div>胜率： </div><div style="color:${getWinColor(recentDate.value[params[0].name].pvpInfo.wins)}">${recentDate.value[params[0].name].pvpInfo.wins}%</div></div>`
+            text += `<div style="display: flex;justify-content:space-between;"><div>战斗数： </div><div>${params[0].value}</div></div>`
+            if (recentDate.value[params[0].name].pvpSoloInfo.battles > 0) {
+              text += `<div style="display: flex;justify-content:space-between;"><div>单野： </div><div>${recentDate.value[params[0].name].pvpSoloInfo.battles}</div></div>`
+            }
+            if (recentDate.value[params[0].name].pvpTwoInfo.battles > 0) {
+              text += `<div style="display: flex;justify-content:space-between;"><div>自行车： </div><div>${recentDate.value[params[0].name].pvpTwoInfo.battles}</div></div>`
+            }
+            if (recentDate.value[params[0].name].pvpThreeInfo.battles > 0) {
+              text += `<div style="display: flex;justify-content:space-between;"><div>装甲车： </div><div>${recentDate.value[params[0].name].pvpThreeInfo.battles}</div></div>`
+            }
+            return text
+          }
+        },
+        title: {
+          text: '近期战斗数（点击柱状图切换每日详情）',
+          textStyle: {
+            color: 'white',
+            fontSize: 24
+          }
+        },
+        yAxis: [{
+          type: 'value',
+          axisLabel: {
+            fontSize: 16,
+            color: 'white'
+          }
+        }],
+        xAxis: [
+          {
+            type: 'category',
+            data: battlesEchartData.map((value:any) => value.date),
+            axisLabel: {
+              color: 'white'
+            }
+          }
+        ],
+        series: [
+          {
+            name: '战斗数',
+            data: battlesEchartData.map((value:any) => {
+              return {
+                value: value.battles,
+                itemStyle: {
+                  color: getWinColor(value.wins)
+                }
+              }
+            }),
+            type: 'bar',
+            barMaxWidth: '10%',
+            label: {
+              normal: {
+                show: true, // 显示数值
+                position: 'top', //  位置设为top
+                formatter: '{c}',
+                textStyle: { color: 'white' } // 设置数值颜色
+              }
+            }
+          }
+        ]
+      }
+      recentBattlesEchart.setOption(recentBattlesOption)
+      recentBattlesEchart.on('click', (params) => {
+        // 控制台打印数据的名称
+        recentDay.value = params.name
+      })
+      nextTick(() => {
+        echartsResize()
+      })
+    }
+  )
 }
 const closeInfoShow = () => {
   infoShow.value = false
   player.playerShips = []
 }
 
-// 近几天
-const recentDay = ref(7)
-const recentDayFormat = (day: number) => {
-  return `近${day}天`
-}
-
 // getUserInfo({ server: 'eu', accountId: 558241106, userName: 'missile_gaia' })
 
 // 复制文字信息
 const copyCommand = (text:string) => {
-  console.log(text)
   navigator.clipboard.writeText(text).then(() => {
     // 剪贴板设置成功
     ElMessage({
@@ -677,65 +787,69 @@ const copyCommand = (text:string) => {
                     1.我绑定了为什么查不到,可能是服务器那几天宕机了导致没数据,建议看看公告近期是否有宕机.<br />
                     2.如果你是以前绑定的现在请重新绑定一次,之前的记录清理了<br />
                     3.recent会定期清理掉,隐藏战绩的账号,一个月没有玩的账号<br />
-                    4.国服不支持<br />
                   </template>
-                  <span>近{{ recentDay }}天数据<sup>?</sup></span>
+                  <span>近7日统计<sup>?</sup></span>
                 </el-tooltip>
               </div>
-              <div class="select"><el-slider v-model="recentDay" :format-tooltip="recentDayFormat" :min="1" :max="7" /></div>
             </div>
-            <div v-if="recentDate[recentDay]">
-              <PlayerInfoOverview :pr="recentDate[recentDay]?.data?.pr" :pvp="recentDate[recentDay]?.data" :dwp-data-v-o="{}" />
+            <div v-show="recentDay!==''">
+              <PlayerInfoOverview :pr="recentSevenDate.pr" :pvp="recentSevenDate.pvp" :dwp-data-v-o="{}" />
+              <!-- 近期船图表 -->
+              <div ref="recentBattlesDiv" class="battles-div"></div>
               <!-- 近期船数据 -->
-              <div>
-                <div class="overview-ship">
-                  <table class="table-wows ships-detail-stats">
-                    <thead>
-                      <tr>
-                        <th class="icon"></th>
-                        <th class="name">战舰</th>
-                        <th class="value">
-                          <div class="icon-battles"></div>
-                          <span>场次</span>
-                        </th>
-                        <th class="value">
-                          <div class="icon-battles"></div>
-                          <span>PR</span>
-                        </th>
-                        <th class="value">
-                          <div class="icon-wins"></div>
-                          <span>胜率</span>
-                        </th>
-                        <th class="value">
-                          <div class="icon-damage"></div>
-                          <span>场均</span>
-                        </th>
-                        <th class="value">
-                          <div class="icon-hit"></div>
-                          <span>命中</span>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="ship of recentDate[recentDay]?.recentList" :key="ship.shipId">
-                        <td class="icon"><img style="width:150px" :src="ship.shipInfo.imgSmall" /></td>
-                        <td class="name">{{ ship.shipInfo.nameCn }}</td>
-                        <td class="value">{{ ship.battles }}</td>
-                        <td class="value">
-                          <span :style="{color: ship?.pr?.color}">
-                            {{ ship?.pr?.value }} {{ ship?.pr?.name }}
-                          </span>
-                        </td>
-                        <td class="value" :style="{color: getWinColor(ship.wins)}">{{ ship.wins }}%</td>
-                        <td class="value" :style="{color: getDamageColor(ship.shipInfo.shipType, ship.damage)}">{{ ship.damage }}</td>
-                        <td class="value">{{ ship.hit }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="recent-select">
+                <div class="label">
+                  <span>每日详情</span>
                 </div>
+                <div style="font-size: 20px;color: white;text-align: right;flex-grow: 1;"><span>{{ recentDay }}</span></div>
+              </div>
+              <div class="overview-ship">
+                <table class="table-wows ships-detail-stats">
+                  <thead>
+                    <tr>
+                      <th class="icon"></th>
+                      <th class="name">战舰</th>
+                      <th class="value">
+                        <div class="icon-battles"></div>
+                        <span>场次</span>
+                      </th>
+                      <th class="value">
+                        <div class="icon-battles"></div>
+                        <span>PR</span>
+                      </th>
+                      <th class="value">
+                        <div class="icon-wins"></div>
+                        <span>胜率</span>
+                      </th>
+                      <th class="value">
+                        <div class="icon-damage"></div>
+                        <span>场均</span>
+                      </th>
+                      <th class="value">
+                        <div class="icon-hit"></div>
+                        <span>命中</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="ship of recentDate[recentDay]?.shipData" :key="ship.shipInfo.shipInfo.nameEnglish">
+                      <td class="icon"><img style="width:150px" :src="ship.shipInfo.shipInfo.imgSmall" /></td>
+                      <td class="name">{{ ship.shipInfo.shipInfo.nameCn }}</td>
+                      <td class="value">{{ ship.shipInfo.battles }}</td>
+                      <td class="value">
+                        <span :style="{color: ship.shipInfo.pr?.color}">
+                          {{ ship.shipInfo?.pr?.value }} {{ ship.shipInfo?.pr?.name }}
+                        </span>
+                      </td>
+                      <td class="value" :style="{color: getWinColor(ship.shipInfo.wins)}">{{ ship.shipInfo.wins }}%</td>
+                      <td class="value" :style="{color: getDamageColor(ship.shipInfo.shipInfo.shipType, ship.shipInfo.damage)}">{{ ship.shipInfo.damage }}</td>
+                      <td class="value">{{ ship.shipInfo.hit }}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <el-empty v-else description="暂无数据" :image="n404" />
+            <el-empty v-show="recentDay===''" description="暂无数据" :image="n404" />
           </div>
         </div>
       </div>
@@ -785,10 +899,6 @@ const copyCommand = (text:string) => {
     font-size: 30px;
     color: #ffab34;
     padding-right 40px
-  }
-  .select {
-    flex-grow 1
-    padding-right 20px
   }
 }
 
@@ -861,6 +971,7 @@ const copyCommand = (text:string) => {
 .palyer-info {
   max-width: $global-v-div-max-width;
   flex-grow: 1;
+  width 0
 
   .player-top {
     display flex
@@ -935,7 +1046,7 @@ const copyCommand = (text:string) => {
           margin-right: 10px;
         }
         .name{
-          width: 30%;
+          // width: 30%;
           text-align: left;
         }
         .icon-ship{
