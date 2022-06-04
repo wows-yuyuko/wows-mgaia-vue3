@@ -382,8 +382,10 @@ const getUserRecent = async (playerItem: Player) => {
         })
         // 单船数据收集
         recentDate.value[dateKey] = dayData
-        // 默认取最后一个
-        recentDay.value = dateKey
+        // 船列表默认显示有数据的最后一个
+        if (dayData.pvpInfo.battles > 0) {
+          recentDay.value = dateKey
+        }
       }
       recentSevenDate.value.pr = getPrShowObj(lodash.floor(countPr / countBattles))
       recentSevenDate.value.pvp = {
@@ -404,8 +406,10 @@ const getUserRecent = async (playerItem: Player) => {
           },
           formatter: (params: any) => {
             let text = '<div style="display: flex;justify-content:space-between;"><div>' + params[0].name + '</div></div>'
-            text += `<div style="display: flex;justify-content:space-between;"><div>PR： </div><div style="color:${recentDate.value[params[0].name].pvpInfo.pr.color}">${recentDate.value[params[0].name].pvpInfo.pr.value}</div></div>`
-            text += `<div style="display: flex;justify-content:space-between;"><div>胜率： </div><div style="color:${getWinColor(recentDate.value[params[0].name].pvpInfo.wins)}">${recentDate.value[params[0].name].pvpInfo.wins}%</div></div>`
+            if (recentDate.value[params[0].name].pvpInfo.battles > 0) {
+              text += `<div style="display: flex;justify-content:space-between;"><div>PR： </div><div style="color:${recentDate.value[params[0].name].pvpInfo.pr.color}">${recentDate.value[params[0].name].pvpInfo.pr.value}</div></div>`
+              text += `<div style="display: flex;justify-content:space-between;"><div>胜率： </div><div style="color:${getWinColor(recentDate.value[params[0].name].pvpInfo.wins)}">${recentDate.value[params[0].name].pvpInfo.wins}%</div></div>`
+            }
             text += `<div style="display: flex;justify-content:space-between;"><div>战斗数： </div><div>${params[0].value}</div></div>`
             if (recentDate.value[params[0].name].pvpSoloInfo.battles > 0) {
               text += `<div style="display: flex;justify-content:space-between;"><div>单野： </div><div>${recentDate.value[params[0].name].pvpSoloInfo.battles}</div></div>`
