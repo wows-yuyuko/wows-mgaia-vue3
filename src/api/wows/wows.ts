@@ -98,3 +98,11 @@ export function uploadVortexDataServerUrl (data: { serverType: string, accountId
 export function uploadVortexDataUserInfo (data: { serverType: string, accountIdAndShipId: string[] }) {
   return request.post(import.meta.env.VITE_TARGET + '/upload/vortex/data/user/info', data)
 }
+
+/**
+ * 战舰平均数据列表
+ * @returns
+ */
+export function encyclopediaShipAvg () {
+  return request.get(apiPath + '/encyclopedia/ship/avg', {})
+}

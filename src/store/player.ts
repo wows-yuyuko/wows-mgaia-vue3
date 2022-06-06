@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { serverList, nationList, shipType } from '@/api/wows/wows'
+import { serverList, nationList, shipType, encyclopediaShipAvg } from '@/api/wows/wows'
 import { setLocalStorage, getLocalStorage } from '@/utils/storage'
 import lodash from 'lodash'
 export interface Player {
@@ -17,6 +17,7 @@ interface PlayerStore {
   shipTypeList: { key: string, value: string }[]
   playerShips: any[]
   avatarMap: {[key:number]:string}
+  avgShip: any
 }
 // 玩家数据
 export default defineStore('player', {
@@ -69,7 +70,9 @@ export default defineStore('player', {
       ],
       shipTypeList: [],
       // 用户单船信息
-      playerShips: []
+      playerShips: [],
+      // 服务器平均数据
+      avgShip: {}
     }
   },
   actions: {
@@ -87,6 +90,17 @@ export default defineStore('player', {
           list.push(response.data[key])
         }
         this.shipTypeList = list
+      })
+      // 获取服务器平均数据列表
+      encyclopediaShipAvg().then((response) => {
+        const avgShip:any = {}
+        for (const ship of response.data) {
+          if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
+          ship.data.winRate = lodash.round(ship.data.winRate, 2)
+          ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
+          avgShip[ship.shipInfo.nameEnglish] = ship
+        }
+        this.avgShip = avgShip
       })
       // 从localStorage中导入历史账号及服务器
       if (!lodash.isNil(getLocalStorage('historyPlayer'))) {

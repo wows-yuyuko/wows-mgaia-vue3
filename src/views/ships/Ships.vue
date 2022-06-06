@@ -7,7 +7,7 @@ import usePlayer from '@/store/player'
 const player = usePlayer()
 const nation = ref<string[]>([])
 const shipType = ref<string[]>([])
-const level = ref<number[]>([])
+const level = ref<number[]>([6, 7, 8, 9, 10, 11])
 
 // 通过计算属性拿出要显示的列表
 const showShipList = computed(() => {
@@ -141,7 +141,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
           </template>
         </el-table-column>
         <el-table-column prop="shipInfo.shipInfo.level" label="等级" align="center" width="80" sortable />
-        <el-table-column prop="shipInfo.shipInfo.nameCn" label="船名" width="220" sortable>
+        <el-table-column prop="shipInfo.shipInfo.nameCn" label="船名" sortable>
           <template #default="scope">
             <img style="width: 50px;" :src="scope.row.shipInfo.shipInfo.imgSmall" />
             <span>{{ scope.row.shipInfo.shipInfo.nameCn }}</span>
@@ -149,22 +149,32 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         </el-table-column>
         <el-table-column prop="shipInfo.shipInfo.shipType" label="类别" width="100" :formatter="shipTypeFormatter" sortable />
         <el-table-column prop="shipInfo.shipInfo.country" label="国家" width="100" :formatter="countryFormatter" sortable />
-        <el-table-column prop="shipInfo.battles" label="场次" align="right" sortable />
-        <el-table-column prop="shipInfo.pr.value" label="PR" align="right" sortable>
+        <el-table-column prop="shipInfo.battles" label="场次" align="right" width="80" sortable />
+        <el-table-column prop="shipInfo.pr.value" label="PR" align="right" width="80" sortable>
           <template #default="scope">
             <div :style="{color: scope.row.shipInfo.pr.color}">{{ scope.row.shipInfo.pr.value }}</div>
           </template>
         </el-table-column>
-        <el-table-column prop="shipInfo.wins" label="胜率" align="right" sortable>
+        <el-table-column prop="shipInfo.wins" label="胜率" align="right" width="80" sortable>
           <template #default="scope">
             <div :style="{color: getWinColor(scope.row.shipInfo.wins)}">{{ scope.row.shipInfo.wins }}%</div>
           </template>
         </el-table-column>
-        <el-table-column prop="shipInfo.damage" label="伤害" align="right" sortable />
-        <el-table-column prop="shipInfo.extensionDataInfo.maxDamage" label="最大伤害" align="right" sortable />
-        <el-table-column prop="shipInfo.xp" label="经验" align="right" sortable />
-        <el-table-column prop="shipInfo.hit" label="命中" align="right" sortable />
-        <el-table-column prop="shipInfo.kd" label="KD" align="right" sortable />
+        <el-table-column label="serverAvg" align="right" width="100">
+          <template #default="scope">
+            <div>{{ player.avgShip[scope.row.shipInfo.shipInfo.nameEnglish]?.data?.winRate }}%</div>
+          </template>
+        </el-table-column>
+        <el-table-column prop="shipInfo.damage" label="伤害" align="right" width="100" sortable />
+        <el-table-column label="serverAvg" align="right" width="100">
+          <template #default="scope">
+            <div>{{ player.avgShip[scope.row.shipInfo.shipInfo.nameEnglish]?.data?.averageDamageDealt }}</div>
+          </template>
+        </el-table-column>
+        <el-table-column prop="shipInfo.extensionDataInfo.maxDamage" label="最大伤害" align="right" width="110" sortable />
+        <el-table-column prop="shipInfo.xp" label="经验" align="right" width="80" sortable />
+        <el-table-column prop="shipInfo.hit" label="命中" align="right" width="80" sortable />
+        <el-table-column prop="shipInfo.kd" label="KD" align="right" width="70" sortable />
       </el-table>
     </div>
   </div>
