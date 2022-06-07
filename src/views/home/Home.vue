@@ -27,6 +27,7 @@ const issues = () => {
           >
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
+            <el-menu-item index="/shipModel">模型</el-menu-item>
             <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
         </div>

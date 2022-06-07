@@ -15,11 +15,13 @@
     "moment": "^2.29.3",
     "path": "^0.12.7",
     "pinia": "^2.0.14",
+    "three": "^0.141.0",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",
+    "@types/three": "^0.141.0",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "@vitejs/plugin-vue": "^2.3.3",
