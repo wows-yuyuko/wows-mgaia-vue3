@@ -232,7 +232,7 @@ export const buildRecentBattlesEchart = (battlesEchartData:any[], recentDate:any
           return {
             value: value.battles,
             itemStyle: {
-              color: getWinColor(value.wins)
+              color: value.winColor
             }
           }
         }),
