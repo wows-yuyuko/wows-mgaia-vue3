@@ -4,6 +4,11 @@ import eslintPlugin from 'vite-plugin-eslint'
 import viteCompression from 'vite-plugin-compression'
 import path from 'path'
 
+// 自动引入
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
@@ -17,7 +22,13 @@ export default defineConfig({
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.ts', 'src/**/*.vue', 'src/*.js', 'src/*.ts', 'src/*.vue', 'src/**/*.styl']
     }),
-    viteCompression({ threshold: 100 * 1000 }) // 超过100k进行压缩
+    viteCompression({ threshold: 100 * 1000 }), // 超过100k进行压缩
+    AutoImport({
+      resolvers: [ElementPlusResolver()]
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()]
+    })
   ],
   server: {
     host: true
