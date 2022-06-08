@@ -660,6 +660,14 @@ const copyCommand = (text:string) => {
         <span>yuyuko群(有bot可绑定)：872725671</span> &ensp;&ensp;&ensp; <span>网页及憨批系列工具反馈群：1050053532</span> &ensp;&ensp;&ensp; <span>战舰世界开发者交流群：967546463</span>
         &ensp;&ensp;&ensp; <span>@missile_gaia</span>&ensp;&ensp;&ensp;<span>@西行寺雨季</span>
       </div>
+      <div>
+        兵工厂：
+        <a href="https://armory.wowsgame.cn/zh-cn/" target="_Blank">国服</a>
+        <a href="https://armory.worldofwarships.asia/zh-sg/" target="_Blank">亚服</a>
+        <a href="https://armory.worldofwarships.eu/zh-sg/" target="_Blank">欧服</a>
+        <a href="https://armory.worldofwarships.com/zh-sg/" target="_Blank">美服</a>
+        <a href="https://armory.worldofwarships.ru/zh-sg/" target="_Blank">毛服</a>
+      </div>
     </div>
   </div>
 </template>
