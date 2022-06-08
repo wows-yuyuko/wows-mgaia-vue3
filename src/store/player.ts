@@ -17,7 +17,25 @@ interface PlayerStore {
   shipTypeList: { key: string, value: string }[]
   playerShips: any[]
   avatarMap: {[key:number]:string}
-  avgShip: any
+  avgShip: {
+    [key: string]: {
+      data: {
+        winRate: number
+        averageDamageDealt: number
+        averageFrags: number
+      }
+      shipInfo: {
+        country: string
+        imgLarge: string
+        imgMedium: string
+        imgSmall: string
+        level: number
+        nameCn: string
+        nameEnglish: string
+        shipType: string
+      }
+    }
+  }
 }
 // 玩家数据
 export default defineStore('player', {
@@ -98,6 +116,7 @@ export default defineStore('player', {
           if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
           ship.data.winRate = lodash.round(ship.data.winRate, 2)
           ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
+          ship.data.averageFrags = lodash.round(ship.data.averageFrags, 2)
           avgShip[ship.shipInfo.nameEnglish] = ship
         }
         this.avgShip = avgShip
