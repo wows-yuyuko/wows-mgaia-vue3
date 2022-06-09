@@ -41,25 +41,43 @@ const count = ref({
   coal: 0, // 煤炭
   free_xp: 0, // 全局经验
   steel: 0, // 钢铁
-  ship: 0 // 船
-// collection_album: 0, 收藏品
+  ship: 0, // 船
+  // collection_album: 0, 收藏品
+  savePoint: selectContainerMap[selectContainer.value].data.data.savePoint
 })
 
 function roll () {
-  let count = 0
+  if (count.value.savePoint === 0) {
+    let shipRewards = 0
+    for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
+      shipRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+    }
+    const random = Math.random() * shipRewards
+    let countRewards = 0
+    for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
+      countRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+      if (countRewards > random) {
+        count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
+        return getPrize((selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i], showPrizeList.value)
+      }
+    }
+  }
+  count.value.savePoint--
+  let countRewards = 0
   const random = Math.random() * 100
   // const random = 99
   for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].commonRewards) {
     for (const item of (selectContainerMap[selectContainer.value].data.data.slots[0].commonRewards as any)[i].rewards) {
-      count += item.probabilityDisplayed
-      if (count > random) {
+      countRewards += item.probabilityDisplayed
+      if (countRewards > random) {
         return getPrize(item, showPrizeList.value)
       }
     }
   }
   for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
-    count += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
-    if (count > random) {
+    countRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+    if (countRewards > random) {
+      count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
       return getPrize((selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i], showPrizeList.value)
     }
   }
@@ -112,16 +130,25 @@ function clear () {
     coal: 0, // 煤炭
     free_xp: 0, // 全局经验
     steel: 0, // 钢铁
-    ship: 0 // 船
+    ship: 0, // 船
     // collection_album: 0, 收藏品
+    savePoint: selectContainerMap[selectContainer.value].data.data.savePoint
   }
+}
+// 切换重制保底
+function containerChange () {
+  count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
 }
 </script>
 <template>
   <div class="container">
     <div class="container-img">
       <div style="padding-top: 20px;">
-        <el-select v-model="selectContainer" placeholder="选择箱子种类">
+        <el-select
+          v-model="selectContainer"
+          placeholder="选择箱子种类"
+          @change="containerChange"
+        >
           <el-option
             v-for="item in selectContainerMap"
             :key="item.value"
@@ -158,6 +185,7 @@ function clear () {
       <div>全局经验: {{ count.free_xp }} 次</div>
       <div>钢铁: {{ count.steel }} 次</div>
       <div>船: {{ count.ship }} 次</div>
+      <div>保底剩余: {{ count.savePoint }} 次</div>
     </div>
   </div>
 </template>
