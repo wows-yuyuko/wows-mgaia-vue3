@@ -73,28 +73,32 @@ function roll () {
 // 用于显示
 const showPrizeList = ref<ShowPrize[]>([])
 
+// 开几次
+const times = ref(1)
 // 开箱
 function openContainer () {
-  const prize = roll()
-  if (prize.type === 'wows_premium') {
-    count.value.wowsPremium++
-  } else if (prize.type === 'gold') {
-    count.value.gold++
-  } else if (prize.type === 'signal') {
-    count.value.signal++
-  } else if (prize.type === 'camouflage') {
-    count.value.camouflage++
-  } else if (prize.type === 'coal') {
-    count.value.coal++
-  } else if (prize.type === 'free_xp') {
-    count.value.free_xp++
-  } else if (prize.type === 'steel') {
-    count.value.steel++
-  } else if (prize.type === 'ship') {
-    count.value.ship++
+  for (let i = 0; i < times.value; i++) {
+    const prize = roll()
+    if (prize.type === 'wows_premium') {
+      count.value.wowsPremium++
+    } else if (prize.type === 'gold') {
+      count.value.gold++
+    } else if (prize.type === 'signal') {
+      count.value.signal++
+    } else if (prize.type === 'camouflage') {
+      count.value.camouflage++
+    } else if (prize.type === 'coal') {
+      count.value.coal++
+    } else if (prize.type === 'free_xp') {
+      count.value.free_xp++
+    } else if (prize.type === 'steel') {
+      count.value.steel++
+    } else if (prize.type === 'ship') {
+      count.value.ship++
+    }
+    count.value.number++
+    showPrizeList.value.unshift(prize)
   }
-  count.value.number++
-  showPrizeList.value.unshift(prize)
 }
 // 清空
 function clear () {
@@ -130,10 +134,12 @@ function clear () {
         </span>
       </div>
       <div>
-        <img style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
+        <img v-show="selectContainer === 'epicContainer'" style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
+        <img v-show="selectContainer !== 'epicContainer'" style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
       </div>
       <div style="text-align: center;">
-        <el-button type="" @click="openContainer">开箱</el-button>
+        <el-input-number v-model="times" :min="1" :max="200" />
+        <el-button type="" style="margin-left:20px;" @click="openContainer">开箱</el-button>
         <el-button style="margin-left:20px;" type="" @click="clear">清空</el-button>
       </div>
     </div>
