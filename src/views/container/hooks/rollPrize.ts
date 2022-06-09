@@ -22,7 +22,7 @@ export interface ShowPrize {
  * @param prize
  * @returns
  */
-export function getPrize (prize:any):ShowPrize {
+export function getPrize (prize:any, prizeList: ShowPrize[]):ShowPrize {
   if (lodash.isNil(prize.rewards)) {
     // 奖品数组空则为普通
     if (prize.type === 'wows_premium') {
@@ -99,7 +99,12 @@ export function getPrize (prize:any):ShowPrize {
     }
   } else {
     // 否则是船
-    const ship = prize.rewards[lodash.floor(Math.random() * prize.rewards.length)].additionalData
+    let ship = prize.rewards[lodash.floor(Math.random() * prize.rewards.length)].additionalData
+    while (prizeList.find(prize => {
+      return prize.text === ship.title
+    })) {
+      ship = prize.rewards[lodash.floor(Math.random() * prize.rewards.length)].additionalData
+    }
     return {
       type: 'ship',
       imgSrc: ship.icons.default,
