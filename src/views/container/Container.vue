@@ -151,7 +151,7 @@ function containerChange () {
         >
           <el-option
             v-for="item in selectContainerMap"
-            :key="item.value"
+            :key="item.value+count.number"
             :label="item.name"
             :value="item.value"
           />
