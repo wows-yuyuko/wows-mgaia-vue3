@@ -5,7 +5,7 @@ import epicContainer from './hooks/PCL005_Epic'
 import santaBig from './hooks/PCL008_SantaBig'
 import santaMedium from './hooks/PCL007_SantaMedium'
 import santaSmall from './hooks/PCL006_SantaSmall'
-
+import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
 import ShowPrizeVue from './component/ShowPrizeVue.vue'
 const selectContainerMap:any = {
@@ -46,6 +46,8 @@ const count = ref({
   savePoint: selectContainerMap[selectContainer.value].data.data.savePoint
 })
 
+// 是否已经氪穿
+const emptyAllshow = ref(false)
 function roll () {
   // 深拷贝后再使用，因为涉及到船池清空重新分配概率问题
   const containerMap = JSON.parse(JSON.stringify(selectContainerMap[selectContainer.value].data.data))
@@ -61,6 +63,7 @@ function roll () {
       }
     }
   }
+  emptyAllshow.value = emptyAll
   console.log('emptyAll', emptyAll)
   // 已经清空的船池概率累加
   let emptyProbability = 0
@@ -145,8 +148,9 @@ const showPrizeList = ref<ShowPrize[]>([])
 // 开几次
 const times = ref(1)
 // 开箱
-function openContainer () {
-  for (let i = 0; i < times.value; i++) {
+function openContainer (num:number|null = null) {
+  const rollTimes = lodash.isNil(num) ? times.value : num
+  for (let i = 0; i < rollTimes; i++) {
     const prize = roll()
     if (prize.type === 'wows_premium') {
       count.value.wowsPremium++
@@ -167,6 +171,14 @@ function openContainer () {
     }
     count.value.number++
     showPrizeList.value.unshift(prize)
+  }
+}
+// 一键氪穿
+function boom () {
+  emptyAllshow.value = false
+  // eslint-disable-next-line no-unmodified-loop-condition
+  while (!emptyAllshow.value) {
+    openContainer(1)
   }
 }
 // 清空
@@ -217,9 +229,11 @@ function containerChange () {
       </div>
       <div style="text-align: center;">
         <el-input-number v-model="times" :min="1" :max="200" />
-        <el-button type="" style="margin-left:20px;" @click="openContainer">开箱</el-button>
+        <el-button type="" style="margin-left:20px;" @click="openContainer()">开箱</el-button>
+        <el-button type="" style="margin-left:20px;" @click="boom">氪穿</el-button>
         <el-button style="margin-left:20px;" type="" @click="clear">清空</el-button>
       </div>
+      <div style="padding: 10px;color: #df4c45;font-size: 13px;">一键氪穿 用于估算多少箱清空船库，根据箱子概率可能会需要运算很久，且对浏览器性能有要求</div>
     </div>
     <div class="prize-div">
       <div class="prize-list">
