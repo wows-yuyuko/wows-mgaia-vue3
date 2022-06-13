@@ -8,6 +8,8 @@ import santaSmall from './hooks/PCL006_SantaSmall'
 import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
 import ShowPrizeVue from './component/ShowPrizeVue.vue'
+import usePlayer from '@/store/player'
+const player = usePlayer()
 const selectContainerMap:any = {
   epicContainer: {
     name: '超级补给箱',
@@ -48,9 +50,25 @@ const count = ref({
 
 // 是否已经氪穿
 const emptyAllshow = ref(false)
+// 与当前查询账号船库挂钩
+const shipsHook = ref(false)
 function roll () {
   // 深拷贝后再使用，因为涉及到船池清空重新分配概率问题
   const containerMap = JSON.parse(JSON.stringify(selectContainerMap[selectContainer.value].data.data))
+  if (shipsHook.value) {
+    // 如果与船库挂钩则先清理奖池
+    for (const key in containerMap.slots[0].valuableRewards) {
+      const rewards = []
+      for (const valueShip of containerMap.slots[0].valuableRewards[key].rewards) {
+        if (!player.playerShips.find(ship => {
+          return valueShip.id === ship.shipInfo.shipId
+        })) {
+          rewards.push(valueShip)
+        }
+      }
+      containerMap.slots[0].valuableRewards[key].rewards = rewards
+    }
+  }
   // 先判定有没有空船池  有则概率分配给其他船池
   // 全部船池清空
   let emptyAll = true
@@ -227,13 +245,17 @@ function containerChange () {
         <img v-show="selectContainer === 'epicContainer'" style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
         <img v-show="selectContainer !== 'epicContainer'" style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
       </div>
+      <div>与当前查询账号船库挂钩：<el-switch v-model="shipsHook" /></div>
       <div style="text-align: center;">
         <el-input-number v-model="times" :min="1" :max="200" />
         <el-button type="" style="margin-left:20px;" @click="openContainer()">开箱</el-button>
         <el-button type="" style="margin-left:20px;" @click="boom">氪穿</el-button>
         <el-button style="margin-left:20px;" type="" @click="clear">清空</el-button>
       </div>
-      <div style="padding: 10px;color: #df4c45;font-size: 13px;">一键氪穿 用于估算多少箱清空船库，根据箱子概率可能会需要运算很久，且对浏览器性能有要求</div>
+      <div style="padding: 10px;color: #df4c45;font-size: 13px;">
+        一键氪穿 用于估算多少箱清空船库，根据箱子概率可能会需要运算很久，且对浏览器性能有要求.
+        一些没开过的船没有记录数据无法剔除
+      </div>
     </div>
     <div class="prize-div">
       <div class="prize-list">
