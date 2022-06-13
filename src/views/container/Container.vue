@@ -47,38 +47,89 @@ const count = ref({
 })
 
 function roll () {
+  // 深拷贝后再使用，因为涉及到船池清空重新分配概率问题
+  const containerMap = JSON.parse(JSON.stringify(selectContainerMap[selectContainer.value].data.data))
+  // 先判定有没有空船池  有则概率分配给其他船池
+  // 全部船池清空
+  let emptyAll = true
+  for (const key in containerMap.slots[0].valuableRewards) {
+    for (const valueShip of containerMap.slots[0].valuableRewards[key].rewards) {
+      if (!showPrizeList.value.find(prize => {
+        return prize.text === valueShip.additionalData.title
+      })) {
+        emptyAll = false
+      }
+    }
+  }
+  console.log('emptyAll', emptyAll)
+  // 已经清空的船池概率累加
+  let emptyProbability = 0
+  // 未清空的船池概率累加
+  let notEmptyProbability = 0
+  if (!emptyAll) {
+    // 如果船池没清空，概率分配给其他船池
+    for (const key in containerMap.slots[0].valuableRewards) {
+      let emptyType = true
+      for (const valueShip of containerMap.slots[0].valuableRewards[key].rewards) {
+        if (!showPrizeList.value.find(prize => {
+          return prize.text === valueShip.additionalData.title
+        })) {
+          emptyType = false
+        }
+      }
+      if (emptyType) {
+        // 累加被清空的概率
+        emptyProbability += containerMap.slots[0].valuableRewards[key].probabilityDisplayed
+        containerMap.slots[0].valuableRewards[key].probabilityDisplayed = 0
+      } else {
+        // 累加未被清空的概率
+        notEmptyProbability += containerMap.slots[0].valuableRewards[key].probabilityDisplayed
+      }
+    }
+    // 再来一遍调整概率
+    for (const key in containerMap.slots[0].valuableRewards) {
+      if (containerMap.slots[0].valuableRewards[key].probabilityDisplayed > 0) {
+        containerMap.slots[0].valuableRewards[key].probabilityDisplayed +=
+          emptyProbability * (containerMap.slots[0].valuableRewards[key].probabilityDisplayed / notEmptyProbability)
+      }
+    }
+  }
+  // console.log('emptyProbability', emptyProbability)
+  // console.log('notEmptyProbability', notEmptyProbability)
+
   if (count.value.savePoint === 0) {
+    // 保底归零触发保底
     let shipRewards = 0
-    for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
-      shipRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+    for (const i in containerMap.slots[0].valuableRewards) {
+      shipRewards += (containerMap.slots[0].valuableRewards as any)[i].probabilityDisplayed
     }
     const random = Math.random() * shipRewards
     let countRewards = 0
-    for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
-      countRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+    for (const i in containerMap.slots[0].valuableRewards) {
+      countRewards += (containerMap.slots[0].valuableRewards as any)[i].probabilityDisplayed
       if (countRewards > random) {
-        count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
-        return getPrize((selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i], showPrizeList.value)
+        count.value.savePoint = containerMap.savePoint
+        return getPrize((containerMap.slots[0].valuableRewards as any)[i], showPrizeList.value, emptyAll)
       }
     }
   }
   count.value.savePoint--
   let countRewards = 0
-  const random = Math.random() * 100
-  // const random = 99
-  for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].commonRewards) {
-    for (const item of (selectContainerMap[selectContainer.value].data.data.slots[0].commonRewards as any)[i].rewards) {
+  // const random = Math.random() * 100
+  const random = 90 + Math.random() * 10
+  for (const i in containerMap.slots[0].commonRewards) {
+    for (const item of (containerMap.slots[0].commonRewards as any)[i].rewards) {
       countRewards += item.probabilityDisplayed
       if (countRewards > random) {
-        return getPrize(item, showPrizeList.value)
+        return getPrize(item, showPrizeList.value, emptyAll)
       }
     }
   }
-  for (const i in selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards) {
-    countRewards += (selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i].probabilityDisplayed
+  for (const i in containerMap.slots[0].valuableRewards) {
+    countRewards += (containerMap.slots[0].valuableRewards as any)[i].probabilityDisplayed
     if (countRewards > random) {
-      count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
-      return getPrize((selectContainerMap[selectContainer.value].data.data.slots[0].valuableRewards as any)[i], showPrizeList.value)
+      count.value.savePoint = containerMap.savePoint
+      return getPrize((containerMap.slots[0].valuableRewards as any)[i], showPrizeList.value, emptyAll)
     }
   }
   return {

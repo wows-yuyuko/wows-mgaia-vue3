@@ -22,7 +22,7 @@ export interface ShowPrize {
  * @param prize
  * @returns
  */
-export function getPrize (prize:any, prizeList: ShowPrize[]):ShowPrize {
+export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):ShowPrize {
   if (lodash.isNil(prize.rewards)) {
     // 奖品数组空则为普通
     if (prize.type === 'wows_premium') {
@@ -98,7 +98,16 @@ export function getPrize (prize:any, prizeList: ShowPrize[]):ShowPrize {
       }
     }
   } else {
-    // 否则是船
+    if (emptyAll) {
+      // 如果船池空了 返金
+      return {
+        type: 'gold',
+        imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_gold_25bcad92345c74beb261d28967f32cadfe8ac8d788b1706d68dc0b001ab0c9ff.png',
+        text: '金币* 1500(船池空了)',
+        probabilityDisplayed: prize.probabilityDisplayed
+      }
+    }
+    // 判断船池是否已经空的逻辑放外面，因为涉及到概率再分配
     let ship = prize.rewards[lodash.floor(Math.random() * prize.rewards.length)].additionalData
     while (prizeList.find(prize => {
       return prize.text === ship.title
