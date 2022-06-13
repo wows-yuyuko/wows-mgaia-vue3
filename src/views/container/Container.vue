@@ -115,8 +115,8 @@ function roll () {
   }
   count.value.savePoint--
   let countRewards = 0
-  // const random = Math.random() * 100
-  const random = 90 + Math.random() * 10
+  const random = Math.random() * 100
+  // const random = 90 + Math.random() * 10
   for (const i in containerMap.slots[0].commonRewards) {
     for (const item of (containerMap.slots[0].commonRewards as any)[i].rewards) {
       countRewards += item.probabilityDisplayed
