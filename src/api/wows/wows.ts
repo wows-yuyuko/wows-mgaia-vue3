@@ -106,3 +106,21 @@ export function uploadVortexDataUserInfo (data: { serverType: string, accountIdA
 export function encyclopediaShipAvg () {
   return request.get(apiPath + '/encyclopedia/ship/avg', {})
 }
+
+/**
+ * 箱子抽奖氪穿-返回详细列表
+ * @param data
+ * @returns
+ */
+export function rollSlotsUserList (data: {shipId: number[]}) {
+  return request.get(apiPath + '/roll/slots/user/list', data)
+}
+
+/**
+ * 箱子抽奖-单抽
+ * @param data
+ * @returns
+ */
+export function rollSlotsUser (data: {shipId: number[], slotsId:number}) {
+  return request.get(apiPath + '/roll/slots/user', data)
+}

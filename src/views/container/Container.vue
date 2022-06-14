@@ -7,6 +7,7 @@ import santaMedium from './hooks/PCL007_SantaMedium'
 import santaSmall from './hooks/PCL006_SantaSmall'
 import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
+import { rollSlotsUserList, rollSlotsUser } from '@/api/wows/wows'
 import ShowPrizeVue from './component/ShowPrizeVue.vue'
 import usePlayer from '@/store/player'
 const player = usePlayer()
@@ -45,7 +46,8 @@ const count = ref({
   steel: 0, // 钢铁
   ship: 0, // 船
   // collection_album: 0, 收藏品
-  savePoint: selectContainerMap[selectContainer.value].data.data.savePoint
+  savePoint: selectContainerMap[selectContainer.value].data.data.savePoint,
+  savePointTrigger: 0 // 保底触发
 })
 
 // 是否已经氪穿
@@ -119,6 +121,8 @@ function roll () {
   // console.log('notEmptyProbability', notEmptyProbability)
 
   if (count.value.savePoint === 0) {
+    // 保底触发累加
+    count.value.savePointTrigger++
     // 保底归零触发保底
     let shipRewards = 0
     for (const i in containerMap.slots[0].valuableRewards) {
@@ -167,6 +171,7 @@ const showPrizeList = ref<ShowPrize[]>([])
 const times = ref(1)
 // 开箱
 function openContainer (num:number|null = null) {
+  // rollSlotsUser({ slotsId: 4285715376, shipId: [] }).then()
   const rollTimes = lodash.isNil(num) ? times.value : num
   for (let i = 0; i < rollTimes; i++) {
     const prize = roll()
@@ -195,6 +200,10 @@ function openContainer (num:number|null = null) {
 function boom () {
   emptyAllshow.value = false
   // eslint-disable-next-line no-unmodified-loop-condition
+  // rollSlotsUserList({ shipId: [] }).then(response => {
+  //   console.log(response)
+  // })
+
   while (!emptyAllshow.value) {
     openContainer(1)
   }
@@ -213,12 +222,14 @@ function clear () {
     steel: 0, // 钢铁
     ship: 0, // 船
     // collection_album: 0, 收藏品
-    savePoint: selectContainerMap[selectContainer.value].data.data.savePoint
+    savePoint: selectContainerMap[selectContainer.value].data.data.savePoint,
+    savePointTrigger: 0
   }
 }
 // 切换重制保底
 function containerChange () {
   count.value.savePoint = selectContainerMap[selectContainer.value].data.data.savePoint
+  count.value.savePointTrigger = 0
 }
 </script>
 <template>
@@ -273,6 +284,7 @@ function containerChange () {
       <div>钢铁: {{ count.steel }} 次</div>
       <div>船: {{ count.ship }} 次</div>
       <div>保底剩余: {{ count.savePoint }} 次</div>
+      <div>保底触发: {{ count.savePointTrigger }} 次</div>
     </div>
   </div>
 </template>
