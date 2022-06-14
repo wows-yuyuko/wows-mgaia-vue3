@@ -7,7 +7,7 @@ import santaMedium from './hooks/PCL007_SantaMedium'
 import santaSmall from './hooks/PCL006_SantaSmall'
 import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
-import { rollSlotsUserList, rollSlotsUser } from '@/api/wows/wows'
+import { rollSlotsUserList, wowsLog } from '@/api/wows/wows'
 import ShowPrizeVue from './component/ShowPrizeVue.vue'
 import usePlayer from '@/store/player'
 const player = usePlayer()
@@ -171,7 +171,7 @@ const showPrizeList = ref<ShowPrize[]>([])
 const times = ref(1)
 // 开箱
 function openContainer (num:number|null = null) {
-  // rollSlotsUser({ slotsId: 4285715376, shipId: [] }).then()
+  wowsLog({ type: '开箱' })
   const rollTimes = lodash.isNil(num) ? times.value : num
   for (let i = 0; i < rollTimes; i++) {
     const prize = roll()
@@ -196,17 +196,126 @@ function openContainer (num:number|null = null) {
     showPrizeList.value.unshift(prize)
   }
 }
-// 一键氪穿
+// 一键氪穿(浏览器渲染)
 function boom () {
   emptyAllshow.value = false
-  // eslint-disable-next-line no-unmodified-loop-condition
-  // rollSlotsUserList({ shipId: [] }).then(response => {
-  //   console.log(response)
-  // })
-
   while (!emptyAllshow.value) {
     openContainer(1)
   }
+}
+
+const serverLoading = ref(false)
+// 一键氪穿(服务器接口)
+function serverBoom () {
+  wowsLog({ type: '氪穿' })
+  serverLoading.value = true
+  clear() // 先清空数据
+  const request:{shipId: number[], slotsId:number} = {
+    slotsId: selectContainerMap[selectContainer.value].data.data.id,
+    shipId: []
+  }
+  if (shipsHook.value) {
+    // 如果与船池挂钩
+    for (const ship of player.playerShips) {
+      request.shipId.push(ship.shipInfo.shipId as number)
+    }
+  }
+  rollSlotsUserList(request).then(response => {
+    console.log(response)
+    const prizeMap:any = {}
+    for (const prize of response.data.slotsList) {
+      if (prize.type === 'wows_premium') {
+        count.value.wowsPremium++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'wows_premium',
+            imgSrc: 'https://wows-static-production.gcdn.co/metashop/1dd97239/assets/images/asset-premium.svg',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `高级账号 ${prizeMap[prize.name].amount + prize.amount} 天`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'gold') {
+        count.value.gold++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'gold',
+            imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_gold_25bcad92345c74beb261d28967f32cadfe8ac8d788b1706d68dc0b001ab0c9ff.png',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `金币* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'signal') {
+        count.value.signal++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'signal',
+            imgSrc: 'https://wows-static-production.gcdn.co/metashop/1dd97239/assets/images/asset-signal_special.svg',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `${prize.name}* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'camouflage') {
+        count.value.camouflage++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'camouflage',
+            imgSrc: prize.imageUrl,
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `${prize.name}* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'coal') {
+        count.value.coal++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'coal',
+            imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_coal_77725f14b70df96ca5fbd710be50c3f36b7eef5776e5002e8abd54395b1f2ef0.png',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `煤炭* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'free_xp') {
+        count.value.free_xp++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'free_xp',
+            imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_freeXP_7eca05d1e294ededa26004af1fbace51acb982c16f3f2ff3b9586d646da5a26a.png',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `全局经验* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'steel') {
+        count.value.steel++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'steel',
+            imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_steel_0ab140da55b4a1f263a02bbee94abb04a74beef50edeead6ad4b37fb3a244179.png',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `钢铁* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount = prize.amount
+      } else if (prize.type === 'ship') {
+        count.value.ship++
+      }
+      count.value.number++
+    }
+    // 触发保底次数记录
+    count.value.savePointTrigger = response.data.savePointTotal
+    for (const index in prizeMap) {
+      showPrizeList.value.push(prizeMap[index])
+    }
+    console.log(prizeMap)
+    serverLoading.value = false
+  }).catch(() => {
+    serverLoading.value = false
+  })
 }
 // 清空
 function clear () {
@@ -257,10 +366,13 @@ function containerChange () {
         <img v-show="selectContainer !== 'epicContainer'" style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
       </div>
       <div>与当前查询账号船库挂钩：<el-switch v-model="shipsHook" /></div>
-      <div style="text-align: center;">
-        <el-input-number v-model="times" :min="1" :max="200" />
-        <el-button type="" style="margin-left:20px;" @click="openContainer()">开箱</el-button>
-        <el-button type="" style="margin-left:20px;" @click="boom">氪穿</el-button>
+      <div style="padding:0 0 10px 0;">
+        开 <el-input-number size="small" v-model="times" :min="1" :max="200" /> 箱
+      </div>
+      <div>
+        <el-button type="" @click="openContainer()">开箱</el-button>
+        <!-- <el-button type="" style="margin-left:20px;" @click="boom">氪穿</el-button> -->
+        <el-button type="" style="margin-left:20px;" :loading="serverLoading" @click="serverBoom">氪穿</el-button>
         <el-button style="margin-left:20px;" type="" @click="clear">清空</el-button>
       </div>
       <div style="padding: 10px;color: #df4c45;font-size: 13px;">

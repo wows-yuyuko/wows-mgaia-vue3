@@ -112,8 +112,8 @@ export function encyclopediaShipAvg () {
  * @param data
  * @returns
  */
-export function rollSlotsUserList (data: {shipId: number[]}) {
-  return request.get(apiPath + '/roll/slots/user/list', data)
+export function rollSlotsUserList (data: {shipId: number[], slotsId:number}) {
+  return request.post(apiPath + '/roll/slots/user/list', data)
 }
 
 /**
@@ -122,5 +122,5 @@ export function rollSlotsUserList (data: {shipId: number[]}) {
  * @returns
  */
 export function rollSlotsUser (data: {shipId: number[], slotsId:number}) {
-  return request.get(apiPath + '/roll/slots/user', data)
+  return request.post(apiPath + '/roll/slots/user', data)
 }

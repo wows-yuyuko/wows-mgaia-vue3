@@ -16,6 +16,7 @@ export interface ShowPrize {
   nationImgSrc?: string
   text: string
   probabilityDisplayed?: number
+  amount?: number
 }
 /**
  * 获取开箱内容
@@ -109,6 +110,7 @@ export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):S
     }
     // 判断船池是否已经空的逻辑放外面，因为涉及到概率再分配
     let ship = prize.rewards[lodash.floor(Math.random() * prize.rewards.length)].additionalData
+    // 如果roll到的船重复了 重新roll
     while (prizeList.find(prize => {
       return prize.text === ship.title
     })) {

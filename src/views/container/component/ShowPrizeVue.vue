@@ -18,7 +18,7 @@ defineProps<{showPrize: ShowPrize}>()
     >
       {{ showPrize.text }}
     </div>
-    <div class="probability-displayed">{{ showPrize.probabilityDisplayed }}%</div>
+    <div v-show="showPrize.probabilityDisplayed" class="probability-displayed">{{ showPrize.probabilityDisplayed }}%</div>
   </div>
 </template>
 <style scoped lang="stylus">
