@@ -5,6 +5,7 @@ import epicContainer from './hooks/PCL005_Epic'
 import santaBig from './hooks/PCL008_SantaBig'
 import santaMedium from './hooks/PCL007_SantaMedium'
 import santaSmall from './hooks/PCL006_SantaSmall'
+import bf2021Paid from './hooks/PCL140_BF2021_Paid'
 import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
 import { rollSlotsUserList, wowsLog } from '@/api/wows/wows'
@@ -12,6 +13,11 @@ import ShowPrizeVue from './component/ShowPrizeVue.vue'
 import usePlayer from '@/store/player'
 const player = usePlayer()
 const selectContainerMap:any = {
+  bf2021Paid: {
+    name: '2021年黑五高级箱',
+    value: 'bf2021Paid',
+    data: bf2021Paid
+  },
   epicContainer: {
     name: '超级补给箱',
     value: 'epicContainer',
@@ -362,8 +368,9 @@ function containerChange () {
         </span>
       </div>
       <div>
-        <img v-show="selectContainer === 'epicContainer'" style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
-        <img v-show="selectContainer !== 'epicContainer'" style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
+        <img v-if="selectContainer === 'epicContainer'" style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
+        <img v-else-if="selectContainer === 'bf2021Paid'" style="width: 100%;" src="@/assets/container/serial_doubloons.jpg" />
+        <img v-else style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
       </div>
       <div>与当前查询账号船库挂钩：<el-switch v-model="shipsHook" /></div>
       <div style="padding:0 0 10px 0;">

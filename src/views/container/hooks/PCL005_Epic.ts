@@ -1,4 +1,5 @@
 // 超级补给箱
+// https://vortex.worldofwarships.eu/api/get_lootbox/zh-sg/4288861104/
 export default {
   status: 'ok',
   data: {
