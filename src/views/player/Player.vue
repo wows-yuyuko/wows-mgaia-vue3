@@ -343,7 +343,7 @@ const copyCommand = (text:string) => {
               <div class="name-info">
                 <span v-show="playerInfo?.clanInfo?.tag" :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
                 <span :class="player.avatarMap[player.player.accountId]?'mirage-text':''">{{ playerInfo?.userName }}</span>
-                <sup class="like">{{ playerInfo?.karma }}</sup>
+                <!-- <sup class="like">{{ playerInfo?.karma }}</sup> 此数据暂时无效 -->
                 <span v-show="playerInfo?.lastDateTime > 0" class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
               </div>
             </div>
