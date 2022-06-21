@@ -42,7 +42,7 @@ export function shipType () {
  * @returns
  */
 export function accountSearchUserList (data: { server: string, userName: string, limit:number }) {
-  return request.get(apiPath + '/account/search/user/list', data)
+  return request.post(apiPath + '/account/search/user/list', data)
 }
 
 /**
@@ -78,7 +78,7 @@ export function accountShipInfoList (data: { queryType: string, userCode: string
  * @returns
  */
 export function accountRecentListV2 (data: { server: string, accountId: number }) {
-  return request.get(apiPath + '/account/v2/recent/list', data)
+  return request.get(apiPath + '/account/v2/recent/list', { server: data.server, accountId: data.accountId })
 }
 
 /**

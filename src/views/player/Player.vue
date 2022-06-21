@@ -13,6 +13,7 @@ import * as echarts from 'echarts'
 import n404 from '@/assets/404.png'
 import { ElMessage } from 'element-plus'
 import { buildBattlesEchart, buildRecentBattlesEchart } from './hooks/buildChart'
+import { Base64 } from 'js-base64'
 
 const player = usePlayer()
 
@@ -55,7 +56,7 @@ const remoteMethodAccountSearchUserList = () => {
 // 通过用户名模糊查询列表
 const searchUserListByUserName = () => {
   wowsLog({ type: '查用户', server: player.server, userName: query.value })
-  accountSearchUserList({ server: player.server, userName: query.value, limit: 5 }).then(
+  accountSearchUserList({ server: player.server, userName: Base64.encode(query.value), limit: 5 }).then(
     response => {
       searchUserList.value = response.data
       searchUserListLoading.value = false
