@@ -84,6 +84,18 @@ const searchUserListByQq = () => {
 
 // 通过绑定accountId查询
 const searchUserByAccountId = () => {
+  accountUserInfo({ server: player.server, accountId: parseInt(query.value) }).then(
+    response => {
+      searchUserList.value = [{
+        accountId: parseInt(query.value),
+        userName: response.data.userName,
+        server: player.server
+      }]
+      searchUserListLoading.value = false
+    }
+  ).catch(() => {
+    searchUserListLoading.value = false
+  })
   console.log()
 }
 
@@ -298,7 +310,7 @@ const copyCommand = (text:string) => {
               <el-select v-model="queryMode" placeholder="Select" style="width: 130px">
                 <el-option label="用户名" value="userName" />
                 <el-option label="QQ号(限绑定)" value="qq" />
-                <!-- <el-option label="accountId" value="accountId" /> -->
+                <el-option label="accountId" value="accountId" />
               </el-select>
             </template>
             <template #append>
