@@ -3,7 +3,7 @@
 import { ref, onMounted, nextTick } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
-import { Search } from '@element-plus/icons-vue'
+import { Search, Promotion } from '@element-plus/icons-vue'
 import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentListV2 } from '@/api/wows/wows'
 import { getWinColor, getDamageColor, getPrShowObj } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
@@ -14,12 +14,15 @@ import n404 from '@/assets/404.png'
 import { ElMessage } from 'element-plus'
 import { buildBattlesEchart, buildRecentBattlesEchart } from './hooks/buildChart'
 import { Base64 } from 'js-base64'
-
+import { useRoute } from 'vue-router'
 const player = usePlayer()
-
 const query = ref('')
 const queryMode = ref('userName')
 const searchUserListLoading = ref(false)
+
+// 如果浏览器地址栏有参数则直接查询
+const route = useRoute()
+
 // 详情展示
 const infoShow = ref(false)
 // 搜索出的用户列表
@@ -115,12 +118,6 @@ const translateServer = (server: string) => {
 // 点击选择账号
 const submitPlayer = (playerItem: Player) => {
   if (lodash.isNil(playerItem.server) || playerItem.server === '') playerItem.server = player.server
-  player.addHistoryPlayer(playerItem)
-  // 存在qq号的情况 导致服务器不统一   反向覆写一下
-  player.setServer(playerItem.server)
-  player.player.accountId = playerItem.accountId
-  player.player.server = playerItem.server
-  player.player.userName = playerItem.userName
   wowsLog({ type: '查信息', ...playerItem })
   getUserInfo(playerItem)
 }
@@ -133,6 +130,16 @@ const getUserInfo = (playerItem: Player) => {
   // 拿用户综合统计信息
   accountUserInfo({ server: playerItem.server, accountId: playerItem.accountId }).then(
     response => {
+      // 查到数据后再加入历史
+      // 存在qq号的情况 导致服务器不统一   反向覆写一下
+      player.setServer(playerItem.server)
+      player.player.accountId = playerItem.accountId
+      player.player.server = playerItem.server
+      player.player.userName = response.data.userName
+      playerItem.userName = response.data.userName
+      player.addHistoryPlayer(playerItem)
+      // 切地址栏
+      history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${playerItem.server}&accountId=${playerItem.accountId}`)
       playerInfo.value = response.data
       infoShow.value = true
       loading.value = false
@@ -157,6 +164,10 @@ const battlesDiv = ref<HTMLElement|null>(null)
 let battlesEchart!: echarts.ECharts
 onMounted(() => {
   battlesEchart = echarts.init(battlesDiv.value as HTMLElement)
+
+  if (!lodash.isNil(route.query.server) && !lodash.isNil(route.query.accountId)) {
+    getUserInfo({ server: route.query.server as string, accountId: parseInt(route.query.accountId as string), userName: '' })
+  }
 })
 const getUserShip = (playerItem: Player) => {
   battlesEchart.clear()
@@ -285,6 +296,10 @@ const copyCommand = (text:string) => {
     ElMessage.error(text)
   })
 }
+
+const copyUrl = () => {
+  copyCommand(window.location.href)
+}
 </script>
 
 <template>
@@ -361,6 +376,7 @@ const copyCommand = (text:string) => {
               </div>
             </div>
           </div>
+          <el-button :icon="Promotion" :loading="searchUserListLoading" @click="copyUrl()">复制分享链接</el-button>
           <el-button :icon="Search" @click="closeInfoShow()" />
         </div>
         <!-- 概览信息 -->
