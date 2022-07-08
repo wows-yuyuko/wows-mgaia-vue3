@@ -139,7 +139,7 @@ const getUserInfo = (playerItem: Player) => {
       playerItem.userName = response.data.userName
       player.addHistoryPlayer(playerItem)
       // 切地址栏
-      history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${playerItem.server}&accountId=${playerItem.accountId}`)
+      history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
       playerInfo.value = response.data
       infoShow.value = true
       loading.value = false
@@ -298,7 +298,7 @@ const copyCommand = (text:string) => {
 }
 
 const copyUrl = () => {
-  copyCommand(window.location.href)
+  copyCommand(`${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
 }
 </script>
 
@@ -596,7 +596,7 @@ const copyUrl = () => {
                     2.如果你是以前绑定的现在请重新绑定一次,之前的记录清理了<br />
                     3.recent会定期清理掉,隐藏战绩的账号,一个月没有玩的账号<br />
                   </template>
-                  <span>近7日统计<sup>?</sup></span>
+                  <span>近30日统计<sup>?</sup></span>
                 </el-tooltip>
               </div>
             </div>

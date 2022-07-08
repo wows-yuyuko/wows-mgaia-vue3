@@ -237,7 +237,7 @@ export const buildRecentBattlesEchart = (battlesEchartData:any[], recentDate:any
           }
         }),
         type: 'bar',
-        barMaxWidth: '20%',
+        barMaxWidth: '80%',
         label: {
           normal: {
             show: true, // 显示数值
