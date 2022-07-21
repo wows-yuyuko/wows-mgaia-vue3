@@ -24,6 +24,7 @@ interface PlayerStore {
         averageDamageDealt: number
         averageFrags: number
       }
+      shipId: number
       shipInfo: {
         country: string
         imgLarge: string
