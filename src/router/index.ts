@@ -28,6 +28,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/serverShips/ServerShips.vue')
       },
       {
+        // 单船服务器平均数据 日度图表
+        path: 'serverShipsAvgEchart',
+        component: () => import('@/views/serverShipsAvgEchart/ServerShipsAvgEchart.vue')
+      },
+      {
         // 开箱模拟
         path: 'container',
         component: () => import('@/views/container/Container.vue')

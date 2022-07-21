@@ -16,7 +16,7 @@ const issues = () => {
       <!-- 左侧logo -->
       <div class="home-header">
         <div class="home-header-logo"></div>
-        <div style="width:600px;padding-left: 20px;">
+        <div style="width:800px;padding-left: 20px;">
           <el-menu
             :default-active="route.path"
             mode="horizontal"
@@ -27,7 +27,8 @@ const issues = () => {
           >
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
-            <el-menu-item index="/serverShips">平均数据</el-menu-item>
+            <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>
+            <el-menu-item index="/serverShipsAvgEchart">服务器日均图表</el-menu-item>
             <el-menu-item index="/container">开箱</el-menu-item>
             <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
