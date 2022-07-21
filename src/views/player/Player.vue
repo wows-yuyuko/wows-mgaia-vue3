@@ -22,7 +22,6 @@ const searchUserListLoading = ref(false)
 
 // 如果浏览器地址栏有参数则直接查询
 const route = useRoute()
-
 // 详情展示
 const infoShow = ref(false)
 // 搜索出的用户列表
@@ -171,7 +170,7 @@ onMounted(() => {
 })
 const getUserShip = (playerItem: Player) => {
   battlesEchart.clear()
-  accountShipInfoList({ queryType: playerItem.server, userCode: playerItem.accountId + '' })
+  accountShipInfoList({ server: playerItem.server, accountId: playerItem.accountId + '' })
     .then(response => {
       // 扔store里 方便船只列表用
       player.playerShips = response.data.shipInfoList

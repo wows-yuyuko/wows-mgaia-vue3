@@ -68,8 +68,8 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
  * @param data
  * @returns
  */
-export function accountShipInfoList (data: { queryType: string, userCode: string, shipType?: string, level?: string, county?: string }) {
-  return request.post(apiPath + '/account/v2/ship/info/list', data)
+export function accountShipInfoList (data: { server: string, accountId: string, shipType?: string, level?: string, county?: string }) {
+  return request.post(apiPath + '/account/ship/info/list', data)
 }
 
 /**
