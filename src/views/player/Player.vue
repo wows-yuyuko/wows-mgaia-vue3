@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 个人综合
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, onActivated } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
 import { Search, Promotion } from '@element-plus/icons-vue'
@@ -206,6 +206,10 @@ const echartsResize = () => {
 }
 // 页面变动时刷新图表
 window.addEventListener('resize', () => {
+  echartsResize()
+})
+// keep-alive激活时调用
+onActivated(() => {
   echartsResize()
 })
 // 获取玩家近期数据

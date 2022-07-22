@@ -124,3 +124,11 @@ export function rollSlotsUserList (data: {shipId: number[], slotsId:number}) {
 export function rollSlotsUser (data: {shipId: number[], slotsId:number}) {
   return request.post(apiPath + '/roll/slots/user', data)
 }
+
+/**
+ * 战舰平均数据列表
+ * @returns
+ */
+export function encyclopediaShipAvgHistory () {
+  return request.get(apiPath + '/encyclopedia/ship/avg/history', {})
+}

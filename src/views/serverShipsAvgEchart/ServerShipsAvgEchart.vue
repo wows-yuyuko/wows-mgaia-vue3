@@ -1,9 +1,16 @@
 <script setup lang="ts">
 
 // 服务器日均数据
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onActivated, watch } from 'vue'
+import * as echarts from 'echarts'
 import usePlayer from '@/store/player'
-import echartData from './data'
+// import echartData from './data'
+import moment from 'moment'
+import lodash from 'lodash'
+import { encyclopediaShipAvgHistory } from '@/api/wows/wows'
+import { db } from '@/utils/db'
+
+const echartData = ref<any>({})
 
 const player = usePlayer()
 const nation = ref<string[]>([])
@@ -50,7 +57,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
 }
 
 //  筛选图表显示逻辑相关
-const selectShips = ref<number[]>([])
+const selectShips = ref<number[]>([4276041424])
 // 删除选中船只
 const deleteShipId = (shipId: number) => {
   for (let index = 0; index < selectShips.value.length; index++) {
@@ -62,24 +69,178 @@ const deleteShipId = (shipId: number) => {
 }
 // 渲染图表
 const serveShipAvgData:any = {}
-for (const serverShip of echartData.data) {
-  serveShipAvgData[serverShip.shipId] = serverShip
-}
 
+// 胜率图
+const winRateDiv = ref<HTMLElement|null>(null)
+const averageDamageDealtDiv = ref<HTMLElement|null>(null)
+const averageFragsDiv = ref<HTMLElement|null>(null)
+let winRateEchart!: echarts.ECharts
+let averageDamageDealtEchart!: echarts.ECharts
+let averageFragsEchart!: echarts.ECharts
+onMounted(async () => {
+  winRateEchart = echarts.init(winRateDiv.value as HTMLElement)
+  averageDamageDealtEchart = echarts.init(averageDamageDealtDiv.value as HTMLElement)
+  averageFragsEchart = echarts.init(averageFragsDiv.value as HTMLElement)
+  const dbData = await db.encyclopediaShipAvgHistoryData.get('encyclopediaShipAvgHistoryData')
+  if (lodash.isNil(dbData) || dbData.day !== moment().format('YYYY-MM-DD')) {
+    await encyclopediaShipAvgHistory().then(
+      response => {
+        db.encyclopediaShipAvgHistoryData.put({
+          id: 'encyclopediaShipAvgHistoryData',
+          day: moment().format('YYYY-MM-DD'),
+          data: JSON.stringify(response)
+        })
+        echartData.value = response
+      }
+    )
+  } else {
+    echartData.value = JSON.parse(dbData.data)
+  }
+
+  for (const serverShip of echartData.value.data) {
+    serveShipAvgData[serverShip.shipId] = serverShip
+  }
+  buildEchart()
+})
+// 刷新图表操作
+const echartsResize = () => {
+  winRateEchart?.resize()
+  averageDamageDealtEchart?.resize()
+  averageFragsEchart?.resize()
+}
+// 页面变动时刷新图表
+window.addEventListener('resize', () => {
+  echartsResize()
+})
+// keep-alive激活时调用
+onActivated(() => {
+  echartsResize()
+})
+watch(() => [selectShips.value], () => {
+  console.log('触发监听')
+  buildEchart()
+}, { deep: true })
 // 渲染图表
 const buildEchart = () => {
+  winRateEchart.clear()
   // 补齐时间
-  let date = []
+  let date: string[] = []
   for (const shipId of selectShips.value) {
     if (date.length < serveShipAvgData[shipId].data.length) {
       const dayDate = []
       for (const day of serveShipAvgData[shipId].data) {
-        dayDate.push(day.recordTime)
+        dayDate.push(moment(day.recordTime * 1000).format('YYYY-MM-DD'))
       }
       date = dayDate
     }
   }
-  // 对其数据
+  // 对齐数据
+  interface AvgMap {
+    [key: number]: {
+      nameCn: string
+      winRateList:number[] // 胜率
+      averageDamageDealtList:number[] // 场均
+      averageFragsList:number[] // 占点
+    }
+  }
+  const avgMap:AvgMap = {}
+  for (const shipId of selectShips.value) {
+    // 如果此船数据长度小于最长的  则需要对齐进行补齐
+    avgMap[shipId] = {
+      nameCn: serveShipAvgData[shipId].shipInfo.nameCn,
+      winRateList: [],
+      averageDamageDealtList: [],
+      averageFragsList: []
+    }
+    if (serveShipAvgData[shipId].data.length < date.length) {
+      const num = date.length - serveShipAvgData[shipId].data.length
+      avgMap[shipId].winRateList = new Array(num)
+      avgMap[shipId].averageDamageDealtList = new Array(num)
+      avgMap[shipId].averageFragsList = new Array(num)
+    }
+    // 数据插入
+    for (const item of serveShipAvgData[shipId].data) {
+      avgMap[shipId].winRateList.push(item.winRate)
+      avgMap[shipId].averageDamageDealtList.push(item.averageDamageDealt)
+      avgMap[shipId].averageFragsList.push(item.averageFrags)
+    }
+  }
+
+  // winRateEchart
+  const winRateOption = getTemplateOption()
+  const averageDamageDealtOption = getTemplateOption()
+  const averageFragsOption = getTemplateOption()
+  // 时间
+  winRateOption.xAxis.data = date
+  averageDamageDealtOption.xAxis.data = date
+  averageFragsOption.xAxis.data = date
+  winRateOption.title.text = '服务器平均胜率'
+  averageDamageDealtOption.title.text = '服务器平均伤害'
+  averageFragsOption.title.text = '服务器平均站点'
+  for (const shipId in avgMap) {
+    winRateOption.series.push({
+      name: avgMap[shipId].nameCn,
+      type: 'line',
+      data: avgMap[shipId].winRateList
+    })
+    averageDamageDealtOption.series.push({
+      name: avgMap[shipId].nameCn,
+      type: 'line',
+      data: avgMap[shipId].averageDamageDealtList
+    })
+    averageFragsOption.series.push({
+      name: avgMap[shipId].nameCn,
+      type: 'line',
+      data: avgMap[shipId].averageFragsList
+    })
+  }
+  console.log(winRateOption)
+  winRateEchart.setOption(winRateOption)
+  averageDamageDealtEchart.setOption(averageDamageDealtOption)
+  averageFragsEchart.setOption(averageFragsOption)
+}
+
+// 构建
+const getTemplateOption = ():any => {
+  return {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow' // 阴影指示器
+      }
+    },
+    dataZoom: {
+      show: true
+    },
+    legend: {
+      textStyle: {
+        // color: 'white'
+      }
+      // data: []
+    },
+    title: {
+      text: '',
+      textStyle: {
+        // color: 'white',
+        fontSize: 24
+      }
+    },
+    yAxis: [{
+      type: 'value',
+      axisLabel: {
+        fontSize: 16
+        // color: 'white'
+      }
+    }],
+    xAxis: {
+      type: 'category',
+      data: ['1'],
+      axisLabel: {
+        // color: 'white'
+      }
+    },
+    series: []
+  }
 }
 </script>
 <template>
@@ -179,6 +340,14 @@ const buildEchart = () => {
         {{ idToName[shipId] }}
       </el-tag>
     </div>
+    <!-- 胜率 -->
+    <div style="height:15px"></div>
+    <div ref="winRateDiv" class="echart-div"></div>
+    <div style="height:15px"></div>
+    <div ref="averageDamageDealtDiv" class="echart-div"></div>
+    <div style="height:15px"></div>
+    <div ref="averageFragsDiv" class="echart-div"></div>
+    <div style="height:15px"></div>
   </div>
 </template>
 <style scoped lang="stylus">
@@ -226,5 +395,10 @@ const buildEchart = () => {
   .tag{
     margin 10px 5px 0px 0
   }
+}
+.echart-div{
+  height: 500px
+  max-width: $global-v-div-max-width;
+  margin: 0 auto;
 }
 </style>
