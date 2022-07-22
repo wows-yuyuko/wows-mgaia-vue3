@@ -120,7 +120,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         <el-table-column prop="shipInfo.country" label="国家" :formatter="countryFormatter" sortable />
         <el-table-column prop="data.winRate" label="平均胜率" align="right" sortable></el-table-column>
         <el-table-column prop="data.averageDamageDealt" label="平均伤害" align="right" sortable />
-        <el-table-column prop="data.averageFrags" label="平均占点" align="right" sortable />
+        <el-table-column prop="data.averageFrags" label="平均击杀" align="right" sortable />
       </el-table>
     </div>
   </div>

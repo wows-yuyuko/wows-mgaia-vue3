@@ -18,10 +18,14 @@ const shipType = ref<string[]>([])
 const level = ref<number[]>([10, 11])
 
 // 船id->船名
-const idToName:{[key: number]:string} = {}
-for (const index in player.avgShip) {
-  idToName[player.avgShip[index].shipId] = player.avgShip[index].shipInfo.nameCn
-}
+const idToName = computed(() => {
+  const idToName:any = {}
+  for (const index in player.avgShip) {
+    idToName[player.avgShip[index].shipId] = player.avgShip[index].shipInfo.nameCn
+  }
+  return idToName
+})
+
 // 通过计算属性拿出要显示的列表
 const showServerShipList = computed(() => {
   const showList = []
@@ -140,7 +144,7 @@ const buildEchart = () => {
       nameCn: string
       winRateList:number[] // 胜率
       averageDamageDealtList:number[] // 场均
-      averageFragsList:number[] // 占点
+      averageFragsList:number[] // 击杀
     }
   }
   const avgMap:AvgMap = {}
@@ -176,7 +180,7 @@ const buildEchart = () => {
   averageFragsOption.xAxis.data = date
   winRateOption.title.text = '服务器平均胜率'
   averageDamageDealtOption.title.text = '服务器平均伤害'
-  averageFragsOption.title.text = '服务器平均站点'
+  averageFragsOption.title.text = '服务器平均击杀'
   for (const shipId in avgMap) {
     winRateOption.series.push({
       name: avgMap[shipId].nameCn,
@@ -325,7 +329,7 @@ const getTemplateOption = ():any => {
         <el-table-column prop="shipInfo.country" label="国家" :formatter="countryFormatter" sortable />
         <el-table-column prop="data.winRate" label="平均胜率" align="right" sortable></el-table-column>
         <el-table-column prop="data.averageDamageDealt" label="平均伤害" align="right" sortable />
-        <el-table-column prop="data.averageFrags" label="平均占点" align="right" sortable />
+        <el-table-column prop="data.averageFrags" label="平均击杀" align="right" sortable />
       </el-table>
     </div>
     <!-- 当前选中舰船 -->
