@@ -5,6 +5,7 @@ import epicContainer from './hooks/PCL005_Epic'
 import santaBig from './hooks/PCL008_SantaBig'
 import santaMedium from './hooks/PCL007_SantaMedium'
 import santaSmall from './hooks/PCL006_SantaSmall'
+import gePShipsPrem from './hooks/PCL105_GE_PShips_Prem'
 import bf2021Paid from './hooks/PCL140_BF2021_Paid'
 import lodash from 'lodash'
 import { getPrize, ShowPrize } from './hooks/rollPrize'
@@ -13,38 +14,44 @@ import ShowPrizeVue from './component/ShowPrizeVue.vue'
 import usePlayer from '@/store/player'
 const player = usePlayer()
 const selectContainerMap:any = {
-  bf2021Paid: {
-    name: '2021年黑五高级箱',
-    value: 'bf2021Paid',
-    data: bf2021Paid
-  },
+  // bf2021Paid: {
+  //   name: '2021年黑五高级箱',
+  //   value: 'bf2021Paid',
+  //   data: bf2021Paid
+  // },
   epicContainer: {
     name: '超级补给箱',
     value: 'epicContainer',
     data: epicContainer
   },
-  santaBig: {
-    name: '圣诞大箱子',
-    value: 'santaBig',
-    data: santaBig
-  },
-  santaMedium: {
-    name: '圣诞中箱子',
-    value: 'santaMedium',
-    data: santaMedium
-  },
-  santaSmall: {
-    name: '圣诞小箱子',
-    value: 'santaSmall',
-    data: santaSmall
+  gePShipsPrem: {
+    name: '德国战争海军高级补给箱',
+    value: 'gePShipsPrem',
+    data: gePShipsPrem
   }
+  // santaBig: {
+  //   name: '圣诞大箱子',
+  //   value: 'santaBig',
+  //   data: santaBig
+  // },
+  // santaMedium: {
+  //   name: '圣诞中箱子',
+  //   value: 'santaMedium',
+  //   data: santaMedium
+  // },
+  // santaSmall: {
+  //   name: '圣诞小箱子',
+  //   value: 'santaSmall',
+  //   data: santaSmall
+  // }
 }
-const selectContainer = ref('epicContainer')
+const selectContainer = ref('gePShipsPrem')
 
 const count = ref({
   number: 0,
   wowsPremium: 0, // 高级账号
   gold: 0, // 金币
+  camoboost: 0, // 加成
   signal: 0, // 旗子
   camouflage: 0, // 涂装
   coal: 0, // 煤炭
@@ -183,6 +190,9 @@ function openContainer (num:number|null = null) {
     const prize = roll()
     if (prize.type === 'wows_premium') {
       count.value.wowsPremium++
+    } else if (prize.type === 'camoboost') {
+      // 加成
+      count.value.camoboost++
     } else if (prize.type === 'gold') {
       count.value.gold++
     } else if (prize.type === 'signal') {
@@ -240,7 +250,19 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `高级账号 ${prizeMap[prize.name].amount + prize.amount} 天`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
+      } else if (prize.type === 'camoboost') {
+        // 加成
+        count.value.camoboost++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'camoboost',
+            imgSrc: 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_credit_24_3.svg',
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `加成* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'gold') {
         count.value.gold++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -251,7 +273,7 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `金币* ${prizeMap[prize.name].amount + prize.amount}`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'signal') {
         count.value.signal++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -273,7 +295,7 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `${prize.name}* ${prizeMap[prize.name].amount + prize.amount}`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'coal') {
         count.value.coal++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -284,7 +306,7 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `煤炭* ${prizeMap[prize.name].amount + prize.amount}`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'free_xp') {
         count.value.free_xp++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -295,7 +317,7 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `全局经验* ${prizeMap[prize.name].amount + prize.amount}`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'steel') {
         count.value.steel++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -306,7 +328,7 @@ function serverBoom () {
           }
         }
         prizeMap[prize.name].text = `钢铁* ${prizeMap[prize.name].amount + prize.amount}`
-        prizeMap[prize.name].amount = prize.amount
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'ship') {
         count.value.ship++
       }
@@ -330,6 +352,7 @@ function clear () {
     number: 0,
     wowsPremium: 0, // 高级账号
     gold: 0, // 金币
+    camoboost: 0, // 加成
     signal: 0, // 旗子
     camouflage: 0, // 涂装
     coal: 0, // 煤炭
@@ -364,12 +387,12 @@ function containerChange () {
           />
         </el-select>
         <span style="color: #a3a3a3;padding-left: 20px;">
-          (圣诞箱子图之后再找找 不要在意细节)
+          <!-- (圣诞箱子图之后再找找 不要在意细节) -->
         </span>
       </div>
       <div>
         <img v-if="selectContainer === 'epicContainer'" style="width: 100%;" src="@/assets/container/0109_Supercontainer_CTokens_Container.png" />
-        <img v-else-if="selectContainer === 'bf2021Paid'" style="width: 100%;" src="@/assets/container/serial_doubloons.jpg" />
+        <img v-else-if="selectContainer === 'gePShipsPrem'" style="width: 100%;" src="@/assets/container/gePShipsPrem.png" />
         <img v-else style="width: 100%;margin: 10px 0;" src="@/assets/container/santa.jpg" />
       </div>
       <div>与当前查询账号船库挂钩：<el-switch v-model="shipsHook" /></div>
@@ -396,6 +419,7 @@ function containerChange () {
       <div>总计: {{ count.number }} 次</div>
       <div>高级账号: {{ count.wowsPremium }} 次</div>
       <div>金币: {{ count.gold }} 次</div>
+      <div>加成: {{ count.camoboost }} 次</div>
       <div>旗子: {{ count.signal }} 次</div>
       <div>涂装: {{ count.camouflage }} 次</div>
       <div>煤炭: {{ count.coal }} 次</div>

@@ -1,4 +1,10 @@
 import lodash from 'lodash'
+import glossary from './glossary'
+
+const glossaryMap:any = {}
+for (const item of glossary[0].data.items) {
+  glossaryMap[item.id] = item
+}
 // type
 // wows_premium 高级账号
 // gold 金币
@@ -9,13 +15,16 @@ import lodash from 'lodash'
 // steel 钢铁
 // ship 船
 // collection_album 收藏品
+// camoboost  加成
 
 export interface ShowPrize {
   type: string
+  id?: string // 具体物品id 比如加成
+  typeName?: string // 加成的具体类型
   imgSrc: string
   nationImgSrc?: string
   text: string
-  probabilityDisplayed?: number
+  probabilityDisplayed?: number // 概率
   amount?: number
 }
 /**
@@ -26,11 +35,35 @@ export interface ShowPrize {
 export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):ShowPrize {
   if (lodash.isNil(prize.rewards)) {
     // 奖品数组空则为普通
+    if (prize.type === 'camoboost') {
+      let imgSrc = ''
+      if (glossaryMap[prize.id].ttc[0].name === 'creditsFactor') {
+        // 银币加成
+        imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_credit_24_3.svg'
+      } else if (glossaryMap[prize.id].ttc[0].name === 'expFactor') {
+        // 经验加成
+        imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_exp_24_3.svg'
+      } else if (glossaryMap[prize.id].ttc[0].name === 'freeExpFactor') {
+        // 全局经验加成
+        imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_freexp_24_3.svg'
+      } else if (glossaryMap[prize.id].ttc[0].name === 'crewExpFactor') {
+        // 指挥官经验加成
+        imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_freecap_24_3.svg'
+      }
+      return {
+        type: 'camoboost',
+        id: prize.id,
+        typeName: glossaryMap[prize.id].ttc[0].name,
+        imgSrc,
+        text: `${glossaryMap[prize.id].title}* ${prize.amount}`,
+        probabilityDisplayed: prize.probabilityDisplayed
+      }
+    }
     if (prize.type === 'wows_premium') {
       // 高级账号
       return {
         type: 'wows_premium',
-        imgSrc: 'https://wows-static-production.gcdn.co/metashop/1dd97239/assets/images/asset-premium.svg',
+        imgSrc: 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-wows-prem.svg',
         text: `高级账号 ${prize.amount} 天`,
         probabilityDisplayed: prize.probabilityDisplayed
       }
@@ -39,7 +72,7 @@ export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):S
       // 金币
       return {
         type: 'gold',
-        imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_gold_25bcad92345c74beb261d28967f32cadfe8ac8d788b1706d68dc0b001ab0c9ff.png',
+        imgSrc: 'https://glossary-wows-global.gcdn.co/icons/currencies/icon_gold_440f9fd9caaa54e6e3a04e5b20b5d3483b335039c70651b349d07cb2508cf53e.png',
         text: `金币* ${prize.amount}`,
         probabilityDisplayed: prize.probabilityDisplayed
       }
