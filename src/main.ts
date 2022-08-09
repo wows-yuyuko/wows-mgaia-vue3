@@ -1,3 +1,4 @@
+import lodash from 'lodash'
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -6,7 +7,9 @@ import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
 import usePlayer from '@/store/player'
+import useElectron from '@/store/electron'
 import { wowsLog } from '@/api/wows/wows'
+import { loopGetTempArenaInfoJson } from '@/hooks/realTimeResults'
 createApp(App)
   .use(createPinia())
   .use(router)
@@ -14,6 +17,7 @@ createApp(App)
   .mount('#app')
 
 const player = usePlayer()
+const electronStore = useElectron()
 player.init()
 window.addEventListener('resize', () => {
   (document.querySelector('body') as HTMLBodyElement).style.height = window.innerHeight + 'px'
@@ -25,3 +29,11 @@ if (window.console) {
   console.log('%c水下小人血妈爆炸', 'color:red')
 }
 wowsLog({ type: '打开页面' })
+
+// 获取判断是否在electron中
+if (!lodash.isNil(window.electronAPI)) {
+  // 启用electron相关内容
+  electronStore.setElectronEnable(true)
+  // 循环获取实时战绩配置项
+  loopGetTempArenaInfoJson()
+}

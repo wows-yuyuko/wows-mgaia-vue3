@@ -46,6 +46,15 @@ export function accountSearchUserList (data: { server: string, userName: string,
 }
 
 /**
+ * 查找用户
+ * @param data
+ * @returns
+ */
+export function accountSearchUser (data: { server: string, userName: string}) {
+  return request.post(apiPath + '/account/search/user', data)
+}
+
+/**
  * 平台绑定的ID列表
  * @param data
  * @returns
@@ -70,6 +79,15 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
  */
 export function accountShipInfoList (data: { server: string, accountId: string, shipType?: string, level?: string, county?: string }) {
   return request.post(apiPath + '/account/ship/info/list', data)
+}
+
+/**
+ * 用户战舰信息
+ * @param data
+ * @returns
+ */
+export function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
+  return request.get(apiPath + '/account/ship/info', data)
 }
 
 /**

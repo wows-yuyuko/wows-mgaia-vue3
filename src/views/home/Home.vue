@@ -25,6 +25,7 @@ const issues = () => {
             active-text-color="#ffd04b"
             :router="true"
           >
+            <el-menu-item index="/realRimeResults">实时对战</el-menu-item>
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
             <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>
