@@ -4,6 +4,7 @@ import { ref, computed } from 'vue'
 import usePlayer from '@/store/player'
 
 const player = usePlayer()
+player.getEncyclopediaShipAvg()
 const nation = ref<string[]>([])
 const shipType = ref<string[]>([])
 const level = ref<number[]>([10, 11])

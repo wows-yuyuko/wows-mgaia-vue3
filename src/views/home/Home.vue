@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChatLineSquare } from '@element-plus/icons-vue'
+import { ChatLineSquare, Chicken } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import usePlayer from '@/store/player'
 import useElectron from '@/store/electron'
@@ -8,6 +8,9 @@ const player = usePlayer()
 const electronStore = useElectron()
 const issues = () => {
   window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
+}
+const afdin = () => {
+  window.open('https://afdian.net/@JustOneSummer')
 }
 
 </script>
@@ -37,9 +40,14 @@ const issues = () => {
           </el-menu>
         </div>
         <div class="right-div">
-          <div style="padding: 0 20px;">
+          <div style="padding-right: 10px;">
             <el-tooltip class="item" effect="dark" content="欢迎提Issues" placement="bottom-end">
               <el-button :icon="ChatLineSquare" circle @click="issues" />
+            </el-tooltip>
+          </div>
+          <div style="padding: 0 10px;">
+            <el-tooltip class="item" effect="dark" content="求赞助给雨季买硬盘" placement="bottom-end">
+              <el-button :icon="Chicken" circle @click="afdin" />
             </el-tooltip>
           </div>
           <!-- 服务器选择 -->

@@ -95,6 +95,20 @@ export default defineStore('player', {
     }
   },
   actions: {
+    getEncyclopediaShipAvg () {
+      // 获取服务器平均数据列表
+      encyclopediaShipAvg().then((response) => {
+        const avgShip:any = {}
+        for (const ship of response.data) {
+          if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
+          ship.data.winRate = lodash.round(ship.data.winRate, 2)
+          ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
+          ship.data.averageFrags = lodash.round(ship.data.averageFrags, 2)
+          avgShip[ship.shipInfo.nameEnglish] = ship
+        }
+        this.avgShip = avgShip
+      })
+    },
     // 初始化数据
     init () {
       serverList().then((response) => {
@@ -109,18 +123,6 @@ export default defineStore('player', {
           list.push(response.data[key])
         }
         this.shipTypeList = list
-      })
-      // 获取服务器平均数据列表
-      encyclopediaShipAvg().then((response) => {
-        const avgShip:any = {}
-        for (const ship of response.data) {
-          if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
-          ship.data.winRate = lodash.round(ship.data.winRate, 2)
-          ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
-          ship.data.averageFrags = lodash.round(ship.data.averageFrags, 2)
-          avgShip[ship.shipInfo.nameEnglish] = ship
-        }
-        this.avgShip = avgShip
       })
       // 从localStorage中导入历史账号及服务器
       if (!lodash.isNil(getLocalStorage('historyPlayer'))) {

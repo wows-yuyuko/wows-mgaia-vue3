@@ -22,7 +22,7 @@ const showMatchupData = computed(() => {
   const left = []
   const right = []
   for (const player of electronStore.currentMatchupData) {
-    player.relation === 1 ? left.push(player) : right.push(player)
+    player.relation === 2 ? right.push(player) : left.push(player)
   }
   const matchupData = []
   for (const index in left) {
@@ -48,8 +48,8 @@ function reload () {
         />
       </el-select>
       <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
-      <span style="padding-right: 20px;">(双击可跳转查询战绩详情)</span>
-      <el-button size="small" @click="getDirectoryPath">选择文件位置</el-button>
+      <span style="padding-right: 20px; color: #fe7903;font-size: 14px;">(双击可跳转查询战绩详情 数据量较大请不要频繁重载数据 卡住请重启)</span>
+      <el-button size="small" @click="getDirectoryPath">选择replays文件夹位置</el-button>
       <span style="padding-left: 10px;">{{ electronStore.tempArenaInfoJsonPath }}</span>
     </div>
     <!-- 信息列表 -->
