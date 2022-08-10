@@ -2,8 +2,10 @@
 import { ChatLineSquare } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import usePlayer from '@/store/player'
+import useElectron from '@/store/electron'
 const route = useRoute()
 const player = usePlayer()
+const electronStore = useElectron()
 const issues = () => {
   window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
 }
@@ -25,7 +27,7 @@ const issues = () => {
             active-text-color="#ffd04b"
             :router="true"
           >
-            <el-menu-item index="/realRimeResults">实时对战</el-menu-item>
+            <el-menu-item v-if="electronStore.electronEnable" index="/realRimeResults">实时对战</el-menu-item>
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
             <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>

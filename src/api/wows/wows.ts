@@ -150,3 +150,11 @@ export function rollSlotsUser (data: {shipId: number[], slotsId:number}) {
 export function encyclopediaShipAvgHistory () {
   return request.get(apiPath + '/encyclopedia/ship/avg/history', {})
 }
+
+/**
+ * 通过shipId获取船只信息
+ * @returns
+ */
+export function shipInfo (data: {shipId: string|number}) {
+  return request.get(apiPath + '/encyclopedia/ship/info', data)
+}

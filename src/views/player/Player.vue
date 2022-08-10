@@ -140,6 +140,7 @@ const getUserInfo = (playerItem: Player) => {
       // 切地址栏
       history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
       playerInfo.value = response.data
+      playerInfo.value.accountId = playerItem.accountId
       infoShow.value = true
       loading.value = false
       // echarts.init()
@@ -163,7 +164,6 @@ const battlesDiv = ref<HTMLElement|null>(null)
 let battlesEchart!: echarts.ECharts
 onMounted(() => {
   battlesEchart = echarts.init(battlesDiv.value as HTMLElement)
-
   if (!lodash.isNil(route.query.server) && !lodash.isNil(route.query.accountId)) {
     getUserInfo({ server: route.query.server as string, accountId: parseInt(route.query.accountId as string), userName: '' })
   }
@@ -210,6 +210,10 @@ window.addEventListener('resize', () => {
 })
 // keep-alive激活时调用
 onActivated(() => {
+  if (player.player.accountId !== 0 && (lodash.isNil(playerInfo.value) || player.player.accountId !== playerInfo.value.accountId)) {
+    console.log('切换时检查到了变化执行')
+    getUserInfo({ server: player.server as string, accountId: player.player.accountId, userName: '' })
+  }
   echartsResize()
 })
 // 获取玩家近期数据
@@ -246,7 +250,7 @@ const getUserRecent = async (playerItem: Player) => {
         // 构建图表详情所需数据
         battlesEchartData.push({
           battles: dayData.pvpInfo.battles,
-          winColor: getWinColor(dayData.pvpInfo.wins),
+          winColor: getWinColor(dayData.pvpInfo.winvs),
           date: dateKey
         })
         // 近期每天数据整理

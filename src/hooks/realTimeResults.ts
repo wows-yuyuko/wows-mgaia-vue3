@@ -1,56 +1,71 @@
 // 实时战绩相关
 import useElectron from '@/store/electron'
-import usePlayer from '@/store/player'
-import { Base64 } from 'js-base64'
-import { accountUserInfo, accountSearchUser, accountShipInfo } from '@/api/wows/wows'
+import { shipInfo } from '@/api/wows/wows'
 
 // 开始获循环获取文件夹内容
 export function loopGetTempArenaInfoJson () {
   const electronStore = useElectron()
   setInterval(() => {
     window.electronAPI.getTempArenaInfoJson(electronStore.tempArenaInfoJsonPath + '//tempArenaInfo.json').then(response => {
-      console.log(response)
       electronStore.setTempArenaInfoJsonRow(response)
     }).catch(error => {
       console.log(error)
     })
   }, 5000)
 }
-
-// 解析战斗数据
-export async function analysisBattleTeamData (dataJson: any) {
-  const playerStore = usePlayer()
+// 等级比较排序
+function levelCompare (player: any, nextPlayer:any) {
+  if (player.shipInfo.level < nextPlayer.shipInfo.level) {
+    return 1
+  } else if (player.shipInfo.level > nextPlayer.shipInfo.level) {
+    return -1
+  } else {
+    return 0
+  }
+}
+// 实时战斗分类排序
+export async function sortBattleTeamData (dataJson: any) {
+  const AirCarrier = [] // 航母
+  const Battleship = [] // 战列
+  const Cruiser = [] // 巡洋
+  const Destroyer = [] // 驱逐舰
+  const Submarine = [] // 潜艇
   // 添加战斗团队
   for (const player of dataJson.vehicles) {
     player.dateTime = dataJson.dateTime
     // 查询船只信息
-
-    // 机器人直接跳过
-    if (player.name[0] === ':') { continue }
-    // 需要先用名字查询id
-    await accountSearchUser({ server: playerStore.server, userName: Base64.encode(player.name) }).then(
-      response => {
-        console.log(response)
-        player.accountId = response.data.accountId
-      }
-    ).catch((error) => {
-      console.log(error)
+    await shipInfo({ shipId: player.shipId }).then(response => {
+      player.shipInfo = response.data
     })
-    // 综合战绩
-    accountUserInfo({ server: playerStore.server, accountId: player.accountId }).then(
-      response => {
-        player.overallPerformance = response.data
-      }
-    ).catch((error) => {
-      console.log(error)
-    })
-    // 单船战绩
-    accountShipInfo({ server: playerStore.server, accountId: player.accountId, shipId: player.shipId }).then(
-      response => {
-        player.shipPerformance = response.data
-      }
-    ).catch((error) => {
-      console.log(error)
-    })
+    switch (player.shipInfo.shipType) {
+      case 'AirCarrier':
+        AirCarrier.push(player)
+        break
+      case 'Battleship':
+        Battleship.push(player)
+        break
+      case 'Cruiser':
+        Cruiser.push(player)
+        break
+      case 'Destroyer':
+        Destroyer.push(player)
+        break
+      case 'Submarine':
+        Submarine.push(player)
+        break
+    }
   }
+  AirCarrier.sort(levelCompare)
+  Battleship.sort(levelCompare)
+  Cruiser.sort(levelCompare)
+  Destroyer.sort(levelCompare)
+  Submarine.sort(levelCompare)
+
+  return [
+    ...AirCarrier,
+    ...Battleship,
+    ...Cruiser,
+    ...Destroyer,
+    ...Submarine
+  ]
 }
