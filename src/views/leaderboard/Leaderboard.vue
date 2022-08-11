@@ -1,16 +1,31 @@
 <script setup lang="ts">
-// 船只列表
-import { ref, computed } from 'vue'
+
+// 排行榜
+import { ref, computed, onMounted, onActivated, watch } from 'vue'
+import * as echarts from 'echarts'
 import usePlayer from '@/store/player'
+// import echartData from './data'
+import moment from 'moment'
+import lodash from 'lodash'
+import { rankShip } from '@/api/wows/wows'
+import { db } from '@/utils/db'
 
 const player = usePlayer()
 if (Object.keys(player.avgShip).length < 5) {
   player.getEncyclopediaShipAvg()
 }
-
 const nation = ref<string[]>([])
 const shipType = ref<string[]>([])
 const level = ref<number[]>([10, 11])
+
+// 船id->船名
+const idToName = computed(() => {
+  const idToName:any = {}
+  for (const index in player.avgShip) {
+    idToName[player.avgShip[index].shipId] = player.avgShip[index].shipInfo.nameCn
+  }
+  return idToName
+})
 
 // 通过计算属性拿出要显示的列表
 const showServerShipList = computed(() => {
@@ -32,7 +47,6 @@ const showServerShipList = computed(() => {
   }
   return showList
 })
-
 const countryFormatter = (row:any, column:any, cellValue:string) => {
   for (const countryItem of player.nationList) {
     if (countryItem.nation.toLocaleLowerCase() === cellValue.toLocaleLowerCase()) return countryItem.cn
@@ -47,6 +61,45 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   return cellValue
 }
 
+// 选中的排行榜
+const leaderboardShipId = ref<number>(4276041424)
+const leaderboardServer = ref<string>(player.server)
+const leaderboardPage = ref<number>(1)
+const leaderboardPageOver = ref<boolean>(false)
+const leaderboardList = ref<any[]>([])
+const leaderboardLoading = ref(false)
+
+// 表格点击事件
+function handleCurrentChange (currentRow: any) {
+  leaderboardShipId.value = currentRow.shipId
+  reloadLeaderboard()
+}
+// 重载排行榜
+function reloadLeaderboard () {
+  leaderboardPage.value = 1
+  leaderboardList.value = []
+  leaderboardPageOver.value = false
+  getLeaderboard()
+}
+// 查询排行榜
+function getLeaderboard () {
+  if (leaderboardPageOver.value) return
+  leaderboardLoading.value = true
+  rankShip({ page: leaderboardPage.value, server: leaderboardServer.value, shipId: leaderboardShipId.value }).then(
+    response => {
+      leaderboardLoading.value = false
+      if (response.data.length === 0) {
+        // 页加载完了
+        leaderboardPageOver.value = true
+      }
+      leaderboardList.value.push(...response.data)
+      leaderboardPage.value++
+    }
+  ).catch(() => {
+    leaderboardLoading.value = false
+  })
+}
+getLeaderboard()
 </script>
 <template>
   <div class="main-content">
@@ -109,15 +162,20 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
     </div>
     <div class="table-div">
       <el-table
-        :data="showServerShipList" border
+        :data="showServerShipList"
+        border
         :default-sort="{ prop: 'shipInfo.level', order: 'descending' }"
+        highlight-current-row
         height="100%" style="width: 100%;"
+        @current-change="handleCurrentChange"
       >
         <el-table-column prop="shipInfo.level" label="等级" align="center" width="80" sortable />
         <el-table-column prop="shipInfo.nameCn" label="船名" sortable>
           <template #default="scope">
-            <img style="width: 50px;" :src="scope.row.shipInfo.imgSmall" />
-            <span>{{ scope.row.shipInfo.nameCn }}</span>
+            <div style="display: flex;align-items: center;">
+              <img style="width: 50px;" :src="scope.row.shipInfo.imgSmall" />
+              <span>{{ scope.row.shipInfo.nameCn }}</span>
+            </div>
           </template>
         </el-table-column>
         <el-table-column prop="shipInfo.shipType" label="类别" :formatter="shipTypeFormatter" sortable />
@@ -127,10 +185,62 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
         <el-table-column prop="data.averageFrags" label="平均击杀" align="right" sortable />
       </el-table>
     </div>
+
+    <!-- 当前选中舰船 -->
+    <div class="ship-tags">
+      {{ idToName[leaderboardShipId] }}排行榜
+      <!-- 服务器选择 -->
+      <el-select
+        v-model="leaderboardServer"
+        placeholder="Select"
+        size="small"
+        style="margin-left: 5px;"
+        @change="reloadLeaderboard"
+      >
+        <el-option
+          v-for="item in player.serverList"
+          :key="item.key"
+          :label="item.value"
+          :value="item.key"
+        />
+      </el-select>
+      <el-button
+        :disabled="leaderboardPageOver" size="small"
+        :loading="leaderboardLoading"
+        style="margin-left: 5px;"
+        @click="getLeaderboard"
+      >
+        {{leaderboardPageOver?'已加载全部':'加载下一页'}}
+      </el-button>
+    </div>
+    <!-- 排行榜 -->
+    <div class="table-div" style="height: 800px;padding-bottom: 20px;">
+      <el-table
+        :data="leaderboardList"
+        border
+        height="100%" style="width: 100%;"
+      >
+        <el-table-column prop="rankRow" width="50" />
+        <el-table-column prop="userName" label="玩家" sortable>
+          <template #default="scope">
+            <span v-if="scope.row.clanTag">[{{ scope.row.clanTag }}]</span>
+            <span>{{ scope.row.userName }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="pr" align="right" label="pr" />
+        <el-table-column prop="battle" align="right" label="场次" />
+        <el-table-column prop="damage" align="right" label="场均伤害" />
+        <el-table-column prop="maxDamage" align="right" label="最大伤害" />
+        <el-table-column prop="maxDamage" align="right" label="最大伤害" />
+        <el-table-column prop="wins" align="right" label="胜率" />
+        <!-- <el-table-column prop="xp" align="right" label="经验" /> -->
+        <el-table-column prop="frags" align="right" label="击杀" />
+        <el-table-column prop="maxFrags" align="right" label="最高击杀" />
+      </el-table>
+    </div>
   </div>
 </template>
 <style scoped lang="stylus">
-
 .main-content {
   background-color: $global-v-page-background-color;
   background-color: white;
@@ -162,20 +272,24 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
 .table-div {
   max-width: $global-v-div-max-width;
   margin: 0 auto;
-  height calc( 100% - 70px )
-  position: absolute;
-  // position: relative;
+  height 500px
+  // position: absolute;
+  position: relative;
   left: 0;
   right: 0;
 }
-.ship-details{
-  padding 10px 50px
-  tr{
-    text-align right
+.ship-tags{
+  max-width: $global-v-div-max-width;
+  margin: 0 auto;
+  padding 20px 0 10px 0
 
-    th{
-      width:60px
-    }
+  .tag{
+    margin 10px 5px 0px 0
   }
+}
+.echart-div{
+  height: 500px
+  max-width: $global-v-div-max-width;
+  margin: 0 auto;
 }
 </style>

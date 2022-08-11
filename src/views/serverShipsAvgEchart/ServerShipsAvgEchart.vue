@@ -13,6 +13,9 @@ import { db } from '@/utils/db'
 const echartData = ref<any>({})
 
 const player = usePlayer()
+if (Object.keys(player.avgShip).length < 5) {
+  player.getEncyclopediaShipAvg()
+}
 const nation = ref<string[]>([])
 const shipType = ref<string[]>([])
 const level = ref<number[]>([10, 11])
@@ -61,6 +64,7 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
 }
 
 //  筛选图表显示逻辑相关
+// 选中船只
 const selectShips = ref<number[]>([4276041424])
 // 删除选中船只
 const deleteShipId = (shipId: number) => {

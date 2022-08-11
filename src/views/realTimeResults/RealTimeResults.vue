@@ -38,7 +38,10 @@ function reload () {
 </script>
 <template>
   <div class="main-content">
-    <div style="text-align: left;width: 1130px; padding: 20px 0 10px 0;  margin: 0 auto;">
+    <div style="text-align: left;width: 1130px; margin: 0 auto;padding: 10px 0 10px 0;">
+      <span style="padding-right: 20px; color: #fe7903;font-size: 14px;">双击跳转查询战绩详情 数据量较大请不要频繁重载数据 请注意右上角服务器匹配 卡住请重启</span>
+    </div>
+    <div style="text-align: left;width: 1130px; padding: 0px 0 10px 0;  margin: 0 auto;">
       <el-select v-model="electronStore.tempArenaInfoJsonRow" size="small" style="margin-right: 5px;" @change="reload">
         <el-option
           v-for="item in electronStore.historyTempArenaInfoJsonRow"
@@ -48,7 +51,6 @@ function reload () {
         />
       </el-select>
       <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
-      <span style="padding-right: 20px; color: #fe7903;font-size: 14px;">(双击可跳转查询战绩详情 数据量较大请不要频繁重载数据 卡住请重启)</span>
       <el-button size="small" @click="getDirectoryPath">选择replays文件夹位置</el-button>
       <span style="padding-left: 10px;">{{ electronStore.tempArenaInfoJsonPath }}</span>
     </div>

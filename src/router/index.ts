@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/serverShipsAvgEchart/ServerShipsAvgEchart.vue')
       },
       {
+        // 排行榜
+        path: 'leaderboard',
+        component: () => import('@/views/leaderboard/Leaderboard.vue')
+      },
+      {
         // 开箱模拟
         path: 'container',
         component: () => import('@/views/container/Container.vue')

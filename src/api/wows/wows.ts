@@ -158,3 +158,12 @@ export function encyclopediaShipAvgHistory () {
 export function shipInfo (data: {shipId: string|number}) {
   return request.get(apiPath + '/encyclopedia/ship/info', data)
 }
+
+/**
+ * 获取战舰排行榜 分服务器
+ * @param data
+ * @returns
+ */
+export function rankShip (data: {page: number, server: string, shipId: number}) {
+  return request.get(import.meta.env.VITE_TARGET + '/wows/rank/ship/server', data)
+}
