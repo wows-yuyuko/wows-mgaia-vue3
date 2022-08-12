@@ -46,7 +46,6 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
   }
   return cellValue
 }
-
 </script>
 <template>
   <div class="main-content">

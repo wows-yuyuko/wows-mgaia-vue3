@@ -10,6 +10,7 @@ import usePlayer from '@/store/player'
 import useElectron from '@/store/electron'
 import { wowsLog } from '@/api/wows/wows'
 import { loopGetTempArenaInfoJson } from '@/hooks/realTimeResults'
+// import '@/hooks/mqtt'
 createApp(App)
   .use(createPinia())
   .use(router)

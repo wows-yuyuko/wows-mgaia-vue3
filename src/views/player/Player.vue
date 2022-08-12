@@ -250,7 +250,7 @@ const getUserRecent = async (playerItem: Player) => {
         // 构建图表详情所需数据
         battlesEchartData.push({
           battles: dayData.pvpInfo.battles,
-          winColor: getWinColor(dayData.pvpInfo.winvs),
+          winColor: getWinColor(dayData.pvpInfo.wins),
           date: dateKey
         })
         // 近期每天数据整理
