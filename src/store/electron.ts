@@ -89,7 +89,7 @@ export default defineStore('electron', {
           // 机器人直接跳过
           if (player.name[0] === ':') { continue }
           // 需要先用名字查询id
-          await accountSearchUser({ server: playerStore.server, userName: Base64.encode(player.name) }).then(
+          await accountSearchUser({ server: playerStore.realTimeResultServer, userName: Base64.encode(player.name) }).then(
             response => {
               player.accountId = response.data.accountId
             }
@@ -97,7 +97,7 @@ export default defineStore('electron', {
             console.log(error)
           })
           // 综合战绩
-          accountUserInfo({ server: playerStore.server, accountId: player.accountId }).then(
+          accountUserInfo({ server: playerStore.realTimeResultServer, accountId: player.accountId }).then(
             response => {
               player.overallPerformance = response.data
             }
@@ -105,7 +105,7 @@ export default defineStore('electron', {
             console.log(error)
           })
           // 单船战绩
-          accountShipInfo({ server: playerStore.server, accountId: player.accountId, shipId: player.shipId }).then(
+          accountShipInfo({ server: playerStore.realTimeResultServer, accountId: player.accountId, shipId: player.shipId }).then(
             response => {
               player.shipPerformance = response.data
             }

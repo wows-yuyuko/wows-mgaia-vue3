@@ -9,6 +9,7 @@ console.log(props.matchupRow)
 function goPlayer () {
   if (lodash.isNil(props.matchupRow.accountId)) return
   playerStore.player.accountId = props.matchupRow.accountId
+  playerStore.server = playerStore.realTimeResultServer
   router.push('/player')
 }
 </script>
@@ -49,8 +50,8 @@ function goPlayer () {
     </div>
     <!-- kd -->
     <div class="number">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.hit }}</div>
-      <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.hit }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.kd }}</div>
+      <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.kd }}</div>
     </div>
   </div>
 </template>

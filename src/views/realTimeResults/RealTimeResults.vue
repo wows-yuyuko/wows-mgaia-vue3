@@ -2,9 +2,11 @@
 import { computed } from 'vue'
 import useElectron from '@/store/electron'
 import lodash from 'lodash'
+import usePlayer from '@/store/player'
 import CombatRow from './component/CombatRow.vue'
+import { setLocalStorage } from '@/utils/storage'
 // 实时战绩页面
-
+const playerStore = usePlayer()
 const electronStore = useElectron()
 
 // 选择对局信息文件夹目录
@@ -35,6 +37,10 @@ const showMatchupData = computed(() => {
 function reload () {
   electronStore.setTempArenaInfoJsonRow(electronStore.tempArenaInfoJsonRow, true)
 }
+
+function serverChange () {
+  setLocalStorage('realTimeResultServer', playerStore.realTimeResultServer)
+}
 </script>
 <template>
   <div class="main-content">
@@ -48,6 +54,21 @@ function reload () {
           :key="item"
           :label="JSON.parse(item).dateTime"
           :value="item"
+        />
+      </el-select>
+      <!-- 服务器选择 -->
+      <el-select
+        v-model="playerStore.realTimeResultServer"
+        placeholder="Select"
+        size="small"
+        style="width:80px;margin-right: 5px;"
+        @change="serverChange"
+      >
+        <el-option
+          v-for="item in playerStore.serverList"
+          :key="item.key"
+          :label="item.value"
+          :value="item.key"
         />
       </el-select>
       <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
@@ -64,7 +85,7 @@ function reload () {
           <div class="cell-title">胜率</div>
           <div class="cell-title">伤害</div>
           <div class="cell-title">命中</div>
-          <div class="cell-title">dk</div>
+          <div class="cell-title">kd</div>
         </div>
         <div style="width: 5px;"></div>
         <div style="display:flex;">
@@ -74,7 +95,7 @@ function reload () {
           <div class="cell-title">胜率</div>
           <div class="cell-title" style="width: 70px;">伤害</div>
           <div class="cell-title">命中</div>
-          <div class="cell-title">dk</div>
+          <div class="cell-title">kd</div>
         </div>
       </div>
       <div v-for="item of showMatchupData" :key="item.left.id+''+item.right.id" class="combat-row">

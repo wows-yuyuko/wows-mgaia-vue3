@@ -12,6 +12,7 @@ interface PlayerStore {
   player: Player
   historyPlayer: Player[]
   server: string
+  realTimeResultServer: string
   serverList: { key: string, value: string }[]
   nationList: { nation: string, cn: string }[]
   shipTypeList: { key: string, value: string }[]
@@ -50,6 +51,7 @@ export default defineStore('player', {
       avatarMap: {},
       historyPlayer: [],
       server: 'eu',
+      realTimeResultServer: 'eu', // 实时战绩服务器选择
       serverList: [
         {
           key: 'asia',
@@ -130,6 +132,9 @@ export default defineStore('player', {
       }
       if (!lodash.isNil(getLocalStorage('server'))) {
         this.server = getLocalStorage('server')
+      }
+      if (!lodash.isNil(getLocalStorage('realTimeResultServer'))) {
+        this.realTimeResultServer = getLocalStorage('realTimeResultServer')
       }
     },
     // 添加历史查询
