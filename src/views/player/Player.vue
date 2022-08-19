@@ -3,7 +3,8 @@
 import { ref, onMounted, nextTick, onActivated } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
-import { Search, Promotion } from '@element-plus/icons-vue'
+import { Search, Promotion, Delete } from '@element-plus/icons-vue'
+import { setLocalStorage } from '@/utils/storage'
 import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentListV2 } from '@/api/wows/wows'
 import { getWinColor, getDamageColor, getPrShowObj } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
@@ -98,7 +99,6 @@ const searchUserByAccountId = () => {
   ).catch(() => {
     searchUserListLoading.value = false
   })
-  console.log()
 }
 
 // 翻译服务器
@@ -211,7 +211,6 @@ window.addEventListener('resize', () => {
 // keep-alive激活时调用
 onActivated(() => {
   if (player.player.accountId !== 0 && (lodash.isNil(playerInfo.value) || player.player.accountId !== playerInfo.value.accountId)) {
-    console.log('切换时检查到了变化执行')
     getUserInfo({ server: player.server as string, accountId: player.player.accountId, userName: '' })
   }
   echartsResize()
@@ -307,6 +306,15 @@ const copyCommand = (text:string) => {
 const copyUrl = () => {
   copyCommand(`${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
 }
+
+// 删除某个玩家的历史缓存
+const deleteHistoryPlayer = (playerItem: Player) => {
+  const index = player.historyPlayer.indexOf(playerItem)
+  if (index < 0) return null
+  player.historyPlayer.splice(index, 1)
+  // 更新localStorage存储
+  setLocalStorage('historyPlayer', player.historyPlayer)
+}
 </script>
 
 <template>
@@ -347,7 +355,7 @@ const copyUrl = () => {
                 <el-button v-show="searchUserList.length>0" class="button" text @click="searchUserList = [];">清空</el-button>
               </div>
             </template>
-            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;">
+            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;padding-bottom: 3px;">
               <div class="player-item" @click="submitPlayer(user)">
                 <div style="width: 50%;">{{ user.userName }}</div>
                 <div>{{ translateServer(user.server?user.server:player.server) }}</div>
@@ -362,6 +370,7 @@ const copyUrl = () => {
                 >
                   复制绑定命令
                 </el-button>
+                <el-button v-if="searchUserList.length<1" :icon="Delete" size="small" circle @click="deleteHistoryPlayer(user)" />
               </div>
             </div>
           </el-card>

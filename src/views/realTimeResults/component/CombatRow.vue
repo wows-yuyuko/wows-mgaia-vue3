@@ -4,7 +4,6 @@ import router from '@/router'
 import lodash from 'lodash'
 const props = defineProps(['matchupRow'])
 const playerStore = usePlayer()
-console.log(props.matchupRow)
 // 跳转到用户详情战绩
 function goPlayer () {
   if (lodash.isNil(props.matchupRow.accountId)) return

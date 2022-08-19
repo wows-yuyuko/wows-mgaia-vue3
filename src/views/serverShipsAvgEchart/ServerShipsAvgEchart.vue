@@ -125,7 +125,6 @@ onActivated(() => {
   echartsResize()
 })
 watch(() => [selectShips.value], () => {
-  console.log('触发监听')
   buildEchart()
 }, { deep: true })
 // 渲染图表
@@ -202,7 +201,6 @@ const buildEchart = () => {
       data: avgMap[shipId].averageFragsList
     })
   }
-  console.log(winRateOption)
   winRateEchart.setOption(winRateOption)
   averageDamageDealtEchart.setOption(averageDamageDealtOption)
   averageFragsEchart.setOption(averageFragsOption)

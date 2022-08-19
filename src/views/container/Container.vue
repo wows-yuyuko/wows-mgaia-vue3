@@ -97,7 +97,6 @@ function roll () {
     }
   }
   emptyAllshow.value = emptyAll
-  console.log('emptyAll', emptyAll)
   // 已经清空的船池概率累加
   let emptyProbability = 0
   // 未清空的船池概率累加
@@ -130,8 +129,6 @@ function roll () {
       }
     }
   }
-  // console.log('emptyProbability', emptyProbability)
-  // console.log('notEmptyProbability', notEmptyProbability)
 
   if (count.value.savePoint === 0) {
     // 保底触发累加
@@ -237,7 +234,6 @@ function serverBoom () {
     }
   }
   rollSlotsUserList(request).then(response => {
-    console.log(response)
     const prizeMap:any = {}
     for (const prize of response.data.slotsList) {
       if (prize.type === 'wows_premium') {
@@ -339,7 +335,6 @@ function serverBoom () {
     for (const index in prizeMap) {
       showPrizeList.value.push(prizeMap[index])
     }
-    console.log(prizeMap)
     serverLoading.value = false
   }).catch(() => {
     serverLoading.value = false
