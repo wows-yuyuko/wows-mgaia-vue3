@@ -41,6 +41,11 @@ const routes: Array<RouteRecordRaw> = [
         // 开箱模拟
         path: 'container',
         component: () => import('@/views/container/Container.vue')
+      },
+      {
+        // 相关下载
+        path: 'relatedDownloads',
+        component: () => import('@/views/relatedDownloads/RelatedDownloads.vue')
       }
     ]
   }
