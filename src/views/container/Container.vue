@@ -28,24 +28,24 @@ const selectContainerMap:any = {
     name: '德国战争海军高级补给箱',
     value: 'gePShipsPrem',
     data: gePShipsPrem
+  },
+  santaBig: {
+    name: '圣诞大箱子',
+    value: 'santaBig',
+    data: santaBig
+  },
+  santaMedium: {
+    name: '圣诞中箱子',
+    value: 'santaMedium',
+    data: santaMedium
+  },
+  santaSmall: {
+    name: '圣诞小箱子',
+    value: 'santaSmall',
+    data: santaSmall
   }
-  // santaBig: {
-  //   name: '圣诞大箱子',
-  //   value: 'santaBig',
-  //   data: santaBig
-  // },
-  // santaMedium: {
-  //   name: '圣诞中箱子',
-  //   value: 'santaMedium',
-  //   data: santaMedium
-  // },
-  // santaSmall: {
-  //   name: '圣诞小箱子',
-  //   value: 'santaSmall',
-  //   data: santaSmall
-  // }
 }
-const selectContainer = ref('gePShipsPrem')
+const selectContainer = ref('santaBig')
 
 const count = ref({
   number: 0,

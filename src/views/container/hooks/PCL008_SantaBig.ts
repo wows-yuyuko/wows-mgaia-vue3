@@ -1,3 +1,4 @@
+// https://vortex.worldofwarships.eu/api/get_lootbox/zh-sg/4285715376/
 // 圣诞大箱子
 export default {
   status: 'ok',
@@ -5,6 +6,17 @@ export default {
     id: 4285715376,
     continuousRewards: true,
     name: 'PCL008_SantaBig',
+    icons: {
+      small:
+        'reward_icons/icon_reward_lootbox_PCL008_SantaBig_009f67cf2d5ed94eaa7c61df2aca14e5728906cea46fd9a6c764e316792b4223.png',
+      large:
+        'reward_icons/icon_reward_lootbox_large_PCL008_SantaBig_30e47411bd0076eeea44a01b58d1d1b9a431cf5dc29e1767e4576416b6b1d414.png',
+      localSmall: 'gui/reward_icons/icon_reward_lootbox_PCL008_SantaBig.png',
+      localLarge:
+        'gui/reward_icons/big/icon_reward_lootbox_large_PCL008_SantaBig.png',
+      default:
+        'reward_icons/icon_reward_lootbox_PCL008_SantaBig_009f67cf2d5ed94eaa7c61df2aca14e5728906cea46fd9a6c764e316792b4223.png'
+    },
     filler: {
       amount: 1250,
       type: 'steel',
@@ -19,312 +31,123 @@ export default {
             rewards: [
               {
                 probability: '1.0',
-                weight: 10,
+                weight: 1000,
                 probabilityDisplayed: 1,
                 amount: 180,
                 type: 'wows_premium',
                 id: null
               },
               {
-                probability: '2.0',
-                weight: 20,
-                probabilityDisplayed: 2,
+                probability: '1.5',
+                weight: 1500,
+                probabilityDisplayed: 1.5,
+                amount: 7,
+                type: 'camoboost',
+                id: 4280283056
+              },
+              {
+                probability: '1.5',
+                weight: 1500,
+                probabilityDisplayed: 1.5,
+                amount: 7,
+                type: 'camoboost',
+                id: 4269797296
+              },
+              {
+                probability: '1.5',
+                weight: 1500,
+                probabilityDisplayed: 1.5,
+                amount: 7,
+                type: 'camoboost',
+                id: 4259311536
+              },
+              {
+                probability: '1.5',
+                weight: 1500,
+                probabilityDisplayed: 1.5,
                 amount: 5,
-                type: 'camouflage',
-                id: 4243517360,
-                additionalData: {
-                  title: '春天的天空',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC049_Dragon_1_2876cdf3496c42c0c329fab11fd7c24f2f207fdb197a74b3a807d5de5599049e.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC049_Dragon_1_2876cdf3496c42c0c329fab11fd7c24f2f207fdb197a74b3a807d5de5599049e.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC049_Dragon_1.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '2.0',
-                weight: 20,
-                probabilityDisplayed: 2,
-                amount: 5,
-                type: 'camouflage',
-                id: 4242468784,
-                additionalData: {
-                  title: '亚洲灯笼',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC050_Dragon_2_6281b4d51b616f4fe29ea43491f182dff701c57a215572862a7bb82af1c6bcb2.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC050_Dragon_2_6281b4d51b616f4fe29ea43491f182dff701c57a215572862a7bb82af1c6bcb2.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC050_Dragon_2.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '2.0',
-                weight: 20,
-                probabilityDisplayed: 2,
-                amount: 5,
-                type: 'camouflage',
-                id: 4241420208,
-                additionalData: {
-                  title: '马赛克',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC051_Dragon_3_250d2c75fa1ccbf7007b9613da6ce927932337add6bed30f42e869e25e11855c.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC051_Dragon_3_250d2c75fa1ccbf7007b9613da6ce927932337add6bed30f42e869e25e11855c.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC051_Dragon_3.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '3.0',
-                weight: 30,
-                probabilityDisplayed: 3,
-                amount: 20,
-                type: 'camouflage',
-                id: 4186894256,
-                additionalData: {
-                  title: '冬季海滨',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC103_NewYear2021_466f2ed94ac9fea501c98b667f50bcf99b9a278c320d846e374801f8472a2d61.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC103_NewYear2021_466f2ed94ac9fea501c98b667f50bcf99b9a278c320d846e374801f8472a2d61.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC103_NewYear2021.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '3.0',
-                weight: 30,
-                probabilityDisplayed: 3,
-                amount: 20,
-                type: 'camouflage',
-                id: 4223594416,
-                additionalData: {
-                  title: '新年彩带',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC068_NY2019_75e43bbd8c2678b2ebe089fdd073f8f3c5376286b0c2669ec88c0512e1d09231.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC068_NY2019_75e43bbd8c2678b2ebe089fdd073f8f3c5376286b0c2669ec88c0512e1d09231.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC068_NY2019.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '3.0',
-                weight: 30,
-                probabilityDisplayed: 3,
-                amount: 20,
-                type: 'camouflage',
-                id: 4249808816,
-                additionalData: {
-                  title: '冰杉树',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC043_Camo_New_Year_18_5acbe3b0aa872a52cd095973f364d41400701706c3a152ba351a2e8f03e964f1.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC043_Camo_New_Year_18_5acbe3b0aa872a52cd095973f364d41400701706c3a152ba351a2e8f03e964f1.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC043_Camo_New_Year_18.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '3.0',
-                weight: 30,
-                probabilityDisplayed: 3,
-                amount: 25,
-                type: 'camouflage',
-                id: 4273926064,
-                additionalData: {
-                  title: '新年',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC020_Camo_New_Year_17_49a312d2e96fbb753212d74b5f8d7d1669af97e3ece2b3a2068c0a424daff2d8.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC020_Camo_New_Year_17_49a312d2e96fbb753212d74b5f8d7d1669af97e3ece2b3a2068c0a424daff2d8.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC020_Camo_New_Year_17.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
-              },
-              {
-                probability: '3.0',
-                weight: 30,
-                probabilityDisplayed: 3,
-                amount: 25,
-                type: 'camouflage',
-                id: 4289654704,
-                additionalData: {
-                  title: '类型 3 — 新年',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC005_Camo_NY_3_976116e987191107adaa5f4efddff0d6740b2fe9e5ce3f2c284c6172ca99ebae.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC005_Camo_NY_3_976116e987191107adaa5f4efddff0d6740b2fe9e5ce3f2c284c6172ca99ebae.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC005_Camo_NY_3.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
+                type: 'camoboost',
+                id: 4248825776
               },
               {
                 probability: '5.0',
-                weight: 50,
+                weight: 5000,
                 probabilityDisplayed: 5,
                 amount: 2500,
                 type: 'gold',
                 id: null
               },
               {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4273827760,
-                additionalData: {
-                  title: '龙',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4272779184,
-                additionalData: {
-                  title: '双足飞龙',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4271730608,
-                additionalData: {
-                  title: '红龙',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4270682032,
-                additionalData: {
-                  title: '衔尾蛇',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4269633456,
-                additionalData: {
-                  title: '九头蛇',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4268584880,
-                additionalData: {
-                  title: '巴西利斯克',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4267536304,
-                additionalData: {
-                  title: '斯库拉',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
-                probability: '5.0',
-                weight: 50,
-                probabilityDisplayed: 5,
-                amount: 30,
-                type: 'signal',
-                id: 4266487728,
-                additionalData: {
-                  title: '利维坦',
-                  tags: ['hidden', 'sellable', 'Special', 'Exterior']
-                }
-              },
-              {
                 probability: '7.0',
-                weight: 70,
+                weight: 7000,
                 probabilityDisplayed: 7,
                 amount: 12500,
                 type: 'coal',
                 id: null
               },
               {
-                probability: '10.0',
-                weight: 100,
-                probabilityDisplayed: 10,
+                probability: '7.0',
+                weight: 7000,
+                probabilityDisplayed: 7,
                 amount: 20,
-                type: 'camouflage',
-                id: 4165922736,
-                additionalData: {
-                  title: '新年的天空',
-                  icons: {
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC123_NY2022_camo_20a72800472191aa1f2206a763c354c4534c4aefa928b10803ac678cf0a68f15.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC123_NY2022_camo_20a72800472191aa1f2206a763c354c4534c4aefa928b10803ac678cf0a68f15.png',
-                    localDefault:
-                      '//glossary-wows-global.gcdn.co/icons/gui/camouflages/PCEC123_NY2022_camo.png'
-                  },
-                  type: 'camouflage',
-                  subType: 'exterior'
-                }
+                type: 'camoboost',
+                id: 4281331632
+              },
+              {
+                probability: '7.0',
+                weight: 7000,
+                probabilityDisplayed: 7,
+                amount: 20,
+                type: 'camoboost',
+                id: 4270845872
+              },
+              {
+                probability: '7.0',
+                weight: 7000,
+                probabilityDisplayed: 7,
+                amount: 20,
+                type: 'camoboost',
+                id: 4260360112
+              },
+              {
+                probability: '7.0',
+                weight: 7000,
+                probabilityDisplayed: 7,
+                amount: 20,
+                type: 'camoboost',
+                id: 4249874352
+              },
+              {
+                probability: '9.25',
+                weight: 9250,
+                probabilityDisplayed: 9.25,
+                amount: 60,
+                type: 'camoboost',
+                id: 4282380208
+              },
+              {
+                probability: '9.25',
+                weight: 9250,
+                probabilityDisplayed: 9.25,
+                amount: 60,
+                type: 'camoboost',
+                id: 4271894448
+              },
+              {
+                probability: '9.25',
+                weight: 9250,
+                probabilityDisplayed: 9.25,
+                amount: 60,
+                type: 'camoboost',
+                id: 4261408688
+              },
+              {
+                probability: '9.25',
+                weight: 9250,
+                probabilityDisplayed: 9.25,
+                amount: 60,
+                type: 'camoboost',
+                id: 4250922928
               }
             ],
             title: ' ',
@@ -409,7 +232,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSA518_06086d6aba70fc870f9d4b23ec25048b66d9cd60583fbf18b7b0334df8b1c120.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSA518_829acc97c69769e75416923822b1c75af3c75fcf542f38f4ae34388d1a2054fa.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSA518_72f52288960c7131a3a39feeb22d508d369af2ceff633fb831cce5af9c1dff2f.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -531,7 +354,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB517_b904d4dfac13920e69f4ebce1c154df4d7e15c05300e82fdc606b7f24ad4c666.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB517_5439cb5ee1a2553e6bfcd4e0319c51a31cf037dad197455b20621090e2eb5bf6.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB517_e63e7a1f68b3950b44c5a5a7b4551b42618b860347c5b3eb9db71d9f475fc68a.png'
                   },
                   type: {
                     name: 'battleship',
@@ -653,7 +476,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB707_5adb831f57bb58011aec94abb7e54ede1cd75c46df3cd092550c165981c6a797.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB707_5a40cba61005cb1279375ed976fd1321061e8835bb4599276545af01ff20ace1.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB707_34d78818b71a080825c0bd016812f561b910cc283fe471c28bc2ec987e9d70d6.png'
                   },
                   type: {
                     name: 'battleship',
@@ -775,7 +598,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB507_e098ab5ebbaa15a51f4478426756ae0a6f54100e8fdb3046b3a128415d341e68.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB507_5a870b319340bb61f5c3b63653d8d2a0c52afa3081a107f11a34887fa1708508.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB507_d581695354fec39a02bfa5a8cf6559631208b9dfd874a5693f7901efbc09ea78.png'
                   },
                   type: {
                     name: 'battleship',
@@ -897,7 +720,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB527_1baf46c76e87e712a84fd1bb04b1042896373ae8fc4d03ad789f949d3cfff7f5.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB527_4fd07bd8718333b655044fe4e749ccd17dc769a271a68573692268083a829340.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB527_5204ca538fbdf9073cad19cd9ddc4a3f1c794d17e20d7cacb91baa7593e596a5.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1019,7 +842,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB507_23a710816e76a9933a3b3224fb525b0ff4de61ccd2c3840da7b5fa170631dfd7.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB507_d4dd327f6f18ef0e8863add785c6f2aba93afe72d7ab69253a7b4c489b781ecb.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB507_6f4e8eccafaf6927769b23f41e6689c5b547f891a35e3d577cbfcbc24a7563d2.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1141,7 +964,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB507_f73355091fc84cf4b698a3b9b6f0e60c14091a22503afe00b9533916f969533d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB507_ec19b682c3b43662d4bff384b319f4edfe41ba77b38d4ddc4622d5c81813ad35.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB507_730a4408a63477f9ff2140fe9c7a35aef8065620834ff9a36811217858bd1bf9.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1263,7 +1086,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB507_c640e33d5943ad652be03dcc03457a53312d3af4390c5cf39c1b0c3933ed9fc6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB507_8486fa1484fe8f9f261f7a6cd0856531637aaff7861326ee431b85ff8f11dbc9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB507_02dc20e5e3485f0a313d4709c730f8f4b548d658d12f462bd8ab13f1c56c14f9.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1385,7 +1208,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB517_87846f80dce228cfae88a5e64d699e96f1ee0d9ae74898c5164bf6a7ced4c733.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB517_3a9250538565826d2bd48a4faa3f4cca7399d2b87361bc1c4b7ea53961276f15.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB517_05cc9be2f9cbdba37d70d2569c5ac10fb586f395507149b82cbd004845869c30.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1507,7 +1330,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB508_57dadd4de8c446cd9d37bc493a81c2dde547e777e454ea156f1366adf4825834.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB508_d94f0ad4149a945cd1d53d9525b4c62565e922ceddb67a81dcc5dbd97bc6ee14.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB508_0b05424b80c4a0c9f64dd824636efbee6e9e7f5c637aa119cb67267001c73150.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1629,7 +1452,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSB507_a872c60bef17ffbd6321c6c1f6cbce51944c4aea844d010c75966a4fe46a074c.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSB507_4d85053f56f514aa173d7c05d221d002c556e179082b58227fea8136906047e9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSB507_637317835df8b389af36fab8f7faf927ec20c87a339bf2bc33711e6f6d53a43a.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1751,7 +1574,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB506_453cedd653e813e75d7e76d15b45bf79c5fcd5aedf8bbcbba1fbdffcd8b27580.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB506_8c9891197aba6240d877e4ffc7c0c5be377beb633e863aff97147d2a1d6431ef.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB506_e91be620df6801264fbb0ae927fa622c26e095e552b2ea01415c4a757040c8a1.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1873,7 +1696,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB507_06ebdd3d8e3613cb57a419708ae5f1e02a977f58b60f8956ae40012fe1f95c72.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB507_f6bc61202630b5ed0c1ac731dd474e656f2e29d43d5a077bb7985d0b1f9a8045.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB507_b56c5105f192aded599486cdde50daedd9fec38ee8a33750465b2e7522bce8ee.png'
                   },
                   type: {
                     name: 'battleship',
@@ -1995,7 +1818,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB002_e7e5e1e1f977851df1b5ce9dfb5da95216ede42608e9abdb54afcfeadfda4f99.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB002_f844138a2b020c4455a99878cfcbda9262e011cde8b25e98378454e88fd5bf40.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB002_61ecbf591394bccf2164e68f0f70cf496406906b082493f865693205c3dc7978.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2117,7 +1940,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB506_6906e740759c67685cbb799de19eaea97793a41c1e632cb381237ee3c4592fa2.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB506_50aebd69b56142bd85a7553126a8c0a8de9c2e11fc2c085740f74ef0bf44f263.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB506_505f4be99e5324695ab60da6bbe174ae0ecf63627fe2e6a86b7e4bc50546a28f.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2239,7 +2062,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB506_d8b0ba60b21183cd8af7d0071bdca57687cf1890e822219a828cabb59572e0a8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB506_df52f3de68bce661560a5ac17d7b0a19a6cdbde8be9695e1c7bda0b5bd9246f8.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB506_6be1050868d1c698d91f9bb99ec175598e6b4878aaf7dd2db6fdaae457114400.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2361,7 +2184,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB506_f7afee3eeaab2267520c0e70725e9d89ea6acf2b9507b7116620abb1d518f0af.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB506_e1d0f8c402acf3e5c016ca535273d5b53fdad6ee69e40815420f3c5af1b904e4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB506_b77892832f2513cc187e4341316c8c2f58da9f1445d81247214c644e1636b686.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2483,7 +2306,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB526_eb56dd993a0f99983b78ddf1f5660ab56dbf947da110120aa0a4f0c0473cbecc.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB526_b92fec7b2031c0767d70a9039d0e0295f7377ff5e2d9e6d8339e907286243bae.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB526_cacca931f341147c29f74cd8818d38cbfafd94fbd57d8cacfca337554633b794.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2605,7 +2428,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB705_e629e475efaf1e29292b717f4d5b05b417d61aa78bd9b286a48f8cb8d8da0f2e.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB705_229f9943899bd70449f3357de518a740fc17f19346d3181d24dac9ca9bb25fb4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB705_e4f89d953515dd01fe320b8e8cbbecd133d30ca37eff1715650246937c9c2a1e.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2727,7 +2550,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB505_649187e67cb463391f6efec5cff033ee213b6895364979a2889feac033698198.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB505_b42af613fa090b74a5491a4342a85a632628edd3bdf11d5aede25d6cdb5775a9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB505_957c9680fd84a8f66db33c1ca654cb5f8668b8bc185c74b48b62406df2b030de.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2849,7 +2672,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB505_6688f90b290439fdff02ff8dc734d98e36ef1f21ae1d04a9c1d7095970334e43.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB505_637d57e6f330a622c264605bc3b0151b6156d7745ba2d8f5edb8f0366951d8f8.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB505_5a66eaf504f11f37b7464bb29297ee385eff1d0cda9981112064c3bd3195ac3b.png'
                   },
                   type: {
                     name: 'battleship',
@@ -2971,7 +2794,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PWSB504_b4e0958684338f02d0a670cbb28413b8b383e38cefdbeb71f7134d15a12518cb.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSB504_4e0ab134d1f13d8147cc573712bb21cb629cbd1479dd7cb8b02a1fe9869c0205.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSB504_12c4f92a30334cfc62d0d18f84022c8b1cb3b22b855b8825f506d1077adb28f8.png'
                   },
                   type: {
                     name: 'battleship',
@@ -3093,7 +2916,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC006_e8351e2a51cd6e4546791ccf2e903498370d5d953836ccc11db81ec903646f7a.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC006_10e41bfdfe49a99a737f8de78de486723a59cc9c0c36c083953f0d79f0c46e47.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC006_2981d902e0dcd4f833b63796a7cc5416939a05ef97732df211e13e5f597aa2de.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3215,7 +3038,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC507_c6e1a2b8f6831f2fd8363929e4345fc7621bfc19e02b5ea3d3bfea796ae25e64.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC507_ad9b745adc8cc6b8f8d53b4de90dadc5500f0f09d1cce988208ee78cc3a011f2.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC507_cb8e02b30436571c65d7fb5de7d38593901844f0bbfb0cf29ee0e49df4e19aa6.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3337,7 +3160,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC597_f157c4b6aa57582cb9336671d6838731b072756d5cc6cb64e54d12598fd16d2d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC597_c0ce8e4b3dbd3c6b41d0a82fdd2b4aa6a0a5865e6293ef0d0c48b393b046dab9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC597_236fd7729806a3ebda79a27d0e0bde0cd02a21161875f5f73a64ec0ab86d57be.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3459,7 +3282,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC507_4277071123544bf007e1fbd24fe3da17191ce2de28f34efae896cb05816a9a24.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC507_e6499989472c09c6653e637ec7ab3ddf3923ae15bce6198a45e0dc37f09d1d30.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC507_9989bae09c18ce2ac4d27554695f97d8854d9ad3b10da7fbdfe648eed6004e47.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3581,7 +3404,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC517_5180a5a07408056ff2e32fbc7077fff58aa50482679d8b88c8ff8a0e2be69981.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC517_9beb9c27be91e2b5f7f6919e4779370902e952203a4119e3c01039810371f70f.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC517_6a675df4177d3e7b8774e8860727d7c798901abba8d0f84f408926f2b00540c7.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3703,7 +3526,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC507_c087484aa63c5c8cb5351c06b2afbff94a8c7a90a26a381b4c48b316d600f105.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC507_90a38cd7a73a6727db041462775e1d79730a457094983c4151d25d2ff8740948.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC507_9ec4054c166dc928bcb098cade51310bc7e8e9cbce381423fade4b1a7a5b54ba.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3825,7 +3648,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC607_17eb47772f4ca5ce8f86395e8968161c1bc745dc239980e14e0577230e1037d9.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC607_853d7e962b0bc2091c8e0d2282f9792e39a5e93f336038bc00ecff3efd218e8d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC607_b8f97c5ccbfc7256304ca7998df81ff2e37379f39704a006b27a373c49a292bd.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -3947,7 +3770,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC518_94fad851de7fbb94d01ed1915ebc0b1287cd5e2d947aef61d51aa6085b50ebc1.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC518_b08c5a54357f432cfe91963c2146da73b6a44c182bd85ff2f3a86e249eccc239.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC518_34dd994981cc1b69b001c3e31fd5c4298b24610c982dbfcf54e25d78b558dc04.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4069,7 +3892,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PVSC507_823e3d410006ac4bf8c793d3f0675c60b9408bf146a78bba2934cdb6864307e5.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PVSC507_c0ce8e4b3dbd3c6b41d0a82fdd2b4aa6a0a5865e6293ef0d0c48b393b046dab9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PVSC507_236fd7729806a3ebda79a27d0e0bde0cd02a21161875f5f73a64ec0ab86d57be.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4191,7 +4014,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC516_bff72db6bcf79726ffe63e9ca1186e472ec8fdf5d6f212b988f4a49c7f07dba0.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC516_68c6228ccad5d53ba9f6c82b72bdc1be11f85334d7f73fe608f9c5a0112343c5.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC516_67e271ac79df680a60d12e4a3b80e599b0c72acbe6c1d29796c241df66554b93.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4313,7 +4136,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC506_5a3b39c8b79ab063acd8125d7117e7e1a53e992e0640ccbf856d94cf336634b7.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC506_9d768205f34c33123a004251a60920058d6969c45924fb95d52bb8e5a1339b25.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC506_b1fe7735840049765bbb43a1e43d492e0d51e6b9fc68acdc7cce3c3d4077640e.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4435,7 +4258,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC506_8f54e2f7c9084821c2f84bb70dd6191a3fb5afcfe2b3b8becab9546ad4b114e7.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC506_d655104e483e42a7eb16a26efeceb121255c25cf6a9c3466e6d0a29ec055a178.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC506_17dde9d53bfe64a6e6943a43c559e9529b678b9cb5a79d94e5db14cf8d18bd25.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4557,7 +4380,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC506_35f98188dc9d6615d7064ae96bb913ae7c4416d24bc5b9daf3369b22b0187622.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC506_f5c0ac43f936c358fe1baef45b568a03d58547345a0dd73b1e6b68c7b86a7c56.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC506_33a6e3f1e1a0577aee36953b7d97e3d70bbae16d1a5a8eb5c67926d2acbdc146.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4679,7 +4502,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC606_a5298dbaca9b2f8f3779755dc75e192b895dbdb408cd4428204befc592b8cf90.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC606_34cfcd87a1815fe6fb64c9a242ffbd8488bb7c40f596c80ff55574cc9364425f.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC606_3e960c3a81694a888b00e7eeb7f7892d67082216e0a0ea9dcf25c277263072ed.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4801,7 +4624,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC506_54f91c7a238b88fb88417e4ad3671f34f61be755a1e100363acb661b199a63d4.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC506_11a608903f0f591b0c1851c463958c403bff52f86d6635b815a8bbf9ce1cd42e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC506_60088a25c9d0ccbd2601c6fef3fd13acb19eae3ede6e4893ff3e50cebee6d4f6.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4923,7 +4746,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC516_39cbe994d1ea4d9ee8a0df427b06a26fec1d3d697d760d330f6158697a448326.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC516_1b173ed5a508b7efd5347c1900ab6812eb45ac7eca8e9b493ebf4db8e43fc271.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC516_e222fdf696fd996fc4a7f4f86da9c091c6d45cfb4164433f95bc16ca84aeeb80.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5045,7 +4868,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSC506_b25a8e7a3e744f47f3ae216378f3dc038883737dd91cadb0f22a741668651a54.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSC506_e63f09fd0617be90192b7e473ec3726007d2ae8d317fab24333a4c6ad66e6c0c.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSC506_d7213f9fc645e2e44f3ec6f1dca068907ac81fe5598cfbe5a453eccf29ceb8cf.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5167,7 +4990,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC044_c352867beffd79fc91554872bd06796cdb5389feae42cac8b6ca39ca5f12df70.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC044_fde4bb0359a8b63ba3eb2accd4f98d2914a34a90c3bdbe79099fd415f27574aa.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC044_5869c5cb190a7db69878a053a5c31b08263571686389a6dda5666aafe3719d4a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5289,7 +5112,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC045_00270098fa52f03895dd251db098c25f052ba5aaf31968c61fc6234001fa6a25.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC045_9e2995fa1647e520455a199226719b54f26b2f067088ea9601e91ef9283f658a.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC045_8e77d7c3c0f5399ff2f3136026238d41d0e125b188302162a8de95ddd307c574.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5411,7 +5234,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC505_475aaceca4d71ac52e7734487b8975108ecdcd354f97a28187d8e2a7afb191ce.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC505_a3cd9a97dbc11145ba37b46ac8b3295b2b74f4e89afa946448918ac51adebde6.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC505_c4023981fd72561431be0b81d639db669a41892b5cd970feec33bc8513d9b00e.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5533,7 +5356,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC505_b0aa40be7249d6fce67e764d450abf4f9739d5254168938abe32349ff49251e8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC505_e9b5d53b34b9b2a97843c0c38bc502849369a652b330fa455f7aa60588491789.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC505_17957839a4cec3777ac00293f9753a7b1d00c9533ec9f9d6b277c7cae50f4619.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5655,7 +5478,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC505_f3444e89f551cae2620d8d24f4a80ff0b1713e631936fca70bb8fe01d57db7de.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC505_a191678c8bc4e18873101b2d835e97efe312cfbf4cad1a1fe94c7368edb00fc0.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC505_ee86f7b25b629e7cd8f324e13569e2cb6adb7c26811ccdb70304ee95e8e63c31.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5777,7 +5600,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC003_12de8888c5c05ba9479ad496193c841281284437bcb2acd42921d2d39ed5aca8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC003_21c66097dac05b387124523326196a5e41495c7b8b091bba75890ddc15d6cefb.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC003_02918bf3ef0c46a9e55f88f82d14da434839d9e1bb03c2bd22d175d2ca1fa4ee.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5899,7 +5722,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC505_fd72a15acaf34823a84fcf131ff6be508c7b0ee5390109fdd3e710dd6af8b455.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC505_c9a5a59682f89e998465fa63897e63a3fda331845c2b089d7ae85c55e96f3f71.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC505_1633010db7129920f438bb32ed5345f20b6533a76dd27eebad02870c72cb6240.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -6021,7 +5844,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC515_1292d736e1c0c9671ad5a8ed3da2267cd3fd273d66044c6a5c5572542557f3b6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC515_81f9a94ef86b68c2e675f7dafa0eb92394c3a783fe65c9f8d9a6f7cc8aae24b8.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC515_becc1475ab20be3ee0ceb3c77a29d5891e3c64b284b810e31fae80df6a23b3bd.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -6143,7 +5966,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC525_200c81c1b344d92c5c8bf1a6c386e7a0560c8d0d39b79df401e69a3ad9c34335.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC525_6c62c54a33f1f2c717af5c11e1ad42d70368f408160e8de7cddc6208ac12a009.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC525_07de5f4b8062822384cf468bea9703e3002c627de0164f75bef4e979668a4d4a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -6247,15 +6070,15 @@ export default {
                     localContour:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASD029_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASD029_5436e7a51623eea397853d0a398e82505484b5c1667ed01f5e884f810d0c45d3.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASD029_806fa03f836d10efe206dfe9bacd1d05142e721a77874780303ba75296b78fac.png',
                     medium:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASD029_544958b7410bfe711ca2d25941e4a5e077abae7304bffeda3eb083652051f818.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD029_dc20aa41ee113ff63d5d1f38b0fd288d3612fe5c6e3aad03d78c8f7fc31368a8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD029_47fc20ec78c447656b77857f6831da4fddd3ef50d66f322d5f112b1dc7a6cf97.png',
                     localSmall:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASD029.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASD029_ea540712554913a774aa3be66f6f34058abfe3d69659bed04d60396ca5844838.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASD029_977df3dcd930e004463a796e0e237d2771a4932b7c173a2a99421eb363831507.png',
                     large:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASD029_334764a4c30f46a1c744ee1a703d420c990f8cdf554845bb5b4135b4cbdcfdac.png',
                     localContourDead:
@@ -6263,9 +6086,9 @@ export default {
                     localContourAlive:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASD029.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD029_dc20aa41ee113ff63d5d1f38b0fd288d3612fe5c6e3aad03d78c8f7fc31368a8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD029_47fc20ec78c447656b77857f6831da4fddd3ef50d66f322d5f112b1dc7a6cf97.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD029_88dfe149d49bc62ef869b9cf2fdd12c8600ebf8fd2c34bffdae9e6e6546295ce.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD029_bcd707f540bfe1754a96ae650a6dc8382f22cada26485fec60a1f68be64b237a.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6387,7 +6210,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD507_5561abb671cb8852d9b88cd3384dcbadee7d8af13e70adc2ddb4e9012c853996.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD507_015e49eb903d0b0e10ee5b387b68c0924b5401f19614c00ef67ccce25527fd54.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD507_467ab0a7083a88c2ec984e7d975af093c7b1723de1aedf160e7fae3b02bd16d9.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6509,7 +6332,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD507_4cd83bae304dc6a32e679848bd7cd0baa1cd87dd4cc12150198777c28b6bb126.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD507_d6582791b00c7b4ddac8e5a70bf0b6c239a5f151c5d5d406a7dda937076c07e3.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD507_b23afb7f081065dc29d1bd23c1fef0c2969b10c5502dd1e6c34af0f967d0160e.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6631,7 +6454,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PWSD501_85e89984588cbe60601a42f1fb9d85b33994ab524e0884b5199ad0c58584a522.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD501_12c4dfa3b6e525b5eded03d4a20456f5a4037092802a5df46135aad649ebaa86.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD501_3606c4006257b2238f2cfeaba3764fba74ff9be2d9f07b6135ab782b54527fa0.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6753,7 +6576,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD506_cccf826bd401d17d94eb5e3707e49ebdc90819b7a55864f8d20cb41cf0cf9036.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD506_54a3ab88cc6b30276eb005777aedb5f9b3e33e7199071c05240303ddd4ebf239.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD506_5252c0d7ada220964f6b479bfdb0e49f8e7c48c77cbd3ce3397b3b9dbc4ee516.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6875,7 +6698,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSD506_e25a4de7802d06c90b5facc85ff7d753d3b43badc6a93fce41327562ee54d8e3.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSD506_5e2f59e626fd7b4d974b24a413282b9ca528d12c17273c1532d95f71bf5c07e1.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSD506_58117671c40f5f3870d04695a6e7f73940b4943d73d1b21f6a9502faa15eeccb.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -6997,7 +6820,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSD506_fb43fa1f9fe16d7f4db30c203624b7057b3198ccfbde3fe9f30b4cb25b05e382.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD506_0abd50840d7fe222cc08896d4db8c6a493d14c24ef441c65ef70ad998c55538b.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD506_46ce889b61810a1a0cd4713956c7b66e90cb62026bed04027ee15b69bbee2e74.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7119,7 +6942,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISD506_f384cc7e1e74bd533567c88f8f576b3e7f41c96fa4d9c0c26f52e6afd921a668.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISD506_5fab4cbdac8af03c157fb82535e972c70c0821a163376aae46acc7a5a768ea76.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISD506_73f5aaf05d512258e409263777838a8e587464ae4c4192289ad39ca623562da7.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7241,7 +7064,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PVSD506_1b86f4d7975064be109d50ac3356866a76c2ca1ed202b181d97ac057f0c2fa26.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PVSD506_0c394df54ba18084450463f184a24a73005ce9a708073748d69c4b9404855f02.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PVSD506_e3a807a39378cf051322640cb6cbb11e67a45b1ce1ee069fe856ce4758d29b8e.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7363,7 +7186,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD506_0b6faddca37afce8abb5e3ec0293f70aa4831464ae4d5f1a54825b966ebbfece.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD506_8d5886d991ed48c2e81b0a7802699553fa4ed3007c8dcc4871a3f4db8bf108bf.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD506_4b3fa8806fe1598768ab6f0221f053b99d91007684a1f8cf4c9e7ad7442a47a7.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7485,7 +7308,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD505_6e5d7f1db6cc0b3fedfb48455a8babe6454907a79f8d6b6767d19cde739273a6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD505_390053f16a98ca27655c63fda8374aeb62ec1c462e0fac37b3476168a47dd431.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD505_b16401bed000c4ce195a21c07bad3bb9ba5a489d26001263f8832cdd6a9f391c.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7607,7 +7430,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSD504_e956632011251ef05455b7466982be235bacb51316cbf30c7fd8b97b18d27469.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD504_0e3f4ce9d70fa387e8a9758053a1a5a089a1331be1c9cb0f1f2d6e7d79f01408.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD504_fc212f8c45b79cb1310d0612d8759c5ed64c4f79cb5b7bc9767c81c6cfc69643.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7729,7 +7552,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD505_fb23e6dda9643f61e83082be2c990505e97f224fc31abe23a894bbd596900970.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD505_6bd597895b15f735c1ce3681835e58c138899f1fe6dabafc94439ee6f8633bf4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD505_f4a3246da8cb31bd25f973391d15a822e445bae546418eba1a43cbe6d559fe32.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -7777,7 +7600,7 @@ export default {
                 }
               }
             ],
-            weight: 120,
+            weight: 12000,
             probability: '12.0',
             probabilityDisplayed: 12,
             savePoint: null,
@@ -7861,7 +7684,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASA528_916e92731e2b592523a82077d1c8c7124e1f7edc4ac7114b6cbc3fa3d60fbad6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASA528_d440ec48d16b406f7e5edb61231ebed4fca413debb0cec1127ec159d4eabb527.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASA528_e3579db2d9a130c1e255d658f546906c5943b156d9ff375e1e6e8b42a502fc00.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -7983,7 +7806,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSA508_6e97d7ad73519f2413f536e8f0acf2526eeb1a9d11e2bbc857e4a35f9ff595f6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSA508_b2e1329988178e7f66b6f281c93b50f6aea9be557e635f09c6198cedabed6b93.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSA508_c8402deb2666a09c643b4b60e5bd5681edfd570899d6bccc725955a0d2aa1064.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -8087,25 +7910,25 @@ export default {
                     localContour:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSA518_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSA518_9c1a1a27e40a457ccb2fd1538cdbcc72845f2e1d4e65656f3d48281fe1cd88bd.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSA518_ef7cd6bc7c1afb5045a46d30d939e06427cf48a6e133990b198cc4f73b414498.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSA518_a04100f8847f52eaa1c44286c08d152abbb97dbc4a2a12148e76677fcaf08673.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSA518_59a475d056f21afee6365889ca4956014ae716b828d14c06cddfa40b0ad9dcbb.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA518_3f1aff5cb151b143cc14e9da364ab2d3269cd9a6ab80df0529ccd0e1b75c1ba4.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA518_8c702472a93ec7c76075db3d0d69cb3176b12fb51de1ac1c4a9245491b3d882c.png',
                     localSmall:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSA518.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSA518_1773de88f8fd2dcbe831259a7395a44aa4fa3225a078fa852e8fe791d620b2fd.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSA518_e7f2ed78c2f867cd2f00403827e9a35ffdb4d1be984a5e330bb458fde0c3a243.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSA518_66a30f7c22bab2ac114b4c7389865c26ea5a2af092336630a1a80f00f909b319.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSA518_6a5b5e470c9aec743720d32e28163f49237023a92330c64260f47247a5d9c124.png',
                     localContourDead:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSA518.png',
                     localContourAlive:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSA518.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA518_3f1aff5cb151b143cc14e9da364ab2d3269cd9a6ab80df0529ccd0e1b75c1ba4.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA518_8c702472a93ec7c76075db3d0d69cb3176b12fb51de1ac1c4a9245491b3d882c.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA518_fee3db64026664e86657450aa0fc6e9499d8c32c9776641a0562375e3f381ee4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA518_3d61485989b24f278c970517e5e28672e8c2b309b018a11f1ab2e1bef4d38fee.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -8227,7 +8050,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSA518_12ef9eaa534e14ae966d5c5af03277e8c9142ae157cbdf76b4a49afe9fc7910f.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSA518_57ddc269897705a11e163b5dfcba4aee9775a1807e98033759a966e4f98ec522.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSA518_8d3956d4034ef0d7dbf4d3bfe035b8fd2b08b960be6a6d57871875c308f1bc63.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -8349,7 +8172,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB509_d7b48615708d19f87a1bad422ce04357216e3f8f486e82ee0f843ea55c385dc8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB509_5cccc43e81ffc76b04429efb950af4661424eb5358cea35fd8b56505b26b3c89.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB509_07d3cc1b7c80b0a5adfea9d5228f756f5f52f367866cab5b1d5560a45cb420e8.png'
                   },
                   type: {
                     name: 'battleship',
@@ -8471,7 +8294,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB509_4017aa95a0367c67c211cc2c24575a47dd617cd4510f9f8ba254155366ccfdd8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB509_a9ba30275293b5ddef4c84bd72fcee5dba607ee5693659e45dc8b29387a92794.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB509_89c28403c01fdbea57be3c5b38c13800ed7538fab16cbd4ec15846dc0ff904ae.png'
                   },
                   type: {
                     name: 'battleship',
@@ -8593,7 +8416,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB508_69f709e9b4f7f819cdbebaee0817f988d5d2afc87de49d4cc79146b40d0e87f4.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB508_92465759ff5c9428bdb53361c94fc3fdd669963160982151c1a584c133aace52.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB508_a3fe8716c81b1f516ecc383bf3e521102e381da6e43499922ebeb0cb02ce5bb1.png'
                   },
                   type: {
                     name: 'battleship',
@@ -8715,7 +8538,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB538_79c302cd4466b56622250c797fd80801d7315e1976b9b8d77916c883e764980a.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB538_9cd851e607744590c902f7f7da0687b2a759dd2c8f2a4305f867ea5d17d9f7f4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB538_06bb765f18613862bcf14c34652ebad0c944660e03d026acebd7de8d04c3c7d7.png'
                   },
                   type: {
                     name: 'battleship',
@@ -8837,7 +8660,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB508_b605ebb9aad4f08ef0e7aa42da0379d18ead80e94458146efb8dc5b0a4fb4af7.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB508_f64f1927b50fc56b25b754654a2121476eae558e11f6300042beed03ccaf64fd.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB508_37a33e02d6d90086d0815395118968d0e616335416a4180942848845478aa447.png'
                   },
                   type: {
                     name: 'battleship',
@@ -8959,7 +8782,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB508_9dae06fe7e9eae2f1b88123fb8e9dd08a219fb9c43e8d60519a338501dc894f8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB508_a89b509d73dc4045e71ac7b280bc5cc8cfc70822fc738d7eb4f54f9bd7e7f3ba.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB508_4266f15fec96f4147e01b7b6667c891aed33aa6bd20df597212979db8f18db67.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9081,7 +8904,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB528_8bd040792a9c8303d866cc8ea1c4f6aafe80ab24c9c2072749b4f247707d8c61.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB528_bd91efc272e2886c6b6fbc1d2084d8fff570b960ff144d0aa5d3c2d452316ef9.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB528_690f91356b559bbf200c6bfffe55ce7fe683ec0201912226b6bef20a5cd4c5f8.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9203,7 +9026,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB538_88230ceef58767fc6917714f1b8a81c40adb455ed774303ad6e0543b2101c04d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB538_9448a90b8e899fe9b4aee0c8ffd89bcddd78939e6c246da286865d761e121217.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB538_2be8ff2a78b421ff2d10e5c17aa1f8316bbb1a877f3fa375fd05b0f422b19142.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9325,7 +9148,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB002_e7b49ecef4ae0be8382c3ff3c77ad70beeb89bdb90e7dd7a6d82b194c5812260.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB002_f41b73861c5de05e7875af2276c13ccacdb3ee3b9258f58beed0e22b97ac8dc6.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB002_6e2569b0a7f4d0caae072f346f751f673a127ba9f85bbfff57bd6ccee8f07ec3.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9447,7 +9270,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB508_6e6445b126ea15622f8e71f97ec9213b91014ae6d46672e24bf6637f0c398747.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB508_0d6885eeffb14b920988d4f2d11cfcc35cb47eb111f19943c92b08ff6e5d63ab.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB508_57ee05efa981d1740d888154546d005f2921ae3403d5df8202cd235b24289655.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9569,7 +9392,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB508_469caa40a5c2e0cf689eb4fbecd0505c0770622ad22c926a9ef66d97cba05931.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB508_40bac77a07c96f32e31befee8581925e9bb9839d3a74f7fc0fe7da58371f59a4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB508_b4273cd64b9c5442dc58f1bbdb8fdd938599fa93d4b14c1a18c7f64cdc34f870.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9691,7 +9514,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB528_cea8b33fad5e89c333bf33da29f9a7fcab29fdb36d8bf62bb754c8712c58ed4b.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB528_cd3d89f9f213d8a2573d3e4e9b0ecef2356ee8277c96e1fad47dd09560a12d3e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB528_f71bc2af6a882a9aa611a16157efec24a65838670ef07b4329ae14c8f79ba074.png'
                   },
                   type: {
                     name: 'battleship',
@@ -9813,7 +9636,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC519_7e70a173146ffeea7e969f1987ca3decb88d42ee1e95f7516bd89633fceeb2ee.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC519_05bf4b371372c05a5fa3d4623ea4030865651a04a2d73bbe80ae0acbf9034c05.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC519_27487dc80e453e9652ab6f538a5546ac8eb6d6f48c5ced4acfa41b1b5904dfdc.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -9935,7 +9758,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC510_886ef945c0c4bf7eb13c2bbe9fcec363931c50e65bd5bdbf7eda10fe2f8d94b3.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC510_2da6e256c03e54117ac8927135a5bbc3da8d46cabd9a60f046f0f23015712988.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC510_d514d61c33d5d2763ea599f914efa9e4ba8d88ba7b28764e910261f869aaa669.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10057,7 +9880,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC528_cf8b57450f225648646fbefbf5f17c9913cd62a47f450a1d4905ef6fa12bd384.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC528_5a07e24355c993c0d8dcb5461bccdb493ce492451d98f73c29608cdb0c00d971.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC528_c286509d1439f714f7fd6e0b81c74bb7ceefef9a4f370db30c1aac1ca6a311a4.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10179,7 +10002,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC508_8cf65982bb9fa3c9dfe532a2d933b9c6df2149dab6f9d91d53d87753d0982b81.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC508_75bfd144b31b92b4f5672e65d333a2b7abdd6be93668f8958727dc17349283a7.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC508_20023a8856680560bca004fb26fe0f27d40b6d8529f16b6587962212bbd926d5.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10301,7 +10124,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC508_9a9fd5931be8a5a9b3928465c84494f02f5763f97332d9ee23a4782568664601.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC508_11d9acfebe158b2f0e4fd49dfa62363983105c701708555b5b7d3e9905273b8b.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC508_465c4676a731bd8076e77ba60678aee312a97f8f625a6c32d588b725b96913c3.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10423,7 +10246,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC518_53a67085699bc04c0a95991ef25af319a4c6065d025cc7f0be8c10a8d3f463ca.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC518_2f6af1f893b8410879a39294b1d0f6cf250a31158ce86bb0ae2c2d240e60ab57.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC518_d6a49df84324efbb7a701d5a62de83b602514e4c4e4b3ae7071b71c143dd9d7a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10545,7 +10368,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC528_b18d10456e0ce23c000d98c2bda042fe29b9cc157635bfd2e1a5bac2f6566abc.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC528_2b78987cb1ff8ea165270bf6af128b2e3655da39027598bd7d321823ec37eb11.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC528_e0b1186336f56eb91ea37f23db6faf919c866b2cc1e21967a155bb568951aa3a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10667,7 +10490,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC508_8db686e4ca232f3275cb158af16e75911a767390d29ea43667f9b03d1cd44dc0.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC508_3c9fca599ca13b895d771110d76347285d541396679ab001827a1e5d0d1e4b43.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC508_bdcb096beca93c1be2ded0e6522a78c0bed19e4318d03dfba834bce09819db84.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10789,7 +10612,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC508_f1aeb94a477976b1dc3a487804f06ef16688b53c9c3b6a796007e2f439815193.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC508_15e47c4661ddc734f394d375927bb63c8a974cf4c68b96258f626d74b99a4b55.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC508_c95cf44b1a588669e2d691f727b4b2a69eb937356d74aaf564816ca5fd18bda4.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -10911,7 +10734,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC518_51a77b095f1a3be3c3ffa5851e974a84d82cb59c7b904974994398d59e7ead94.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC518_0ac2a56f88d6ebd0798016e2e344fd2a72908abdd21748e20c0dda7dcda97a6e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC518_c5e2ae99cf2c43196ebb94e561775df9e30bf6f87af51f668ecf9f22b891f8e5.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11033,7 +10856,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC038_ad542cd733f22b5763df118848a9f5705fc9c5b240c99ea30806690cacb56ae6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC038_2b2b03ff7cc1b5d7047fedb2b33a45e1ae6dbfcefd0a8b242c1896311f62edf8.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC038_84672abe81f01cc0604332974b6c46907cf064a9d55e102f92fe835d51aa8806.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11155,7 +10978,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC018_2ae928170d84b653950e5d294d9a869780e984924b2452f3e84dc2249bbd554b.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC018_670f8aeb224298bebb6ba1f93e3599400a64fdb6a37fc536c39f9f3dd1437bc5.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC018_4f7ad1690d5f4a050d115f7b75b000dad5eb3508ea7792dfbeabda54798828c6.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11277,7 +11100,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC528_c0c4d94ec7f35fd60479049912b3dc65050b8517e2e97be98a70bb664ae8c68c.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC528_65f98b9fa0bb8bfd25880d821b34e00b10be67058691edc733d9a7c79526006c.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC528_3bb2356fc4c477b4a271e4742f8a6d3a2ebd1d7be4dfe29aead7b710c72076bb.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11399,7 +11222,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC538_3da61de0ff82ae273665c0db17c31567081fd0bfee1cfc41d97a07c9ade70f0d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC538_52dcf021fe2fcc5b644d7e52535f54bb8f048f4b012136cbca7eb013e5bdb35c.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC538_b4747b47e8ae85c93135976537d58fd1127f669fefbf3549694b92b727f9ac77.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11521,7 +11344,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSC508_236f57a8142b6bcd33cb4d351af2c936ae2490c9a64282cad25241980a13f612.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSC508_8475f5cb534221d13da1a97d5094424a093a15fede3d79b885a3f35e4e2a6515.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSC508_edbf8335125320faea9d214651ad5f355389b3c7a4ef6fc77a530d5005f54a9c.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -11643,7 +11466,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD519_f05462005a9f458b20950a5419ff24879ebc2e232d72a50c3bb630571181a33b.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD519_53a58191a175bb1b141e25ac1206bae57b8840682bd9d780dd3d8e058aca83ed.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD519_ade317b934252416621b0b383e8c97d09e7c7d3a174b64775837ea618434cb94.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -11765,7 +11588,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PHSD509_92062782ac6fca3f141910b55b09d8cfbd4f0609517cdd2571553fdb07b7f42d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PHSD509_e4b7ec15a9ef4ac7dc7373d2269cd39bc898ff5c8857bd149dfff43cb4e48722.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PHSD509_8d322c8d6ea47cc102794a90f13163c12badb6dbde86601c2bf10c76f55bd5fe.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -11887,7 +11710,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD508_932f023f70ccd57b093e1c765dacffeb8a73549842f2775db64622a9cb8f0eb6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD508_f2d042405c5de1e8a0f302a5fdd5b3b1aab225b6265e39e16072ba4e2939dea3.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD508_81d96c851d4d38cce11ca573917d943538df0a40d2a44dd398252d37248ef8d9.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12009,7 +11832,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSD517_4dde170795a55472dfbb20b938e349c8acab41d7e4d25b09cd248b4653ca9ca6.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSD517_4129c92398151965a654df4ae6738497a0c5eead581f2cf3cb870f8400336732.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSD517_526a403a51d9af52842c0b91518736df4deb5dd849f47b6344e505aeeeafe1f7.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12131,7 +11954,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSD508_03e6130483cab70e7b7834dbe38b53defa3ee0593eedb8444fb75ee6fa62f2ac.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD508_d54fe5141be0edbd3d3dca18667ba113c5fc0ac2092691f4c817363fed92f2a6.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD508_5c076ba169bb75c36d1a0da998ccd29dc3da8cff719d4db23845a655b06ddc17.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12253,7 +12076,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD518_679ed930bc2d1e7b63ab2e5a8ad9c73f5a542fcc92206e0a7e6be21a5241506f.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD518_7c1bb337bc9dea36c9c59d758fa1c583a4a4ba7f88157e5b00e1868bb5f83e4e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD518_f7d6b69b0e979b961cb770f61574a631391d889721ca4ce8325e6381a8f52662.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12375,7 +12198,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PWSD508_29af9a8fdb3ec4e0e20fe07c9042d3552aa6cef05efa8687efec540637ae80ac.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD508_02ffad0be37f3f3d85a222df70282c8285fcdc412116d2d193c0416c5bf075a2.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD508_cb28ef691cec069cdd9ec599e5d781212a5076e8d43c5e934d55d9e9522a2b74.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12497,7 +12320,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD508_e24bc8a7bc321dd877414d2223334d7037572eea68655535bf05a977e8608eb0.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD508_ec083709a7cae9582e32209aad42ac2c60df0974ed3d969602ac71805e595a38.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD508_1e942fec671cdfe216a51cc98c3387baa81e94d9581be55b584c5825f51651b6.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12619,7 +12442,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD518_e8c31988eb047869dc1f5d63472625c9a610631354a073631a580ce1eb722c17.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD518_5adb067857dcbe3c0db310809249db8116d2b32e53803639143c03f4bce60f85.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD518_07cd9075ccd01a39dd742d546a3702fa5912d525c7cfbe53b3f7480ab72192aa.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12741,7 +12564,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD208_d7b9f7f1cf99a5ce0b17c5b3987ed872df39c7fc5cd4d6bbcfdd00bc34efd6fd.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD208_7c4f125f56310d2c54b81524b8338fa2a17618c922627345e22cc9b7665c949e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD208_677f96b926587f38c67adfa0cf22d337dfd720ca717c5c84961b754113928e39.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -12789,7 +12612,7 @@ export default {
                 }
               }
             ],
-            weight: 30,
+            weight: 3000,
             probability: '3.0',
             probabilityDisplayed: 3,
             savePoint: null,
@@ -12873,7 +12696,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA610_ba8c1756ffcbe1dc6ada25f62b1d1d13f43b9782f41294babd5f7978958aa57f.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA610_00260b9bc821da8c47275d81278f55b726d5c647468a8da3953ab602683258a4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA610_94519268374590e9f59c8129df841e1eaf059dcd3a01fa3490f4dff80961824a.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -12995,7 +12818,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASA518_1d6166593fe612e7436a4cd708d938a973cee0a65c37c5c7479fd817644b8626.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASA518_83267854e1e66c600eebdcd2d9a9e9cab1ebb66b2327263370b0bdbb34c4f0fe.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASA518_cb06508ebef3168d63ea53b723a0d0165f475898b56cf7840b2aa92cff79c720.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -13117,7 +12940,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSA506_9aeb5484a2d385b989f8a74b448f766be7d8201569ed07e0693f84ba7dac4e37.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA506_dbd49ec3fa8ca33f2db531155fe0c2b8527098b9fbb11fac25c99cd02ad76c27.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSA506_91d57b03e2762214d8bbd0c792d012b7d132f3dcbf44ff922b329148f0eb3893.png'
                   },
                   type: {
                     name: 'aircarrier',
@@ -13239,7 +13062,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB510_21d69bbf542aa82e43e01a5ba3a31784a4df583d20daa805a8c077e625c17309.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB510_efb4e079d11e356a6b830f4f40c68213b4719ecd77d57f428bef2a0997754150.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB510_a637f5b13b1411824926b1f284bb1a7bee0b7501aa93751c6e151ed60c5b814b.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13361,7 +13184,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB509_9b435c1100a6f5b7c3c188bffb12ee3243cd9394b7df9bf9dced5c8a003d0dd0.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB509_2aea8e07bccf14342f3c486c25a69d712588ffca9e60be3cd2d82fe8a5e8f42d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB509_5cb7f24d6ae830f176955b305a1b44d0a0843b7b58449f907de4dbe3d782608d.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13483,7 +13306,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB729_7e0a36575fdaaf6c64b52c86434e3e9f11d1b722076090bb0cf83eac6d4f1dcb.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB729_df51e5dfffd59985980d37c6a9b980287b99feee3c52ee1965fa2bdd32f92609.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB729_0f9e65e1dc811f99519ab0c8c2cde0642a31c248ddc2e485350b64a25613fc3d.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13605,7 +13428,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB518_e98a1b58fe899c6c0f69cc9973ed0e55c42e68de1eee1fc58ef2513f9fa36da3.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB518_8f60327ffdc91ada23fdeea1d5e51109fd2e9e8828cca92dbbad841400997040.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB518_ced3457f13ae070e7d48d7e5de04b97a2798d3223db0ec6d7b05685f89856d6a.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13727,7 +13550,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB509_51ef2df4e97193eec7ae82a5a4068f4a3618e7494343100c29966675264fc93e.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB509_bd0b29fd86f3e8686b99ecabb656fb1403174f4479c995922c612bd193eceb29.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB509_4dad860fb5c1fb38913909d1c3a7c93d614b45bde6a65f3e33237c038da7ea6f.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13849,7 +13672,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB518_2f9d62bd58e089b4190828ea78dd173b0c85959dac242ce1ea0c192c5fc9b8fe.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB518_d28176fae54dd8a119db06278d75d9b82f4e104499a4367ec8c10d5fbb68c5cf.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB518_f3c7780d1654160db22a970acd1862c2332c44e58d3903eaeaa8405067b28d2e.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13971,7 +13794,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB518_03952270b37c005edd521e04e59bfd489c052a9ee68824716d01f158c71f72a9.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB518_b58997ff310c6ac0d7b20a499510962ee27db5aa2984c0f7b89b844cb665387d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB518_cabc1cc56478ba8071e1bffe16e4fd102d726be7811bfcaefc676d93320f2881.png'
                   },
                   type: {
                     name: 'battleship',
@@ -14075,15 +13898,15 @@ export default {
                     localContour:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSB517_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB517_e4c8530722ea8b8e4e3d950d3d660ef8cab8a09e1f5a9c23d6c79b8c2a9e3f97.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB517_ed2130d425dd03290e441e492d2b0bccdea2deb2e351e2003df0e01059109ebf.png',
                     medium:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSB517_174ec41cd9fe031e5a2680e0f9aed6fc0fec4453be37d9081654daba6b6c7a34.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB517_9a17345d760bb6f7e1ac44f67f04e412098b784b8d9fbcebfd0713d6b1d21d65.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB517_703d1019bb3e7e37bc7cfc28698190262d13d299782c95ac0eaba7f660f4358c.png',
                     localSmall:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSB517.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB517_aff491ed9ec27d19e239293eedf9155e8d3cac2cd4e30a2c96d0e0d67880c076.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB517_942bd40fc871389f805c01fd309568cfc0dd68b68d2677bef7920837fbe7c1c8.png',
                     large:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSB517_62701f655c54ec968f85c4317f779ca17ba0409dbe9d4b48110ef7da1df62a35.png',
                     localContourDead:
@@ -14091,9 +13914,9 @@ export default {
                     localContourAlive:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSB517.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB517_9a17345d760bb6f7e1ac44f67f04e412098b784b8d9fbcebfd0713d6b1d21d65.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB517_703d1019bb3e7e37bc7cfc28698190262d13d299782c95ac0eaba7f660f4358c.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB517_04803eda596ec3d3e2f567ef61ad4ddcfa0b4fc78903b539d0bd9e3df496a33d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB517_d07dbb18938e8ff11ea983f73cac47f541583c74cb54d1e9797b3f652dea1104.png'
                   },
                   type: {
                     name: 'battleship',
@@ -14215,7 +14038,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC710_295243134f7325711607add114f258af9989cbd388a74b1cd834604f92644008.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC710_f49168298966a3125d5a6a9701a31a878b7683c4a29b092c250a402928056ee7.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC710_1df8b63dfea71f1dd33d02daac092625a14110035afc2c79251b0d8be61033dd.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14337,7 +14160,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC510_d2a5839fbf073d26b7e5c8a6c04ae11c5dc3e107dbffe45d19ea32cbfe30ab36.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC510_51df6690201b9203865d07f21626536399e38183b659135b44b0b03f89992585.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC510_bc02e7f66fc1fb60e0f0efdd8dd018fffed915ebbd339bab6267d3c1e3fc2b63.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14459,7 +14282,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC520_7e7757907a51a278d771f99c39c7dd40f538c9e1ff919d1d185d960fe6029a3a.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC520_5c49d5d289294a63bd6e24e89b14a0eb7896ba3898689ecc97e9bb5fc005bf33.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC520_73b85a1fec391f4f5d4cac3a14c92d43517b617ad3eb176b3206d0c30427bff1.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14581,7 +14404,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC110_af66b6adce0ba16a9021dfab5f6e28835e4d53da800972171655d9d034d90fbf.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC110_d03b9c132902813be37be4f84cbd4cce588bdb5b662e399717aa15f1a3b44d9e.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC110_d9f5e94e31b7a8a89a718c55d6f7e187591db79e53abc74a0725e3870a39b3a9.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14703,7 +14526,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC610_c070b9c9a3b1ca9f05515c50feea1fb0f59cb56f85d7fa50c05903b8463b6a8e.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC610_4c37d61ba79f189a3cf473751dd84dccdf9e97cb6b95df54afc42478b4f405ac.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC610_c3e917d6e938e435d226d0897206e406f7742bc55a2e23ce404381768aadce79.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14825,7 +14648,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC510_1c368c094c16e8fc1fed07afbc237cb7fde0cf956ce171dc419eabfbaedf4364.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC510_6623329eb6dde69986d49cd706d681ba9beb67c0224c7b04660319473528602f.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC510_1b0a2164897f073a4e82e99e6da6015fcb04abedb2f0136f2badd0f97c5dd293.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14947,7 +14770,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC509_fb3152ccffe21b181bf0cc0ab39207e05c1e28d24f95653ec92bc03b5319d99a.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC509_07dbe6fa9833a605147e15b6815a9de444de490e6b4dec49610f251c2009689d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC509_3e52cd03a3c038304e846fd02c65dd77e50a857beee4fcba184261652eb6bc2e.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -15069,7 +14892,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC508_e047dfbb9700ac15ac06b7217523b7a6d34a9b5fba7d3829ebe4a4ea1c507d1f.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC508_eebe87a3cea87fd2b02e622f87872da0ca6a1da255b74c3ecad3d2e2c6ea3594.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC508_b5616b55b58102ad0ad052b863f2a58e8df43d7fc8fb881f223fd562eebd7d48.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -15191,7 +15014,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC707_9a53bf9f926e7f9199ed84b19e8ab76ac7dd0559502728123fa9908c7d8b0343.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC707_6daa329f2b9e3e99f23105b9bc740c6b08efd3be0dcd9f78dfdfcc8801e5e409.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC707_7f053e59c6bbe58f83712c145c5e3482456b790787a2aa5095397d2d29c93d11.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -15313,7 +15136,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC507_2cfe2ef56e1d7f9aafd65abb3b42e2b5ba1f0527b0b0f7d62110fdb65c9484b4.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC507_d7e631dfc47e3d0c4484cd8dcd692f26584fa8cd7ccfac0f956c188fb119f3d4.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC507_86ece1a4746db65fc16821023f46c12acf7445fa30fa45a9da059b26db03a01a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -15435,7 +15258,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC506_cd19a0c7ddbdcc99aef6f5cc2b0a27bbed9881faad07bed279305f04e6fa5bdd.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC506_08ace3cc7647fcac238bbb4722d441f30ab6b102feab3a896797edc3bbc48155.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC506_d3321d2ab58ab0aa6ec30fb256f11829d2f7db0498a68a7dc99d9a6b8a1d74f8.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -15557,7 +15380,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSD210_04c13e7c99b8afeb3d52bfac6d523beda85d08c2ada88b0a1b631ac93a0cc48d.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD210_f5167179bff8328af7a67610481373a62eb192ef5bc32aa81c734b55cbdcd134.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSD210_2ea0fb0aa2c92d70183370e3368fb3b37a766aa4054998236591717bdb305a36.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -15679,7 +15502,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD510_c9fdc6961cd1523d698ff6fd518db576de10b5fa2b859f4961f1aed667a6ffb5.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD510_0c9220e276f23a5d0cee43e0f7e8387715152efc6d10e5d7eaac77eabb750993.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD510_5f6ec0f92b11d62a6f6278b91b68b4b0713012b1cc9177eb4a593496a82ece02.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -15801,7 +15624,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PWSD610_4bb7261b1c22c1fd2e99ae07df98a25f6d5c5aa6e7f882b4e29e5bc4f90405a3.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD610_8da96019a819527772742d50871fb7cd752d4f24155b3cb608abb132538f9cd1.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD610_4e1ce9b3f0329e03c55afcc1c63f6574474a6745cbe8f632277b966c8a87f984.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -15923,7 +15746,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD509_416a92f6023fe6d209316177e1c5b28d27b28c069d66becf28ea59942081a255.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD509_d98500b3d012670dca30303fe63ad9097728183e7315c4fe8489fc83ee8a6770.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD509_bed9bca849864e8bf27446370b820c5cc7e477ba245b1e9894dd3ad40a88f4ec.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16045,7 +15868,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD709_83852f75688cca539a7861743f2d499361a558155b1cf5a1bc31af012a880cac.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD709_8dffd921b7894c778c3881e7ee5cfc8b4921ee889ed404040381a286e084fec7.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD709_119078e40357824bc0242347e4723d5f027a93f90bf1d7a65b92c0008070037d.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16167,7 +15990,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PWSD510_fa46df265e3a795777c63a7d860174b347d2a326a3fb6e11e6c9e1587fdabdee.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD510_9655c71259d7d0db5344bdfb740737a190a0db2b8ca51c3999e007bae1fd6458.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PWSD510_ad5c58e8a10830cab57a978eb433d21606620c42987f41d5c643b8defe5a6914.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16289,7 +16112,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD518_31adcca978dfffcaaceee151db4a83095a69aaf99d8b5ec0f503709480c5eeae.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD518_6dfb81f01a0613ffbd76ba79f37917f3f41fe23fe95cb611100c937c13161bad.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD518_a677e8237376009f008baa34e4474664660259d3aae20f3a086a08182ad313d4.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16411,7 +16234,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD508_9aa92d1aab51689cf337177e30b27688c614bb9803dc617aacbf89f0ed4a0fa4.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD508_c69ad7d5965c5598d5bf3e06e931b9e103b297b51443efeb87d48bb7a669e391.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD508_41ee55f78bcd98370a0c5e89d4b947c1045fa16a24573e56c4a2e1644774a688.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16533,7 +16356,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSD507_001ecb2e9c8eafa05dd9aca63569dc50e4cb1f5a2dbb130d2bdfd5ad1155cbee.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSD507_704000c780fc9f868655cb197b92aaf45da7e57529ea544475e74ef9c1ee21d1.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSD507_8566da75f8a33f82e8372fbf717b9b2897145cc49f6fa92dae703bc38bef6997.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16655,7 +16478,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD506_7dcc64e840bc4ff641d4669aae606aacf023f41a222cfb0b71bcfaf4c692d865.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD506_7839dbe782d3034fe83d0ebb4f6676c308c24d054e4bd7ae1e1c45af653adbd7.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD506_5462d234ea4dec1a30210b338511abe3554c880f1d6ff8763c12ad41bbcaad94.png'
                   },
                   type: {
                     name: 'destroyer',
@@ -16703,7 +16526,7 @@ export default {
                 }
               }
             ],
-            weight: 10,
+            weight: 1000,
             probability: '1.0',
             probabilityDisplayed: 1,
             savePoint: null,
