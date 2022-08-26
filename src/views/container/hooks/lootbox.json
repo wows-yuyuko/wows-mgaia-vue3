@@ -1,0 +1,431 @@
+{
+	"4293055408": {
+		"name": "PCL001_Credits"
+	},
+	"4292006832": {
+		"name": "PCL002_Signals"
+	},
+	"4289909680": {
+		"name": "PCL004_Lucky"
+	},
+	"4288861104": {
+		"name": "PCL005_Epic"
+	},
+	"4287812528": {
+		"name": "PCL006_SantaSmall"
+	},
+	"4286763952": {
+		"name": "PCL007_SantaMedium"
+	},
+	"4285715376": {
+		"name": "PCL008_SantaBig"
+	},
+	"4284666800": {
+		"name": "PCL009_Bismarck_Coll_Free"
+	},
+	"4283618224": {
+		"name": "PCL010_Bismarck_Coll_Prem"
+	},
+	"4282569648": {
+		"name": "PCL011_Dunkirk_Coll_Free"
+	},
+	"4281521072": {
+		"name": "PCL012_Dunkirk_Coll_Prem"
+	},
+	"4280472496": {
+		"name": "PCL013_Yamamoto_Coll_Free"
+	},
+	"4279423920": {
+		"name": "PCL014_Yamamoto_Coll_Prem"
+	},
+	"4277326768": {
+		"name": "PCL016_Bday2Y_Coll_Free"
+	},
+	"4276278192": {
+		"name": "PCL017_OctRevolution"
+	},
+	"4274181040": {
+		"name": "PCL019_NordkappNY18_Coll"
+	},
+	"4273132464": {
+		"name": "PCL020_STest"
+	},
+	"4272083888": {
+		"name": "PCL021_Steam"
+	},
+	"4271035312": {
+		"name": "PCL022_HSF18_Coll"
+	},
+	"4269986736": {
+		"name": "PCL023_VivaLaFr_Coll_Free"
+	},
+	"4268938160": {
+		"name": "PCL024_VivaLaFr_Coll_Prem"
+	},
+	"4267889584": {
+		"name": "PCL025_Twitch1"
+	},
+	"4266841008": {
+		"name": "PCL026_Twitch2"
+	},
+	"4265792432": {
+		"name": "PCL027_April18_old"
+	},
+	"4264743856": {
+		"name": "PCL028_Contributor"
+	},
+	"4263695280": {
+		"name": "PCL029_USA_CA_Coll_Free"
+	},
+	"4262646704": {
+		"name": "PCL030_USA_CA_Coll_Prem"
+	},
+	"4261598128": {
+		"name": "PCL031_RvR_Sharks_old"
+	},
+	"4260549552": {
+		"name": "PCL032_RvR_Eagles_old"
+	},
+	"4259500976": {
+		"name": "PCL033_RvR_GoNavy_old"
+	},
+	"4258452400": {
+		"name": "PCL034_Resourses"
+	},
+	"4257403824": {
+		"name": "PCL035_Bday3Y_Coll_Free"
+	},
+	"4256355248": {
+		"name": "PCL036_Bday3Y_Coll_Prem"
+	},
+	"4255306672": {
+		"name": "PCL037_UKarc_Free_old"
+	},
+	"4254258096": {
+		"name": "PCL038_UKarc_Prem_old"
+	},
+	"4253209520": {
+		"name": "PCL039_Ovechkin_Free_old"
+	},
+	"4252160944": {
+		"name": "PCL040_Ovechkin_Prem_old"
+	},
+	"4251112368": {
+		"name": "PCL041_HW2018_Free"
+	},
+	"4250063792": {
+		"name": "PCL042_HW2018_Prem"
+	},
+	"4249015216": {
+		"name": "PCL043_BF2018_Prem"
+	},
+	"4247966640": {
+		"name": "PCL044_UK_Coll_Free"
+	},
+	"4246918064": {
+		"name": "PCL045_UK_Coll_Prem"
+	},
+	"4245869488": {
+		"name": "PCL046_WG_Stuff1"
+	},
+	"4244820912": {
+		"name": "PCL047_WG_Stuff10"
+	},
+	"4243772336": {
+		"name": "PCL048_WG_Compensation"
+	},
+	"4242723760": {
+		"name": "PCL049_WG_Commmon"
+	},
+	"4241675184": {
+		"name": "PCL050_BF2018_Free"
+	},
+	"4240626608": {
+		"name": "PCL051_BelleEpoque_Coll"
+	},
+	"4239578032": {
+		"name": "PCL052_Unbranded"
+	},
+	"4238529456": {
+		"name": "PCL053_LunarNY_Free"
+	},
+	"4237480880": {
+		"name": "PCL054_LunarNY_Prem"
+	},
+	"4236432304": {
+		"name": "PCL055_UK_CV_Coll_Free"
+	},
+	"4235383728": {
+		"name": "PCL056_UK_CV_Coll_Prem"
+	},
+	"4234335152": {
+		"name": "PCL057_Aviabox_Free_old"
+	},
+	"4233286576": {
+		"name": "PCL058_Aviabox_Prem_old"
+	},
+	"4232238000": {
+		"name": "PCL059_AzurLane_Coll_Free"
+	},
+	"4231189424": {
+		"name": "PCL060_AzurLane_Coll_Prem"
+	},
+	"4230140848": {
+		"name": "PCL061_SArc1_Free_old"
+	},
+	"4229092272": {
+		"name": "PCL062_SArc1_Prem_old"
+	},
+	"4228043696": {
+		"name": "PCL063_RecruitSmall"
+	},
+	"4226995120": {
+		"name": "PCL064_RecruitMedium"
+	},
+	"4225946544": {
+		"name": "PCL065_RecruitBig"
+	},
+	"4224897968": {
+		"name": "PCL066_SArcBB_Coll_Free"
+	},
+	"4223849392": {
+		"name": "PCL067_SArcBB_Coll_Prem"
+	},
+	"4222800816": {
+		"name": "PCL068_EPICstd5"
+	},
+	"4221752240": {
+		"name": "PCL069_EPICprem5"
+	},
+	"4220703664": {
+		"name": "PCL070_EPICstd6"
+	},
+	"4219655088": {
+		"name": "PCL071_EPICprem6"
+	},
+	"4218606512": {
+		"name": "PCL072_EPICstd7"
+	},
+	"4217557936": {
+		"name": "PCL073_EPICprem7"
+	},
+	"4216509360": {
+		"name": "PCL074_EPICstd8"
+	},
+	"4215460784": {
+		"name": "PCL075_EPICprem8"
+	},
+	"4214412208": {
+		"name": "PCL076_EPICstd9"
+	},
+	"4213363632": {
+		"name": "PCL077_EPICprem9"
+	},
+	"4212315056": {
+		"name": "PCL078_RogueWave_Free_old"
+	},
+	"4211266480": {
+		"name": "PCL079_RogueWave_Prem_old"
+	},
+	"4210217904": {
+		"name": "PCL080_Supertest_2"
+	},
+	"4209169328": {
+		"name": "PCL081_FRDD_Free_old"
+	},
+	"4208120752": {
+		"name": "PCL082_FRDD_Prem_old"
+	},
+	"4207072176": {
+		"name": "PCL083_MogadorEA_old"
+	},
+	"4206023600": {
+		"name": "PCL084_Legion_Coll_Free"
+	},
+	"4204975024": {
+		"name": "PCL085_Legion_Coll_Prem"
+	},
+	"4203926448": {
+		"name": "PCL086_Gift_Signals"
+	},
+	"4202877872": {
+		"name": "PCL087_CatSam_Free"
+	},
+	"4201829296": {
+		"name": "PCL088_CatSam_Prem"
+	},
+	"4200780720": {
+		"name": "PCL089_ITCA_Free_old"
+	},
+	"4199732144": {
+		"name": "PCL090_ITCA_Prem_old"
+	},
+	"4198683568": {
+		"name": "PCL091_ITCA0810_Coll_Free"
+	},
+	"4197634992": {
+		"name": "PCL092_ITCA0810_Coll_Prem"
+	},
+	"4196586416": {
+		"name": "PCL093_BF2019_Free"
+	},
+	"4195537840": {
+		"name": "PCL094_BF2019_Paid"
+	},
+	"4194489264": {
+		"name": "PCL095_Shipbuilding_Coll"
+	},
+	"4193440688": {
+		"name": "PCL096_CAPT2020_old"
+	},
+	"4192392112": {
+		"name": "PCL097_KOTS_Coll"
+	},
+	"4191343536": {
+		"name": "PCL098_EUDDEA_old"
+	},
+	"4190294960": {
+		"name": "PCL099_SArc094_old"
+	},
+	"4189246384": {
+		"name": "PCL100_WH_Khorne"
+	},
+	"4188197808": {
+		"name": "PCL101_WH_Imper"
+	},
+	"4187149232": {
+		"name": "PCL102_GArc096_Prem_old"
+	},
+	"4186100656": {
+		"name": "PCL103_GArc096_Free_old"
+	},
+	"4185052080": {
+		"name": "PCL104_Ger097_Coll"
+	},
+	"4184003504": {
+		"name": "PCL105_GE_PremShips_Prem"
+	},
+	"4182954928": {
+		"name": "PCL106_GE_PremShips_Free"
+	},
+	"4181906352": {
+		"name": "PCL107_TF098_Prem"
+	},
+	"4180857776": {
+		"name": "PCL108_TF098_Free"
+	},
+	"4179809200": {
+		"name": "PCL109_FiveEpochs098_Coll"
+	},
+	"4178760624": {
+		"name": "PCL110_WG099Mobile"
+	},
+	"4177712048": {
+		"name": "PCL111_BF2020_Free"
+	},
+	"4176663472": {
+		"name": "PCL112_BF2020_Prem"
+	},
+	"4175614896": {
+		"name": "PCL113_UTubeMem_Cap_Coll"
+	},
+	"4174566320": {
+		"name": "PCL114_USA_BB0910_Coll_Free"
+	},
+	"4173517744": {
+		"name": "PCL115_USA_BB0910_Coll_Prem"
+	},
+	"4172469168": {
+		"name": "PCL116_Journey2021_Free"
+	},
+	"4171420592": {
+		"name": "PCL117_Journey2021_Prem"
+	},
+	"4170372016": {
+		"name": "PCL118_RankedBronze"
+	},
+	"4169323440": {
+		"name": "PCL119_RankedSilver"
+	},
+	"4168274864": {
+		"name": "PCL120_RankedGold"
+	},
+	"4166177712": {
+		"name": "PCL122_ITPremShips_Free"
+	},
+	"4165129136": {
+		"name": "PCL123_ITPremShips_Paid"
+	},
+	"4164080560": {
+		"name": "PCL124_KongVSGodzilla"
+	},
+	"4163031984": {
+		"name": "PCL125_GerDD0104_Coll_Free"
+	},
+	"4161983408": {
+		"name": "PCL126_GerDD0104_Coll_Paid"
+	},
+	"4160934832": {
+		"name": "PCL127_Jutland0104"
+	},
+	"4159886256": {
+		"name": "PCL128_SkinContainer"
+	},
+	"4158837680": {
+		"name": "PCL129_EPICstd2_4"
+	},
+	"4157789104": {
+		"name": "PCL130_EPICprem2_4"
+	},
+	"4156740528": {
+		"name": "PCL131_Logh"
+	},
+	"4155691952": {
+		"name": "PCL132_TF108_Prem"
+	},
+	"4154643376": {
+		"name": "PCL133_TF108_Free"
+	},
+	"4153594800": {
+		"name": "PCL134_BD108_Coll"
+	},
+	"4152546224": {
+		"name": "PCL135_GE_PremShips_Prem109"
+	},
+	"4151497648": {
+		"name": "PCL136_GE_PremShips_free109"
+	},
+	"4150449072": {
+		"name": "PCL137_Warhammer40k_Lootbox"
+	},
+	"4149400496": {
+		"name": "PCL138_Subscription"
+	},
+	"4148351920": {
+		"name": "PCL139_HW2021_Prem"
+	},
+	"4147303344": {
+		"name": "PCL140_BF2021_Paid"
+	},
+	"4146254768": {
+		"name": "PCL141_BF2021_Free"
+	},
+	"4145206192": {
+		"name": "PCL142_Steam_Anniversary"
+	},
+	"4144157616": {
+		"name": "PCL143_Ny2022collection"
+	},
+	"4143109040": {
+		"name": "PCL144_JutlandFree0110"
+	},
+	"4142060464": {
+		"name": "PCL145_first10lvl_0111"
+	},
+	"4139963312": {
+		"name": "PCL147_IT_DD_Collection_Lootbox_free"
+	},
+	"4138914736": {
+		"name": "PCL148_IT_DD_Collection_Lootbox_paid"
+	}
+}

@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ChatLineSquare } from '@element-plus/icons-vue'
+import { ChatLineSquare, Chicken } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import usePlayer from '@/store/player'
+import useElectron from '@/store/electron'
 const route = useRoute()
 const player = usePlayer()
+const electronStore = useElectron()
 const issues = () => {
   window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
+}
+const afdin = () => {
+  window.open('https://afdian.net/@JustOneSummer')
 }
 
 </script>
@@ -16,7 +21,7 @@ const issues = () => {
       <!-- 左侧logo -->
       <div class="home-header">
         <div class="home-header-logo"></div>
-        <div style="width:600px;padding-left: 20px;">
+        <div style="width:800px;padding-left: 20px;">
           <el-menu
             :default-active="route.path"
             mode="horizontal"
@@ -25,16 +30,26 @@ const issues = () => {
             active-text-color="#ffd04b"
             :router="true"
           >
+            <el-menu-item v-if="electronStore.electronEnable" index="/realRimeResults">实时对战</el-menu-item>
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
-            <el-menu-item index="/shipModel">模型</el-menu-item>
+            <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>
+            <el-menu-item index="/serverShipsAvgEchart">服务器日均图表</el-menu-item>
+            <!-- <el-menu-item index="/leaderboard">排行榜</el-menu-item> -->
+            <el-menu-item index="/container">开箱</el-menu-item>
+            <el-menu-item v-if="!electronStore.electronEnable" index="/relatedDownloads">相关下载</el-menu-item>
             <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
         </div>
         <div class="right-div">
-          <div style="padding: 0 20px;">
+          <div style="padding-right: 10px;">
             <el-tooltip class="item" effect="dark" content="欢迎提Issues" placement="bottom-end">
               <el-button :icon="ChatLineSquare" circle @click="issues" />
+            </el-tooltip>
+          </div>
+          <div style="padding: 0 10px;">
+            <el-tooltip class="item" effect="dark" content="求赞助给雨季买硬盘" placement="bottom-end">
+              <el-button :icon="Chicken" circle @click="afdin" />
             </el-tooltip>
           </div>
           <!-- 服务器选择 -->

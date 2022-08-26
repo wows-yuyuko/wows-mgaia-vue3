@@ -12,12 +12,32 @@ interface PlayerStore {
   player: Player
   historyPlayer: Player[]
   server: string
+  realTimeResultServer: string
   serverList: { key: string, value: string }[]
   nationList: { nation: string, cn: string }[]
   shipTypeList: { key: string, value: string }[]
   playerShips: any[]
   avatarMap: {[key:number]:string}
-  avgShip: any
+  avgShip: {
+    [key: string]: {
+      data: {
+        winRate: number
+        averageDamageDealt: number
+        averageFrags: number
+      }
+      shipId: number
+      shipInfo: {
+        country: string
+        imgLarge: string
+        imgMedium: string
+        imgSmall: string
+        level: number
+        nameCn: string
+        nameEnglish: string
+        shipType: string
+      }
+    }
+  }
 }
 // 玩家数据
 export default defineStore('player', {
@@ -31,6 +51,7 @@ export default defineStore('player', {
       avatarMap: {},
       historyPlayer: [],
       server: 'eu',
+      realTimeResultServer: 'eu', // 实时战绩服务器选择
       serverList: [
         {
           key: 'asia',
@@ -76,6 +97,20 @@ export default defineStore('player', {
     }
   },
   actions: {
+    getEncyclopediaShipAvg () {
+      // 获取服务器平均数据列表
+      encyclopediaShipAvg().then((response) => {
+        const avgShip:any = {}
+        for (const ship of response.data) {
+          if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
+          ship.data.winRate = lodash.round(ship.data.winRate, 2)
+          ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
+          ship.data.averageFrags = lodash.round(ship.data.averageFrags, 2)
+          avgShip[ship.shipInfo.nameEnglish] = ship
+        }
+        this.avgShip = avgShip
+      })
+    },
     // 初始化数据
     init () {
       serverList().then((response) => {
@@ -91,23 +126,15 @@ export default defineStore('player', {
         }
         this.shipTypeList = list
       })
-      // 获取服务器平均数据列表
-      encyclopediaShipAvg().then((response) => {
-        const avgShip:any = {}
-        for (const ship of response.data) {
-          if (lodash.isNil(ship.shipInfo.nameEnglish)) continue
-          ship.data.winRate = lodash.round(ship.data.winRate, 2)
-          ship.data.averageDamageDealt = lodash.round(ship.data.averageDamageDealt, 2)
-          avgShip[ship.shipInfo.nameEnglish] = ship
-        }
-        this.avgShip = avgShip
-      })
       // 从localStorage中导入历史账号及服务器
       if (!lodash.isNil(getLocalStorage('historyPlayer'))) {
         this.historyPlayer = getLocalStorage('historyPlayer')
       }
       if (!lodash.isNil(getLocalStorage('server'))) {
         this.server = getLocalStorage('server')
+      }
+      if (!lodash.isNil(getLocalStorage('realTimeResultServer'))) {
+        this.realTimeResultServer = getLocalStorage('realTimeResultServer')
       }
     },
     // 添加历史查询

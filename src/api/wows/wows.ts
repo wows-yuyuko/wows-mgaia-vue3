@@ -42,7 +42,16 @@ export function shipType () {
  * @returns
  */
 export function accountSearchUserList (data: { server: string, userName: string, limit:number }) {
-  return request.get(apiPath + '/account/search/user/list', data)
+  return request.post(apiPath + '/account/search/user/list', data)
+}
+
+/**
+ * 查找用户
+ * @param data
+ * @returns
+ */
+export function accountSearchUser (data: { server: string, userName: string}) {
+  return request.post(apiPath + '/account/search/user', data)
 }
 
 /**
@@ -68,8 +77,17 @@ export function accountUserInfo (data: { server: string, accountId: number }) {
  * @param data
  * @returns
  */
-export function accountShipInfoList (data: { queryType: string, userCode: string, shipType?: string, level?: string, county?: string }) {
-  return request.post(apiPath + '/account/v2/ship/info/list', data)
+export function accountShipInfoList (data: { server: string, accountId: string, shipType?: string, level?: string, county?: string }) {
+  return request.post(apiPath + '/account/ship/info/list', data)
+}
+
+/**
+ * 用户战舰信息
+ * @param data
+ * @returns
+ */
+export function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
+  return request.get(apiPath + '/account/ship/info', data)
 }
 
 /**
@@ -78,7 +96,7 @@ export function accountShipInfoList (data: { queryType: string, userCode: string
  * @returns
  */
 export function accountRecentListV2 (data: { server: string, accountId: number }) {
-  return request.get(apiPath + '/account/v2/recent/list', data)
+  return request.get(apiPath + '/account/v2/recent/list', { server: data.server, accountId: data.accountId })
 }
 
 /**
@@ -105,4 +123,47 @@ export function uploadVortexDataUserInfo (data: { serverType: string, accountIdA
  */
 export function encyclopediaShipAvg () {
   return request.get(apiPath + '/encyclopedia/ship/avg', {})
+}
+
+/**
+ * 箱子抽奖氪穿-返回详细列表
+ * @param data
+ * @returns
+ */
+export function rollSlotsUserList (data: {shipId: number[], slotsId:number}) {
+  return request.post(apiPath + '/roll/slots/user/list', data)
+}
+
+/**
+ * 箱子抽奖-单抽
+ * @param data
+ * @returns
+ */
+export function rollSlotsUser (data: {shipId: number[], slotsId:number}) {
+  return request.post(apiPath + '/roll/slots/user', data)
+}
+
+/**
+ * 战舰平均数据列表
+ * @returns
+ */
+export function encyclopediaShipAvgHistory () {
+  return request.get(apiPath + '/encyclopedia/ship/avg/history', {})
+}
+
+/**
+ * 通过shipId获取船只信息
+ * @returns
+ */
+export function shipInfo (data: {shipId: string|number}) {
+  return request.get(apiPath + '/encyclopedia/ship/info', data)
+}
+
+/**
+ * 获取战舰排行榜 分服务器
+ * @param data
+ * @returns
+ */
+export function rankShip (data: {page: number, server: string, shipId: number}) {
+  return request.get(import.meta.env.VITE_TARGET + '/wows/rank/ship/server', data)
 }

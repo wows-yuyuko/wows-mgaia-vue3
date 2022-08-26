@@ -1,9 +1,10 @@
 <script setup lang="ts">
 // 个人综合
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, onActivated } from 'vue'
 import PlayerInfoOverview from './component/PlayerInfoOverview.vue'
 import Avatar from './component/Avatar.vue'
-import { Search } from '@element-plus/icons-vue'
+import { Search, Promotion, Delete } from '@element-plus/icons-vue'
+import { setLocalStorage } from '@/utils/storage'
 import { wowsLog, accountSearchUserList, accountPlatformBindList, accountUserInfo, accountShipInfoList, accountRecentListV2 } from '@/api/wows/wows'
 import { getWinColor, getDamageColor, getPrShowObj } from '@/utils/getColor'
 import usePlayer, { Player } from '@/store/player'
@@ -13,12 +14,15 @@ import * as echarts from 'echarts'
 import n404 from '@/assets/404.png'
 import { ElMessage } from 'element-plus'
 import { buildBattlesEchart, buildRecentBattlesEchart } from './hooks/buildChart'
-
+import { Base64 } from 'js-base64'
+import { useRoute } from 'vue-router'
 const player = usePlayer()
-
 const query = ref('')
 const queryMode = ref('userName')
 const searchUserListLoading = ref(false)
+
+// 如果浏览器地址栏有参数则直接查询
+const route = useRoute()
 // 详情展示
 const infoShow = ref(false)
 // 搜索出的用户列表
@@ -55,7 +59,7 @@ const remoteMethodAccountSearchUserList = () => {
 // 通过用户名模糊查询列表
 const searchUserListByUserName = () => {
   wowsLog({ type: '查用户', server: player.server, userName: query.value })
-  accountSearchUserList({ server: player.server, userName: query.value, limit: 5 }).then(
+  accountSearchUserList({ server: player.server, userName: Base64.encode(query.value), limit: 5 }).then(
     response => {
       searchUserList.value = response.data
       searchUserListLoading.value = false
@@ -83,7 +87,18 @@ const searchUserListByQq = () => {
 
 // 通过绑定accountId查询
 const searchUserByAccountId = () => {
-  console.log()
+  accountUserInfo({ server: player.server, accountId: parseInt(query.value) }).then(
+    response => {
+      searchUserList.value = [{
+        accountId: parseInt(query.value),
+        userName: response.data.userName,
+        server: player.server
+      }]
+      searchUserListLoading.value = false
+    }
+  ).catch(() => {
+    searchUserListLoading.value = false
+  })
 }
 
 // 翻译服务器
@@ -102,12 +117,6 @@ const translateServer = (server: string) => {
 // 点击选择账号
 const submitPlayer = (playerItem: Player) => {
   if (lodash.isNil(playerItem.server) || playerItem.server === '') playerItem.server = player.server
-  player.addHistoryPlayer(playerItem)
-  // 存在qq号的情况 导致服务器不统一   反向覆写一下
-  player.setServer(playerItem.server)
-  player.player.accountId = playerItem.accountId
-  player.player.server = playerItem.server
-  player.player.userName = playerItem.userName
   wowsLog({ type: '查信息', ...playerItem })
   getUserInfo(playerItem)
 }
@@ -120,7 +129,18 @@ const getUserInfo = (playerItem: Player) => {
   // 拿用户综合统计信息
   accountUserInfo({ server: playerItem.server, accountId: playerItem.accountId }).then(
     response => {
+      // 查到数据后再加入历史
+      // 存在qq号的情况 导致服务器不统一   反向覆写一下
+      player.setServer(playerItem.server)
+      player.player.accountId = playerItem.accountId
+      player.player.server = playerItem.server
+      player.player.userName = response.data.userName
+      playerItem.userName = response.data.userName
+      player.addHistoryPlayer(playerItem)
+      // 切地址栏
+      history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
       playerInfo.value = response.data
+      playerInfo.value.accountId = playerItem.accountId
       infoShow.value = true
       loading.value = false
       // echarts.init()
@@ -144,10 +164,13 @@ const battlesDiv = ref<HTMLElement|null>(null)
 let battlesEchart!: echarts.ECharts
 onMounted(() => {
   battlesEchart = echarts.init(battlesDiv.value as HTMLElement)
+  if (!lodash.isNil(route.query.server) && !lodash.isNil(route.query.accountId)) {
+    getUserInfo({ server: route.query.server as string, accountId: parseInt(route.query.accountId as string), userName: '' })
+  }
 })
 const getUserShip = (playerItem: Player) => {
   battlesEchart.clear()
-  accountShipInfoList({ queryType: playerItem.server, userCode: playerItem.accountId + '' })
+  accountShipInfoList({ server: playerItem.server, accountId: playerItem.accountId + '' })
     .then(response => {
       // 扔store里 方便船只列表用
       player.playerShips = response.data.shipInfoList
@@ -183,6 +206,13 @@ const echartsResize = () => {
 }
 // 页面变动时刷新图表
 window.addEventListener('resize', () => {
+  echartsResize()
+})
+// keep-alive激活时调用
+onActivated(() => {
+  if (player.player.accountId !== 0 && (lodash.isNil(playerInfo.value) || player.player.accountId !== playerInfo.value.accountId)) {
+    getUserInfo({ server: player.server as string, accountId: player.player.accountId, userName: '' })
+  }
   echartsResize()
 })
 // 获取玩家近期数据
@@ -272,6 +302,19 @@ const copyCommand = (text:string) => {
     ElMessage.error(text)
   })
 }
+
+const copyUrl = () => {
+  copyCommand(`${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
+}
+
+// 删除某个玩家的历史缓存
+const deleteHistoryPlayer = (playerItem: Player) => {
+  const index = player.historyPlayer.indexOf(playerItem)
+  if (index < 0) return null
+  player.historyPlayer.splice(index, 1)
+  // 更新localStorage存储
+  setLocalStorage('historyPlayer', player.historyPlayer)
+}
 </script>
 
 <template>
@@ -297,7 +340,7 @@ const copyCommand = (text:string) => {
               <el-select v-model="queryMode" placeholder="Select" style="width: 130px">
                 <el-option label="用户名" value="userName" />
                 <el-option label="QQ号(限绑定)" value="qq" />
-                <!-- <el-option label="accountId" value="accountId" /> -->
+                <el-option label="accountId" value="accountId" />
               </el-select>
             </template>
             <template #append>
@@ -312,7 +355,7 @@ const copyCommand = (text:string) => {
                 <el-button v-show="searchUserList.length>0" class="button" text @click="searchUserList = [];">清空</el-button>
               </div>
             </template>
-            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;">
+            <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;padding-bottom: 3px;">
               <div class="player-item" @click="submitPlayer(user)">
                 <div style="width: 50%;">{{ user.userName }}</div>
                 <div>{{ translateServer(user.server?user.server:player.server) }}</div>
@@ -327,6 +370,7 @@ const copyCommand = (text:string) => {
                 >
                   复制绑定命令
                 </el-button>
+                <el-button v-if="searchUserList.length<1" :icon="Delete" size="small" circle @click="deleteHistoryPlayer(user)" />
               </div>
             </div>
           </el-card>
@@ -343,11 +387,12 @@ const copyCommand = (text:string) => {
               <div class="name-info">
                 <span v-show="playerInfo?.clanInfo?.tag" :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
                 <span :class="player.avatarMap[player.player.accountId]?'mirage-text':''">{{ playerInfo?.userName }}</span>
-                <sup class="like">{{ playerInfo?.karma }}</sup>
+                <!-- <sup class="like">{{ playerInfo?.karma }}</sup> 此数据暂时无效 -->
                 <span v-show="playerInfo?.lastDateTime > 0" class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
               </div>
             </div>
           </div>
+          <el-button :icon="Promotion" :loading="searchUserListLoading" @click="copyUrl()">复制分享链接</el-button>
           <el-button :icon="Search" @click="closeInfoShow()" />
         </div>
         <!-- 概览信息 -->
@@ -558,11 +603,16 @@ const copyCommand = (text:string) => {
                   <template #content>
                     需要通过bot在yuyuko平台绑定QQ号才会统计近期数据<br />
                     recent是基于你绑定账号那天起,服务器会在每日凌晨开始记录你的战绩数据,所以理论上是第一天绑定第二天才可以查询当日的数据.<br />
+                    recent计算方式: <br />
+                    按照日期存档点至下一个存档点区间的战斗记录;<br />
+                    未到下一存档点则是最新日期存档点至今的战斗记录。查询时请注意查看日期的记录时间<br />
+                    服务器可能宕机导致存档点丢失  不保证记录日期准确性<br />
+                    常见问题：<br />
                     1.我绑定了为什么查不到,可能是服务器那几天宕机了导致没数据,建议看看公告近期是否有宕机.<br />
                     2.如果你是以前绑定的现在请重新绑定一次,之前的记录清理了<br />
                     3.recent会定期清理掉,隐藏战绩的账号,一个月没有玩的账号<br />
                   </template>
-                  <span>近7日统计<sup>?</sup></span>
+                  <span>近30日统计<sup>?</sup></span>
                 </el-tooltip>
               </div>
             </div>
@@ -659,6 +709,14 @@ const copyCommand = (text:string) => {
       <div>
         <span>yuyuko群(有bot可绑定)：872725671</span> &ensp;&ensp;&ensp; <span>网页及憨批系列工具反馈群：1050053532</span> &ensp;&ensp;&ensp; <span>战舰世界开发者交流群：967546463</span>
         &ensp;&ensp;&ensp; <span>@missile_gaia</span>&ensp;&ensp;&ensp;<span>@西行寺雨季</span>
+      </div>
+      <div>
+        兵工厂：
+        <a href="https://armory.wowsgame.cn/zh-cn/" target="_Blank">国服</a>
+        <a href="https://armory.worldofwarships.asia/zh-sg/" target="_Blank">亚服</a>
+        <a href="https://armory.worldofwarships.eu/zh-sg/" target="_Blank">欧服</a>
+        <a href="https://armory.worldofwarships.com/zh-sg/" target="_Blank">美服</a>
+        <a href="https://armory.worldofwarships.ru/zh-sg/" target="_Blank">毛服</a>
       </div>
     </div>
   </div>
