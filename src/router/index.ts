@@ -48,6 +48,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/relatedDownloads/RelatedDownloads.vue')
       }
     ]
+  },
+  {
+    // 石蒜模拟
+    path: '/lycorisSimulator',
+    component: () => import('@/views/wonderful/LycorisSimulator.vue')
   }
 ]
 
