@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 石蒜模拟器
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import background from '@/assets/lycorisSimulator/background.jpg'
 // import sight from '@/assets/lycorisSimulator/sight.png'
 import lycoris from '@/assets/lycorisSimulator/object.png'
@@ -20,10 +20,10 @@ const loadImg = (src:string):Promise<HTMLImageElement> => {
 }
 // 设置鼠标在画布位置信息
 let mouseX = 0
-let mouseY = 0
+// let mouseY = 0
 const setMouse = (event:MouseEvent) => {
   mouseX = event.offsetX
-  mouseY = event.offsetY
+  // mouseY = event.offsetY
 }
 
 // 画布相关
@@ -131,12 +131,12 @@ window.addEventListener('resize', () => {
     <canvas
       ref="canvas"
       class="canvas"
-      @mousemove="setMouse"
-      @mousedown="shooting"
-      @mouseup="stoping"
       :height="windowHeight"
       :width="windowWidth"
       :style="{width:windowWidth+'px', height:windowHeight+'px'}"
+      @mousemove="setMouse"
+      @mousedown="shooting"
+      @mouseup="stoping"
     />
   </div>
 </template>
