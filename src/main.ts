@@ -1,6 +1,6 @@
 import lodash from 'lodash'
 import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
+import ElementPlus, { ElMessage } from 'element-plus'
 import 'element-plus/dist/index.css'
 // import 'element-plus/theme-chalk/dark/css-vars.css'
 import App from './App.vue'
@@ -30,6 +30,12 @@ if (window.console) {
   console.log('%c水下小人血妈爆炸', 'color:red')
 }
 wowsLog({ type: '打开页面' })
+
+ElMessage({
+  showClose: true,
+  message: '老群炸了 请加新群 578477683',
+  type: 'warning'
+})
 
 // 获取判断是否在electron中
 if (!lodash.isNil(window.electronAPI)) {

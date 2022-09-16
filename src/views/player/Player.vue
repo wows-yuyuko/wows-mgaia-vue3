@@ -707,7 +707,7 @@ const deleteHistoryPlayer = (playerItem: Player) => {
         <a href="https://gitee.com/benx1n/wows-stats-bot" target="_Blank">Hoshino(动手能力较强)gitee</a>
       </div>
       <div>
-        <span>yuyuko群(有bot可绑定)：872725671</span> &ensp;&ensp;&ensp; <span>网页及憨批系列工具反馈群：1050053532</span> &ensp;&ensp;&ensp; <span>战舰世界开发者交流群：967546463</span>
+        <span>yuyuko群(有bot可绑定)：872725671</span> &ensp;&ensp;&ensp; <span>网页及憨批系列工具反馈群：578477683</span> &ensp;&ensp;&ensp; <span>战舰世界开发者交流群：967546463</span>
         &ensp;&ensp;&ensp; <span>@missile_gaia</span>&ensp;&ensp;&ensp;<span>@西行寺雨季</span>
       </div>
       <div>
