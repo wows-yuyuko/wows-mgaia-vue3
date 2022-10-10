@@ -1,10 +1,7 @@
 import lodash from 'lodash'
 import glossary from './glossary'
 
-const glossaryMap:any = {}
-for (const item of glossary[0].data.items) {
-  glossaryMap[item.id] = item
-}
+const glossaryMap:any = glossary
 // type
 // wows_premium 高级账号
 // gold 金币
@@ -37,23 +34,26 @@ export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):S
     // 奖品数组空则为普通
     if (prize.type === 'camoboost') {
       let imgSrc = ''
-      if (glossaryMap[prize.id].ttc[0].name === 'creditsFactor') {
+      if (glossaryMap[prize.id] === undefined) {
+        console.log(prize.id)
+      }
+      if (glossaryMap[prize.id].boostType === 'creditsFactor') {
         // 银币加成
         imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_credit_24_3.svg'
-      } else if (glossaryMap[prize.id].ttc[0].name === 'expFactor') {
+      } else if (glossaryMap[prize.id].boostType === 'expFactor') {
         // 经验加成
         imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_exp_24_3.svg'
-      } else if (glossaryMap[prize.id].ttc[0].name === 'freeExpFactor') {
+      } else if (glossaryMap[prize.id].boostType === 'freeExpFactor') {
         // 全局经验加成
         imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_freexp_24_3.svg'
-      } else if (glossaryMap[prize.id].ttc[0].name === 'crewExpFactor') {
+      } else if (glossaryMap[prize.id].boostType === 'crewExpFactor') {
         // 指挥官经验加成
         imgSrc = 'https://wows-static-production.gcdn.co/metashop/11bb71ee/assets/images/asset-bonus_freecap_24_3.svg'
       }
       return {
         type: 'camoboost',
         id: prize.id,
-        typeName: glossaryMap[prize.id].ttc[0].name,
+        typeName: glossaryMap[prize.id].boostType,
         imgSrc,
         text: `${glossaryMap[prize.id].title}* ${prize.amount}`,
         probabilityDisplayed: prize.probabilityDisplayed
