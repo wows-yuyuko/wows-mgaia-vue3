@@ -1,5 +1,6 @@
 import request from '@/api/request'
 import axios from 'axios'
+import pako from 'pako'
 
 /**
  * 日志
@@ -68,7 +69,8 @@ export function accountPlatformBindList (data: { platformType : string, platform
  * @param data
  * @returns
  */
-export function accountUserInfo (data: { server: string, accountId: number }) {
+export async function accountUserInfo (data: { server: string, accountId: number }) {
+  // await cacheCheck(data.accountId.toString(), data.server)
   return request.get(apiPath + '/account/v2/user/info', data)
 }
 
@@ -86,7 +88,8 @@ export function accountShipInfoList (data: { server: string, accountId: string, 
  * @param data
  * @returns
  */
-export function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
+export async function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
+  // await cacheCheck(data.accountId.toString(), data.server)
   return request.get(apiPath + '/account/ship/info', data)
 }
 
@@ -166,4 +169,66 @@ export function shipInfo (data: {shipId: string|number}) {
  */
 export function rankShip (data: {page: number, server: string, shipId: number}) {
   return request.get(import.meta.env.VITE_TARGET + '/wows/rank/ship/server', data)
+}
+
+/**
+ * 缓存检查
+ */
+async function cacheCheck (accountId: string, server: string) {
+  await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+    accountId,
+    server
+  }).then(async data => {
+    console.log('data', data)
+    if (data.code === 201) {
+      await axios.post(data.data.DEV).then(async reData => {
+        console.log('reData', reData)
+        if (reData.status === 200) {
+          data.data.DEV = JSON.stringify(reData.data) // dev中内容转string
+          data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
+          await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+            accountId,
+            server,
+            data: data.data
+          }).then(endData => {
+            console.log('endData', endData)
+          })
+        }
+      })
+    }
+  })
+}
+
+const base64abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+  'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+  'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e',
+  'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+  'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+  'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
+]
+
+function bytesToBase64 (bytes:any) {
+  let result = ''
+  let i
+  const l = bytes.length
+  for (i = 2; i < l; i += 3) {
+    result += base64abc[bytes[i - 2] >> 2]
+    result += base64abc[((bytes[i - 2] & 0x03) << 4) | (bytes[i - 1] >> 4)]
+    result += base64abc[((bytes[i - 1] & 0x0f) << 2) | (bytes[i] >> 6)]
+    result += base64abc[bytes[i] & 0x3f]
+  }
+  if (i === l + 1) {
+    // 1 octet yet to write
+    result += base64abc[bytes[i - 2] >> 2]
+    result += base64abc[(bytes[i - 2] & 0x03) << 4]
+    result += '=='
+  }
+  if (i === l) {
+    // 2 octets yet to write
+    result += base64abc[bytes[i - 2] >> 2]
+    result += base64abc[((bytes[i - 2] & 0x03) << 4) | (bytes[i - 1] >> 4)]
+    result += base64abc[(bytes[i - 1] & 0x0f) << 2]
+    result += '='
+  }
+  return result
 }
