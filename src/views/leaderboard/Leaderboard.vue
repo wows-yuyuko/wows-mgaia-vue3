@@ -9,6 +9,7 @@ import moment from 'moment'
 import lodash from 'lodash'
 import { rankShip } from '@/api/wows/wows'
 import { db } from '@/utils/db'
+import router from '@/router'
 
 const player = usePlayer()
 if (Object.keys(player.avgShip).length < 5) {
@@ -63,7 +64,8 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
 
 // 选中的排行榜
 const leaderboardShipId = ref<number>(4276041424)
-const leaderboardServer = ref<string>(player.server)
+// const leaderboardServer = ref<string>(player.server)
+const leaderboardServer = ref<string>('cn')
 const leaderboardPage = ref<number>(1)
 const leaderboardPageOver = ref<boolean>(false)
 const leaderboardList = ref<any[]>([])
@@ -100,6 +102,13 @@ function getLeaderboard () {
   })
 }
 getLeaderboard()
+
+// 跳转到用户详情战绩
+function goPlayer (accountId:number) {
+  player.player.accountId = accountId
+  player.server = 'cn'
+  router.push('/player')
+}
 </script>
 <template>
   <div class="main-content">
@@ -190,7 +199,7 @@ getLeaderboard()
     <div class="ship-tags">
       {{ idToName[leaderboardShipId] }}排行榜
       <!-- 服务器选择 -->
-      <el-select
+      <!-- <el-select
         v-model="leaderboardServer"
         placeholder="Select"
         size="small"
@@ -203,14 +212,14 @@ getLeaderboard()
           :label="item.value"
           :value="item.key"
         />
-      </el-select>
+      </el-select> -->
       <el-button
         :disabled="leaderboardPageOver" size="small"
         :loading="leaderboardLoading"
         style="margin-left: 5px;"
         @click="getLeaderboard"
       >
-        {{leaderboardPageOver?'已加载全部':'加载下一页'}}
+        {{ leaderboardPageOver?'已加载全部':'加载下一页'}}
       </el-button>
     </div>
     <!-- 排行榜 -->
@@ -220,22 +229,22 @@ getLeaderboard()
         border
         height="100%" style="width: 100%;"
       >
-        <el-table-column prop="rankRow" width="50" />
-        <el-table-column prop="userName" label="玩家" sortable>
+        <el-table-column prop="sortValue" width="50" />
+        <el-table-column prop="userName" width="250" label="玩家" sortable>
           <template #default="scope">
             <span v-if="scope.row.clanTag">[{{ scope.row.clanTag }}]</span>
-            <span>{{ scope.row.userName }}</span>
+            <el-button link type="primary" @click="goPlayer(scope.row.accountId)">{{ scope.row.userName }}</el-button>
           </template>
         </el-table-column>
         <el-table-column prop="pr" align="right" label="pr" />
-        <el-table-column prop="battle" align="right" label="场次" />
+        <el-table-column prop="battles" align="right" label="场次" />
+        <el-table-column prop="wins" align="right" label="胜率" />
         <el-table-column prop="damage" align="right" label="场均伤害" />
         <el-table-column prop="maxDamage" align="right" label="最大伤害" />
-        <el-table-column prop="maxDamage" align="right" label="最大伤害" />
-        <el-table-column prop="wins" align="right" label="胜率" />
-        <!-- <el-table-column prop="xp" align="right" label="经验" /> -->
-        <el-table-column prop="frags" align="right" label="击杀" />
-        <el-table-column prop="maxFrags" align="right" label="最高击杀" />
+        <el-table-column prop="xp" align="right" label="场均经验" />
+        <el-table-column prop="originalXp" align="right" label="场均裸经验" />
+        <el-table-column prop="maxXp" align="right" label="最大经验" />
+        <el-table-column prop="hit" align="right" label="命中率" />
       </el-table>
     </div>
   </div>

@@ -21,11 +21,11 @@ const afdin = () => {
       <!-- 左侧logo -->
       <div class="home-header">
         <div class="home-header-logo"></div>
-        <div style="width:800px;padding-left: 20px;">
+        <div style="width:900px;padding-left: 20px;">
           <el-menu
             :default-active="route.path"
             mode="horizontal"
-            background-color="#ffffff00"
+            background-color="#171e49"
             text-color="#fff"
             active-text-color="#ffd04b"
             :router="true"
@@ -33,9 +33,12 @@ const afdin = () => {
             <el-menu-item v-if="electronStore.electronEnable" index="/realRimeResults">实时对战</el-menu-item>
             <el-menu-item index="/player">玩家</el-menu-item>
             <el-menu-item index="/ships">舰船</el-menu-item>
-            <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>
-            <el-menu-item index="/serverShipsAvgEchart">服务器日均图表</el-menu-item>
-            <!-- <el-menu-item index="/leaderboard">排行榜</el-menu-item> -->
+            <el-sub-menu index="/serverShips">
+              <template #title>服务器数据</template>
+              <el-menu-item index="/serverShips">服务器平均数据</el-menu-item>
+              <el-menu-item index="/serverShipsAvgEchart">服务器日均图表</el-menu-item>
+              <el-menu-item index="/leaderboard">国服排行榜</el-menu-item>
+            </el-sub-menu>
             <el-menu-item index="/container">开箱</el-menu-item>
             <el-menu-item v-if="!electronStore.electronEnable" index="/relatedDownloads">相关下载</el-menu-item>
             <el-menu-item index="/lycorisSimulator">射击石蒜</el-menu-item>

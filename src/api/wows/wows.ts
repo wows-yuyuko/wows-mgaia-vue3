@@ -3,6 +3,10 @@ import axios from 'axios'
 import pako from 'pako'
 
 /**
+ * https://api.worldoftanks.eu/wot/auth/login/?application_id=ea64190ca355a64fa9346fe1121c0660&redirect_uri=https://wows.mgaia.top/#/player
+ * 去毛子那拿token
+ */
+/**
  * 日志
  * @param data
  * @returns
