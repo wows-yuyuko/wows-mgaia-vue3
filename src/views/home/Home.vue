@@ -15,7 +15,7 @@ const afdin = () => {
 }
 const wgOa = () => {
   if (player.server === 'cn') { return }
-  window.open('https://api.worldoftanks.' + (player.server === 'na' ? 'com' : player.server) + '/wot/auth/login/?application_id=cf82e0d66424f5cbdc2634a046495be2&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success')
+  window.open('https://api.worldoftanks.' + (player.server === 'na' ? 'com' : player.server) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success')
 }
 
 </script>
