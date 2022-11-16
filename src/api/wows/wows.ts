@@ -3,9 +3,10 @@ import axios from 'axios'
 import pako from 'pako'
 
 /**
- * https://api.worldoftanks.eu/wot/auth/login/?application_id=ea64190ca355a64fa9346fe1121c0660&redirect_uri=https://wows.mgaia.top/#/player
+ * https://api.worldoftanks.eu/wot/auth/login/?application_id=cf82e0d66424f5cbdc2634a046495be2&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success
  * 去毛子那拿token
  */
+//  https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success?&status=ok&access_token=031982de4dc0fb282b4876f9cb6489ffcdb7093c&nickname=missile_gaia&account_id=558241106&expires_at=1669705559
 /**
  * 日志
  * @param data
@@ -173,6 +174,15 @@ export function shipInfo (data: {shipId: string|number}) {
  */
 export function rankShip (data: {page: number, server: string, shipId: number}) {
   return request.get(import.meta.env.VITE_TARGET + '/wows/rank/ship/server', data)
+}
+
+/**
+ * 传入id获取毛子授权地址后回调数据上传
+ * @param data
+ * @returns
+ */
+export function yuyukoSuccess (data: {accountId: string, server: string}) {
+  return request.get(apiPath + '/public/wows/oauth/wows/yuyuko/success', data)
 }
 
 /**

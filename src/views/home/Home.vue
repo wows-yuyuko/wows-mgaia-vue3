@@ -3,6 +3,7 @@ import { ChatLineSquare, Chicken } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import usePlayer from '@/store/player'
 import useElectron from '@/store/electron'
+import WgLogo from '@/assets/wg/log.svg'
 const route = useRoute()
 const player = usePlayer()
 const electronStore = useElectron()
@@ -11,6 +12,10 @@ const issues = () => {
 }
 const afdin = () => {
   window.open('https://afdian.net/@JustOneSummer')
+}
+const wgOa = () => {
+  if (player.server === 'cn') { return }
+  window.open('https://api.worldoftanks.' + (player.server === 'na' ? 'com' : player.server) + '/wot/auth/login/?application_id=cf82e0d66424f5cbdc2634a046495be2&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success')
 }
 
 </script>
@@ -46,6 +51,11 @@ const afdin = () => {
           </el-menu>
         </div>
         <div class="right-div">
+          <div style="padding-right: 10px;">
+            <el-tooltip class="item" effect="dark" content="授权wg账号(国服无效)" placement="bottom-end">
+              <img style="padding: 6px 4px; cursor: pointer;" :src="WgLogo" @click="wgOa" />
+            </el-tooltip>
+          </div>
           <div style="padding-right: 10px;">
             <el-tooltip class="item" effect="dark" content="欢迎提Issues" placement="bottom-end">
               <el-button :icon="ChatLineSquare" circle @click="issues" />
