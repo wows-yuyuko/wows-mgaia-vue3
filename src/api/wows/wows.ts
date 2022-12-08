@@ -199,20 +199,22 @@ async function cacheCheck (accountId: string, server: string) {
   }).then(async data => {
     console.log('data', data)
     if (data.code === 201) {
-      await axios.post(data.data.DEV).then(async reData => {
-        console.log('reData', reData)
-        if (reData.status === 200) {
-          data.data.DEV = JSON.stringify(reData.data) // dev中内容转string
-          data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
-          await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
-            accountId,
-            server,
-            data: data.data
-          }).then(endData => {
-            console.log('endData', endData)
-          })
-        }
-      })
+      for (const key in data.data) {
+        await axios.post(data.data[key]).then(async reData => {
+          console.log('reData', reData)
+          if (reData.status === 200) {
+            data.data[key] = JSON.stringify(reData.data) // dev中内容转string
+            data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
+            await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+              accountId,
+              server,
+              data: data.data
+            }).then(endData => {
+              console.log('endData', endData)
+            })
+          }
+        })
+      }
     }
   })
 }

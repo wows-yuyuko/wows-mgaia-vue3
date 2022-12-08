@@ -1,5 +1,7 @@
 import lodash from 'lodash'
 import glossary from './glossary'
+import credits from '@/assets/container/credits.png'
+import eliteXp from '@/assets/container/elite_xp.png'
 
 const glossaryMap:any = glossary
 // type
@@ -128,6 +130,24 @@ export function getPrize (prize:any, prizeList: ShowPrize[], emptyAll = false):S
         type: 'collection_album',
         imgSrc: '',
         text: '收藏品',
+        probabilityDisplayed: prize.probabilityDisplayed
+      }
+    }
+    if (prize.type === 'elite_xp') {
+      // 精英指挥官经验
+      return {
+        type: 'elite_xp',
+        imgSrc: eliteXp,
+        text: `精英指挥官经验* ${prize.amount}`,
+        probabilityDisplayed: prize.probabilityDisplayed
+      }
+    }
+    if (prize.type === 'credits') {
+      // 银币
+      return {
+        type: 'credits',
+        imgSrc: credits,
+        text: `银币* ${prize.amount}`,
         probabilityDisplayed: prize.probabilityDisplayed
       }
     }

@@ -12,6 +12,8 @@ import { getPrize, ShowPrize } from './hooks/rollPrize'
 import { rollSlotsUserList, wowsLog } from '@/api/wows/wows'
 import ShowPrizeVue from './component/ShowPrizeVue.vue'
 import usePlayer from '@/store/player'
+import credits from '@/assets/container/credits.png'
+import eliteXp from '@/assets/container/elite_xp.png'
 const player = usePlayer()
 const selectContainerMap:any = {
   // bf2021Paid: {
@@ -58,6 +60,8 @@ const count = ref({
   free_xp: 0, // 全局经验
   steel: 0, // 钢铁
   ship: 0, // 船
+  elite_xp: 0, // 精英指挥官经验
+  credits: 0, // 银币
   // collection_album: 0, 收藏品
   savePoint: selectContainerMap[selectContainer.value].data.data.savePoint,
   savePointTrigger: 0 // 保底触发
@@ -204,6 +208,12 @@ function openContainer (num:number|null = null) {
       count.value.steel++
     } else if (prize.type === 'ship') {
       count.value.ship++
+    } else if (prize.type === 'elite_xp') {
+      count.value.elite_xp++
+    } else if (prize.type === 'credits') {
+      count.value.credits++
+    } else {
+      debugger
     }
     count.value.number++
     showPrizeList.value.unshift(prize)
@@ -314,6 +324,28 @@ function serverBoom () {
         }
         prizeMap[prize.name].text = `全局经验* ${prizeMap[prize.name].amount + prize.amount}`
         prizeMap[prize.name].amount += prize.amount
+      } else if (prize.type === 'elite_xp') { // 后加的精英指挥官经验
+        count.value.elite_xp++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'elite_xp',
+            imgSrc: eliteXp,
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `精英指挥官经验* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount += prize.amount
+      } else if (prize.type === 'credits') { // 后加的银币
+        count.value.credits++
+        if (lodash.isNil(prizeMap[prize.name])) {
+          prizeMap[prize.name] = {
+            type: 'credits',
+            imgSrc: credits,
+            amount: 0
+          }
+        }
+        prizeMap[prize.name].text = `银币* ${prizeMap[prize.name].amount + prize.amount}`
+        prizeMap[prize.name].amount += prize.amount
       } else if (prize.type === 'steel') {
         count.value.steel++
         if (lodash.isNil(prizeMap[prize.name])) {
@@ -354,6 +386,8 @@ function clear () {
     free_xp: 0, // 全局经验
     steel: 0, // 钢铁
     ship: 0, // 船
+    elite_xp: 0, // 精英指挥官经验
+    credits: 0, // 银币
     // collection_album: 0, 收藏品
     savePoint: selectContainerMap[selectContainer.value].data.data.savePoint,
     savePointTrigger: 0
@@ -419,6 +453,8 @@ function containerChange () {
       <div>涂装: {{ count.camouflage }} 次</div>
       <div>煤炭: {{ count.coal }} 次</div>
       <div>全局经验: {{ count.free_xp }} 次</div>
+      <div>精英指挥官经验: {{ count.elite_xp }} 次</div>
+      <div>银币: {{ count.credits }} 次</div>
       <div>钢铁: {{ count.steel }} 次</div>
       <div>船: {{ count.ship }} 次</div>
       <div>保底剩余: {{ count.savePoint }} 次</div>

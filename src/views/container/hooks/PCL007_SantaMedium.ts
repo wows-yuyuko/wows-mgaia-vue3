@@ -7,20 +7,20 @@ export default {
     name: 'PCL007_SantaMedium',
     icons: {
       small:
-        'reward_icons/icon_reward_lootbox_PCL007_SantaMedium_30d387659d81b309076876d5b5ab133d4d65f2c82242a246ab63a6397be9b604.png',
+        'reward_icons/icon_reward_lootbox_PCL007_SantaMedium_2fdeea1d89765035cef9cd61f220dec0cfbf87296aeba2c9051012adf96a225a.png',
       large:
-        'reward_icons/icon_reward_lootbox_large_PCL007_SantaMedium_ceb465cb5b390ad78d7c46ba86acea51cdf966ef24a8cb2971b1dd31862ad8f7.png',
+        'reward_icons/PCL007_SantaMedium_7161211c0108462e161d15085eb14038c0ff90150d76fc3d782f6e26bde6c0b7.png',
       localSmall: 'gui/reward_icons/icon_reward_lootbox_PCL007_SantaMedium.png',
-      localLarge:
-        'gui/reward_icons/big/icon_reward_lootbox_large_PCL007_SantaMedium.png',
+      localLarge: 'gui/reward_icons/big/PCL007_SantaMedium.png',
       default:
-        'reward_icons/icon_reward_lootbox_PCL007_SantaMedium_30d387659d81b309076876d5b5ab133d4d65f2c82242a246ab63a6397be9b604.png'
+        'reward_icons/icon_reward_lootbox_PCL007_SantaMedium_2fdeea1d89765035cef9cd61f220dec0cfbf87296aeba2c9051012adf96a225a.png'
     },
     filler: {
       amount: 750,
       type: 'steel',
       id: null
     },
+    tags: [],
     isPremium: false,
     savePoint: 27,
     slots: [
@@ -37,12 +37,105 @@ export default {
                 id: null
               },
               {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4287459248,
+                additionalData: {
+                  title: 'India Delta',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4289556400,
+                additionalData: {
+                  title: 'Sierra Mike',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4276973488,
+                additionalData: {
+                  title: 'Victor Lima',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4275924912,
+                additionalData: {
+                  title: 'India X-Ray',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4265439152,
+                additionalData: {
+                  title: 'X-Ray Papa Unaone',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
+                probability: '3.5',
+                weight: 35,
+                probabilityDisplayed: 3.5,
+                amount: 75,
+                type: 'signal',
+                id: 4264390576,
+                additionalData: {
+                  title: 'Sierra Bravo',
+                  tags: ['Battle', 'sellable', 'Exterior']
+                }
+              },
+              {
                 probability: '5.0',
                 weight: 50,
                 probabilityDisplayed: 5,
                 amount: 1500,
                 type: 'gold',
                 id: null
+              },
+              {
+                probability: '5.0',
+                weight: 50,
+                probabilityDisplayed: 5,
+                amount: 15,
+                type: 'camouflage',
+                id: 4165922736,
+                additionalData: {
+                  title: '新年的天空',
+                  icons: {
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC123_NY2022_camo_0cb21dacc1bc95c837ae791cac8e45b8eed6a0c92a9fc7dfa2e16d35264a8fcf.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/camouflage/PCEC123_NY2022_camo_0cb21dacc1bc95c837ae791cac8e45b8eed6a0c92a9fc7dfa2e16d35264a8fcf.png',
+                    localDefault:
+                      '//glossary-wows-global.gcdn.co/icons/gui/exteriors/camouflages/PCEC123_NY2022_camo.png'
+                  },
+                  type: 'camouflage',
+                  subType: 'exterior'
+                }
               },
               {
                 probability: '7.0',
@@ -53,68 +146,52 @@ export default {
                 id: null
               },
               {
-                probability: '9.0',
-                weight: 90,
-                probabilityDisplayed: 9,
+                probability: '8.0',
+                weight: 80,
+                probabilityDisplayed: 8,
                 amount: 10,
                 type: 'camoboost',
                 id: 4281331632
               },
               {
-                probability: '9.0',
-                weight: 90,
-                probabilityDisplayed: 9,
+                probability: '8.0',
+                weight: 80,
+                probabilityDisplayed: 8,
                 amount: 10,
                 type: 'camoboost',
                 id: 4270845872
               },
               {
-                probability: '9.0',
-                weight: 90,
-                probabilityDisplayed: 9,
+                probability: '8.0',
+                weight: 80,
+                probabilityDisplayed: 8,
                 amount: 10,
                 type: 'camoboost',
                 id: 4260360112
               },
               {
-                probability: '9.0',
-                weight: 90,
-                probabilityDisplayed: 9,
+                probability: '8.0',
+                weight: 80,
+                probabilityDisplayed: 8,
                 amount: 10,
                 type: 'camoboost',
                 id: 4249874352
               },
               {
-                probability: '10.5',
-                weight: 105,
-                probabilityDisplayed: 10.5,
-                amount: 35,
-                type: 'camoboost',
-                id: 4282380208
+                probability: '10.0',
+                weight: 100,
+                probabilityDisplayed: 10,
+                amount: 60000,
+                type: 'elite_xp',
+                id: null
               },
               {
-                probability: '10.5',
-                weight: 105,
-                probabilityDisplayed: 10.5,
-                amount: 35,
-                type: 'camoboost',
-                id: 4271894448
-              },
-              {
-                probability: '10.5',
-                weight: 105,
-                probabilityDisplayed: 10.5,
-                amount: 35,
-                type: 'camoboost',
-                id: 4261408688
-              },
-              {
-                probability: '10.5',
-                weight: 105,
-                probabilityDisplayed: 10.5,
-                amount: 35,
-                type: 'camoboost',
-                id: 4250922928
+                probability: '10.0',
+                weight: 100,
+                probabilityDisplayed: 10,
+                amount: 1350000,
+                type: 'credits',
+                id: null
               }
             ],
             title: ' ',
@@ -147,8 +224,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -251,119 +327,118 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3752802288,
+                id: 3764369232,
                 additionalData: {
-                  level: 7,
+                  level: 6,
                   nation: {
-                    name: 'usa',
+                    name: 'france',
                     icons: {
                       large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png',
                       default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_France.png',
                       localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_France.png',
                       small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
-                    color: 5549009,
+                    color: 1788269,
                     tags: ['inTree'],
                     localization: {
                       mark: {
-                        ru: 'США',
-                        fr: 'USA',
-                        en: 'U.S.A.',
-                        nl: 'V.S.',
-                        uk: 'США',
-                        ptBr: 'E.U.A.',
-                        zhCn: 'M系',
-                        tr: 'ABD',
-                        de: 'USA',
-                        ko: '미국',
-                        it: 'U.S.A.',
-                        pl: 'U.S.A.',
-                        th: 'สหรัฐอเมริกา',
-                        cs: 'USA',
-                        esMx: 'EE.UU.',
-                        zhSg: '美国',
-                        ja: 'アメリカ',
-                        es: 'EE. UU.',
-                        zhTw: '美國'
+                        ru: 'Франция',
+                        fr: 'France',
+                        en: 'France',
+                        nl: 'Frankrijk',
+                        uk: 'Франція',
+                        ptBr: 'França',
+                        zhCn: 'F系',
+                        tr: 'Fransa',
+                        de: 'Frankreich',
+                        ko: '프랑스',
+                        it: 'Francia',
+                        pl: 'Francja',
+                        th: 'ฝรั่งเศส',
+                        cs: 'Francie',
+                        esMx: 'Francia',
+                        zhSg: '法国',
+                        ja: 'フランス',
+                        es: 'Francia',
+                        zhTw: '法國'
                       }
                     },
-                    id: 2
+                    id: 5
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASB517_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PFSA506_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASB517_286bc37cb8b748bcbeb01d0210b6fb562a276cd84231cf3efd63181920f434b1.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PFSA506_81c34ce7e91176243d49b329d951fb240eb1f6114c1de88a541e69e00cce6759.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASB517_736bb41bf08c8bd3e65b44d07c3a41f0a576fa6db4e6f845fcd05b6af7949947.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PFSA506_1fe2d158b0d5d201e3e4e4a4eacb668c5d12a88be45445660403c36a462b7929.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB517_b904d4dfac13920e69f4ebce1c154df4d7e15c05300e82fdc606b7f24ad4c666.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSA506_1390b2cca525bd45b98026d0064db6d04c9367dbfb582f338cd09a703442605c.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASB517.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PFSA506.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASB517_0dbb8bfa976baa755baf7b38da1bcd8e384e91b184d48202dfed17ec3def2efc.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PFSA506_71aeb64666cfeb0dca09368b6ef06417fb3e253e9afac7a57e60adb42780aa85.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASB517_2a404de09a1f74c9269918cc10ebf33f403a3d1d231d532de376bec491ec310b.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PFSA506_1a1917a74265634c044e1deab72a718a172ba2f2b700ba6c9d7e3ddb0730df4e.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASB517.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PFSA506.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASB517.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PFSA506.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB517_b904d4dfac13920e69f4ebce1c154df4d7e15c05300e82fdc606b7f24ad4c666.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSA506_1390b2cca525bd45b98026d0064db6d04c9367dbfb582f338cd09a703442605c.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB517_e63e7a1f68b3950b44c5a5a7b4551b42618b860347c5b3eb9db71d9f475fc68a.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSA506_3a2ec1dd48ae39d93be07f0f7a5016ec7a6aabb9b21f5c0f7abf175826c2c1ba.png'
                   },
                   type: {
-                    name: 'battleship',
+                    name: 'aircarrier',
                     icons: {
                       default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png',
                       elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png',
                       premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png',
                       special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png',
                       normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png'
                     },
-                    sortOrder: 4,
+                    sortOrder: 5,
                     localization: {
                       shortmark: {},
                       mark: {
-                        ru: 'Линкор',
-                        fr: 'Cuirassé',
-                        en: 'Battleship',
-                        nl: 'Slagschip',
-                        th: 'เรือประจัญบาน',
-                        ptBr: 'Encouraçado',
-                        zhCn: '战列舰',
-                        ko: '전함',
-                        de: 'Schlachtschiff',
-                        tr: 'Zırhlı',
-                        it: 'Corazzata',
-                        zhSg: '战列舰',
-                        uk: 'Лінкор',
-                        es: 'Acorazado',
-                        cs: 'Bitevní loď',
-                        esMx: 'Acorazado',
-                        ja: '戦艦',
-                        pl: 'Pancernik',
-                        zhTw: '主力艦'
+                        ru: 'Авианосец',
+                        fr: 'Porte-avions',
+                        en: 'Aircraft Carrier',
+                        nl: 'Vliegdekschip',
+                        th: 'เรือบรรทุกเครื่องบิน',
+                        ptBr: 'Porta-Aviões',
+                        zhCn: '航空母舰',
+                        ko: '항공모함',
+                        de: 'Flugzeugträger',
+                        tr: 'Uçak Gemisi',
+                        it: 'Portaerei',
+                        zhSg: '航空母舰',
+                        uk: 'Авіаносець',
+                        es: 'Portaaviones',
+                        cs: 'Letadlová loď',
+                        esMx: 'Portaaviones',
+                        ja: '航空母艦',
+                        pl: 'Lotniskowiec',
+                        zhTw: '航空母艦'
                       }
                     }
                   },
-                  title: '佛罗里达',
+                  title: '贝阿恩',
                   isPremium: true,
                   isSpecial: false
                 }
@@ -391,8 +466,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -495,77 +569,76 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3763288016,
+                id: 3752802288,
                 additionalData: {
                   level: 7,
                   nation: {
-                    name: 'uk',
+                    name: 'usa',
                     icons: {
                       large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
                       default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
                       localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
                       small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
-                    color: 2719672,
+                    color: 5549009,
                     tags: ['inTree'],
                     localization: {
                       mark: {
-                        ru: 'Великобритания',
-                        fr: 'Royaume-Uni',
-                        en: 'U.K.',
-                        nl: 'V.K.',
-                        uk: 'Великобританія',
-                        ptBr: 'Reino Unido',
-                        zhCn: 'Y系',
-                        tr: 'İngiltere',
-                        de: 'GB',
-                        ko: '영국',
-                        it: 'U.K.',
-                        pl: 'Zjedn. Królestwo',
-                        th: 'สหราชอาณาจักร',
-                        cs: 'Británie',
-                        esMx: 'Reino Unido',
-                        zhSg: '英国',
-                        ja: 'イギリス',
-                        es: 'Reino Unido',
-                        zhTw: '英國'
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
                       }
                     },
-                    id: 3
+                    id: 2
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSB507_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASB517_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB507_830fb8fc3d22c25068d665239df8ec4a8b495275db8069abec4aad1466045531.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASB517_286bc37cb8b748bcbeb01d0210b6fb562a276cd84231cf3efd63181920f434b1.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSB507_19ba32f3b2d5046372636fddce27e6e4024fdcb610ac96e2be323dcc1154e9a8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASB517_736bb41bf08c8bd3e65b44d07c3a41f0a576fa6db4e6f845fcd05b6af7949947.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB507_e098ab5ebbaa15a51f4478426756ae0a6f54100e8fdb3046b3a128415d341e68.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB517_b904d4dfac13920e69f4ebce1c154df4d7e15c05300e82fdc606b7f24ad4c666.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSB507.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASB517.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB507_37bbf9fbaaecffdfdc3330ce37af397457023937e6cc7989aa8c1fa95c274d5c.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASB517_0dbb8bfa976baa755baf7b38da1bcd8e384e91b184d48202dfed17ec3def2efc.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSB507_25c5552be162332b0c683455c2fd512f4228bcd3aef80e91dee5e5d7166b8a1c.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASB517_2a404de09a1f74c9269918cc10ebf33f403a3d1d231d532de376bec491ec310b.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSB507.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASB517.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSB507.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASB517.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB507_e098ab5ebbaa15a51f4478426756ae0a6f54100e8fdb3046b3a128415d341e68.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB517_b904d4dfac13920e69f4ebce1c154df4d7e15c05300e82fdc606b7f24ad4c666.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB507_d581695354fec39a02bfa5a8cf6559631208b9dfd874a5693f7901efbc09ea78.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB517_e63e7a1f68b3950b44c5a5a7b4551b42618b860347c5b3eb9db71d9f475fc68a.png'
                   },
                   type: {
                     name: 'battleship',
@@ -607,7 +680,128 @@ export default {
                       }
                     }
                   },
-                  title: '胡德',
+                  title: '佛罗里达',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3731830736,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSB537_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB537_039ff3aa2de9a5e57866a78d91d9d589f5126346888ad3e9952fef79feab2b63.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSB537_3a021c22f2ddee74e7381dfe2e0c95106255399b77764069b7a28faf5f491178.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB537_462030776dcb61cba23581705e3ec898061ba626137af590a0764bb092a8851e.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSB537.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB537_02e073814d9a7d4a6e6c2fe84c84d1892b7a3745cdae5130f8b46c4b2d14a1eb.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSB537_8ac49d3fb713299b9ce909cf67204b6652b5c8d312730ed4e250f22f2a1be302.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSB537.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSB537.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB537_462030776dcb61cba23581705e3ec898061ba626137af590a0764bb092a8851e.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB537_c3a0f35e37c8cfa6d807e5073e8fed533ef2cd79f8d318086fad0645d36df020.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '科林伍德',
                   isPremium: true,
                   isSpecial: false
                 }
@@ -635,8 +829,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -739,6 +932,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3763288016,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSB507_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB507_830fb8fc3d22c25068d665239df8ec4a8b495275db8069abec4aad1466045531.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSB507_19ba32f3b2d5046372636fddce27e6e4024fdcb610ac96e2be323dcc1154e9a8.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB507_e098ab5ebbaa15a51f4478426756ae0a6f54100e8fdb3046b3a128415d341e68.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSB507.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB507_37bbf9fbaaecffdfdc3330ce37af397457023937e6cc7989aa8c1fa95c274d5c.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSB507_25c5552be162332b0c683455c2fd512f4228bcd3aef80e91dee5e5d7166b8a1c.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSB507.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSB507.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB507_e098ab5ebbaa15a51f4478426756ae0a6f54100e8fdb3046b3a128415d341e68.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB507_d581695354fec39a02bfa5a8cf6559631208b9dfd874a5693f7901efbc09ea78.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '胡德',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3763287888,
                 additionalData: {
                   level: 7,
@@ -757,8 +1071,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -879,8 +1192,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -1001,8 +1313,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -1123,8 +1434,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -1245,8 +1555,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -1367,8 +1676,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png'
                     },
                     color: 15789327,
                     tags: [],
@@ -1489,8 +1797,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -1611,8 +1918,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -1715,6 +2021,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3743365072,
+                additionalData: {
+                  level: 6,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSB526_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSB526_7ea45c4fb02270b223ad6c2617806b388e4ae0d98d19d4034b66a736bed02f90.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSB526_5064b28f47cdf2f22445c4f922a8dcb61f930f0f87164af775d173e4d3643cd6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB526_73e67ba854a0377abf3dd17418b329299beee193f2cc80b78ff38b010e68106f.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSB526.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSB526_512b5db4674aea1597c6bb7719575c5da54d71cf1ee5f8cdd5212de3e6cf5e1d.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSB526_5a07f82614b758fcd07d64a97536839d74516287df4ce0f822d25148117a48b3.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSB526.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSB526.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSB526_73e67ba854a0377abf3dd17418b329299beee193f2cc80b78ff38b010e68106f.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSB526_a509feb763a5ae328a22ac0ec30c27585dd3260ce2297ed88b0387bbb8b42e80.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '反击',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 4292818896,
                 additionalData: {
                   level: 6,
@@ -1733,8 +2160,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -1855,8 +2281,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -1977,8 +2402,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -2081,128 +2505,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3764336336,
-                additionalData: {
-                  level: 6,
-                  nation: {
-                    name: 'japan',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
-                    },
-                    color: 13752795,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'Япония',
-                        fr: 'Japon',
-                        en: 'Japan',
-                        nl: 'Japan',
-                        uk: 'Японія',
-                        ptBr: 'Japão',
-                        zhCn: 'R系',
-                        tr: 'Japonya',
-                        de: 'Japan',
-                        ko: '일본',
-                        it: 'Giappone',
-                        pl: 'Japonia',
-                        th: 'ญี่ปุ่น',
-                        cs: 'Japonsko',
-                        esMx: 'Japón',
-                        zhSg: '日本',
-                        ja: '日本',
-                        es: 'Japón',
-                        zhTw: '日本'
-                      }
-                    },
-                    id: 1
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSB506_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSB506_38484e758196131229f0ba658ad54c3e33236349deb597971bacfac794bdd031.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSB506_1395006ad4f5cea47b8369c43929e0728c636c46ca6e7e145a1f7eb06cadb847.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB506_f7afee3eeaab2267520c0e70725e9d89ea6acf2b9507b7116620abb1d518f0af.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSB506.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSB506_32260ec5afc93cf775094726904d8a4b8955053d2cd68c1dfc776b029b443d3f.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSB506_42efeaf3ee94fb8edd5c9571710561ee04dbdd4cd1e1201ce4db4fa8363abc2f.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSB506.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSB506.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB506_f7afee3eeaab2267520c0e70725e9d89ea6acf2b9507b7116620abb1d518f0af.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB506_b77892832f2513cc187e4341316c8c2f58da9f1445d81247214c644e1636b686.png'
-                  },
-                  type: {
-                    name: 'battleship',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
-                    },
-                    sortOrder: 4,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Линкор',
-                        fr: 'Cuirassé',
-                        en: 'Battleship',
-                        nl: 'Slagschip',
-                        th: 'เรือประจัญบาน',
-                        ptBr: 'Encouraçado',
-                        zhCn: '战列舰',
-                        ko: '전함',
-                        de: 'Schlachtschiff',
-                        tr: 'Zırhlı',
-                        it: 'Corazzata',
-                        zhSg: '战列舰',
-                        uk: 'Лінкор',
-                        es: 'Acorazado',
-                        cs: 'Bitevní loď',
-                        esMx: 'Acorazado',
-                        ja: '戦艦',
-                        pl: 'Pancernik',
-                        zhTw: '主力艦'
-                      }
-                    }
-                  },
-                  title: '陆奥',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3743364816,
                 additionalData: {
                   level: 6,
@@ -2221,8 +2523,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -2325,6 +2626,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3764336336,
+                additionalData: {
+                  level: 6,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSB506_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSB506_38484e758196131229f0ba658ad54c3e33236349deb597971bacfac794bdd031.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSB506_1395006ad4f5cea47b8369c43929e0728c636c46ca6e7e145a1f7eb06cadb847.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB506_f7afee3eeaab2267520c0e70725e9d89ea6acf2b9507b7116620abb1d518f0af.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSB506.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSB506_32260ec5afc93cf775094726904d8a4b8955053d2cd68c1dfc776b029b443d3f.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSB506_42efeaf3ee94fb8edd5c9571710561ee04dbdd4cd1e1201ce4db4fa8363abc2f.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSB506.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSB506.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB506_f7afee3eeaab2267520c0e70725e9d89ea6acf2b9507b7116620abb1d518f0af.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB506_b77892832f2513cc187e4341316c8c2f58da9f1445d81247214c644e1636b686.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '陆奥',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3753850320,
+                additionalData: {
+                  level: 6,
+                  nation: {
+                    name: 'ussr',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
+                    },
+                    color: 14764062,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
+                      }
+                    },
+                    id: 0
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSB516_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSB516_35679545e1b5740a38a1c7e2296b1d9f350d8b653cc844bee170850a7fd12699.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSB516_7d3181ad83a9f1c84e14d2c805e22a86e063eab69ca263880439d6de4d4a2d9c.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB516_c8685d4d60bf52e5ec002eb6b3ca57409be749115a820f947a100cbc22815082.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSB516.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSB516_15f21d3945a24cfe8238f49ce12d029bc6a7676697081d54f69cee9ce3c3e9dc.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSB516_b170bec0c7027eaf4e13d7aa8f7bc0d8aad09d3fcac659ce4432ab2cb44b1cf9.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSB516.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSB516.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSB516_c8685d4d60bf52e5ec002eb6b3ca57409be749115a820f947a100cbc22815082.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSB516_10fe131bbeaade1873af8f51b783483e360d15c191f19c2199f35e373a95b1be.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '新罗西斯克',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3555670000,
                 additionalData: {
                   level: 5,
@@ -2343,8 +2886,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -2465,8 +3007,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -2587,8 +3128,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -2691,6 +3231,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3765384528,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'pan_america',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Pan_America_cd8032e6cfcd6850d0a256810ca328539b97d01d2091b42e8376cfe033a774cb.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Pan_America.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Pan_America.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_America.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_America_66683fa0d219a205edc85a0afb7155c3746fa17c637393c11ed54e3cc22f3616.png'
+                    },
+                    color: 16737792,
+                    tags: [],
+                    localization: {
+                      mark: {
+                        ru: 'Пан-Америка',
+                        fr: 'PanAmérique',
+                        en: 'Pan-America',
+                        nl: 'Pan-Amerika',
+                        uk: 'Пан-Америка',
+                        ptBr: 'Pan-América',
+                        zhCn: 'FM系洲',
+                        tr: 'Pan-Amerika',
+                        de: 'Panamerika',
+                        ko: '범아메리카',
+                        it: 'Pan-America',
+                        pl: 'Panameryka',
+                        th: 'รวมอเมริกา',
+                        cs: 'Panamerika',
+                        esMx: 'Panamérica',
+                        zhSg: '泛美',
+                        ja: 'パンアメリカ',
+                        es: 'Panamérica',
+                        zhTw: '泛美洲'
+                      }
+                    },
+                    id: 11
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PVSB505_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PVSB505_0e4e96009dbafd9e795bba7cbb3db3cad34fa72e79a2d3d399bbeb4a2a811181.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PVSB505_728ecf1dc69815966864aa6dfcb7e0fa47d656d7a344ee29271029883e145555.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PVSB505_9cb6a17f25e4e6fb497c22bcbd74cfa6c0334f46fa8f48a31764a68ba95c4f61.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PVSB505.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PVSB505_f5ac90f6013888c75724155d73adbe2caff5ff6bb95bf4b1d2ad28687b52dcea.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PVSB505_a2b3186ec49c267144f00ea454508f0484724bd306d8b522add5345e761f6c3a.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PVSB505.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PVSB505.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PVSB505_9cb6a17f25e4e6fb497c22bcbd74cfa6c0334f46fa8f48a31764a68ba95c4f61.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PVSB505_e9f1529fdb42988d9247921434000250b853ff7edec0abfe5a7507b99aeec22e.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '里约热内卢',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3766433072,
                 additionalData: {
                   level: 5,
@@ -2709,8 +3370,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Europe.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66da2bf0a3d0736ade533118e5131aab9b4f7c9367cbb0392c621e6888c23fe1.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png'
                     },
                     color: 16763904,
                     tags: ['inTree'],
@@ -2831,8 +3491,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -2935,128 +3594,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3763255280,
-                additionalData: {
-                  level: 7,
-                  nation: {
-                    name: 'usa',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
-                    },
-                    color: 5549009,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'США',
-                        fr: 'USA',
-                        en: 'U.S.A.',
-                        nl: 'V.S.',
-                        uk: 'США',
-                        ptBr: 'E.U.A.',
-                        zhCn: 'M系',
-                        tr: 'ABD',
-                        de: 'USA',
-                        ko: '미국',
-                        it: 'U.S.A.',
-                        pl: 'U.S.A.',
-                        th: 'สหรัฐอเมริกา',
-                        cs: 'USA',
-                        esMx: 'EE.UU.',
-                        zhSg: '美国',
-                        ja: 'アメリカ',
-                        es: 'EE. UU.',
-                        zhTw: '美國'
-                      }
-                    },
-                    id: 2
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC507_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC507_f9b57b2b07f6265baed4858d6956ec2c5d1971e283171eba46e4f9b0ac4e6267.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC507_dce5eba0e3942f63ae1bb23d279da4b6405dd321e20f1367a34a76fd8cc15bb6.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC507_c6e1a2b8f6831f2fd8363929e4345fc7621bfc19e02b5ea3d3bfea796ae25e64.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC507.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC507_4433588d46c2802a5a8462d7c301922570146365820859159b531384dff3ed67.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC507_a0f74fc98838d4c0d7d250d199e9897eb99a0a3c5037d3048c206aac6cca4881.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC507.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC507.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC507_c6e1a2b8f6831f2fd8363929e4345fc7621bfc19e02b5ea3d3bfea796ae25e64.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC507_cb8e02b30436571c65d7fb5de7d38593901844f0bbfb0cf29ee0e49df4e19aa6.png'
-                  },
-                  type: {
-                    name: 'cruiser',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
-                    },
-                    sortOrder: 3,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Крейсер',
-                        fr: 'Croiseur',
-                        en: 'Cruiser',
-                        nl: 'Kruiser',
-                        th: 'เรือลาดตระเวน',
-                        ptBr: 'Cruzador',
-                        zhCn: '巡洋舰',
-                        ko: '순양함',
-                        de: 'Kreuzer',
-                        tr: 'Kruvazör',
-                        it: 'Incrociatore',
-                        zhSg: '巡洋舰',
-                        uk: 'Крейсер',
-                        es: 'Crucero',
-                        cs: 'Křižník',
-                        esMx: 'Crucero',
-                        ja: '巡洋艦',
-                        pl: 'Krążownik',
-                        zhTw: '巡洋艦'
-                      }
-                    }
-                  },
-                  title: '印第安纳波利斯',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3668883440,
                 additionalData: {
                   level: 7,
@@ -3075,8 +3612,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -3179,6 +3715,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3763255280,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC507_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC507_f9b57b2b07f6265baed4858d6956ec2c5d1971e283171eba46e4f9b0ac4e6267.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC507_dce5eba0e3942f63ae1bb23d279da4b6405dd321e20f1367a34a76fd8cc15bb6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC507_c6e1a2b8f6831f2fd8363929e4345fc7621bfc19e02b5ea3d3bfea796ae25e64.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC507.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC507_4433588d46c2802a5a8462d7c301922570146365820859159b531384dff3ed67.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC507_a0f74fc98838d4c0d7d250d199e9897eb99a0a3c5037d3048c206aac6cca4881.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC507.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC507.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC507_c6e1a2b8f6831f2fd8363929e4345fc7621bfc19e02b5ea3d3bfea796ae25e64.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC507_cb8e02b30436571c65d7fb5de7d38593901844f0bbfb0cf29ee0e49df4e19aa6.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '印第安纳波利斯',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3763255120,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'france',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_France.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_France.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
+                    },
+                    color: 1788269,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Франция',
+                        fr: 'France',
+                        en: 'France',
+                        nl: 'Frankrijk',
+                        uk: 'Франція',
+                        ptBr: 'França',
+                        zhCn: 'F系',
+                        tr: 'Fransa',
+                        de: 'Frankreich',
+                        ko: '프랑스',
+                        it: 'Francia',
+                        pl: 'Francja',
+                        th: 'ฝรั่งเศส',
+                        cs: 'Francie',
+                        esMx: 'Francia',
+                        zhSg: '法国',
+                        ja: 'フランス',
+                        es: 'Francia',
+                        zhTw: '法國'
+                      }
+                    },
+                    id: 5
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PFSC507_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PFSC507_79f363eb9071c104edd498c4817bbca1b62da2afe1016dffe9743375f35ba3d0.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PFSC507_c593dc2ed8efc8f84a4fbf20a15ba6c453b310f0dd776b208c089306e290dde8.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC507_418002a53af07c110cda6bd88423b414f9e7974855ef5cba892e4f05a4a1ff5b.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PFSC507.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PFSC507_05377847b2ea89cff3ccd42c35a60d10a586f303140ef24b4b55d0833837b51b.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PFSC507_1f3f7d1f336aa70f2f49b4a421dff52cfc4a27b8da185b7a9c72a97c26e5e362.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PFSC507.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PFSC507.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC507_418002a53af07c110cda6bd88423b414f9e7974855ef5cba892e4f05a4a1ff5b.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC507_3c4222cd920c5e597cb925ce83617a03499fb7d37e84b60596e3cb6582eae25c.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '土伦',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3763255088,
                 additionalData: {
                   level: 7,
@@ -3197,8 +3975,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -3319,8 +4096,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -3441,8 +4217,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -3563,8 +4338,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -3667,6 +4441,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3752769232,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSC517_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSC517_6aa396fa6d743f1cbbb9f134a82991fc6fd2073b6f0733b2c2802d20ab085a84.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSC517_f76412366d7dfb675de6e96e72a4a4f2ae2698840d65fd23317d883ebc877f04.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC517_87d083e81135154f167ede2f77f83b173637a7d330e0e647deb83396b7d69988.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSC517.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSC517_1fbf64c7279eaf8640d41cc3c8cd89e9b56231cfa785dac1f4563aa1a58232c9.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSC517_99ded278576b5fa274222493c4370d2cc19f8c716de1582b6e866ec7eed3acfa.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSC517.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSC517.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSC517_87d083e81135154f167ede2f77f83b173637a7d330e0e647deb83396b7d69988.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSC517_108a2ef251052388f1e7797fdc4f4081a5af913930331bceaa145f7d13563df7.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '摩耶',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3751720400,
                 additionalData: {
                   level: 7,
@@ -3685,8 +4580,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -3807,8 +4701,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_America.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_America_e1c73e4294d3f8addc39872e23f6457e6f540a68db120d8bc5dec7e2034f83af.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_America_66683fa0d219a205edc85a0afb7155c3746fa17c637393c11ed54e3cc22f3616.png'
                     },
                     color: 16737792,
                     tags: [],
@@ -3929,8 +4822,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -4051,8 +4943,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -4173,8 +5064,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -4277,128 +5167,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3764303312,
-                additionalData: {
-                  level: 6,
-                  nation: {
-                    name: 'ussr',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
-                    },
-                    color: 14764062,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'СССР',
-                        fr: 'URSS',
-                        en: 'U.S.S.R.',
-                        nl: 'Sovjet-Unie',
-                        uk: 'СРСР',
-                        ptBr: 'U.R.S.S.',
-                        zhCn: 'S系',
-                        tr: 'SSCB',
-                        de: 'UdSSR',
-                        ko: '소련',
-                        it: 'U.R.S.S.',
-                        pl: 'Z.S.R.R.',
-                        th: 'สหภาพโซเวียต',
-                        cs: 'SSSR',
-                        esMx: 'U.R.S.S.',
-                        zhSg: '苏联',
-                        ja: 'ソ連',
-                        es: 'URSS',
-                        zhTw: '蘇聯'
-                      }
-                    },
-                    id: 0
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC506_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC506_eff8aaaa537ac0f89fa3d40b67010649b1f90b96b7dae0b1f9960e1398435949.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC506_afc984b575702d9056774b04a44b636d400dcfa7bca11f57de8d78de9ac40baa.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC506_35f98188dc9d6615d7064ae96bb913ae7c4416d24bc5b9daf3369b22b0187622.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC506.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC506_4c29958451973f2ef67de81cde579a1f48f015ada1172c6adfad55f36fd37dab.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC506_aed0e8360d62b5f7711815cb09b17771aa729feac38509ff67dd17c7e495ddfd.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC506.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC506.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC506_35f98188dc9d6615d7064ae96bb913ae7c4416d24bc5b9daf3369b22b0187622.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC506_33a6e3f1e1a0577aee36953b7d97e3d70bbae16d1a5a8eb5c67926d2acbdc146.png'
-                  },
-                  type: {
-                    name: 'cruiser',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
-                    },
-                    sortOrder: 3,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Крейсер',
-                        fr: 'Croiseur',
-                        en: 'Cruiser',
-                        nl: 'Kruiser',
-                        th: 'เรือลาดตระเวน',
-                        ptBr: 'Cruzador',
-                        zhCn: '巡洋舰',
-                        ko: '순양함',
-                        de: 'Kreuzer',
-                        tr: 'Kruvazör',
-                        it: 'Incrociatore',
-                        zhSg: '巡洋舰',
-                        uk: 'Крейсер',
-                        es: 'Crucero',
-                        cs: 'Křižník',
-                        esMx: 'Crucero',
-                        ja: '巡洋艦',
-                        pl: 'Krążownik',
-                        zhTw: '巡洋艦'
-                      }
-                    }
-                  },
-                  title: '莫洛托夫',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3659445712,
                 additionalData: {
                   level: 6,
@@ -4417,8 +5185,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -4521,77 +5288,76 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3764303216,
+                id: 3764303312,
                 additionalData: {
                   level: 6,
                   nation: {
-                    name: 'commonwealth',
+                    name: 'ussr',
                     icons: {
                       large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Commonwealth_8b4d3ea923bbcff5194ed7ba63369ff3f8067581b03b4f528bb75b516df40d31.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
                       default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Commonwealth.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
                       localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Commonwealth.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
                       small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png'
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
-                    color: 15789327,
-                    tags: [],
+                    color: 14764062,
+                    tags: ['inTree'],
                     localization: {
                       mark: {
-                        ru: 'Содружество',
-                        fr: 'Commonwealth',
-                        en: 'Commonwealth',
-                        nl: 'Commonwealth',
-                        uk: 'Співдружність',
-                        ptBr: 'Comunidade das Nações',
-                        zhCn: 'CW系',
-                        tr: 'Milletler Topluluğu',
-                        de: 'Staatenbund',
-                        ko: '영연방',
-                        it: 'Commonwealth',
-                        pl: 'Wspólnota',
-                        th: 'เครือจักรภพ',
-                        cs: 'Commonwealth',
-                        esMx: 'Commonwealth',
-                        zhSg: '联邦',
-                        ja: 'イギリス連邦',
-                        es: 'Commonwealth',
-                        zhTw: '聯邦'
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
                       }
                     },
-                    id: 9
+                    id: 0
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PUSC506_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC506_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PUSC506_aa77ec51a43c728ed385c33e5b277f8121505dab52d0d0aef61cac612f8bbe14.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC506_eff8aaaa537ac0f89fa3d40b67010649b1f90b96b7dae0b1f9960e1398435949.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PUSC506_fcea110d60f6a20e6494c3e9967472e8f4b09a0d8176c6f31af2e1c34a1c4f0e.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC506_afc984b575702d9056774b04a44b636d400dcfa7bca11f57de8d78de9ac40baa.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC506_54f91c7a238b88fb88417e4ad3671f34f61be755a1e100363acb661b199a63d4.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC506_35f98188dc9d6615d7064ae96bb913ae7c4416d24bc5b9daf3369b22b0187622.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PUSC506.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC506.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PUSC506_c8587b003d3ca0abd4c6821183a878002b5f9228d545aefe416147ef39036e64.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC506_4c29958451973f2ef67de81cde579a1f48f015ada1172c6adfad55f36fd37dab.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PUSC506_69949ff400d7ae8e2f010f8a8e49529bcd175dbee672bc6e6ee1a2dcbcc2d106.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC506_aed0e8360d62b5f7711815cb09b17771aa729feac38509ff67dd17c7e495ddfd.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PUSC506.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC506.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PUSC506.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC506.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC506_54f91c7a238b88fb88417e4ad3671f34f61be755a1e100363acb661b199a63d4.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC506_35f98188dc9d6615d7064ae96bb913ae7c4416d24bc5b9daf3369b22b0187622.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC506_60088a25c9d0ccbd2601c6fef3fd13acb19eae3ede6e4893ff3e50cebee6d4f6.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC506_33a6e3f1e1a0577aee36953b7d97e3d70bbae16d1a5a8eb5c67926d2acbdc146.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -4633,7 +5399,7 @@ export default {
                       }
                     }
                   },
-                  title: '珀斯',
+                  title: '莫洛托夫',
                   isPremium: true,
                   isSpecial: false
                 }
@@ -4661,8 +5427,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png'
                     },
                     color: 15789327,
                     tags: [],
@@ -4765,6 +5530,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3764303216,
+                additionalData: {
+                  level: 6,
+                  nation: {
+                    name: 'commonwealth',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Commonwealth_8b4d3ea923bbcff5194ed7ba63369ff3f8067581b03b4f528bb75b516df40d31.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Commonwealth.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Commonwealth.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png'
+                    },
+                    color: 15789327,
+                    tags: [],
+                    localization: {
+                      mark: {
+                        ru: 'Содружество',
+                        fr: 'Commonwealth',
+                        en: 'Commonwealth',
+                        nl: 'Commonwealth',
+                        uk: 'Співдружність',
+                        ptBr: 'Comunidade das Nações',
+                        zhCn: 'CW系',
+                        tr: 'Milletler Topluluğu',
+                        de: 'Staatenbund',
+                        ko: '영연방',
+                        it: 'Commonwealth',
+                        pl: 'Wspólnota',
+                        th: 'เครือจักรภพ',
+                        cs: 'Commonwealth',
+                        esMx: 'Commonwealth',
+                        zhSg: '联邦',
+                        ja: 'イギリス連邦',
+                        es: 'Commonwealth',
+                        zhTw: '聯邦'
+                      }
+                    },
+                    id: 9
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PUSC506_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PUSC506_aa77ec51a43c728ed385c33e5b277f8121505dab52d0d0aef61cac612f8bbe14.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PUSC506_fcea110d60f6a20e6494c3e9967472e8f4b09a0d8176c6f31af2e1c34a1c4f0e.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC506_54f91c7a238b88fb88417e4ad3671f34f61be755a1e100363acb661b199a63d4.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PUSC506.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PUSC506_c8587b003d3ca0abd4c6821183a878002b5f9228d545aefe416147ef39036e64.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PUSC506_69949ff400d7ae8e2f010f8a8e49529bcd175dbee672bc6e6ee1a2dcbcc2d106.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PUSC506.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PUSC506.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSC506_54f91c7a238b88fb88417e4ad3671f34f61be755a1e100363acb661b199a63d4.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSC506_60088a25c9d0ccbd2601c6fef3fd13acb19eae3ede6e4893ff3e50cebee6d4f6.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '珀斯',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3764303056,
                 additionalData: {
                   level: 6,
@@ -4783,8 +5669,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
                     },
                     color: 15774479,
                     tags: ['inTree'],
@@ -4905,8 +5790,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -5027,8 +5911,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -5149,8 +6032,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -5271,8 +6153,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -5393,8 +6274,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -5497,7 +6377,7 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 4291737040,
+                id: 3744380368,
                 additionalData: {
                   level: 5,
                   nation: {
@@ -5515,8 +6395,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -5547,27 +6426,27 @@ export default {
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC003_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC525_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC003_387ee4eb79f87e63e9fe7f2f4270189d64a004ece6c04d66a9155008e6368fa7.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC525_d48fdaf3ed495129d23815f87629d12bd6c349b882c7978a78bb6a3c18e59592.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC003_ad97d112541cea21af1283c7abb58bf0dcc8d7e1a48a503bef240148a67ab6d8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC525_44857079e0f287708ee7f83e6b0c9e4f846dade495bd5e6dd42422a62850efc4.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC003_12de8888c5c05ba9479ad496193c841281284437bcb2acd42921d2d39ed5aca8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC525_200c81c1b344d92c5c8bf1a6c386e7a0560c8d0d39b79df401e69a3ad9c34335.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC003.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC525.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC003_ead93269048df803d7c5a5a2ca1933c7f43856e4a25de3f74b0bd94313782b38.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC525_15388466078d8be8c0fea71bf9e74157a06054361c06c131de8ae1eeec14caf5.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC003_8ca723235cccec441316a3bbe74bdf544944c4720cf0da4b9b1e79759b4b033e.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC525_14ec7797f0d6d3e43c085d75a444aa211c477513ad94a0eadd14ff18c86916d1.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC003.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC525.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC003.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC525.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC003_12de8888c5c05ba9479ad496193c841281284437bcb2acd42921d2d39ed5aca8.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC525_200c81c1b344d92c5c8bf1a6c386e7a0560c8d0d39b79df401e69a3ad9c34335.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC003_02918bf3ef0c46a9e55f88f82d14da434839d9e1bb03c2bd22d175d2ca1fa4ee.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC525_07de5f4b8062822384cf468bea9703e3002c627de0164f75bef4e979668a4d4a.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5609,7 +6488,7 @@ export default {
                       }
                     }
                   },
-                  title: '摩尔曼斯克',
+                  title: '基洛夫',
                   isPremium: true,
                   isSpecial: false
                 }
@@ -5637,8 +6516,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -5759,8 +6637,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -5863,7 +6740,7 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3744380368,
+                id: 4291737040,
                 additionalData: {
                   level: 5,
                   nation: {
@@ -5881,8 +6758,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -5913,27 +6789,27 @@ export default {
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC525_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSC003_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC525_d48fdaf3ed495129d23815f87629d12bd6c349b882c7978a78bb6a3c18e59592.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSC003_387ee4eb79f87e63e9fe7f2f4270189d64a004ece6c04d66a9155008e6368fa7.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC525_44857079e0f287708ee7f83e6b0c9e4f846dade495bd5e6dd42422a62850efc4.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSC003_ad97d112541cea21af1283c7abb58bf0dcc8d7e1a48a503bef240148a67ab6d8.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC525_200c81c1b344d92c5c8bf1a6c386e7a0560c8d0d39b79df401e69a3ad9c34335.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC003_12de8888c5c05ba9479ad496193c841281284437bcb2acd42921d2d39ed5aca8.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC525.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSC003.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC525_15388466078d8be8c0fea71bf9e74157a06054361c06c131de8ae1eeec14caf5.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSC003_ead93269048df803d7c5a5a2ca1933c7f43856e4a25de3f74b0bd94313782b38.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC525_14ec7797f0d6d3e43c085d75a444aa211c477513ad94a0eadd14ff18c86916d1.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSC003_8ca723235cccec441316a3bbe74bdf544944c4720cf0da4b9b1e79759b4b033e.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC525.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSC003.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC525.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSC003.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC525_200c81c1b344d92c5c8bf1a6c386e7a0560c8d0d39b79df401e69a3ad9c34335.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSC003_12de8888c5c05ba9479ad496193c841281284437bcb2acd42921d2d39ed5aca8.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC525_07de5f4b8062822384cf468bea9703e3002c627de0164f75bef4e979668a4d4a.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSC003_02918bf3ef0c46a9e55f88f82d14da434839d9e1bb03c2bd22d175d2ca1fa4ee.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -5975,7 +6851,7 @@ export default {
                       }
                     }
                   },
-                  title: '基洛夫',
+                  title: '摩尔曼斯克',
                   isPremium: true,
                   isSpecial: false
                 }
@@ -6003,8 +6879,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -6107,6 +6982,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3763222256,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'italy',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Italy_1c3ee585f3132d89f71ffadfbbf529b23cb7acade1c1d5b6f9be5687b7770dc8.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Italy.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Italy.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
+                    },
+                    color: 4176426,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Италия',
+                        fr: 'Italie',
+                        en: 'Italy',
+                        nl: 'Italië',
+                        uk: 'Італія',
+                        ptBr: 'Itália',
+                        zhCn: 'I系',
+                        tr: 'İtalya',
+                        de: 'Italien',
+                        ko: '이탈리아',
+                        it: 'Italia',
+                        pl: 'Włochy',
+                        th: 'อิตาลี',
+                        cs: 'Itálie',
+                        esMx: 'Italia',
+                        zhSg: '意大利',
+                        ja: 'イタリア',
+                        es: 'Italia',
+                        zhTw: '義大利'
+                      }
+                    },
+                    id: 6
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PISD507_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISD507_4802afc08d5d9be788e06c8e8025c9f4240a5eff0b16242a5205a32e3b8c0905.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PISD507_e694ccf136932e679eab24cc35810dae577ee682e69ab0eac77264ea48884075.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISD507_1263e7d12dc63e85a59a1469dae0f025867f5902dfa1b39eec383eff694a04b6.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PISD507.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISD507_f3f8284ca0940e0032cc369377ed4ef7216761329421aad5dbd9011aa7a4d557.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PISD507_e52a55de534f7002bfe850dd7a87a27bf54d0e48382b3f67ecc3e87083914711.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PISD507.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PISD507.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISD507_1263e7d12dc63e85a59a1469dae0f025867f5902dfa1b39eec383eff694a04b6.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISD507_263295a281dafa82bc36a07b004b3f3483ac0e3740197a09c9c037248ee8f6a8.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: 'FR25',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3763222224,
                 additionalData: {
                   level: 7,
@@ -6125,8 +7121,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -6247,8 +7242,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -6351,6 +7345,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3752736112,
+                additionalData: {
+                  level: 7,
+                  nation: {
+                    name: 'commonwealth',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Commonwealth_8b4d3ea923bbcff5194ed7ba63369ff3f8067581b03b4f528bb75b516df40d31.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Commonwealth.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Commonwealth.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png'
+                    },
+                    color: 15789327,
+                    tags: [],
+                    localization: {
+                      mark: {
+                        ru: 'Содружество',
+                        fr: 'Commonwealth',
+                        en: 'Commonwealth',
+                        nl: 'Commonwealth',
+                        uk: 'Співдружність',
+                        ptBr: 'Comunidade das Nações',
+                        zhCn: 'CW系',
+                        tr: 'Milletler Topluluğu',
+                        de: 'Staatenbund',
+                        ko: '영연방',
+                        it: 'Commonwealth',
+                        pl: 'Wspólnota',
+                        th: 'เครือจักรภพ',
+                        cs: 'Commonwealth',
+                        esMx: 'Commonwealth',
+                        zhSg: '联邦',
+                        ja: 'イギリス連邦',
+                        es: 'Commonwealth',
+                        zhTw: '聯邦'
+                      }
+                    },
+                    id: 9
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PUSD517_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PUSD517_4903334a225814310a8691a543f7e5eb2b93db6769d2b6718dd495c4e8999d17.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PUSD517_0bd545f658c2aaf921499c4b8a832a921818c9326dbc75a4ba146f3cd10f1ad7.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSD517_83f9913adb5b08d3a06a91c2489da1cae0f09646e25630e5e31e120df1cb476c.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PUSD517.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PUSD517_7d065707a7c24ffeeab39119a970976c7c4fb4bd212301847a44e5897fed3102.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PUSD517_49e1c7f68488054df511c597bca1eb735be94e023ce02212608ed9dc0196b189.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PUSD517.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PUSD517.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PUSD517_83f9913adb5b08d3a06a91c2489da1cae0f09646e25630e5e31e120df1cb476c.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PUSD517_f3336124f94abf6d8a8dd37fe84a99d3cd2f0202693c65bbac55e71333589494.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '休伦',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3769513264,
                 additionalData: {
                   level: 7,
@@ -6369,8 +7484,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Europe.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66da2bf0a3d0736ade533118e5131aab9b4f7c9367cbb0392c621e6888c23fe1.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png'
                     },
                     color: 16763904,
                     tags: ['inTree'],
@@ -6491,8 +7605,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -6613,8 +7726,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -6735,8 +7847,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -6839,6 +7950,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3753785136,
+                additionalData: {
+                  level: 6,
+                  nation: {
+                    name: 'germany',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
+                    },
+                    color: 8358796,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
+                      }
+                    },
+                    id: 4
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSD516_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSD516_52c83012b6f5f96900a54b30179809afe5500e89de8cb7020ff94e1b58e5a290.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSD516_46d7c4c50d5ee41529ae09b940e136035d1f81bc2d215a77eb278021c38ab879.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD516_0b14a28a80a000b2abbca13888fc073c54fa76fe65c4132beed1c51c283bd02e.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSD516.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSD516_6658b1e4be3682e5a8ba66f58ac558b6e51e64e4ddb9f9ca0563ce466d960e7c.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSD516_b815a070059fab497ce7c17fa2006e77ab28abe91dc583189a82fcc3df928802.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSD516.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSD516.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSD516_0b14a28a80a000b2abbca13888fc073c54fa76fe65c4132beed1c51c283bd02e.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSD516_9a9ff80534059afc38ee4428130e74d99d3aa756d4f5302ecf03913435d2cecc.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '卡尔·冯·勋伯格',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3764270832,
                 additionalData: {
                   level: 6,
@@ -6857,8 +8089,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -6979,8 +8210,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_America.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_America_e1c73e4294d3f8addc39872e23f6457e6f540a68db120d8bc5dec7e2034f83af.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_America_66683fa0d219a205edc85a0afb7155c3746fa17c637393c11ed54e3cc22f3616.png'
                     },
                     color: 16737792,
                     tags: [],
@@ -7101,8 +8331,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
                     },
                     color: 15774479,
                     tags: ['inTree'],
@@ -7223,8 +8452,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -7345,8 +8573,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -7467,8 +8694,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -7581,6 +8807,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3730814960,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASA538_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASA538_bddbe8f6a2e363b989197be9278fb3c5ea3d0dc0cb606667f8a317ce5c2c9624.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASA538_cbf52d70f3cfacd0b7a969cdfc5e7ade25d6317406be17d0845d2910bb16c88f.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASA538_77768e54a5f4b7bed8cd644adef198182ffb284f96d60d229ffa8aa7972a3232.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASA538.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASA538_7bbb2ce5e2e00e8942742feee62cc31c6dcb2701d82848acc4f8b5e741af46f3.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASA538_8a3914a1a21d121d350ad7f0b24da26032363629a2ee47e874845f61ca0b3d2d.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASA538.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASA538.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASA538_77768e54a5f4b7bed8cd644adef198182ffb284f96d60d229ffa8aa7972a3232.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASA538_72cebe924b72ca233fcf5b34328fb67ba47421730dc23e551d90ed4c4eedff91.png'
+                  },
+                  type: {
+                    name: 'aircarrier',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png'
+                    },
+                    sortOrder: 5,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Авианосец',
+                        fr: 'Porte-avions',
+                        en: 'Aircraft Carrier',
+                        nl: 'Vliegdekschip',
+                        th: 'เรือบรรทุกเครื่องบิน',
+                        ptBr: 'Porta-Aviões',
+                        zhCn: '航空母舰',
+                        ko: '항공모함',
+                        de: 'Flugzeugträger',
+                        tr: 'Uçak Gemisi',
+                        it: 'Portaerei',
+                        zhSg: '航空母舰',
+                        uk: 'Авіаносець',
+                        es: 'Portaaviones',
+                        cs: 'Letadlová loď',
+                        esMx: 'Portaaviones',
+                        ja: '航空母艦',
+                        pl: 'Lotniskowiec',
+                        zhTw: '航空母艦'
+                      }
+                    }
+                  },
+                  title: '大黄蜂',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3741300720,
                 additionalData: {
                   level: 8,
@@ -7599,8 +8946,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -7721,8 +9067,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -7843,8 +9188,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -7947,6 +9291,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3762271984,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'italy',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Italy_1c3ee585f3132d89f71ffadfbbf529b23cb7acade1c1d5b6f9be5687b7770dc8.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Italy.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Italy.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
+                    },
+                    color: 4176426,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Италия',
+                        fr: 'Italie',
+                        en: 'Italy',
+                        nl: 'Italië',
+                        uk: 'Італія',
+                        ptBr: 'Itália',
+                        zhCn: 'I系',
+                        tr: 'İtalya',
+                        de: 'Italien',
+                        ko: '이탈리아',
+                        it: 'Italia',
+                        pl: 'Włochy',
+                        th: 'อิตาลี',
+                        cs: 'Itálie',
+                        esMx: 'Italia',
+                        zhSg: '意大利',
+                        ja: 'イタリア',
+                        es: 'Italia',
+                        zhTw: '義大利'
+                      }
+                    },
+                    id: 6
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PISA508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISA508_37c92d4482c99ed9e56d6a9542877ea2a774bab9cc11fed31564e43dcdde6c98.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PISA508_2f4a52b5ead3427529fbf443d1a42d06bdd749eee732b7c5a6ac08fcfb62b0a6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISA508_1b3d64d30eb427c61c29a0283290b6bd2b13f762d07034294fde9ad1053fdfbc.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PISA508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISA508_c1e3047fd7f22e59615312b26b02cdbae3e4af81c7a93159b9de806e40687737.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PISA508_6509fb55ed206dadfcde4ee296e0409cd8ff43e3f3e3c3669ee2dba69deea043.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PISA508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PISA508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISA508_1b3d64d30eb427c61c29a0283290b6bd2b13f762d07034294fde9ad1053fdfbc.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISA508_1b5f1310746fc41fd317959f9bac4f9f8e00de8368995f953a1b77d98f9c8eba.png'
+                  },
+                  type: {
+                    name: 'aircarrier',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png'
+                    },
+                    sortOrder: 5,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Авианосец',
+                        fr: 'Porte-avions',
+                        en: 'Aircraft Carrier',
+                        nl: 'Vliegdekschip',
+                        th: 'เรือบรรทุกเครื่องบิน',
+                        ptBr: 'Porta-Aviões',
+                        zhCn: '航空母舰',
+                        ko: '항공모함',
+                        de: 'Flugzeugträger',
+                        tr: 'Uçak Gemisi',
+                        it: 'Portaerei',
+                        zhSg: '航空母舰',
+                        uk: 'Авіаносець',
+                        es: 'Portaaviones',
+                        cs: 'Letadlová loď',
+                        esMx: 'Portaaviones',
+                        ja: '航空母艦',
+                        pl: 'Lotniskowiec',
+                        zhTw: '航空母艦'
+                      }
+                    }
+                  },
+                  title: '天鹰',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3751786192,
                 additionalData: {
                   level: 8,
@@ -7965,8 +9430,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -8069,6 +9533,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3762271696,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'ussr',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
+                    },
+                    color: 14764062,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
+                      }
+                    },
+                    id: 0
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSA508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSA508_ef56a54755bbb97dacdc518738179ae0b044c649ac9b0203eb21cd824b40638c.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSA508_7399f84163abb3880c49eb636ff587990e3b8b85e05141ae791484a517da0714.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSA508_d4b44193f09b7a33a4f16522c02b1fb56054274322047b5d8abb2a553a8413c9.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSA508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSA508_06bbbcf2d700ff289c35a45bb8aa8132e74de50b6788d89aa77bf5ccc0412481.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSA508_21f7c81a01293578d88d61a0952729b0d388267e2fe0094ddee1a966b340ae82.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSA508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSA508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSA508_d4b44193f09b7a33a4f16522c02b1fb56054274322047b5d8abb2a553a8413c9.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSA508_843bfd57aac1d741ad3d44b9eba05fc8f9194a3046d32028370d928b9bb5fa63.png'
+                  },
+                  type: {
+                    name: 'aircarrier',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png'
+                    },
+                    sortOrder: 5,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Авианосец',
+                        fr: 'Porte-avions',
+                        en: 'Aircraft Carrier',
+                        nl: 'Vliegdekschip',
+                        th: 'เรือบรรทุกเครื่องบิน',
+                        ptBr: 'Porta-Aviões',
+                        zhCn: '航空母舰',
+                        ko: '항공모함',
+                        de: 'Flugzeugträger',
+                        tr: 'Uçak Gemisi',
+                        it: 'Portaerei',
+                        zhSg: '航空母舰',
+                        uk: 'Авіаносець',
+                        es: 'Portaaviones',
+                        cs: 'Letadlová loď',
+                        esMx: 'Portaaviones',
+                        ja: '航空母艦',
+                        pl: 'Lotniskowiec',
+                        zhTw: '航空母艦'
+                      }
+                    }
+                  },
+                  title: '契卡洛夫',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3750705136,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASB519_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASB519_556a774eee8126119ba4e96f9422d954324f0dd15d0a29d5d497fa3d350eda89.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASB519_b8601ae64c5f065fbe176ae624b46fbb4e330d645a5197972124aed1ab071224.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB519_738e2e142c001aec261b31c0865498e13bf5e750bf8fd0771239501ce6c73e26.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASB519.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASB519_5b880e778efbfbb275e75efbabfcca19cb45dab4650096839f4420d22296b6fc.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASB519_15888faa5a00c1d7be32368e1263190e1c631f6cea1151834b0553d33d22cbdb.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASB519.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASB519.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB519_738e2e142c001aec261b31c0865498e13bf5e750bf8fd0771239501ce6c73e26.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB519_c3fffaeb6a4066ddb98b5c84ade8ce32cf3c5a1dc8c3b396cb81c8741a7588dd.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '奇尔沙治',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3761190704,
                 additionalData: {
                   level: 9,
@@ -8087,8 +9793,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -8191,6 +9896,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3750704880,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'italy',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Italy_1c3ee585f3132d89f71ffadfbbf529b23cb7acade1c1d5b6f9be5687b7770dc8.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Italy.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Italy.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
+                    },
+                    color: 4176426,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Италия',
+                        fr: 'Italie',
+                        en: 'Italy',
+                        nl: 'Italië',
+                        uk: 'Італія',
+                        ptBr: 'Itália',
+                        zhCn: 'I系',
+                        tr: 'İtalya',
+                        de: 'Italien',
+                        ko: '이탈리아',
+                        it: 'Italia',
+                        pl: 'Włochy',
+                        th: 'อิตาลี',
+                        cs: 'Itálie',
+                        esMx: 'Italia',
+                        zhSg: '意大利',
+                        ja: 'イタリア',
+                        es: 'Italia',
+                        zhTw: '義大利'
+                      }
+                    },
+                    id: 6
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PISB519_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISB519_2a4ba3798b63e724afddd4494e32cec21f8e5e7b3f2c8ba38d18955221663243.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PISB519_69f5516510b47e0a20f60bbc66099482dde2db32a0187f20c6c44456002e9faf.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB519_0968c7b13a913e41ee4b6d9c45640be4ea559bc4c8c2266aea2be97888105921.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PISB519.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISB519_23ec34c91b6d61afa4d9fb05aca3f77ef5662429b2d45df5edcf8dca339a3387.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PISB519_ee3851dfd88d2da3d5c201534dcd3a8a95c4f53b91e686a1d90b1496b6bd1a22.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PISB519.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PISB519.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB519_0968c7b13a913e41ee4b6d9c45640be4ea559bc4c8c2266aea2be97888105921.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB519_89c28403c01fdbea57be3c5b38c13800ed7538fab16cbd4ec15846dc0ff904ae.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '朱塞佩·威尔第',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3761190640,
                 additionalData: {
                   level: 9,
@@ -8209,8 +10035,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -8313,6 +10138,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3740219088,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSB529_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSB529_df4b16de7084eea6faadb48dde0117cb57241c466da6e07c4ec86a33736a259e.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSB529_47fc8e1f2d048b8e0505548c47f105e891855267d58cd03760033ff29288ab41.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB529_3af49dda52a28d62460004e34293722fd452caaf3e946f2fafda605abff02ca8.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSB529.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSB529_9c1df834e4c479a590366e4f994a069b156228ff0ed4d1964d1c2bd91eaa19a4.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSB529_cfd627f90b7b3f835ff02365fa331b04cce058e2b5630d9a7137ae30f2723c88.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSB529.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSB529.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB529_3af49dda52a28d62460004e34293722fd452caaf3e946f2fafda605abff02ca8.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB529_f0e6df6e77f28f8f70232c63470534810ffb86ebf3160d84c44a3adf917a2538.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '石见',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3762239472,
                 additionalData: {
                   level: 8,
@@ -8331,8 +10277,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -8453,8 +10398,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -8575,8 +10519,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -8679,128 +10622,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3762239312,
-                additionalData: {
-                  level: 8,
-                  nation: {
-                    name: 'france',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_France.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_France.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
-                    },
-                    color: 1788269,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'Франция',
-                        fr: 'France',
-                        en: 'France',
-                        nl: 'Frankrijk',
-                        uk: 'Франція',
-                        ptBr: 'França',
-                        zhCn: 'F系',
-                        tr: 'Fransa',
-                        de: 'Frankreich',
-                        ko: '프랑스',
-                        it: 'Francia',
-                        pl: 'Francja',
-                        th: 'ฝรั่งเศส',
-                        cs: 'Francie',
-                        esMx: 'Francia',
-                        zhSg: '法国',
-                        ja: 'フランス',
-                        es: 'Francia',
-                        zhTw: '法國'
-                      }
-                    },
-                    id: 5
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PFSB508_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PFSB508_55c1619ecdef22bbbba96625334c66a11b913dc50afd60a602e2c70ab35d221a.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PFSB508_416c469627e905e8103ff9c6e121740046def899e89f9eead66845caeb1c8c9c.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB508_9dae06fe7e9eae2f1b88123fb8e9dd08a219fb9c43e8d60519a338501dc894f8.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PFSB508.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PFSB508_4099c8ac0fbf4bb2320b144ecd9fda9d034e62e494c6b9ba8cbd219a0bf9b45c.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PFSB508_f524e732674f12d3bb52648d8bc73a5b5c268f934a9fefc921cf26a92dae3d23.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PFSB508.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PFSB508.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB508_9dae06fe7e9eae2f1b88123fb8e9dd08a219fb9c43e8d60519a338501dc894f8.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB508_4266f15fec96f4147e01b7b6667c891aed33aa6bd20df597212979db8f18db67.png'
-                  },
-                  type: {
-                    name: 'battleship',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
-                    },
-                    sortOrder: 4,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Линкор',
-                        fr: 'Cuirassé',
-                        en: 'Battleship',
-                        nl: 'Slagschip',
-                        th: 'เรือประจัญบาน',
-                        ptBr: 'Encouraçado',
-                        zhCn: '战列舰',
-                        ko: '전함',
-                        de: 'Schlachtschiff',
-                        tr: 'Zırhlı',
-                        it: 'Corazzata',
-                        zhSg: '战列舰',
-                        uk: 'Лінкор',
-                        es: 'Acorazado',
-                        cs: 'Bitevní loď',
-                        esMx: 'Acorazado',
-                        ja: '戦艦',
-                        pl: 'Pancernik',
-                        zhTw: '主力艦'
-                      }
-                    }
-                  },
-                  title: '加斯科涅',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3741267792,
                 additionalData: {
                   level: 8,
@@ -8819,8 +10640,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -8941,8 +10761,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -9045,6 +10864,369 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3762239312,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'france',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_France.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_France.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
+                    },
+                    color: 1788269,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Франция',
+                        fr: 'France',
+                        en: 'France',
+                        nl: 'Frankrijk',
+                        uk: 'Франція',
+                        ptBr: 'França',
+                        zhCn: 'F系',
+                        tr: 'Fransa',
+                        de: 'Frankreich',
+                        ko: '프랑스',
+                        it: 'Francia',
+                        pl: 'Francja',
+                        th: 'ฝรั่งเศส',
+                        cs: 'Francie',
+                        esMx: 'Francia',
+                        zhSg: '法国',
+                        ja: 'フランス',
+                        es: 'Francia',
+                        zhTw: '法國'
+                      }
+                    },
+                    id: 5
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PFSB508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PFSB508_55c1619ecdef22bbbba96625334c66a11b913dc50afd60a602e2c70ab35d221a.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PFSB508_416c469627e905e8103ff9c6e121740046def899e89f9eead66845caeb1c8c9c.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB508_9dae06fe7e9eae2f1b88123fb8e9dd08a219fb9c43e8d60519a338501dc894f8.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PFSB508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PFSB508_4099c8ac0fbf4bb2320b144ecd9fda9d034e62e494c6b9ba8cbd219a0bf9b45c.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PFSB508_f524e732674f12d3bb52648d8bc73a5b5c268f934a9fefc921cf26a92dae3d23.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PFSB508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PFSB508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSB508_9dae06fe7e9eae2f1b88123fb8e9dd08a219fb9c43e8d60519a338501dc894f8.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSB508_4266f15fec96f4147e01b7b6667c891aed33aa6bd20df597212979db8f18db67.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '加斯科涅',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3741267760,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'germany',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
+                    },
+                    color: 8358796,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
+                      }
+                    },
+                    id: 4
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSB528_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSB528_ac93777a80630d0070da539172b3013511ac0d3830422379564427c387ed3ff1.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSB528_7d1e2b12d2e17f2ee7767092927bff2265e850f11853938c0dadebc40386c311.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB528_a266acc5c840e7ad1c3a1456ea71105ec84dd04a3efe79c14d06c4a3e67aedd9.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSB528.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSB528_7ef271d74fea5bc00cf1c9f366be9e300c4c46be4d2a167abdd4ac3854de87e7.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSB528_f1bc960d3461768a8450557a693e9a21e8adfb3d5b3403fac06d9aa50634500e.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSB528.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSB528.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB528_a266acc5c840e7ad1c3a1456ea71105ec84dd04a3efe79c14d06c4a3e67aedd9.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB528_c7fa17292dd88b703b74b4f53630a24bbdb4d53aad6c84b9eb4b79205ca3ffef.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '安哈尔特',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3751753520,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'germany',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
+                    },
+                    color: 8358796,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
+                      }
+                    },
+                    id: 4
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSB518_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSB518_8e102ac875918e815981eca70bda202751396a6e16c31bfd2b93d21147fe12f3.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSB518_baf9dad3665a766df810aef7d618c1110670d71ff76284c6b80a16a79479d2fa.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB518_c5f6a3be03f0b3a7cacc104c428bd36b4a1b7383aae090ad3864bc023a546642.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSB518.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSB518_949b3e756de2f260299a580cd5d2e70216b88d5638d743e5c492f460416763f9.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSB518_8f021d5036e69a199319915086f6c0493334caecb1977be62ac32d0770bd9863.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSB518.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSB518.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB518_c5f6a3be03f0b3a7cacc104c428bd36b4a1b7383aae090ad3864bc023a546642.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB518_e52ae8ae5c76997a41d427a5252ef85c68bf4d4201f53df2d332cc0d42cc05fa.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '勃兰登堡',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 4292818736,
                 additionalData: {
                   level: 8,
@@ -9063,8 +11245,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -9185,8 +11366,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -9307,8 +11487,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -9429,8 +11608,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -9533,6 +11711,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3750672368,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC519_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC519_c848b855b5ddc2c22ae466b850b65b4554e7afc89c1fb4110cfb8268e4f7f6da.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC519_ad1d7a2e800e3ad9c14b303e85ffaead9030c46cde53d95228842d3e3686aae2.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC519_823cdde2d22cf5062d33b79105bdaf17bd4822f1baf017c2047b2471fa674bf3.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC519.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC519_4ba31a87fb06e0b9c417df488c868e5a9e396fe8ae3e97740879b4208255c552.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC519_389c3552477193a920ef83e6d144e7bc9b93b5e5cef25594082f1a622ccc7392.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC519.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC519.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC519_823cdde2d22cf5062d33b79105bdaf17bd4822f1baf017c2047b2471fa674bf3.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC519_5f5986604c563544dfd6215039c6d4900808e95c385299b3e90d74f16e8aeb91.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '塔尔萨',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3761157968,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'france',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_France.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_France.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
+                    },
+                    color: 1788269,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Франция',
+                        fr: 'France',
+                        en: 'France',
+                        nl: 'Frankrijk',
+                        uk: 'Франція',
+                        ptBr: 'França',
+                        zhCn: 'F系',
+                        tr: 'Fransa',
+                        de: 'Frankreich',
+                        ko: '프랑스',
+                        it: 'Francia',
+                        pl: 'Francja',
+                        th: 'ฝรั่งเศส',
+                        cs: 'Francie',
+                        esMx: 'Francia',
+                        zhSg: '法国',
+                        ja: 'フランス',
+                        es: 'Francia',
+                        zhTw: '法國'
+                      }
+                    },
+                    id: 5
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PFSC509_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PFSC509_0d7d0b47b615541d6a4d23f25fd3cc60df074d3f6d0a3c40a1f4d81bd5c69638.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PFSC509_a39249a0226b35838af00b51762dcffb74007fc4ec48bbb7e8eda01148b63c99.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC509_75e67dc62eb151974ea01203994258387edca1efeda9ba90752bdd161999aecf.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PFSC509.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PFSC509_adfcdff1f193289db9303f5506ddb1b12a9ce4285c29811b7daf1aab6a9e8727.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PFSC509_e71a8fb6ad346360da0d9d8554c7195559f9b22cd8aa021177d851442560be44.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PFSC509.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PFSC509.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PFSC509_75e67dc62eb151974ea01203994258387edca1efeda9ba90752bdd161999aecf.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PFSC509_e2435fd301dcd8a0b75ea686687e0160e405ba7d64212a47a1d0a40082fb4997.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '卡诺',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3750672176,
                 additionalData: {
                   level: 9,
@@ -9551,8 +11971,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -9673,8 +12092,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -9777,6 +12195,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3761157328,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'pan_asia',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Pan_Asia_43c01cae40c13f6ec165ebef027a7fada24375ac05e018aaa9068ebfef2d8915.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Pan_Asia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Pan_Asia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
+                    },
+                    color: 15774479,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Пан-Азия',
+                        fr: 'Asie',
+                        en: 'Pan-Asia',
+                        nl: 'Pan-Azië',
+                        uk: 'Пан-Азія',
+                        ptBr: 'Pan-Ásia',
+                        zhCn: 'C系',
+                        tr: 'Pan-Asya',
+                        de: 'Panasien',
+                        ko: '범아시아',
+                        it: 'Pan-Asia',
+                        pl: 'Azja Wschodnia',
+                        th: 'รวมชาติเอเชีย',
+                        cs: 'Panasie',
+                        esMx: 'Pan-Asia',
+                        zhSg: '泛亚',
+                        ja: 'パンアジア',
+                        es: 'Panasia',
+                        zhTw: '泛亞'
+                      }
+                    },
+                    id: 8
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PZSC509_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PZSC509_fc556a86dad49fa6d174a09ca20064f4fb964f17ac962eff04d73485cef0c9a7.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PZSC509_a8b90575267ddd73b32a0d9847b49f72094277ad62b5489ff27d5684fb1118ca.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSC509_7ee92df4e82319bad3c92a99c184dbbcde5bc7b36eac32a05d755eb43e7d34f9.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PZSC509.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PZSC509_2298699e16761dcf6aee414bbf72d69bf93608f820484fedaa42508f314a60dc.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PZSC509_b1167e64b26258856e6e2efaa7cc269a4e54d0542743abbaed8a47ef560242fb.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PZSC509.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PZSC509.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSC509_7ee92df4e82319bad3c92a99c184dbbcde5bc7b36eac32a05d755eb43e7d34f9.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSC509_d57b04404a6a6b07c3c7929c20102cecb527bfa2bfebfacf56a63f9f37242c9b.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '大连',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3741235184,
                 additionalData: {
                   level: 8,
@@ -9795,8 +12334,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -9899,6 +12437,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3730749424,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC538_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC538_a8fa0178ad31cf3bbdbffcbea67f82c9e270f1028daecc054b63b85b9dba17a1.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC538_fcc081754667b2c7f9d0ad05524a0534d29122ed280b291780e7bad5e330ec9c.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC538_7f9689bf07467198681f95ce1d1673af92a811f8f9cb8da0f9a8814af5ab438c.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC538.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC538_617bb6e8b4a8eb0bf63e318200f6588883a474dbe04ef70ed0b4c8ca99061460.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC538_caa80294176de747d692ed3f28548cc4164e85c8102c4d0c0e198723cc675ceb.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC538.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC538.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC538_7f9689bf07467198681f95ce1d1673af92a811f8f9cb8da0f9a8814af5ab438c.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC538_877eb5e1d795aa469f41809d26b567708a69cf2fda2d5333f4119792a6021ae3.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '罗彻斯特',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3720263664,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC548_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC548_18b862f7ea8625b622d6cd56a09576f36314f2a21c1d24ffbe56b6ff2f563853.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC548_71b862f131327683726a5234a460b614c149879c8910ca29c5a119f07d6a49b8.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC548_0f0e6ea813fa5e9df0366b837a94e2a7f926e4384325ec7cdd30b7dafebdda61.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC548.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC548_9f2898d2eede20ca9b92e9ac872ac42284e663339ddfe3ca365709130a0c84be.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC548_48568c481200c7514ff3580568f4f55ea9f607f26a4884778022cae861af5b58.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC548.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC548.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC548_0f0e6ea813fa5e9df0366b837a94e2a7f926e4384325ec7cdd30b7dafebdda61.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC548_b45525e45fc3ea31d6b95843e87d6f00ab4e9b3a706d265b02a9adc0972793ea.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '圣地亚哥',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3762206704,
                 additionalData: {
                   level: 8,
@@ -9917,8 +12697,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -10021,6 +12800,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3741235152,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSC528_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSC528_268b0f2b5a02aeacebda80d77149b678b6b06b9e358bbd2c7cbd5338d3a86451.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSC528_8507d1778b421b15ed085daaffaac28c2fd350ee066ae5a4027c2ec7f8f02abc.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC528_fa5534aaeec51ec52c44a04c62841aa2409a7e548086e4929de28d7ea3437daf.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSC528.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSC528_605824f2f350d74cec575b4f804e2071900e7509a740439bcbd21d14b3474899.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSC528_2969810174d3cdf14e0ed1201762a55a494c5863438bf21f14b7d1a684653130.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSC528.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSC528.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC528_fa5534aaeec51ec52c44a04c62841aa2409a7e548086e4929de28d7ea3437daf.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC528_e0b1186336f56eb91ea37f23db6faf919c866b2cc1e21967a155bb568951aa3a.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '贝尔法斯特43',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3762206672,
                 additionalData: {
                   level: 8,
@@ -10039,8 +12939,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -10143,6 +13042,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3730749392,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSC538_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSC538_a71f7f98d7ff24da52f1f0c465b5d8e9574c5afb6239434fb60b7e59b6dc86f2.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSC538_7173c5fdad81904b69ac982ef4a20be25e36a07aa5b2f1171a7d227df8d562dd.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC538_436c6c3b0f831e595c6562d6fc0ccbdf994fd9d852c93eb0c6904b2d32cdf1fd.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSC538.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSC538_792997184ea5a29270880ab5a645e5058530faa1e5b292faf87d66027e48dd7b.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSC538_008a5f691d20f6d44e02266283a159df127062caf3d62b553cfd53a4aeb2dd26.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSC538.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSC538.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC538_436c6c3b0f831e595c6562d6fc0ccbdf994fd9d852c93eb0c6904b2d32cdf1fd.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC538_8e7c563b294b6d1015d599a5d29dd6e1dad1e7880ca2af5b9cbf660d58312ddb.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '汉普郡',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3751720912,
                 additionalData: {
                   level: 8,
@@ -10161,8 +13181,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -10265,128 +13284,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3741235152,
-                additionalData: {
-                  level: 8,
-                  nation: {
-                    name: 'uk',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
-                    },
-                    color: 2719672,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'Великобритания',
-                        fr: 'Royaume-Uni',
-                        en: 'U.K.',
-                        nl: 'V.K.',
-                        uk: 'Великобританія',
-                        ptBr: 'Reino Unido',
-                        zhCn: 'Y系',
-                        tr: 'İngiltere',
-                        de: 'GB',
-                        ko: '영국',
-                        it: 'U.K.',
-                        pl: 'Zjedn. Królestwo',
-                        th: 'สหราชอาณาจักร',
-                        cs: 'Británie',
-                        esMx: 'Reino Unido',
-                        zhSg: '英国',
-                        ja: 'イギリス',
-                        es: 'Reino Unido',
-                        zhTw: '英國'
-                      }
-                    },
-                    id: 3
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSC528_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSC528_a84679e75093adfedb259597b6e865f07fef28e10c825c95b24c31370e22d826.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSC528_fe93c40fba502819fbd678727d44a0fc51878897bcd0c96e26897e192af4d2be.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC528_b18d10456e0ce23c000d98c2bda042fe29b9cc157635bfd2e1a5bac2f6566abc.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSC528.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSC528_5a6b7fbe2667bb778ecc3c0d1fd4cd78a54cd088a9deb91226aa495edc67415d.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSC528_bf4a425a2de06b9d6d94475f0fa3c8d59c64e3183c434b909ece1cbe9c4d69e7.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSC528.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSC528.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSC528_b18d10456e0ce23c000d98c2bda042fe29b9cc157635bfd2e1a5bac2f6566abc.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSC528_e0b1186336f56eb91ea37f23db6faf919c866b2cc1e21967a155bb568951aa3a.png'
-                  },
-                  type: {
-                    name: 'cruiser',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
-                    },
-                    sortOrder: 3,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Крейсер',
-                        fr: 'Croiseur',
-                        en: 'Cruiser',
-                        nl: 'Kruiser',
-                        th: 'เรือลาดตระเวน',
-                        ptBr: 'Cruzador',
-                        zhCn: '巡洋舰',
-                        ko: '순양함',
-                        de: 'Kreuzer',
-                        tr: 'Kruvazör',
-                        it: 'Incrociatore',
-                        zhSg: '巡洋舰',
-                        uk: 'Крейсер',
-                        es: 'Crucero',
-                        cs: 'Křižník',
-                        esMx: 'Crucero',
-                        ja: '巡洋艦',
-                        pl: 'Krążownik',
-                        zhTw: '巡洋艦'
-                      }
-                    }
-                  },
-                  title: '贝尔法斯特43',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3762206544,
                 additionalData: {
                   level: 8,
@@ -10405,8 +13302,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -10509,6 +13405,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3751720752,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'germany',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
+                    },
+                    color: 8358796,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
+                      }
+                    },
+                    id: 4
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSC518_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSC518_f76ffde6a5caead4e8c099b9a5ac7351a9ebf8c80a8e1c45579c79635845275f.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSC518_375693b7da7e8a033cf0b2874016c5f0a672cf41a8cc1aac72f007a056fb241f.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC518_ae50bab72297aba342bde2c5de93c40b893e406b4784fe2fb7d6805162ae1039.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSC518.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSC518_ca31065b21350634ecaf646617d9fd655aa28487ba03a293a444bafb7f60ddd4.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSC518_dccd87ab597006b03d683b00f38117e6b2560d5fc6f95d5dd12b0e9da2e8f39b.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSC518.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSC518.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC518_ae50bab72297aba342bde2c5de93c40b893e406b4784fe2fb7d6805162ae1039.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC518_c5e2ae99cf2c43196ebb94e561775df9e30bf6f87af51f668ecf9f22b891f8e5.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '美因茨',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3762206512,
                 additionalData: {
                   level: 8,
@@ -10527,8 +13544,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -10631,128 +13647,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3751720752,
-                additionalData: {
-                  level: 8,
-                  nation: {
-                    name: 'germany',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
-                    },
-                    color: 8358796,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'Германия',
-                        fr: 'Allemagne',
-                        en: 'Germany',
-                        nl: 'Duitsland',
-                        uk: 'Німеччина',
-                        ptBr: 'Alemanha',
-                        zhCn: 'D系',
-                        tr: 'Almanya',
-                        de: 'Deutschland',
-                        ko: '독일',
-                        it: 'Germania',
-                        pl: 'Niemcy',
-                        th: 'เยอรมนี',
-                        cs: 'Německo',
-                        esMx: 'Alemania',
-                        zhSg: '德国',
-                        ja: 'ドイツ',
-                        es: 'Alemania',
-                        zhTw: '德國'
-                      }
-                    },
-                    id: 4
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSC518_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSC518_1db2e73dea75e5230293c43c7449664d4f126ca69e7fb6502a6554954b61d0ce.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSC518_8d0f8768b6877daabca08e8aee5510ed9d6cdd8dfbb3aac314e3f76fb749bf65.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC518_51a77b095f1a3be3c3ffa5851e974a84d82cb59c7b904974994398d59e7ead94.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSC518.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSC518_dd56b1162433ab436f1fdaa0fce54cab2e0be05d1165680cea8d47feb18d7508.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSC518_2e25f5cda7495d10e863392a05ba4b42a61b60941f57630325a7bd32497eae76.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSC518.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSC518.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSC518_51a77b095f1a3be3c3ffa5851e974a84d82cb59c7b904974994398d59e7ead94.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSC518_c5e2ae99cf2c43196ebb94e561775df9e30bf6f87af51f668ecf9f22b891f8e5.png'
-                  },
-                  type: {
-                    name: 'cruiser',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
-                    },
-                    sortOrder: 3,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Крейсер',
-                        fr: 'Croiseur',
-                        en: 'Cruiser',
-                        nl: 'Kruiser',
-                        th: 'เรือลาดตระเวน',
-                        ptBr: 'Cruzador',
-                        zhCn: '巡洋舰',
-                        ko: '순양함',
-                        de: 'Kreuzer',
-                        tr: 'Kruvazör',
-                        it: 'Incrociatore',
-                        zhSg: '巡洋舰',
-                        uk: 'Крейсер',
-                        es: 'Crucero',
-                        cs: 'Křižník',
-                        esMx: 'Crucero',
-                        ja: '巡洋艦',
-                        pl: 'Krążownik',
-                        zhTw: '巡洋艦'
-                      }
-                    }
-                  },
-                  title: '美因茨',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 4255037136,
                 additionalData: {
                   level: 8,
@@ -10771,8 +13665,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -10893,8 +13786,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -11015,8 +13907,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -11137,8 +14028,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -11259,8 +14149,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
                     },
                     color: 15774479,
                     tags: ['inTree'],
@@ -11381,8 +14270,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -11503,8 +14391,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Netherlands_95aaa1a8837aaa25b7f8ee01481e08d219f713a314490ed741dd7dcf677dd143.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Netherlands.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Netherlands_dd3112a12284f158a1e9d283ac7fa46d3beaa3d8698e70d99f28f6ade0286941.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Netherlands_f706c692f890e876aeb549103873b16ee8b00ba7bbb4d0c3dd9997894e987bd3.png'
                     },
                     color: 16711782,
                     tags: ['inTree'],
@@ -11625,8 +14512,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -11747,8 +14633,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -11869,8 +14754,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -11991,8 +14875,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -12113,8 +14996,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Europe.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66da2bf0a3d0736ade533118e5131aab9b4f7c9367cbb0392c621e6888c23fe1.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png'
                     },
                     color: 16763904,
                     tags: ['inTree'],
@@ -12217,128 +15099,6 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3762173136,
-                additionalData: {
-                  level: 8,
-                  nation: {
-                    name: 'pan_asia',
-                    icons: {
-                      large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Pan_Asia_43c01cae40c13f6ec165ebef027a7fada24375ac05e018aaa9068ebfef2d8915.png',
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
-                      localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Pan_Asia.png',
-                      localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Pan_Asia.png',
-                      small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
-                      localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
-                    },
-                    color: 15774479,
-                    tags: ['inTree'],
-                    localization: {
-                      mark: {
-                        ru: 'Пан-Азия',
-                        fr: 'Asie',
-                        en: 'Pan-Asia',
-                        nl: 'Pan-Azië',
-                        uk: 'Пан-Азія',
-                        ptBr: 'Pan-Ásia',
-                        zhCn: 'C系',
-                        tr: 'Pan-Asya',
-                        de: 'Panasien',
-                        ko: '범아시아',
-                        it: 'Pan-Asia',
-                        pl: 'Azja Wschodnia',
-                        th: 'รวมชาติเอเชีย',
-                        cs: 'Panasie',
-                        esMx: 'Pan-Asia',
-                        zhSg: '泛亚',
-                        ja: 'パンアジア',
-                        es: 'Panasia',
-                        zhTw: '泛亞'
-                      }
-                    },
-                    id: 8
-                  },
-                  icons: {
-                    localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PZSD508_h_bg.png',
-                    contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PZSD508_21aee357e5414f0ec89cc8661aa3c9e468803a585acda61c374fadc7dd5f7175.png',
-                    medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PZSD508_ea39180b0e17692444a8745eacc3e10cc52c3b5ba81e9c1dfbacabb1993d6ce6.png',
-                    default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD508_e24bc8a7bc321dd877414d2223334d7037572eea68655535bf05a977e8608eb0.png',
-                    localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PZSD508.png',
-                    contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PZSD508_41cd141527b9b5feac71ba83b3a9fbe439a229ec18a8624a000c75bad8879401.png',
-                    large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PZSD508_b5861257d66fb918edd83b5f141674be5ba1e17697c1d7c2b09934a4ef82eceb.png',
-                    localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PZSD508.png',
-                    localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PZSD508.png',
-                    small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD508_e24bc8a7bc321dd877414d2223334d7037572eea68655535bf05a977e8608eb0.png',
-                    contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD508_1e942fec671cdfe216a51cc98c3387baa81e94d9581be55b584c5825f51651b6.png'
-                  },
-                  type: {
-                    name: 'destroyer',
-                    icons: {
-                      default:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
-                      elite:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
-                      premium:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
-                      special:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
-                      normal:
-                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
-                    },
-                    sortOrder: 2,
-                    localization: {
-                      shortmark: {},
-                      mark: {
-                        ru: 'Эсминец',
-                        fr: 'Destroyer',
-                        en: 'Destroyer',
-                        nl: 'Torpedobootjager',
-                        th: 'เรือพิฆาต',
-                        ptBr: 'Contratorpedeiro',
-                        zhCn: '驱逐舰',
-                        ko: '구축함',
-                        de: 'Zerstörer',
-                        tr: 'Muhrip',
-                        it: 'Cacciatorpediniere',
-                        zhSg: '驱逐舰',
-                        uk: 'Есмінець',
-                        es: 'Destructor',
-                        cs: 'Torpédoborec',
-                        esMx: 'Destructor',
-                        ja: '駆逐艦',
-                        pl: 'Niszczyciel',
-                        zhTw: '驅逐艦'
-                      }
-                    }
-                  },
-                  title: '洛阳',
-                  isPremium: true,
-                  isSpecial: false
-                }
-              },
-              {
-                addTop: false,
-                crewLevel: 10,
-                type: 'ship',
-                amount: 1,
                 id: 3751687376,
                 additionalData: {
                   level: 8,
@@ -12357,8 +15117,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
                     },
                     color: 15774479,
                     tags: ['inTree'],
@@ -12461,6 +15220,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3762173136,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'pan_asia',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Pan_Asia_43c01cae40c13f6ec165ebef027a7fada24375ac05e018aaa9068ebfef2d8915.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Pan_Asia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Pan_Asia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
+                    },
+                    color: 15774479,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Пан-Азия',
+                        fr: 'Asie',
+                        en: 'Pan-Asia',
+                        nl: 'Pan-Azië',
+                        uk: 'Пан-Азія',
+                        ptBr: 'Pan-Ásia',
+                        zhCn: 'C系',
+                        tr: 'Pan-Asya',
+                        de: 'Panasien',
+                        ko: '범아시아',
+                        it: 'Pan-Asia',
+                        pl: 'Azja Wschodnia',
+                        th: 'รวมชาติเอเชีย',
+                        cs: 'Panasie',
+                        esMx: 'Pan-Asia',
+                        zhSg: '泛亚',
+                        ja: 'パンアジア',
+                        es: 'Panasia',
+                        zhTw: '泛亞'
+                      }
+                    },
+                    id: 8
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PZSD508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PZSD508_21aee357e5414f0ec89cc8661aa3c9e468803a585acda61c374fadc7dd5f7175.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PZSD508_ea39180b0e17692444a8745eacc3e10cc52c3b5ba81e9c1dfbacabb1993d6ce6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD508_e24bc8a7bc321dd877414d2223334d7037572eea68655535bf05a977e8608eb0.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PZSD508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PZSD508_41cd141527b9b5feac71ba83b3a9fbe439a229ec18a8624a000c75bad8879401.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PZSD508_b5861257d66fb918edd83b5f141674be5ba1e17697c1d7c2b09934a4ef82eceb.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PZSD508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PZSD508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PZSD508_e24bc8a7bc321dd877414d2223334d7037572eea68655535bf05a977e8608eb0.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PZSD508_1e942fec671cdfe216a51cc98c3387baa81e94d9581be55b584c5825f51651b6.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '洛阳',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 4076745936,
                 additionalData: {
                   level: 8,
@@ -12479,8 +15359,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Pan_Asia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png'
                     },
                     color: 15774479,
                     tags: ['inTree'],
@@ -12577,6 +15456,248 @@ export default {
                   isPremium: true,
                   isSpecial: false
                 }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3751196368,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSS518_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSS518_5358a6794539955d8232138a19a872bde31799933a3f0dccb8670c2aaded2750.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSS518_811dccee152c80d71dcb65fb26f7c88b36db217d2c691686103e51b63617e749.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSS518_ba8eced1d5d3e3f481ccc6df09cb1aaa00f7d8182cc4f4bbf501e34c5d4486e2.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSS518.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSS518_cc40944967372a81fb9c26f54dfa93b97f432da3722bfae097ea9ea58791a440.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSS518_d3cfde90978126ac3d1a53f647c99c1d364c882c91ac1e9fc5bc97ce85bcf9d8.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSS518.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSS518.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSS518_ba8eced1d5d3e3f481ccc6df09cb1aaa00f7d8182cc4f4bbf501e34c5d4486e2.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSS518_58ba5b65b6ac38a8ab6165802b31269aab1fefe61fcd7f8242be7e5d8cbea4cc.png'
+                  },
+                  type: {
+                    name: 'submarine',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/elite_48fb6cc4ac86f63e8833e16ac1f7e996f86da5884c3e1b87da9b5ea324f3d5e4.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/premium_2da34d2e1f5f4934406d60eb020c1b107857405618c03bbe7710d502b24a5b8b.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/special_ac6b2659676bb2f9f46f099fd4ad26d30f2fa64d76f6487f382af721ac6bee4f.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png'
+                    },
+                    sortOrder: 1,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Подводная лодка',
+                        fr: 'Sous-marin',
+                        en: 'Submarine',
+                        nl: 'Onderzeeër',
+                        th: 'เรือดำน้ำ',
+                        ptBr: 'Submarino',
+                        zhCn: '潜艇',
+                        ko: '잠수함',
+                        de: 'U-Boot',
+                        tr: 'Denizaltı',
+                        it: 'Sommergibile',
+                        zhSg: '潜艇',
+                        uk: 'Підводний човен',
+                        es: 'Submarino',
+                        cs: 'Ponorka',
+                        esMx: 'Submarino',
+                        ja: '潜水艦',
+                        pl: 'Okręt podwodny',
+                        zhTw: '潛水艦'
+                      }
+                    }
+                  },
+                  title: 'I-56',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3761681872,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'ussr',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
+                    },
+                    color: 14764062,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
+                      }
+                    },
+                    id: 0
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSS508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSS508_6d59e246d50d249534227f536ef488c68407165d4aed81ac3a9186b53ad50078.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSS508_6248b7c226da08b3e1733c8935b1c6df37f8c30be8cb3034f7b3f9103d9a9b2d.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSS508_a6c0a7f14e413087abc092c06ba3a8a7495ba974f9bfe919f61fc889725b99ec.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSS508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSS508_be674dce0271cdb5cbec79a48aec4ea13e0220175a3b1704ce5eb2d3c3d367ea.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSS508_966c538ff5374f46501defa9517b7bc9e4b8166d4cf9a752b7b81f408bd82aec.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSS508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSS508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSS508_a6c0a7f14e413087abc092c06ba3a8a7495ba974f9bfe919f61fc889725b99ec.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSS508_3816a13b07b5cb93a5b2d598fbe37f623c176f40d48751d959f3ef689330edbf.png'
+                  },
+                  type: {
+                    name: 'submarine',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/elite_48fb6cc4ac86f63e8833e16ac1f7e996f86da5884c3e1b87da9b5ea324f3d5e4.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/premium_2da34d2e1f5f4934406d60eb020c1b107857405618c03bbe7710d502b24a5b8b.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/special_ac6b2659676bb2f9f46f099fd4ad26d30f2fa64d76f6487f382af721ac6bee4f.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png'
+                    },
+                    sortOrder: 1,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Подводная лодка',
+                        fr: 'Sous-marin',
+                        en: 'Submarine',
+                        nl: 'Onderzeeër',
+                        th: 'เรือดำน้ำ',
+                        ptBr: 'Submarino',
+                        zhCn: '潜艇',
+                        ko: '잠수함',
+                        de: 'U-Boot',
+                        tr: 'Denizaltı',
+                        it: 'Sommergibile',
+                        zhSg: '潜艇',
+                        uk: 'Підводний човен',
+                        es: 'Submarino',
+                        cs: 'Ponorka',
+                        esMx: 'Submarino',
+                        ja: '潜水艦',
+                        pl: 'Okręt podwodny',
+                        zhTw: '潛水艦'
+                      }
+                    }
+                  },
+                  title: 'S-189',
+                  isPremium: true,
+                  isSpecial: false
+                }
               }
             ],
             weight: 15,
@@ -12588,6 +15709,127 @@ export default {
           },
           list1: {
             rewards: [
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3760175056,
+                additionalData: {
+                  level: 10,
+                  nation: {
+                    name: 'uk',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_United_Kingdom.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_United_Kingdom.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
+                    },
+                    color: 2719672,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Великобритания',
+                        fr: 'Royaume-Uni',
+                        en: 'U.K.',
+                        nl: 'V.K.',
+                        uk: 'Великобританія',
+                        ptBr: 'Reino Unido',
+                        zhCn: 'Y系',
+                        tr: 'İngiltere',
+                        de: 'GB',
+                        ko: '영국',
+                        it: 'U.K.',
+                        pl: 'Zjedn. Królestwo',
+                        th: 'สหราชอาณาจักร',
+                        cs: 'Británie',
+                        esMx: 'Reino Unido',
+                        zhSg: '英国',
+                        ja: 'イギリス',
+                        es: 'Reino Unido',
+                        zhTw: '英國'
+                      }
+                    },
+                    id: 3
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PBSA510_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PBSA510_cb1f2c39c510431bc5367c141320c0d8b1f5ff0082ce3d1c2a1f6e95ac4e5cce.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PBSA510_22f99fa5640e895d59fab189b6d14e0bffb162522ce85554ef1425e11bbc0416.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSA510_c6e61f7dc1b1a52513a15fa9cfbab68d523aa7cd540707c988d60a2976835c7f.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PBSA510.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PBSA510_de04f35a446445343142d3c0262191905e568c22f03746ae803a9866004960da.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PBSA510_d65d999b05307a7e7b30c7f4ea7e5122de6e4dd723b1e62b1f9e0af6637819b0.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PBSA510.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PBSA510.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PBSA510_c6e61f7dc1b1a52513a15fa9cfbab68d523aa7cd540707c988d60a2976835c7f.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PBSA510_af9eb25420ab3801e1777a04f9b311722b7049d88787b683070760a53321099e.png'
+                  },
+                  type: {
+                    name: 'aircarrier',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png'
+                    },
+                    sortOrder: 5,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Авианосец',
+                        fr: 'Porte-avions',
+                        en: 'Aircraft Carrier',
+                        nl: 'Vliegdekschip',
+                        th: 'เรือบรรทุกเครื่องบิน',
+                        ptBr: 'Porta-Aviões',
+                        zhCn: '航空母舰',
+                        ko: '항공모함',
+                        de: 'Flugzeugträger',
+                        tr: 'Uçak Gemisi',
+                        it: 'Portaerei',
+                        zhSg: '航空母舰',
+                        uk: 'Авіаносець',
+                        es: 'Portaaviones',
+                        cs: 'Letadlová loď',
+                        esMx: 'Portaaviones',
+                        ja: '航空母艦',
+                        pl: 'Lotniskowiec',
+                        zhTw: '航空母艦'
+                      }
+                    }
+                  },
+                  title: '马耳他',
+                  isPremium: false,
+                  isSpecial: true
+                }
+              },
               {
                 addTop: false,
                 crewLevel: 10,
@@ -12611,8 +15853,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -12733,8 +15974,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -12855,8 +16095,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -12977,8 +16216,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -13081,77 +16319,76 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
-                id: 3761190896,
+                id: 4179572528,
                 additionalData: {
-                  level: 9,
+                  level: 10,
                   nation: {
-                    name: 'usa',
+                    name: 'germany',
                     icons: {
                       large:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
                       default:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localLarge:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
                       localTiny:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
                       small:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
-                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
-                    color: 5549009,
+                    color: 8358796,
                     tags: ['inTree'],
                     localization: {
                       mark: {
-                        ru: 'США',
-                        fr: 'USA',
-                        en: 'U.S.A.',
-                        nl: 'V.S.',
-                        uk: 'США',
-                        ptBr: 'E.U.A.',
-                        zhCn: 'M系',
-                        tr: 'ABD',
-                        de: 'USA',
-                        ko: '미국',
-                        it: 'U.S.A.',
-                        pl: 'U.S.A.',
-                        th: 'สหรัฐอเมริกา',
-                        cs: 'USA',
-                        esMx: 'EE.UU.',
-                        zhSg: '美国',
-                        ja: 'アメリカ',
-                        es: 'EE. UU.',
-                        zhTw: '美國'
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
                       }
                     },
-                    id: 2
+                    id: 4
                   },
                   icons: {
                     localContour:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASB509_h_bg.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSB110_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASB509_e338388f060d0eb4a1f45d3bc45687ae7fe21d1a9f71c4255b607d8489519619.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSB110_5e12b9568b74c982729398d87df799672b39db6056af545ca2c32a9c5d0fd8fc.png',
                     medium:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASB509_58ce4f5c0df93dc676d5e26e5bb9d84f5f2c1884542012b8e55491c94ab37172.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSB110_f9e1a88b4f13d29dc69a71850409153192e8fa96866c17089fd735f937ecede5.png',
                     default:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB509_9b435c1100a6f5b7c3c188bffb12ee3243cd9394b7df9bf9dced5c8a003d0dd0.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB110_a0e9e505a89bb73989868a6594d39f0894d96cf49900bf248748a344c7ef99f3.png',
                     localSmall:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASB509.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSB110.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASB509_b904e70e1d01397314fda5b8558c84ebb00933fd5d2869f0fb86165af0ca2264.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSB110_709ee7caba4d0a2559e22e577354d4a4362f72781f97d8ab721fcafff3a0d3de.png',
                     large:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASB509_d78529f32fb27fa16ad3fb004191caa1af482a652b2cc033e66ceb712ff3e4ed.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSB110_bc7afe133bd564a1c31b2498288f7ba4904e10d1e9719e318b8c53361977e823.png',
                     localContourDead:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASB509.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSB110.png',
                     localContourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASB509.png',
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSB110.png',
                     small:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB509_9b435c1100a6f5b7c3c188bffb12ee3243cd9394b7df9bf9dced5c8a003d0dd0.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB110_a0e9e505a89bb73989868a6594d39f0894d96cf49900bf248748a344c7ef99f3.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB509_5cb7f24d6ae830f176955b305a1b44d0a0843b7b58449f907de4dbe3d782608d.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB110_afb47a40a4d738b7722a7ca4a8b8f8150e9e60156c148a2e88e1c58a29ba172e.png'
                   },
                   type: {
                     name: 'battleship',
@@ -13193,9 +16430,9 @@ export default {
                       }
                     }
                   },
-                  title: '密苏里',
-                  isPremium: true,
-                  isSpecial: false
+                  title: '大选帝侯',
+                  isPremium: false,
+                  isSpecial: true
                 }
               },
               {
@@ -13221,8 +16458,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -13325,6 +16561,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3761190896,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASB509_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASB509_e338388f060d0eb4a1f45d3bc45687ae7fe21d1a9f71c4255b607d8489519619.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASB509_58ce4f5c0df93dc676d5e26e5bb9d84f5f2c1884542012b8e55491c94ab37172.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB509_9b435c1100a6f5b7c3c188bffb12ee3243cd9394b7df9bf9dced5c8a003d0dd0.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASB509.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASB509_b904e70e1d01397314fda5b8558c84ebb00933fd5d2869f0fb86165af0ca2264.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASB509_d78529f32fb27fa16ad3fb004191caa1af482a652b2cc033e66ceb712ff3e4ed.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASB509.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASB509.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASB509_9b435c1100a6f5b7c3c188bffb12ee3243cd9394b7df9bf9dced5c8a003d0dd0.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASB509_5cb7f24d6ae830f176955b305a1b44d0a0843b7b58449f907de4dbe3d782608d.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '密苏里',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3751753552,
                 additionalData: {
                   level: 9,
@@ -13343,8 +16700,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -13447,6 +16803,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3750704848,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSB519_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSB519_4047de3c1f7495db4a3751e32fcfb9eba92d17f50fa009e42b2980e8e6ea4f0d.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSB519_c445277dd12554c906d835519c999f2c6935e460c240f76a80884948d9b307cb.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB519_e831ca6d7cb77724e8406c2f59ec390f8ef694927d65be123078f94857440f23.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSB519.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSB519_cf9767241aeb1a619aa8897e6baae51a12851d8b7c103fd70e691f82ff9be57b.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSB519_01bfac2d8c144cb84e22a32954048c1b32f7764e11e8c72527e55a268a659339.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSB519.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSB519.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSB519_e831ca6d7cb77724e8406c2f59ec390f8ef694927d65be123078f94857440f23.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSB519_529bc045ca131918703784d4b804c7226452b9217a5a2dee2f5ce3b7304c4885.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '肥前',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3761190608,
                 additionalData: {
                   level: 9,
@@ -13465,8 +16942,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -13587,8 +17063,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -13691,6 +17166,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3762239280,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'germany',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Germany.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Germany.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
+                    },
+                    color: 8358796,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Германия',
+                        fr: 'Allemagne',
+                        en: 'Germany',
+                        nl: 'Duitsland',
+                        uk: 'Німеччина',
+                        ptBr: 'Alemanha',
+                        zhCn: 'D系',
+                        tr: 'Almanya',
+                        de: 'Deutschland',
+                        ko: '독일',
+                        it: 'Germania',
+                        pl: 'Niemcy',
+                        th: 'เยอรมนี',
+                        cs: 'Německo',
+                        esMx: 'Alemania',
+                        zhSg: '德国',
+                        ja: 'ドイツ',
+                        es: 'Alemania',
+                        zhTw: '德國'
+                      }
+                    },
+                    id: 4
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PGSB508_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PGSB508_1b0a6f3e5603ee70c77d3268cd5c28c5bc374181bd00f6e94bfae3811c47242d.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PGSB508_8ef9b9f925ab2733f5531655fe8322eae37c384d7f378f1f8c8871fc61f70804.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB508_83d1664ae9eef542099dbef64f77537be011b0da14d76189b3c4dbd01e14dec7.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PGSB508.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PGSB508_96c01697cff48f87602446955e43461ea04fa8f7004a3d358dd18d726b1a1c9d.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PGSB508_d2056d8d664334d0f16e7de4a8e9709b15360bbfc2b43711d0a1333900543dae.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PGSB508.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PGSB508.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PGSB508_83d1664ae9eef542099dbef64f77537be011b0da14d76189b3c4dbd01e14dec7.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PGSB508_21208e9c9990d3572340457da47cc3db76264a1d297a6a3127f978fbff908c4a.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '奥丁',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3751753168,
                 additionalData: {
                   level: 8,
@@ -13709,8 +17305,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -13831,8 +17426,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -13935,6 +17529,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3765384944,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'italy',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Italy_1c3ee585f3132d89f71ffadfbbf529b23cb7acade1c1d5b6f9be5687b7770dc8.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Italy.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Italy.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
+                    },
+                    color: 4176426,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Италия',
+                        fr: 'Italie',
+                        en: 'Italy',
+                        nl: 'Italië',
+                        uk: 'Італія',
+                        ptBr: 'Itália',
+                        zhCn: 'I系',
+                        tr: 'İtalya',
+                        de: 'Italien',
+                        ko: '이탈리아',
+                        it: 'Italia',
+                        pl: 'Włochy',
+                        th: 'อิตาลี',
+                        cs: 'Itálie',
+                        esMx: 'Italia',
+                        zhSg: '意大利',
+                        ja: 'イタリア',
+                        es: 'Italia',
+                        zhTw: '義大利'
+                      }
+                    },
+                    id: 6
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PISB505_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISB505_589faa66199ba9f7f7519ee5378f1b70be0082e1b59288e52192fd442ec6c553.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PISB505_739f318e87766f23d8707e71d072fbd671f7971b5a126cc2b4b9a14a615c05ac.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB505_e886c50dba9c6453eab1d69b9bafb409082034ee3a12bf2e519538436679bae1.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PISB505.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISB505_ccee3ffe720348f22451de23a2366a8037f3015e83d1eb2f0862587f5c4d2d23.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PISB505_1f3da5ac9af291843f0eb118b64af529a72a6cc7977896c6abba52ed65f71d9a.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PISB505.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PISB505.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISB505_e886c50dba9c6453eab1d69b9bafb409082034ee3a12bf2e519538436679bae1.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISB505_5cc7bb676aa2575f0644f9d164bca8cfb25a4bf99e68a0765f3142c23db34c29.png'
+                  },
+                  type: {
+                    name: 'battleship',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png'
+                    },
+                    sortOrder: 4,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Линкор',
+                        fr: 'Cuirassé',
+                        en: 'Battleship',
+                        nl: 'Slagschip',
+                        th: 'เรือประจัญบาน',
+                        ptBr: 'Encouraçado',
+                        zhCn: '战列舰',
+                        ko: '전함',
+                        de: 'Schlachtschiff',
+                        tr: 'Zırhlı',
+                        it: 'Corazzata',
+                        zhSg: '战列舰',
+                        uk: 'Лінкор',
+                        es: 'Acorazado',
+                        cs: 'Bitevní loď',
+                        esMx: 'Acorazado',
+                        ja: '戦艦',
+                        pl: 'Pancernik',
+                        zhTw: '主力艦'
+                      }
+                    }
+                  },
+                  title: '尤里乌斯-恺撒',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3550394352,
                 additionalData: {
                   level: 10,
@@ -13953,8 +17668,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -14075,8 +17789,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Italy.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_206c77d5bf356559100ac3e95fdb7200b4fecf3e3ebb54d3ac18d332bd9cbdb7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png'
                     },
                     color: 4176426,
                     tags: ['inTree'],
@@ -14109,7 +17822,7 @@ export default {
                     localContour:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PISC510_h_bg.png',
                     contourAlive:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISC510_08ba60fb796f2a901cdf77a9fc2d6e541f5a0f06436c7ba059c42f143a81985c.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PISC510_7c7d48559201e0c7adb9e91c9422349067cc35bf268f5354f1cc3e6fcd7fc531.png',
                     medium:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PISC510_c302f7cbb3c04ecfc88cbc6af378c7858704fac333131010e8e3edb367658a0c.png',
                     default:
@@ -14117,7 +17830,7 @@ export default {
                     localSmall:
                       '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PISC510.png',
                     contourDead:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISC510_b9b4b6c939c7b3cc6a6db326e8249f9901631cda716f31e3f2372ef9280bcd74.png',
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PISC510_4ca1ff4168aba110fee106dfb6c07e95a71f901663f27f771b0b2b63e58de75f.png',
                     large:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/large/PISC510_378e78d3be3191b9e51fb8dbb7ad2a47b7a36cbbfe7b46e55991236c66ab0ed1.png',
                     localContourDead:
@@ -14127,7 +17840,7 @@ export default {
                     small:
                       '//glossary-wows-global.gcdn.co/icons/vehicle/small/PISC510_d2a5839fbf073d26b7e5c8a6c04ae11c5dc3e107dbffe45d19ea32cbfe30ab36.png',
                     contour:
-                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC510_bc02e7f66fc1fb60e0f0efdd8dd018fffed915ebbd339bab6267d3c1e3fc2b63.png'
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PISC510_338286cd8ad1ba779e4f23277b12dfba82cdbe8ef431546d5677aa2eea7019e7.png'
                   },
                   type: {
                     name: 'cruiser',
@@ -14197,8 +17910,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -14319,8 +18031,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -14441,8 +18152,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -14563,8 +18273,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -14685,8 +18394,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -14789,6 +18497,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3751720944,
+                additionalData: {
+                  level: 8,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASC518_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASC518_61edbef3bc5fc3858fa3e622f15c211669b4abc3387dccd32eb7d6fca6a34bc3.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASC518_4668c873a7d87909208f791d47ed3448f5a18aac8141fe25173ebc837fa28258.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC518_2c04adeedc12c9b2877e5570c4292fc3bb950101c4728313b6650bcd191b9aca.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASC518.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASC518_a5be93df44d0aa78a9fafafce715358c7b4eb43798286397dd7ad6ec25678922.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASC518_1256947206cb1c91c440a17347632d543495ca8e6014756fa76562cac53874c3.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASC518.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASC518.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASC518_2c04adeedc12c9b2877e5570c4292fc3bb950101c4728313b6650bcd191b9aca.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASC518_40e504079a1478d3af3011b802b800070fe04dc1844cb7fd823f72f11a4bd119.png'
+                  },
+                  type: {
+                    name: 'cruiser',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png'
+                    },
+                    sortOrder: 3,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Крейсер',
+                        fr: 'Croiseur',
+                        en: 'Cruiser',
+                        nl: 'Kruiser',
+                        th: 'เรือลาดตระเวน',
+                        ptBr: 'Cruzador',
+                        zhCn: '巡洋舰',
+                        ko: '순양함',
+                        de: 'Kreuzer',
+                        tr: 'Kruvazör',
+                        it: 'Incrociatore',
+                        zhSg: '巡洋舰',
+                        uk: 'Крейсер',
+                        es: 'Crucero',
+                        cs: 'Křižník',
+                        esMx: 'Crucero',
+                        ja: '巡洋艦',
+                        pl: 'Krążownik',
+                        zhTw: '巡洋艦'
+                      }
+                    }
+                  },
+                  title: '安克雷奇',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3762206160,
                 additionalData: {
                   level: 8,
@@ -14807,8 +18636,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -14929,8 +18757,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -15051,8 +18878,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_United_Kingdom.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png'
                     },
                     color: 2719672,
                     tags: ['inTree'],
@@ -15173,8 +18999,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -15277,6 +19102,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3655219184,
+                additionalData: {
+                  level: 10,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASD610_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASD610_0db01c1fc13ba71bb07e8c7903fee95988755a863ba2f2188a2737164dd3cad8.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASD610_c6cbc941949a6c932658f18e3b48721d4e831e00ff4d0649bbfe7f62908d0b93.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD610_37ba87b7c828ab5116854e84a5817820bc84e09b054fad33f772a7b68a40b7e1.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASD610.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASD610_235bc72bf9ad80fe6e2cc95257c965751d78dc21ae84909f08cd5f06c31e82db.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASD610_759c9a33741215c5f89f6b245e8b6605e2ee82bf2d5bbf29f5b24d2bd1f40a5c.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASD610.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASD610.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD610_37ba87b7c828ab5116854e84a5817820bc84e09b054fad33f772a7b68a40b7e1.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD610_b2d4d368794791fcc55ec6b6a6c84758a9e2ea6deeb3883e73b2e373c6120150.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '福雷斯特·谢尔曼',
+                  isPremium: false,
+                  isSpecial: true
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 4074649424,
                 additionalData: {
                   level: 10,
@@ -15295,8 +19241,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_France.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_1b45875fe2166c392a4b0801c9faa6d375a18f3f9644a726f5dcc721f3b36580.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png'
                     },
                     color: 1788269,
                     tags: ['inTree'],
@@ -15417,8 +19362,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -15521,6 +19465,248 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 4179506640,
+                additionalData: {
+                  level: 10,
+                  nation: {
+                    name: 'ussr',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
+                    },
+                    color: 14764062,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
+                      }
+                    },
+                    id: 0
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSD110_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSD110_09924d271f6a8c7beba4223d55bc761db74cdc749dce88af1d96237b82ea4900.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSD110_0a8e9d0c0ed49839f3e06e62d50af08c4f10efb01d842090dc030202d6d008b6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD110_ceaf3063317eb98264855d51783a7a9c0a627a47ef5c7fdc1e6ecce1172da397.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSD110.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSD110_2a1d79f2fb477e0af68b4fc24fee1fdb3cd1729f65de259c6e3b08e5e3d517f6.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSD110_0ee90d627e73d666f77c2ec73f63b995f240ba7283e2e9dbf04b5675a7cf9b38.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSD110.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSD110.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD110_ceaf3063317eb98264855d51783a7a9c0a627a47ef5c7fdc1e6ecce1172da397.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD110_09cecf46c75bb9440264e008e49b437ba3edadc8f24592d624313ffd8136caf1.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '哈巴罗夫斯克',
+                  isPremium: false,
+                  isSpecial: true
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 3760076208,
+                additionalData: {
+                  level: 10,
+                  nation: {
+                    name: 'spain',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Spain_e7b90b91cbcbd6ea2191c134e9713dbcb0aaebf0c670911f8a527610fcdf293a.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Spain_956316c955d6d1ac7b623852fe4a3ba35d401d81ecf4296c3f927d8a1ef23059.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Spain.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Spain.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Spain_956316c955d6d1ac7b623852fe4a3ba35d401d81ecf4296c3f927d8a1ef23059.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Spain.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Spain_faddbe9a35a81f9797e36142196ce81595a762969fd57c171f8866b4cf9b9f54.png'
+                    },
+                    color: 9525451,
+                    tags: [],
+                    localization: {
+                      mark: {
+                        ru: 'Испания',
+                        fr: 'Espagne',
+                        en: 'Spain',
+                        nl: 'Spanje',
+                        uk: 'Іспанія',
+                        ptBr: 'Espanha',
+                        zhCn: 'X系',
+                        tr: 'İspanya',
+                        de: 'Spanien',
+                        ko: '스페인',
+                        it: 'Spagna',
+                        pl: 'Hiszpania',
+                        th: 'สเปน',
+                        cs: 'Španělsko',
+                        esMx: 'España',
+                        zhSg: '西班牙',
+                        ja: 'スペイン',
+                        es: 'España',
+                        zhTw: '西班牙'
+                      }
+                    },
+                    id: 13
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PSSD510_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PSSD510_2e25188ad9edef5f54a03778e4c6e807ca0784a635e9bd6c706990d922e79b85.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PSSD510_b60124b5af1f322bd1c76c08c386b225ecbdbe409bc56d5b5d2742a34c5bf064.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PSSD510_945bbdf767afc174a5526e8c577eccc616a482a7397f1bc1b7f3d3062a745cf0.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PSSD510.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PSSD510_ff7537118c8138eb48719086410e4ad787b8613038f3df8a48df0b82068bca8a.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PSSD510_1461fa6ec64246a7aff3c59fdc65ab9105f625bbc1bcf466cf0b26a942ff3b2f.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PSSD510.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PSSD510.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PSSD510_945bbdf767afc174a5526e8c577eccc616a482a7397f1bc1b7f3d3062a745cf0.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PSSD510_1ac91af7aeaf7170111adc0c7e401da04b67e5baebb69737a3dfe8aabc55a7a4.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '阿尔瓦罗·德·巴赞',
+                  isPremium: false,
+                  isSpecial: true
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3655218480,
                 additionalData: {
                   level: 10,
@@ -15539,8 +19725,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Europe.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66da2bf0a3d0736ade533118e5131aab9b4f7c9367cbb0392c621e6888c23fe1.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png'
                     },
                     color: 16763904,
                     tags: ['inTree'],
@@ -15661,8 +19846,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
                     },
                     color: 5549009,
                     tags: ['inTree'],
@@ -15765,6 +19949,127 @@ export default {
                 crewLevel: 10,
                 type: 'ship',
                 amount: 1,
+                id: 3551410160,
+                additionalData: {
+                  level: 9,
+                  nation: {
+                    name: 'usa',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_USA.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_USA.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_USA.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png'
+                    },
+                    color: 5549009,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'США',
+                        fr: 'USA',
+                        en: 'U.S.A.',
+                        nl: 'V.S.',
+                        uk: 'США',
+                        ptBr: 'E.U.A.',
+                        zhCn: 'M系',
+                        tr: 'ABD',
+                        de: 'USA',
+                        ko: '미국',
+                        it: 'U.S.A.',
+                        pl: 'U.S.A.',
+                        th: 'สหรัฐอเมริกา',
+                        cs: 'USA',
+                        esMx: 'EE.UU.',
+                        zhSg: '美国',
+                        ja: 'アメリカ',
+                        es: 'EE. UU.',
+                        zhTw: '美國'
+                      }
+                    },
+                    id: 2
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PASD709_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PASD709_54924b9f3bd58c9c823b3d045d491ef0810ccd64774b15b41c4ec9e4de546b9f.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PASD709_e987479a3f0b2a7d2bdeef4349e4b9c10dd705fe3b30615b0c0f88514b8d56ba.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD709_f7d89956ba9d7ecafb01b89729fa011f898faac2adb169cf573ec58e2c58755f.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PASD709.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PASD709_4c0243c4cb50e429bf467053d7d85498af68b1b0ad34d2018912607e416ec419.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PASD709_c6aef9598225ddde42cc6edca1ec237ee4a51c9c0c117ed11c46dad9a6e3cbee.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PASD709.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PASD709.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PASD709_f7d89956ba9d7ecafb01b89729fa011f898faac2adb169cf573ec58e2c58755f.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PASD709_794849aec235164ddcf436bf2378e16ff41c7fda5a9e7bc5153bd8f8723a20fc.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '布莱克',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
                 id: 3551409616,
                 additionalData: {
                   level: 9,
@@ -15783,8 +20088,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
                     },
                     color: 14764062,
                     tags: ['inTree'],
@@ -15905,8 +20209,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Europe.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66da2bf0a3d0736ade533118e5131aab9b4f7c9367cbb0392c621e6888c23fe1.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png'
                     },
                     color: 16763904,
                     tags: ['inTree'],
@@ -16027,8 +20330,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
                     },
                     color: 13752795,
                     tags: ['inTree'],
@@ -16149,8 +20451,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -16271,8 +20572,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Commonwealth.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png'
                     },
                     color: 15789327,
                     tags: [],
@@ -16393,8 +20693,7 @@ export default {
                         '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png',
                       localSmall:
                         '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Germany.png',
-                      tiny:
-                        '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png'
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png'
                     },
                     color: 8358796,
                     tags: ['inTree'],
@@ -16488,6 +20787,490 @@ export default {
                     }
                   },
                   title: 'T-61',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 4277024464,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSD017_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSD017_85b94f7d2df496ebdbe9378288362a3b44ed35bf1007613ea30d7b640c022858.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSD017_04dd235662c0fb544490138938f2618fbc505787f1193ad5691973eb4585ed22.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD017_e674ae3673bb6ca14a72b76a2e5cc071ea1ec38e81fc44ee782813139b97061f.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSD017.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSD017_14162fcc103bb109d5aa217655f6914fa31f99e13bf6987f11b64b93187b6440.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSD017_9d6cfd515b9c3a1e815ea93403a30f2d5de7922d60a3077565e774f9b4e585af.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSD017.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSD017.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD017_e674ae3673bb6ca14a72b76a2e5cc071ea1ec38e81fc44ee782813139b97061f.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD017_90a4209659664fae18d516d6380162982e85f4aaf34e9a8a39e438e6fd640c47.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '风神',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 4268635856,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSD025_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSD025_85b94f7d2df496ebdbe9378288362a3b44ed35bf1007613ea30d7b640c022858.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSD025_ec16636c3b826f394de52ecd50e0d60d425c61f877b5b280f48645c37d98adfc.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD025_b7e23e0c827173f76fd9b11ce98c60647d90c37fccffdc6e6827ab8654452b50.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSD025.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSD025_14162fcc103bb109d5aa217655f6914fa31f99e13bf6987f11b64b93187b6440.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSD025_b1845de7ee9cb9fb41b240d9518a5b086a953f7a0c1159df7563a310f9ea44d8.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSD025.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSD025.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD025_b7e23e0c827173f76fd9b11ce98c60647d90c37fccffdc6e6827ab8654452b50.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD025_90a4209659664fae18d516d6380162982e85f4aaf34e9a8a39e438e6fd640c47.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '神风',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 4267587280,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'japan',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Japan.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Japan.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Japan.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png'
+                    },
+                    color: 13752795,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'Япония',
+                        fr: 'Japon',
+                        en: 'Japan',
+                        nl: 'Japan',
+                        uk: 'Японія',
+                        ptBr: 'Japão',
+                        zhCn: 'R系',
+                        tr: 'Japonya',
+                        de: 'Japan',
+                        ko: '일본',
+                        it: 'Giappone',
+                        pl: 'Japonia',
+                        th: 'ญี่ปุ่น',
+                        cs: 'Japonsko',
+                        esMx: 'Japón',
+                        zhSg: '日本',
+                        ja: '日本',
+                        es: 'Japón',
+                        zhTw: '日本'
+                      }
+                    },
+                    id: 1
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PJSD026_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PJSD026_85b94f7d2df496ebdbe9378288362a3b44ed35bf1007613ea30d7b640c022858.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PJSD026_f6398a07a0849a58be000fc24043e7d043ed6adc9115ab814501cc9f395e3af6.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD026_ae4c4e5124b791147bd405a984b325e4dc0cd1272c64464df203ae644dcf84f4.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PJSD026.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PJSD026_14162fcc103bb109d5aa217655f6914fa31f99e13bf6987f11b64b93187b6440.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PJSD026_472abb9e0a9af051fbfbbba974402fd6ba40584e200877d7a7fa7e728eeb4fc0.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PJSD026.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PJSD026.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PJSD026_ae4c4e5124b791147bd405a984b325e4dc0cd1272c64464df203ae644dcf84f4.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PJSD026_90a4209659664fae18d516d6380162982e85f4aaf34e9a8a39e438e6fd640c47.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '神风 R',
+                  isPremium: true,
+                  isSpecial: false
+                }
+              },
+              {
+                addTop: false,
+                crewLevel: 10,
+                type: 'ship',
+                amount: 1,
+                id: 4293801424,
+                additionalData: {
+                  level: 5,
+                  nation: {
+                    name: 'ussr',
+                    icons: {
+                      large:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png',
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localLarge:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/big/flag_Russia.png',
+                      localTiny:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/tiny/flag_Russia.png',
+                      small:
+                        '//glossary-wows-global.gcdn.co/icons/nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png',
+                      localSmall:
+                        '//glossary-wows-global.gcdn.co/icons/gui/nation_flags/small/flag_Russia.png',
+                      tiny: '//glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png'
+                    },
+                    color: 14764062,
+                    tags: ['inTree'],
+                    localization: {
+                      mark: {
+                        ru: 'СССР',
+                        fr: 'URSS',
+                        en: 'U.S.S.R.',
+                        nl: 'Sovjet-Unie',
+                        uk: 'СРСР',
+                        ptBr: 'U.R.S.S.',
+                        zhCn: 'S系',
+                        tr: 'SSCB',
+                        de: 'UdSSR',
+                        ko: '소련',
+                        it: 'U.R.S.S.',
+                        pl: 'Z.S.R.R.',
+                        th: 'สหภาพโซเวียต',
+                        cs: 'SSSR',
+                        esMx: 'U.R.S.S.',
+                        zhSg: '苏联',
+                        ja: 'ソ連',
+                        es: 'URSS',
+                        zhTw: '蘇聯'
+                      }
+                    },
+                    id: 0
+                  },
+                  icons: {
+                    localContour:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_bars/PRSD001_h_bg.png',
+                    contourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_alive/PRSD001_cce6a8cdc4c8bb0e30616d7578194958ef3ed70f51b16baa1d49181593eabc68.png',
+                    medium:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/medium/PRSD001_54fba8c988ce8fc40829933e8458035b76703ebf5bc9970b7e4140577a352fa2.png',
+                    default:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD001_bab33b89c6978cdc1011b430fc1fe71af19ec3f1b9e56a406cbb606853160608.png',
+                    localSmall:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_previews/PRSD001.png',
+                    contourDead:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour_dead/PRSD001_9c7d948f50012aa48ba1bc6c027ad9e7dcc13c2f53026d7c25c855f40b9b98b8.png',
+                    large:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/large/PRSD001_4813c14eaa885f844a252d5b2f60a30af7556e97cd233d9db5db409443bf4717.png',
+                    localContourDead:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_dead_icons/PRSD001.png',
+                    localContourAlive:
+                      '//glossary-wows-global.gcdn.co/icons/gui/ship_icons/PRSD001.png',
+                    small:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/small/PRSD001_bab33b89c6978cdc1011b430fc1fe71af19ec3f1b9e56a406cbb606853160608.png',
+                    contour:
+                      '//glossary-wows-global.gcdn.co/icons/vehicle/contour/PRSD001_9ced03450de03a32f1ebc4c0b1f11a9c7eabb10640a8fc085230b8d339578127.png'
+                  },
+                  type: {
+                    name: 'destroyer',
+                    icons: {
+                      default:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png',
+                      elite:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png',
+                      premium:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png',
+                      special:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png',
+                      normal:
+                        '//glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png'
+                    },
+                    sortOrder: 2,
+                    localization: {
+                      shortmark: {},
+                      mark: {
+                        ru: 'Эсминец',
+                        fr: 'Destroyer',
+                        en: 'Destroyer',
+                        nl: 'Torpedobootjager',
+                        th: 'เรือพิฆาต',
+                        ptBr: 'Contratorpedeiro',
+                        zhCn: '驱逐舰',
+                        ko: '구축함',
+                        de: 'Zerstörer',
+                        tr: 'Muhrip',
+                        it: 'Cacciatorpediniere',
+                        zhSg: '驱逐舰',
+                        uk: 'Есмінець',
+                        es: 'Destructor',
+                        cs: 'Torpédoborec',
+                        esMx: 'Destructor',
+                        ja: '駆逐艦',
+                        pl: 'Niszczyciel',
+                        zhTw: '驅逐艦'
+                      }
+                    }
+                  },
+                  title: '轰鸣',
                   isPremium: true,
                   isSpecial: false
                 }
