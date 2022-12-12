@@ -8,7 +8,6 @@ import router from './router'
 import { createPinia } from 'pinia'
 import usePlayer from '@/store/player'
 import useElectron from '@/store/electron'
-import { wowsLog } from '@/api/wows/wows'
 import { loopGetTempArenaInfoJson } from '@/hooks/realTimeResults'
 // import '@/hooks/mqtt'
 createApp(App)
@@ -29,7 +28,6 @@ window.addEventListener('resize', () => {
 if (window.console) {
   console.log('%c水下小人血妈爆炸', 'color:red')
 }
-wowsLog({ type: '打开页面' })
 
 ElMessage({
   showClose: true,

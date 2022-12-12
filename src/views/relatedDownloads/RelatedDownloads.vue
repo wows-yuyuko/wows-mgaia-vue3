@@ -5,10 +5,9 @@
   <div class="main-content">
     <div class="downloads-table">
       <img src="@/assets/relatedDownloads/mgaia.jpeg" style="width: 360px;" />
-      实时战绩软件
-      mgaia-wows-pc-app Setup 0.2.0.exe
-      链接：https://pan.baidu.com/s/12msGSqjX4xdf4V6XD6icQA
-      提取码：3x0l
+      实时战绩软件<br />
+      链接：https://pan.baidu.com/s/1JQKWCXiY-YNuDyFgNjPFEQ <br />
+      提取码：s2ri <br />
     </div>
   </div>
 </template>

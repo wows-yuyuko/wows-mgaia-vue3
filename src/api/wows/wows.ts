@@ -1,6 +1,7 @@
 import request from '@/api/request'
 import axios from 'axios'
 import pako from 'pako'
+import useElectron from '@/store/electron'
 
 /**
  * https://api.worldoftanks.eu/wot/auth/login/?application_id=cf82e0d66424f5cbdc2634a046495be2&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success
@@ -75,9 +76,10 @@ export function accountPlatformBindList (data: { platformType : string, platform
  * @returns
  */
 export async function accountUserInfo (data: { server: string, accountId: number }) {
-  // if (data.server === 'cn') {
-  //   await cacheCheck(data.accountId.toString(), data.server)
-  // }
+  const electronStore = useElectron()
+  if (data.server === 'cn' && electronStore.electronEnable) {
+    await cacheCheck(data.accountId.toString(), data.server)
+  }
   return request.get(apiPath + '/account/v2/user/info', data)
 }
 
@@ -96,9 +98,10 @@ export function accountShipInfoList (data: { server: string, accountId: string, 
  * @returns
  */
 export async function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
-  // if (data.server === 'cn') {
-  //   await cacheCheck(data.accountId.toString(), data.server)
-  // }
+  const electronStore = useElectron()
+  if (data.server === 'cn' && electronStore.electronEnable) {
+    await cacheCheck(data.accountId.toString(), data.server)
+  }
   return request.get(apiPath + '/account/ship/info', data)
 }
 
@@ -200,21 +203,21 @@ async function cacheCheck (accountId: string, server: string) {
     console.log('data', data)
     if (data.code === 201) {
       for (const key in data.data) {
-        await axios.post(data.data[key]).then(async reData => {
+        await axios.get(data.data[key]).then(async reData => {
           console.log('reData', reData)
           if (reData.status === 200) {
             data.data[key] = JSON.stringify(reData.data) // dev中内容转string
-            data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
-            await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
-              accountId,
-              server,
-              data: data.data
-            }).then(endData => {
-              console.log('endData', endData)
-            })
           }
         })
       }
+      data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
+      await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+        accountId,
+        server,
+        data: data.data
+      }).then(endData => {
+        console.log('endData', endData)
+      })
     }
   })
 }
