@@ -75,9 +75,9 @@ export function accountPlatformBindList (data: { platformType : string, platform
  * @returns
  */
 export async function accountUserInfo (data: { server: string, accountId: number }) {
-  if (data.server === 'cn') {
-    await cacheCheck(data.accountId.toString(), data.server)
-  }
+  // if (data.server === 'cn') {
+  //   await cacheCheck(data.accountId.toString(), data.server)
+  // }
   return request.get(apiPath + '/account/v2/user/info', data)
 }
 
@@ -96,9 +96,9 @@ export function accountShipInfoList (data: { server: string, accountId: string, 
  * @returns
  */
 export async function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
-  if (data.server === 'cn') {
-    await cacheCheck(data.accountId.toString(), data.server)
-  }
+  // if (data.server === 'cn') {
+  //   await cacheCheck(data.accountId.toString(), data.server)
+  // }
   return request.get(apiPath + '/account/ship/info', data)
 }
 
