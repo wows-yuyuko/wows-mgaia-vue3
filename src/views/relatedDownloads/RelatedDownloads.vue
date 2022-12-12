@@ -6,8 +6,8 @@
     <div class="downloads-table">
       <img src="@/assets/relatedDownloads/mgaia.jpeg" style="width: 360px;" />
       实时战绩软件<br />
-      链接：https://pan.baidu.com/s/1JQKWCXiY-YNuDyFgNjPFEQ <br />
-      提取码：s2ri <br />
+      链接：https://pan.baidu.com/s/1H07d0uVk58OI3PwgSu8mNQ?pwd=zcyu <br />
+      提取码：zcyu <br />
     </div>
   </div>
 </template>
