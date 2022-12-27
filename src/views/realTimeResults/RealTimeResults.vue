@@ -98,10 +98,10 @@ function serverChange () {
           <div class="cell-title">kd</div>
         </div>
       </div>
-      <div v-for="item of showMatchupData" :key="item.left.id+''+item.right.id" class="combat-row">
-        <CombatRow :matchupRow="item.left" />
+      <div v-for="item of showMatchupData" :key="item.left?.id+''+item.right?.id" class="combat-row">
+        <CombatRow :matchupRow="item.left" v-if="item.left"/>
         <div style="width: 5px;"></div>
-        <CombatRow :matchupRow="item.right" />
+        <CombatRow :matchupRow="item.right" v-if="item.right" />
       </div>
     </div>
   </div>

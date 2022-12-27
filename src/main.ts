@@ -29,11 +29,11 @@ if (window.console) {
   console.log('%c水下小人血妈爆炸', 'color:red')
 }
 
-ElMessage({
-  showClose: true,
-  message: '老群炸了 请加新群 578477683',
-  type: 'warning'
-})
+// ElMessage({
+//   showClose: true,
+//   message: '老群炸了 请加新群 578477683',
+//   type: 'warning'
+// })
 
 // 获取判断是否在electron中
 if (!lodash.isNil(window.electronAPI)) {
