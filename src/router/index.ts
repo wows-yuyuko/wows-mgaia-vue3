@@ -46,6 +46,11 @@ const routes: Array<RouteRecordRaw> = [
         // 相关下载
         path: 'relatedDownloads',
         component: () => import('@/views/relatedDownloads/RelatedDownloads.vue')
+      },
+      {
+        // 封号匹配
+        path: 'banLike',
+        component: () => import('@/views/banLike/BanLike.vue')
       }
     ]
   },

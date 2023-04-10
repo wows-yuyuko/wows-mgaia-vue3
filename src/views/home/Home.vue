@@ -46,7 +46,8 @@ const wgOa = () => {
             </el-sub-menu>
             <el-menu-item index="/container">开箱</el-menu-item>
             <el-menu-item v-if="!electronStore.electronEnable" index="/relatedDownloads">相关下载</el-menu-item>
-            <el-menu-item index="/lycorisSimulator">射击石蒜</el-menu-item>
+            <!-- <el-menu-item index="/lycorisSimulator">射击石蒜</el-menu-item> -->
+            <el-menu-item index="/banLike">历史封禁检测</el-menu-item>
             <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
           </el-menu>
         </div>

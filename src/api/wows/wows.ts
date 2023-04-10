@@ -189,7 +189,16 @@ export function rankShip (data: {page: number, server: string, shipId: number}) 
  * @returns
  */
 export function yuyukoSuccess (data: {accountId: string, server: string}) {
-  return request.get(apiPath + '/public/wows/oauth/wows/yuyuko/success', data)
+  return request.get(apiPath + '/oauth/wows/yuyuko/success', data)
+}
+
+/**
+ * 封号名单模糊查询
+ * @param data
+ * @returns
+ */
+export function searcBanCn (data:{accountId: string}) {
+  return request.post(apiPath + '/ban/cn/user', data)
 }
 
 /**
