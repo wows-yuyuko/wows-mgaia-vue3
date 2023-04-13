@@ -8,7 +8,7 @@ const route = useRoute()
 const player = usePlayer()
 const electronStore = useElectron()
 const issues = () => {
-  window.open('https://gitee.com/missile_xuan/wows-mgaia-vue3')
+  window.open('https://github.com/missile-xuan/wows-mgaia-vue3')
 }
 const afdin = () => {
   window.open('https://afdian.net/@JustOneSummer')
