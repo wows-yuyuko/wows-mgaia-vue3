@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { accountSearchUserList, searcBanCn } from '@/api/wows/wows'
 import { Base64 } from 'js-base64'
+import lodash from 'lodash'
 const searchListLoading = ref(false)
 const user = ref()
 const userList = ref<{
@@ -91,7 +92,7 @@ const searchBanId = () => {
       <!-- 虎牙TV-2020小兄弟 -->
       <!-- 一炮二红的小鸟 -->
       <div
-        v-if="!banUser.voList"
+        v-if="lodash.isNil(banUser.voList)||banUser.voList.length===0"
         style="
           text-align: center;
           color: #27b440;
