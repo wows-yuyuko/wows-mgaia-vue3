@@ -5,6 +5,13 @@
   <RouterView />
 </template>
 
-<style scoped lang="less">
+<style lang="less">
+body{
+  overflow: auto;
+}
+#app{
+  height: 100%;
+  min-width: 980px;
+}
 
 </style>
