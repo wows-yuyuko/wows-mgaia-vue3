@@ -22,5 +22,5 @@ export function getPlayerListByUserName (data:{userName:string}) {
  * @returns
  */
 export function getPlatformBindList (data:{platformType:string, platformId: string}) {
-  return request.get(BASE_URL + '/api/user/platform/bind/list', data)
+  return request.get(BASE_URL + '/public/user/platform/bind/list', data)
 }
