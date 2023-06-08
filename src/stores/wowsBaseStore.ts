@@ -2,7 +2,7 @@
  * wows基础数据
  */
 import { defineStore } from 'pinia'
-import { getServerList } from '@/api/wowsBase'
+import { getServerList, getPlatform } from '@/api/wowsBase'
 import { ref, watch } from 'vue'
 import { setLocalStorage, getLocalStorage, removeLocalStorage } from '@/utils/auth'
 import lodash from 'lodash'
@@ -17,6 +17,8 @@ export default defineStore('wowsBaseStore', () => {
   const serverList = ref<Server[]>([])
   // 当前选择得服务器
   const server = ref('')
+  // 支持绑定的平台列表
+  const platformList = ref<string[]>([])
 
   // 监听 如果服务器列表发生变动 且服务器缓存为空 则设置服务器为第一个
   watch(serverList, (newSL, oldSL) => {
@@ -28,6 +30,9 @@ export default defineStore('wowsBaseStore', () => {
 
   watch(server, () => {
     setLocalStorage('server', server.value)
+  })
+  watch(platformList, () => {
+    setLocalStorage('platformList', platformList.value)
   })
 
   // 检查缓存基础信息
@@ -47,6 +52,7 @@ export default defineStore('wowsBaseStore', () => {
     } else {
       // 有缓存信息则取出
       serverList.value = getLocalStorage('serverList')
+      platformList.value = getLocalStorage('platformList')
     }
   }
 
@@ -62,7 +68,18 @@ export default defineStore('wowsBaseStore', () => {
       })
     })
 
-    return Promise.all([promiseGetServerList])
+    // 获取平台信息
+    const promiseGetPlatform = new Promise((resolve, reject) => {
+      getPlatform().then((response:string[]) => {
+        platformList.value = response
+        setLocalStorage('platformList', response)
+        resolve(true)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+
+    return Promise.all([promiseGetServerList, promiseGetPlatform])
   }
 
   /**
@@ -75,6 +92,7 @@ export default defineStore('wowsBaseStore', () => {
   return {
     serverList,
     server,
+    platformList,
     updateBaseInfo,
     checkBaseInfoCache,
     cleanCache

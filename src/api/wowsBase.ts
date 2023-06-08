@@ -4,8 +4,8 @@
 
 import request from './request'
 
-// const BASE_URL = 'https://v3-api.wows.shinoaki.com'
-const BASE_URL = ''
+const BASE_URL = 'https://v3-api.wows.shinoaki.com'
+// const BASE_URL = ''
 /**
  * 获取服务器列表
  * @returns
@@ -36,4 +36,12 @@ export function getPrInfo () {
  */
 export function getNation () {
   return request.get(BASE_URL + '/public/wows/encyclopedia/nation/list', {})
+}
+
+/**
+ * 获取地区列表
+ * @returns
+ */
+export function getPlatform () {
+  return request.get(BASE_URL + '/public/wows/encyclopedia/server/platform', {})
 }
