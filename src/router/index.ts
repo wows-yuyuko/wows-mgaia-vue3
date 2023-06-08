@@ -6,7 +6,15 @@ const router = createRouter({
     {
       path: '/',
       name: 'Layout',
-      component: () => import('@/views/layout/Lyout.vue')
+      component: () => import('@/views/layout/Lyout.vue'),
+      redirect: '/playerInfo',
+      children: [
+        {
+          path: '/playerInfo',
+          name: 'PlayerInfo',
+          component: () => import('@/views/player/PlayerInfo.vue')
+        }
+      ]
     }
   ]
 })

@@ -1,7 +1,7 @@
 {
   "files": [],
   "compilerOptions": {
-    "types": ["element-plus/global"]
+    "types": ["element-plus/global"],
   },
   "references": [
     {

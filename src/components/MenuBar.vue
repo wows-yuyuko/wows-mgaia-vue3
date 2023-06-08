@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { ChatLineSquare } from '@element-plus/icons-vue'
+import { Setting } from '@element-plus/icons-vue'
+import wowsBaseStore from '@/stores/wowsBaseStore'
+// 初始化一系列数据
+const wowsBase = wowsBaseStore()
+// 检查基础信息缓存
+wowsBase.checkBaseInfoCache()
+
+console.log('wowsBase.serverList', wowsBase.serverList)
 </script>
 <template>
   <div class="menu-bar">
@@ -17,8 +24,25 @@ import { ChatLineSquare } from '@element-plus/icons-vue'
         <el-menu-item index="3">舰队</el-menu-item>
       </el-menu>
     </div>
-    <div>
-      <el-button :icon="ChatLineSquare" circle />
+    <div class="right-block" style="display: flex;align-items: center;">
+      <!-- 服务器选择 -->
+      <el-select style="width: 60px;" v-model="wowsBase.server" placeholder="服务器" size="small">
+        <el-option
+          v-for="serverItem in wowsBase.serverList"
+          :key="serverItem.keu"
+          :label="serverItem.value"
+          :value="serverItem.keu"
+        />
+      </el-select>
+      <!-- 系统设置 -->
+      <el-dropdown size="small">
+        <el-button size="small" :icon="Setting" circle />
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="wowsBase.cleanCache()">清空缓存</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -42,6 +66,12 @@ import { ChatLineSquare } from '@element-plus/icons-vue'
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+  }
+
+  .right-block{
+    div{
+      margin-left: 5px;
+    }
   }
 }
 </style>

@@ -11,6 +11,11 @@ import MenuBar from '@/components/MenuBar.vue'
     </div>
     <!-- 下方内容区域 -->
     <div class="layout-bottom">
+      <router-view v-slot="{ Component, route }">
+        <keep-alive>
+          <component :is="Component" :key="route.path" />
+        </keep-alive>
+      </router-view>
     </div>
   </div>
 </template>
@@ -25,7 +30,8 @@ import MenuBar from '@/components/MenuBar.vue'
   .layout-bottom {
     padding: 10px;
     flex-grow: 1;
-    display: flex;
+    height: 0;
+    overflow: auto;
   }
 }
 </style>

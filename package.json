@@ -1,9 +1,9 @@
 {
-  "name": "wows",
+  "name": "wows-mgaia",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --debug",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -11,7 +11,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.8",
     "element-plus": "^2.3.6",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0"
