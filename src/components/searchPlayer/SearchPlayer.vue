@@ -36,7 +36,7 @@ const platformId = ref('')
 const platformIdSearchLoading = ref(false)
 const platformBindPlayerList = ref<Account[]>([])
 function searchPlayerByPlatformId () {
-  getPlatformBindList({ platformId: platformId.value, platformType: selectPlatform.value}).then(response => {
+  getPlatformBindList({ platformId: platformId.value, platformType: selectPlatform.value }).then(response => {
     console.log(response)
     platformBindPlayerList.value = response
     platformIdSearchLoading.value = false
@@ -45,8 +45,6 @@ function searchPlayerByPlatformId () {
     platformIdSearchLoading.value = false
   })
 }
-
-
 </script>
 
 <template>
