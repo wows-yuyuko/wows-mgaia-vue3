@@ -6,11 +6,7 @@ import { getServerList, getPlatform } from '@/api/wowsBase'
 import { ref, watch } from 'vue'
 import { setLocalStorage, getLocalStorage, removeLocalStorage } from '@/utils/auth'
 import lodash from 'lodash'
-
-interface Server {
-  keu: string
-  value: string
-}
+import type { Server } from '@/types/player'
 
 export default defineStore('wowsBaseStore', () => {
   // 服务器列表

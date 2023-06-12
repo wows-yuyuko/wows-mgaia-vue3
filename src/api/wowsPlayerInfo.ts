@@ -24,3 +24,12 @@ export function getPlayerListByUserName (data:{userName:string}) {
 export function getPlatformBindList (data:{platformType:string, platformId: string}) {
   return request.get(BASE_URL + '/public/user/platform/bind/list', data)
 }
+
+/**
+ * 通过accountid获取用户信息
+ * @param data
+ * @returns
+ */
+export function getPlayerByUUID (data:{accountId:string}) {
+  return request.get(BASE_URL + `/public/wows/account/search/db/${data.accountId}`, {})
+}

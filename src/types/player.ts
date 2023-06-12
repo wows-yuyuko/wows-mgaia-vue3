@@ -6,5 +6,13 @@
 export interface Account {
   userName: string,
   accountId: number,
-  server?: number
+  server?: string
+}
+
+/**
+ * 后台接口返回的服务器列表格式
+ */
+export interface Server {
+  keu: string
+  value: string
 }

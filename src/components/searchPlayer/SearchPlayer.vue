@@ -3,9 +3,11 @@
 import { Search } from '@element-plus/icons-vue'
 import PlayerItem from './components/PlayerItem.vue'
 import { ref } from 'vue'
-import { getPlayerListByUserName, getPlatformBindList } from '@/api/wowsPlayerInfo'
+import { getPlayerListByUserName, getPlatformBindList, getPlayerByUUID } from '@/api/wowsPlayerInfo'
 import type { Account } from '@/types/player'
 import wowsBaseStore from '@/stores/wowsBaseStore'
+import wowsPlayerStore from '@/stores/wowsPlayerStore'
+import { ElMessage } from 'element-plus'
 
 // wows基础信息
 const wowsBase = wowsBaseStore()
@@ -29,6 +31,23 @@ function searchPlayerListByUserName () {
 }
 
 // ==========搜uuid==========
+const uuid = ref('')
+const uuidSearchLoading = ref(false)
+const uuidPlayer = ref<Account>()
+function searchPlayerByUUID () {
+  // 538294581
+  getPlayerByUUID({ accountId: uuid.value }).then(response => {
+    console.log(response)
+    uuidPlayer.value = response
+  }).catch(error => {
+    console.log('error', error)
+    ElMessage.error({
+      message: error.message,
+      grouping: true
+    })
+  })
+}
+
 // ==========平台id==========
 // 选中的平台
 const selectPlatform = ref('QQ')
@@ -68,7 +87,25 @@ function searchPlayerByPlatformId () {
             :userName="player.userName"/>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="wowsUID">Role</el-tab-pane>
+      <el-tab-pane label="wowsUID">
+        <el-input
+          v-model="uuid"
+          :placeholder="`输入wowsUID`"
+          @keyup.enter="searchPlayerByUUID"
+        >
+          <template #append>
+            <el-button :icon="Search" :loading="uuidSearchLoading" @click=" searchPlayerByUUID"/>
+          </template>
+        </el-input>
+        <div class="play-list-div">
+          <PlayerItem
+            v-if="uuidPlayer"
+            :key="uuidPlayer.accountId"
+            :accountId="uuidPlayer.accountId"
+            :userName="uuidPlayer.userName"
+            :server="uuidPlayer.server"/>
+        </div>
+      </el-tab-pane>
       <el-tab-pane label="平台id">
         <el-input
           v-model="platformId"
@@ -86,13 +123,23 @@ function searchPlayerByPlatformId () {
         </el-input>
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of playerList"
+            v-for="player of platformBindPlayerList"
             :key="player.accountId"
             :accountId="player.accountId"
-            :userName="player.userName"/>
+            :userName="player.userName"
+            :server="player.server"/>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="历史">Task</el-tab-pane>
+      <el-tab-pane label="历史">
+        <div class="play-list-div">
+          <PlayerItem
+            v-for="player of wowsPlayerStore().accountHistory"
+            :key="player.accountId"
+            :accountId="player.accountId"
+            :userName="player.userName"
+            :server="player.server"/>
+        </div>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
