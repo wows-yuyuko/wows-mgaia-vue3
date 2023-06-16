@@ -13,6 +13,8 @@ function translateServer () {
 // 点击用户
 function clickAccount () {
   wowsPlayerStore().addAccountHistory({ accountId: props.accountId, server, userName: props.userName })
+  // 设置玩家信息
+  wowsPlayerStore().setPlayerInfo(server, props.accountId)
 }
 </script>
 

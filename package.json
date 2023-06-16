@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "dayjs": "^1.11.8",
+    "dexie": "^3.2.4",
     "element-plus": "^2.3.6",
     "lodash": "^4.17.21",
     "pinia": "^2.0.36",

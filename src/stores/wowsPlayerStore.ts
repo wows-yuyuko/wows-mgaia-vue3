@@ -5,6 +5,8 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import lodash from 'lodash'
 import type { Account } from '@/types/player'
+import { getPlayerInfo } from '@/api/wowsPlayerInfo'
+import db from '@/db/db'
 
 export default defineStore('wowsPlayerStore', () => {
   // 用户查询的历史记录
@@ -31,9 +33,20 @@ export default defineStore('wowsPlayerStore', () => {
     }
     return false
   }
+
+  const setPlayerInfo = (server: string, accountId:string|number) => {
+    // 查询数据库缓存数据
+
+    // 调用接口进行设置
+    getPlayerInfo({ server, accountId }).then(response => {
+      console.log('getPlayerInfo', response)
+      console.log(db.table('player').get({ accountid: '123' }))
+    })
+  }
   return {
     accountHistory,
     addAccountHistory,
-    deleteAccountHistory
+    deleteAccountHistory,
+    setPlayerInfo
   }
 })

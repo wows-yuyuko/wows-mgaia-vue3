@@ -33,3 +33,12 @@ export function getPlatformBindList (data:{platformType:string, platformId: stri
 export function getPlayerByUUID (data:{accountId:string}) {
   return request.get(BASE_URL + `/public/wows/account/search/db/${data.accountId}`, {})
 }
+
+/**
+ * 查询用户基础战绩信息
+ * @param data:{server:string, accountid: string}
+ * @returns
+ */
+export function getPlayerInfo (data:{server:string, accountId: string|number}) {
+  return request.get(BASE_URL + '/public/wows/account/user/info', data)
+}
