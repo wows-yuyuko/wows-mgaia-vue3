@@ -1,17 +1,17 @@
 // 数据库相关操作
 import Dexie from 'dexie'
-const db = new Dexie('wows')
-console.log(db)
-db.version(1).stores(
-  {
-    player: 'accountid, server, userName, updateTime'
-  }
-)
+import type { PlayerInfo } from '@/types/player'
 
 class WowsDb extends Dexie {
-  public constructor(){
-    super()
+  public player: Dexie.Table<PlayerInfo, string>
+  public constructor () {
+    super('wows')
+    this.version(1).stores({
+      player: '&accountid'
+    })
+    this.player = this.table('player')
   }
 }
+const db = new WowsDb()
 
 export default db

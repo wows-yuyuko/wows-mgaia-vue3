@@ -4,7 +4,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import lodash from 'lodash'
-import type { Account } from '@/types/player'
+import type { Account, PlayerInfo } from '@/types/player'
 import { getPlayerInfo } from '@/api/wowsPlayerInfo'
 import db from '@/db/db'
 
@@ -34,13 +34,13 @@ export default defineStore('wowsPlayerStore', () => {
     return false
   }
 
-  const setPlayerInfo = (server: string, accountId:string|number) => {
+  const setPlayerInfo = (server: string, accountId:string) => {
     // 查询数据库缓存数据
 
     // 调用接口进行设置
-    getPlayerInfo({ server, accountId }).then(response => {
+    getPlayerInfo({ server, accountId }).then((response: PlayerInfo) => {
       console.log('getPlayerInfo', response)
-      console.log(db.table('player').get({ accountid: '123' }))
+      db.player.add(response, accountId)
     })
   }
   return {
