@@ -5,7 +5,7 @@
  */
 export interface Account {
   userName: string,
-  accountId: number,
+  accountId: string,
   server?: string
 }
 
@@ -214,4 +214,5 @@ export interface PlayerInfo {
   }
   lastBattleTime: number // 最后战斗时间 秒
   recordTime: number // 服务器记录时间 毫秒
+  getTime: number // 获取此记录的时间
 }

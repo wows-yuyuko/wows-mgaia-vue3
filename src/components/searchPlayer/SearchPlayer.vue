@@ -8,7 +8,8 @@ import type { Account } from '@/types/player'
 import wowsBaseStore from '@/stores/wowsBaseStore'
 import wowsPlayerStore from '@/stores/wowsPlayerStore'
 import { ElMessage } from 'element-plus'
-
+const wowsPlayer = await wowsPlayerStore()
+const accountHistory = wowsPlayer.accountHistory
 // wows基础信息
 const wowsBase = wowsBaseStore()
 // ==========搜索名==========
@@ -133,7 +134,7 @@ function searchPlayerByPlatformId () {
       <el-tab-pane label="历史">
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of wowsPlayerStore().accountHistory"
+            v-for="player of accountHistory"
             :key="player.accountId"
             :accountId="player.accountId"
             :userName="player.userName"
