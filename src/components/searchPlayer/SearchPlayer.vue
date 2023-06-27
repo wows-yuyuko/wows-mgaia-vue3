@@ -8,8 +8,9 @@ import type { Account } from '@/types/player'
 import wowsBaseStore from '@/stores/wowsBaseStore'
 import wowsPlayerStore from '@/stores/wowsPlayerStore'
 import { ElMessage } from 'element-plus'
-const wowsPlayer = await wowsPlayerStore()
+const wowsPlayer = wowsPlayerStore()
 const accountHistory = wowsPlayer.accountHistory
+
 // wows基础信息
 const wowsBase = wowsBaseStore()
 // ==========搜索名==========

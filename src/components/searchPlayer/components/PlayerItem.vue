@@ -5,7 +5,7 @@ import wowsPlayerStore from '@/stores/wowsPlayerStore'
 import type { Account } from '@/types/player'
 const props = defineProps<Account>()
 const server = props.server ? props.server : wowsBaseStore().server
-const wowsPlayer = await wowsPlayerStore()
+const wowsPlayer = wowsPlayerStore()
 function translateServer () {
   return wowsBaseStore().serverList.find((serverItem) => {
     return serverItem.keu === server

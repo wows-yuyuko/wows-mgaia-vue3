@@ -6,7 +6,7 @@ import SearchPlayer from '@/components/searchPlayer/SearchPlayer.vue'
 <template>
   <div>
     <!-- 异步组件 -->
-    <Suspense><SearchPlayer/></Suspense>
+    <SearchPlayer/>
     玩家信息
   </div>
 </template>
