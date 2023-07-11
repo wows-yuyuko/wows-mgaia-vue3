@@ -18,6 +18,7 @@ export default defineStore('wowsPlayerStore', () => {
   // 向着账号历史记录中新增数据
   const addAccountHistory = (account:Account) => {
     console.log('触发新增')
+    debugger
     const findAccount = accountHistory.value.find(item => {
       return item.accountId === account.accountId
     })
@@ -40,7 +41,12 @@ export default defineStore('wowsPlayerStore', () => {
   }
   watch(accountHistory, () => {
     console.log('触发监听')
-    db.accountHistory.add({ id: 'accountHistoryDB', accountHistory: accountHistory.value })
+    db.accountHistory.add({ id: 'accountHistoryDB', accountHistory: accountHistory.value }, 'accountHistoryDB')
+    db.accountHistory.get('accountHistoryDB').then(accountHistoryDB => {
+      console.log(accountHistoryDB)
+    })
+  }, {
+    deep: true
   })
 
   // 玩家基础数据信息

@@ -9,7 +9,6 @@ import wowsBaseStore from '@/stores/wowsBaseStore'
 import wowsPlayerStore from '@/stores/wowsPlayerStore'
 import { ElMessage } from 'element-plus'
 const wowsPlayer = wowsPlayerStore()
-const accountHistory = wowsPlayer.accountHistory
 
 // wows基础信息
 const wowsBase = wowsBaseStore()
@@ -135,7 +134,7 @@ function searchPlayerByPlatformId () {
       <el-tab-pane label="历史">
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of accountHistory"
+            v-for="player of wowsPlayer.accountHistory"
             :key="player.accountId"
             :accountId="player.accountId"
             :userName="player.userName"
