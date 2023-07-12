@@ -14,18 +14,15 @@ interface AccountHistoryDB {
 class WowsDb extends Dexie {
   public player: Dexie.Table<PlayerInfoDB, string> // 基础战绩信息
   public accountHistory: Dexie.Table<AccountHistoryDB, string> // 玩家账号搜索记录
-  public test: Dexie.Table<{data: number[], id: string}, string>
 
   public constructor () {
     super('wows')
     this.version(1).stores({
       player: '&accountid',
-      accountHistory: '&id',
-      test: '&id'
+      accountHistory: '&id'
     })
     this.player = this.table('player')
     this.accountHistory = this.table('accountHistory')
-    this.test = this.table('test')
   }
 }
 const db = new WowsDb()

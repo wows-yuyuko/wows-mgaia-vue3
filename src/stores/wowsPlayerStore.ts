@@ -18,7 +18,6 @@ export default defineStore('wowsPlayerStore', () => {
   // 向着账号历史记录中新增数据
   const addAccountHistory = (account:Account) => {
     console.log('触发新增')
-    debugger
     const findAccount = accountHistory.value.find(item => {
       return item.accountId === account.accountId
     })
@@ -40,8 +39,10 @@ export default defineStore('wowsPlayerStore', () => {
     return false
   }
   watch(accountHistory, () => {
-    console.log('触发监听')
-    db.accountHistory.add({ id: 'accountHistoryDB', accountHistory: accountHistory.value }, 'accountHistoryDB')
+    console.log('触发监听', { id: 'accountHistoryDB', accountHistory: JSON.parse(JSON.stringify(accountHistory.value)) })
+    db.accountHistory.put({ id: 'accountHistoryDB', accountHistory: JSON.parse(JSON.stringify(accountHistory.value)) }).then(data => {
+      console.log(data)
+    })
     db.accountHistory.get('accountHistoryDB').then(accountHistoryDB => {
       console.log(accountHistoryDB)
     })
@@ -54,15 +55,18 @@ export default defineStore('wowsPlayerStore', () => {
   const setPlayerInfo = async (server: string, accountId:string) => {
     // 查询数据库缓存数据
     const getTime = Date.now()
-    console.log('db.player', await db.player.get(accountId))
-    const playerInfoDb = await db.player.get(accountId)
+    console.log('db.player', await db.player.get(accountId.toString()))
+    const playerInfoDb = await db.player.get(accountId.toString())
+    // console.log(getTime)
+    // console.log(playerInfoDb!.playerInfo.getTime)
+    // console.log(getTime - playerInfoDb!.playerInfo.getTime)
     if (lodash.isNil(playerInfoDb) || (getTime - playerInfoDb.playerInfo.getTime) > 1800000) {
       // 调用接口进行设置
       getPlayerInfo({ server, accountId }).then((response: PlayerInfo) => {
         console.log('getPlayerInfo', response)
         response.getTime = getTime
         playerInfo.value = response
-        db.player.add({ accountid: accountId, playerInfo: response }, accountId)
+        db.player.put({ accountid: accountId.toString(), playerInfo: response })
       })
     } else {
       playerInfo.value = playerInfoDb.playerInfo
