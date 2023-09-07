@@ -4,7 +4,7 @@
 
 import request from './request'
 
-const BASE_URL = 'https://v3-api.wows.shinoaki.com'
+const BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
 // const BASE_URL = ''
 /**
  * 获取服务器列表

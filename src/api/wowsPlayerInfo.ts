@@ -4,7 +4,7 @@
 import request from './request'
 import wowsBaseStore from '@/stores/wowsBaseStore'
 
-const BASE_URL = 'https://v3-api.wows.shinoaki.com'
+const BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
 // const BASE_URL = ''
 
 /**
