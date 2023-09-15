@@ -43,6 +43,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/container/Container.vue')
       },
       {
+        // 代币兑换计算
+        path: 'tokens',
+        component: () => import('@/views/tokens/Tokens.vue')
+      },
+      {
         // 相关下载
         path: 'relatedDownloads',
         component: () => import('@/views/relatedDownloads/RelatedDownloads.vue')
