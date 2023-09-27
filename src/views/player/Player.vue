@@ -356,12 +356,12 @@ const deleteHistoryPlayer = (playerItem: Player) => {
               </div>
             </template>
             <div v-for="user in (searchUserList.length>0)?searchUserList:player.historyPlayer" :key="user.accountId" style="display: flex;padding-bottom: 3px;">
-              <div class="player-item" @click="submitPlayer(user)">
+              <div v-if="!['7048454946', 7048454946, '7049850854', 7049850854].includes(user.accountId)" class="player-item" @click="submitPlayer(user)">
                 <div style="width: 50%;">{{ user.userName }}</div>
                 <div>{{ translateServer(user.server?user.server:player.server) }}</div>
                 <div>{{ user.accountId }}</div>
               </div>
-              <div style="padding-left: 20px;">
+              <div v-if="!['7048454946', 7048454946, '7049850854', 7049850854].includes(user.accountId)" style="padding-left: 20px;">
                 <el-button
                   link
                   type="info"
