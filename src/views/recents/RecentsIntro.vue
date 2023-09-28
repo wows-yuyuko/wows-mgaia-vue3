@@ -26,11 +26,21 @@
       </p>
 
       <h2>订阅方式</h2>
-
       <p>
         当前订阅方式为<a href="https://afdian.net/a/JustOneSummer">爱发电</a>购买
         <br />填写游戏AID即可开通recents服务<br />请在购买前通过
         <code>wws 查询绑定 me</code> 查看您的AID，如有误操作请联系我们
+      </p>
+
+      <h2>购买步骤</h2>
+      <p>
+        &nbsp;&nbsp;1. 查询你需要开通recents功能的账号AID<br />
+        <img src="./img/1.jpg" /><br />
+        &nbsp;&nbsp;2. 访问 https://afdian.net/a/JustOneSummer ，选择需要购买的时长<br />
+        <img src="./img/2.png" /><br />
+        &nbsp;&nbsp;3. 填写你的游戏AID<br />
+        <img src="./img/3.jpg" /><br />
+        &nbsp;&nbsp;4. 你是我军最后的希望<br />
       </p>
     </div>
   </div>
