@@ -56,6 +56,11 @@ const routes: Array<RouteRecordRaw> = [
         // 封号匹配
         path: 'banLike',
         component: () => import('@/views/banLike/BanLike.vue')
+      },
+      {
+        // 封号匹配
+        path: 'recentsIntro',
+        component: () => import('@/views/recents/RecentsIntro.vue')
       }
     ]
   },
