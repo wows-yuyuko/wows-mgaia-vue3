@@ -141,11 +141,11 @@ const shipTypeFormatter = (row:any, column:any, cellValue:string) => {
           </template>
         </el-table-column>
         <el-table-column prop="shipInfo.shipInfo.level" label="等级" align="center" width="80" sortable />
-        <el-table-column prop="rank" label="排名" align="center" width="80" sortable>
+        <!-- <el-table-column prop="rank" label="排名" align="center" width="80" sortable>
           <template #default="scope">
             <span>{{ scope.row.rank===-1?'':scope.row.rank }}</span>
           </template>
-        </el-table-column>
+        </el-table-column> -->
         <el-table-column prop="shipInfo.shipInfo.nameCn" label="船名" sortable>
           <template #default="scope">
             <img style="width: 50px;" :src="scope.row.shipInfo.shipInfo.imgSmall" />

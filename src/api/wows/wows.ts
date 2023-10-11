@@ -2,7 +2,7 @@ import request from '@/api/request'
 import axios from 'axios'
 import pako from 'pako'
 import useElectron from '@/store/electron'
-
+const V3_BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
 /**
  * https://api.worldoftanks.eu/wot/auth/login/?application_id=cf82e0d66424f5cbdc2634a046495be2&redirect_uri=https://api.wows.linxun.link/public/wows/oauth/wows/yuyuko/success
  * 去毛子那拿token
@@ -180,7 +180,7 @@ export function shipInfo (data: {shipId: string|number}) {
  * @returns
  */
 export function rankShip (data: {page: number, server: string, shipId: number}) {
-  return request.get(import.meta.env.VITE_TARGET + '/wows/rank/ship/server', data)
+  return request.get(V3_BASE_URL + `/public/rank/ship/${data.server}/${data.shipId}/0`, { page: data.page, desc: true })
 }
 
 /**

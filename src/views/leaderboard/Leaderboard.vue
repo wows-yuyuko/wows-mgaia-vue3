@@ -232,19 +232,27 @@ function goPlayer (accountId:number) {
         <el-table-column prop="sortValue" width="50" />
         <el-table-column prop="userName" width="250" label="玩家" sortable>
           <template #default="scope">
-            <span v-if="scope.row.clanTag">[{{ scope.row.clanTag }}]</span>
-            <el-button link type="primary" @click="goPlayer(scope.row.accountId)">{{ scope.row.userName }}</el-button>
+            <span v-if="scope.row.userInfo.clanInfo.tag">[{{ scope.row.userInfo.clanInfo.tag }}]</span>
+            <el-button link type="primary" @click="goPlayer(scope.row.userInfo.accountId)">{{ scope.row.userInfo.userName }}</el-button>
           </template>
         </el-table-column>
-        <el-table-column prop="pr" align="right" label="pr" />
-        <el-table-column prop="battles" align="right" label="场次" />
-        <el-table-column prop="wins" align="right" label="胜率" />
+        <el-table-column prop="pr.value" align="right" label="pr" />
+        <el-table-column prop="battle" align="right" label="场次" />
+        <el-table-column prop="wins" align="right" label="胜率">
+          <template #default="scope">
+            <span v-if="scope.row.wins">{{ lodash.round(scope.row.wins, 2) }}</span>
+          </template>
+        </el-table-column>
         <el-table-column prop="damage" align="right" label="场均伤害" />
         <el-table-column prop="maxDamage" align="right" label="最大伤害" />
         <el-table-column prop="xp" align="right" label="场均经验" />
         <el-table-column prop="originalXp" align="right" label="场均裸经验" />
         <el-table-column prop="maxXp" align="right" label="最大经验" />
-        <el-table-column prop="hit" align="right" label="命中率" />
+        <el-table-column prop="hit" align="right" label="命中率">
+          <template #default="scope">
+            <span v-if="scope.row.wins">{{ lodash.round(scope.row.hit, 2) }}</span>
+          </template>
+        </el-table-column>
       </el-table>
     </div>
   </div>
