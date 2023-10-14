@@ -9,7 +9,7 @@ const options = {
   // username: 'wows-poll',
   // password: 'wows-poll'
 }
-// const client = mqtt.connect('ws://mq.wows.linxun.link:8083/mqtt', options)
+// const client = mqtt.connect('ws://mq.wows.shinoaki.com:8083/mqtt', options)
 const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', options)
 // 链接成功会触发connect
 client.on('connect', function () {
