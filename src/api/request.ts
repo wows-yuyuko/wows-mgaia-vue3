@@ -42,11 +42,11 @@ service.interceptors.response.use(
     if ((response.config.url as string).indexOf('/account/recent/list') > -1) {
       return Promise.reject(response.data)
     }
-    ElMessage.error(response.data.message)
+    console.error(response.data.message)
     return Promise.reject(response.data)
   },
   error => {
-    ElMessage.error(error.message)
+    console.error(response.data.message)
     return Promise.reject(error)
   }
 )

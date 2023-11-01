@@ -49,7 +49,7 @@ const wgOa = () => {
             <!-- <el-menu-item index="/tokens">代币兑换计算</el-menu-item> -->
             <el-menu-item index="/banLike">历史封禁检测</el-menu-item>
             <el-menu-item index="/recentsIntro">recents介绍</el-menu-item>
-            <!-- <el-menu-item index="clan">舰队</el-menu-item> -->
+            <el-menu-item index="/clan">舰队</el-menu-item>
           </el-menu>
         </div>
         <div class="right-div">

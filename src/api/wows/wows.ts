@@ -202,6 +202,32 @@ export function searcBanCn (data:{accountId: string}) {
 }
 
 /**
+ * 通过tag模糊查询舰队列表
+ * @param data
+ * @returns
+ */
+export function clanSearch (data: {tag: string, server: string}) {
+  return request.get(V3_BASE_URL + `/public/wows/clan/search/${data.server}`, { tag: data.tag })
+}
+
+/**
+ * 获取舰队信息
+ * @param data
+ * @returns
+ */
+export function getClanInfo (data: {accountId: string, server: string}) {
+  return request.get(V3_BASE_URL + '/public/wows/clan/info', data)
+}
+
+/**
+ * 舰队抽奖
+ * @param data
+ * @returns
+ */
+export function getClanRoll (data: {clanId: string|number, server: string, count:number}) {
+  return request.get(V3_BASE_URL + `/public/wows/roll/${data.server}/clan/${data.clanId}`, { count: data.count })
+}
+/**
  * 缓存检查
  */
 async function cacheCheck (accountId: string, server: string) {
