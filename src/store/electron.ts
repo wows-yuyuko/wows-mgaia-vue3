@@ -5,7 +5,7 @@ import { Base64 } from 'js-base64'
 import { defineStore } from 'pinia'
 import { setLocalStorage, getLocalStorage } from '@/utils/storage'
 import { sortBattleTeamData } from '@/hooks/realTimeResults'
-import { accountUserInfo, accountSearchUser, accountShipInfo } from '@/api/wows/wows'
+import { accountUserInfo, accountSearchUserList, accountShipInfo } from '@/api/wows/wows'
 import usePlayer from '@/store/player'
 
 interface ElectronStore {
@@ -89,7 +89,7 @@ export default defineStore('electron', {
           // 机器人直接跳过
           if (player.name[0] === ':') { continue }
           // 需要先用名字查询id
-          await accountSearchUser({ server: playerStore.realTimeResultServer, userName: Base64.encode(player.name) }).then(
+          await accountSearchUserList({ server: playerStore.realTimeResultServer, userName: player.name, one: true }).then(
             response => {
               player.accountId = response.data.accountId
             }

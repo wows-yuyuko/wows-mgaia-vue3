@@ -11,45 +11,46 @@ function goPlayer () {
   playerStore.server = playerStore.realTimeResultServer
   router.push('/player')
 }
+// props.matchupRow.overallPerformance
 </script>
 <template>
   <div class="matchup-row" @dblclick="goPlayer">
-    <div class="pr-color" :style="{'background-color': props.matchupRow.overallPerformance?.pr.color}"></div>
+    <div class="pr-color" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color}"></div>
     <div style="width: 85px;">
       <img class="ship-img" :src="props.matchupRow.shipInfo.imgSmall" />
     </div>
     <div class="name">
-      <div class="text"><span v-if="props.matchupRow.overallPerformance?.clanInfo.tag">[{{ props.matchupRow.overallPerformance?.clanInfo.tag }}]</span>{{ props.matchupRow.name }}</div>
+      <div class="text"><span v-if="props.matchupRow.overallPerformance?.userInfo?.clanInfo?.tag">[{{ props.matchupRow.overallPerformance?.userInfo?.clanInfo?.tag }}]</span>{{ props.matchupRow.name }}</div>
       <div class="text">{{ props.matchupRow.shipInfo.nameCn }}</div>
     </div>
     <!-- 场次 -->
     <div class="number">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.battles }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.battleInfo.battle }}</div>
       <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.battles }}</div>
     </div>
     <!-- pr -->
     <div class="number">
-      <div class="text" :style="{'color': props.matchupRow.overallPerformance?.pr.color}">{{ props.matchupRow.overallPerformance?.pr.value }}</div>
+      <div class="text" :style="{'color': props.matchupRow.overallPerformance?.prInfo.color}">{{ props.matchupRow.overallPerformance?.prInfo.value }}</div>
       <div class="text" :style="{'color': props.matchupRow.shipPerformance?.shipInfo.pr.color}">{{ props.matchupRow.shipPerformance?.shipInfo.pr.value }}</div>
     </div>
     <!-- 胜率 -->
     <div class="number">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.wins }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.win }}</div>
       <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.wins }}</div>
     </div>
     <!-- 伤害 -->
     <div class="number" style="width: 70px;">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.damage }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damage }}</div>
       <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.damage }}</div>
     </div>
     <!-- 命中 -->
     <div class="number">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.hit }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
       <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.hit }}</div>
     </div>
     <!-- kd -->
     <div class="number">
-      <div class="text">{{ props.matchupRow.overallPerformance?.pvp.kd }}</div>
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.kd }}</div>
       <div class="text">{{ props.matchupRow.shipPerformance?.shipInfo.kd }}</div>
     </div>
   </div>

@@ -13,7 +13,7 @@ const userList = ref<{
 }[]>([])
 
 const searchUserList = (query: string) => {
-  accountSearchUserList({ server: 'cn', userName: Base64.encode(query), limit: 5 }).then(
+  accountSearchUserList({ server: 'cn', userName: query, limit: 5 }).then(
     response => {
       userList.value = response.data
       searchListLoading.value = false

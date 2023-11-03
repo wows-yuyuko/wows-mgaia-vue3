@@ -59,7 +59,7 @@ const remoteMethodAccountSearchUserList = () => {
 // 通过用户名模糊查询列表
 const searchUserListByUserName = () => {
   wowsLog({ type: '查用户', server: player.server, userName: query.value })
-  accountSearchUserList({ server: player.server, userName: Base64.encode(query.value), limit: 5 }).then(
+  accountSearchUserList({ server: player.server, userName: query.value, limit: 5 }).then(
     response => {
       searchUserList.value = response.data
       searchUserListLoading.value = false
@@ -91,7 +91,7 @@ const searchUserByAccountId = () => {
     response => {
       searchUserList.value = [{
         accountId: parseInt(query.value),
-        userName: response.data.userName,
+        userName: response.data.userInfo.userName,
         server: player.server
       }]
       searchUserListLoading.value = false
@@ -125,6 +125,7 @@ const playerInfo = ref()
 const loading = ref(false)
 // 查询用户总体信息
 const getUserInfo = (playerItem: Player) => {
+  battlesEchart.clear()
   loading.value = true
   // 拿用户综合统计信息
   accountUserInfo({ server: playerItem.server, accountId: playerItem.accountId }).then(
@@ -134,8 +135,8 @@ const getUserInfo = (playerItem: Player) => {
       player.setServer(playerItem.server)
       player.player.accountId = playerItem.accountId
       player.player.server = playerItem.server
-      player.player.userName = response.data.userName
-      playerItem.userName = response.data.userName
+      player.player.userName = response.data.userInfo.userName
+      playerItem.userName = response.data.userInfo.userName
       player.addHistoryPlayer(playerItem)
       // 切地址栏
       history.replaceState(null, document.title, `${window.location.href.split('?')[0]}?server=${player.player.server}&accountId=${player.player.accountId}`)
@@ -144,6 +145,8 @@ const getUserInfo = (playerItem: Player) => {
       infoShow.value = true
       loading.value = false
       // echarts.init()
+      // 构建战斗图表
+      buildBattlesEchart(response.data.battleCount, battlesEchart)
       nextTick(() => {
         echartsResize()
       })
@@ -152,7 +155,6 @@ const getUserInfo = (playerItem: Player) => {
     loading.value = false
   })
   // 拿用户单船数据
-  getUserShip(playerItem)
   // 拿近期数据 先做清空
   recentDate.value = {}
   recentDay.value = ''
@@ -168,36 +170,37 @@ onMounted(() => {
     getUserInfo({ server: route.query.server as string, accountId: parseInt(route.query.accountId as string), userName: '' })
   }
 })
-const getUserShip = (playerItem: Player) => {
-  battlesEchart.clear()
-  accountShipInfoList({ server: playerItem.server, accountId: playerItem.accountId + '' })
-    .then(response => {
-      // 扔store里 方便船只列表用
-      player.playerShips = response.data.shipInfoList
-      // 将船分类整合
-      const classifyShip: any = {}
-      for (const ship of player.playerShips) {
-        // 构建数据结构 先进性判空初始化
-        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level])) {
-          classifyShip[ship.shipInfo.shipInfo.level] = {}
-        }
-        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType])) {
-          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType] = {}
-        }
-        if (lodash.isNil(classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles)) {
-          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles = 0
-          classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].wins = 0
-        }
-        classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].battles += ship.shipInfo.battles
-        classifyShip[ship.shipInfo.shipInfo.level][ship.shipInfo.shipInfo.shipType].wins += ship.shipInfo.wins
-      }
-      // 构建战斗图表
-      buildBattlesEchart(classifyShip, battlesEchart)
-      nextTick(() => {
-        echartsResize()
-      })
-    })
-}
+// const getUserShip = (playerItem: Player) => {
+//   battlesEchart.clear()
+//   accountShipInfoList({ server: playerItem.server, accountId: playerItem.accountId + '' })
+//     .then(response => {
+//       // 扔store里 方便船只列表用
+//       player.playerShips = response.data.shipInfo
+//       // 将船分类整合
+//       const classifyShip: any = {}
+//       for (const ship of player.playerShips) {
+//         debugger
+//         // 构建数据结构 先进性判空初始化
+//         if (lodash.isNil(classifyShip[ship.shipInfo.level])) {
+//           classifyShip[ship.shipInfo.level] = {}
+//         }
+//         if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType])) {
+//           classifyShip[ship.shipInfo.level][ship.shipInfo.shipType] = {}
+//         }
+//         if (lodash.isNil(classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles)) {
+//           classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles = 0
+//           classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins = 0
+//         }
+//         classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].battles += ship.shipInfo.battles
+//         classifyShip[ship.shipInfo.level][ship.shipInfo.shipType].wins += ship.shipInfo.wins
+//       }
+//       // 构建战斗图表
+//       buildBattlesEchart(classifyShip, battlesEchart)
+//       nextTick(() => {
+//         echartsResize()
+//       })
+//     })
+// }
 
 // 刷新图表操作
 const echartsResize = () => {
@@ -385,8 +388,8 @@ const deleteHistoryPlayer = (playerItem: Player) => {
             <div style="display: flex;">
               <Avatar :account-id="player.player.accountId" />
               <div class="name-info">
-                <span v-show="playerInfo?.clanInfo?.tag" :style="{color: playerInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.clanInfo?.tag }}]</span>
-                <span :class="player.avatarMap[player.player.accountId]?'mirage-text':''">{{ playerInfo?.userName }}</span>
+                <span v-show="playerInfo?.userInfo?.clanInfo?.tag" :style="{color: playerInfo?.userInfo?.clanInfo?.colorRgb}">[{{ playerInfo?.userInfo?.clanInfo?.tag }}]</span>
+                <span :class="player.avatarMap[player.player.accountId]?'mirage-text':''">{{ playerInfo?.userInfo?.userName }}</span>
                 <!-- <sup class="like">{{ playerInfo?.karma }}</sup> 此数据暂时无效 -->
                 <span v-show="playerInfo?.lastDateTime > 0" class="registration-time">最后战斗: {{ moment(playerInfo?.lastDateTime*1000).format('YYYY-MM-DD') }}</span>
               </div>
@@ -397,104 +400,104 @@ const deleteHistoryPlayer = (playerItem: Player) => {
         </div>
         <!-- 概览信息 -->
         <div class="overview">
-          <PlayerInfoOverview :pr="playerInfo?.pr" :pvp="playerInfo?.pvp" :dwp-data-v-o="playerInfo?.dwpDataVO" />
+          <PlayerInfoOverview :pr="playerInfo?.prInfo" :pvp="playerInfo?.battleTypeInfo" :dwp-data-v-o="playerInfo?.dwpData" />
           <el-divider />
           <!-- 组队和排位情况 -->
           <div class="overview-team">
             <div>
               <div class="account-title">单野</div>
               <div class="team-item">
-                <div>场次</div><div>{{ playerInfo?.pvpSolo?.battles }}</div>
+                <div>场次</div><div>{{ playerInfo?.battleTypeInfo?.PVP_SOLO?.shipInfo.battleInfo.battle }}</div>
               </div>
               <div class="team-item">
-                <div>PR</div><div :style="{color:playerInfo?.pvpSolo?.pr?.color}">{{ playerInfo?.pvpSolo?.pr?.value }}</div>
+                <div>PR</div><div :style="{color:playerInfo?.battleTypeInfo?.PVP_SOLO.prInfo.color}">{{ playerInfo?.battleTypeInfo?.PVP_SOLO.prInfo.value }}</div>
               </div>
               <div class="team-item">
-                <div>经验</div><div>{{ playerInfo?.pvpSolo?.xp }}</div>
+                <div>经验</div><div>{{ playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.avgInfo.xp }}</div>
               </div>
               <div class="team-item">
-                <div>场均</div><div>{{ playerInfo?.pvpSolo?.damage }}</div>
+                <div>场均</div><div>{{ playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.avgInfo.damage }}</div>
               </div>
               <div class="team-item">
-                <div>K/D</div><div>{{ playerInfo?.pvpSolo?.kd }}</div>
+                <div>K/D</div><div>{{ playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.avgInfo.kd }}</div>
               </div>
               <div class="team-item">
-                <div>命中</div><div>{{ playerInfo?.pvpSolo?.hit }}%</div>
+                <div>命中</div><div>{{ playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.hitRatioInfo.ratioAtba }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpSolo?.wins)}">{{ playerInfo?.pvpSolo?.wins }}%</div>
+                <div>胜率</div><div :style="{color: playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.battleTypeInfo?.PVP_SOLO.shipInfo.avgInfo.win }}%</div>
               </div>
             </div>
             <div>
               <div class="account-title">自行车</div>
               <div class="team-item">
-                <div>场次</div><div>{{ playerInfo?.pvpTwo?.battles }}</div>
+                <div>场次</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.battleInfo.battle }}</div>
               </div>
               <div class="team-item">
-                <div>PR</div><div :style="{color:playerInfo?.pvpTwo?.pr?.color}">{{ playerInfo?.pvpTwo?.pr?.value }}</div>
+                <div>PR</div><div :style="{color:playerInfo?.battleTypeInfo?.PVP_DIV2.prInfo.color}">{{ playerInfo?.battleTypeInfo?.PVP_DIV2.prInfo.value }}</div>
               </div>
               <div class="team-item">
-                <div>经验</div><div>{{ playerInfo?.pvpTwo?.xp }}</div>
+                <div>经验</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.avgInfo.xp }}</div>
               </div>
               <div class="team-item">
-                <div>场均</div><div>{{ playerInfo?.pvpTwo?.damage }}</div>
+                <div>场均</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.avgInfo.damage }}</div>
               </div>
               <div class="team-item">
-                <div>K/D</div><div>{{ playerInfo?.pvpTwo?.kd }}</div>
+                <div>K/D</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.avgInfo.kd }}</div>
               </div>
               <div class="team-item">
-                <div>命中</div><div>{{ playerInfo?.pvpTwo?.hit }}%</div>
+                <div>命中</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.hitRatioInfo.ratioAtba }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpTwo?.wins)}">{{ playerInfo?.pvpTwo?.wins }}%</div>
+                <div>胜率</div><div :style="{color: playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.battleTypeInfo?.PVP_DIV2.shipInfo.avgInfo.win }}%</div>
               </div>
             </div>
             <div>
               <div class="account-title">装甲车</div>
               <div class="team-item">
-                <div>场次</div><div>{{ playerInfo?.pvpThree?.battles }}</div>
+                <div>场次</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.battleInfo.battle }}</div>
               </div>
               <div class="team-item">
-                <div>PR</div><div :style="{color:playerInfo?.pvpThree?.pr?.color}">{{ playerInfo?.pvpThree?.pr?.value }}</div>
+                <div>PR</div><div :style="{color:playerInfo?.battleTypeInfo?.PVP_DIV3.prInfo.color}">{{ playerInfo?.battleTypeInfo?.PVP_DIV3.prInfo.value }}</div>
               </div>
               <div class="team-item">
-                <div>经验</div><div>{{ playerInfo?.pvpThree?.xp }}</div>
+                <div>经验</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.avgInfo.xp }}</div>
               </div>
               <div class="team-item">
-                <div>场均</div><div>{{ playerInfo?.pvpThree?.damage }}</div>
+                <div>场均</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.avgInfo.damage }}</div>
               </div>
               <div class="team-item">
-                <div>K/D</div><div>{{ playerInfo?.pvpThree?.kd }}</div>
+                <div>K/D</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.avgInfo.kd }}</div>
               </div>
               <div class="team-item">
-                <div>命中</div><div>{{ playerInfo?.pvpThree?.hit }}%</div>
+                <div>命中</div><div>{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.hitRatioInfo.ratioAtba }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.pvpThree?.wins)}">{{ playerInfo?.pvpThree?.wins }}%</div>
+                <div>胜率</div><div :style="{color: playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.battleTypeInfo?.PVP_DIV3.shipInfo.avgInfo.win }}%</div>
               </div>
             </div>
             <div v-show="playerInfo?.rankSolo?.battles > 0">
               <div class="account-title">排位赛</div>
               <div class="team-item">
-                <div>场次</div><div>{{ playerInfo?.rankSolo?.battles }}</div>
+                <div>场次</div><div>{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.battleInfo.battle }}</div>
               </div>
               <div class="team-item">
-                <div>PR</div><div :style="{color:playerInfo?.rankSolo?.pr?.color}">{{ playerInfo?.rankSolo?.pr?.value }}</div>
+                <div>PR</div><div :style="{color:playerInfo?.battleTypeInfo?.RANK_SOLO.prInfo.color}">{{ playerInfo?.battleTypeInfo?.RANK_SOLO.prInfo.value }}</div>
               </div>
               <div class="team-item">
-                <div>经验</div><div>{{ playerInfo?.rankSolo?.xp }}</div>
+                <div>经验</div><div>{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.avgInfo.xp }}</div>
               </div>
               <div class="team-item">
-                <div>场均</div><div>{{ playerInfo?.rankSolo?.damage }}</div>
+                <div>场均</div><div>{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.avgInfo.damage }}</div>
               </div>
               <div class="team-item">
-                <div>K/D</div><div>{{ playerInfo?.rankSolo?.kd }}</div>
+                <div>K/D</div><div>{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.avgInfo.kd }}</div>
               </div>
               <div class="team-item">
-                <div>命中</div><div>{{ playerInfo?.rankSolo?.hit }}%</div>
+                <div>命中</div><div>{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.hitRatioInfo.ratioAtba }}%</div>
               </div>
               <div class="team-item">
-                <div>胜率</div><div :style="{color: getWinColor(playerInfo?.rankSolo?.wins)}">{{ playerInfo?.rankSolo?.wins }}%</div>
+                <div>胜率</div><div :style="{color: playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.battleTypeInfo?.RANK_SOLO.shipInfo.avgInfo.win }}%</div>
               </div>
             </div>
           </div>
@@ -532,54 +535,67 @@ const deleteHistoryPlayer = (playerItem: Player) => {
                 <tr>
                   <td class="icon"><div class="icon-dd"></div></td>
                   <td class="name">驱逐舰</td>
-                  <td class="value">{{ playerInfo?.type?.Destroyer?.battles }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.battleInfo.battle }}</td>
                   <td class="value">
-                    <span :style="{color: playerInfo?.type?.Destroyer?.pr?.color}">
-                      {{ playerInfo?.type?.Destroyer?.pr?.value }} {{ playerInfo?.type?.Destroyer?.pr?.name }}
+                    <span :style="{color: playerInfo?.shipTypeInfo.Destroyer.PVP.prInfo.color}">
+                      {{ playerInfo?.shipTypeInfo.Destroyer.PVP.prInfo.value }} {{ playerInfo?.shipTypeInfo.Destroyer.PVP.prInfo.name }}
                     </span>
                   </td>
-                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Destroyer?.wins)}">{{ playerInfo?.type?.Destroyer?.wins }}%</td>
-                  <td class="value" :style="{color: getDamageColor('Destroyer', playerInfo?.type?.Destroyer?.damage)}">{{ playerInfo?.type?.Destroyer?.damage }}</td>
-                  <td class="value">{{ playerInfo?.type?.Destroyer?.hit }}</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.win }}%</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.damageData.color}">{{ playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.damage }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Destroyer.PVP.shipInfo.hitRatioInfo.ratioMain }}%</td>
                 </tr>
                 <tr>
                   <td class="icon"><div class="icon-ca"></div></td>
                   <td class="name">巡洋舰</td>
-                  <td class="value">{{ playerInfo?.type?.Cruiser?.battles }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.battleInfo.battle }}</td>
                   <td class="value">
-                    <span :style="{color: playerInfo?.type?.Cruiser?.pr?.color}">
-                      {{ playerInfo?.type?.Cruiser?.pr?.value }} {{ playerInfo?.type?.Cruiser?.pr?.name }}
+                    <span :style="{color: playerInfo?.shipTypeInfo.Cruiser.PVP.prInfo.color}">
+                      {{ playerInfo?.shipTypeInfo.Cruiser.PVP.prInfo.value }} {{ playerInfo?.shipTypeInfo.Cruiser.PVP.prInfo.name }}
                     </span>
                   </td>
-                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Cruiser?.wins)}">{{ playerInfo?.type?.Cruiser?.wins }}%</td>
-                  <td class="value" :style="{color: getDamageColor('Cruiser', playerInfo?.type?.Cruiser?.damage)}">{{ playerInfo?.type?.Cruiser?.damage }}</td>
-                  <td class="value">{{ playerInfo?.type?.Cruiser?.hit }}</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.win }}%</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.damageData.color}">{{ playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.damage }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Cruiser.PVP.shipInfo.hitRatioInfo.ratioMain }}%</td>
                 </tr>
                 <tr>
                   <td class="icon"><div class="icon-bb"></div></td>
                   <td class="name">战列舰</td>
-                  <td class="value">{{ playerInfo?.type?.Battleship?.battles }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.battleInfo.battle }}</td>
                   <td class="value">
-                    <span :style="{color: playerInfo?.type?.Battleship?.pr?.color}">
-                      {{ playerInfo?.type?.Battleship?.pr?.value }} {{ playerInfo?.type?.Battleship?.pr?.name }}
+                    <span :style="{color: playerInfo?.shipTypeInfo.Battleship.PVP.prInfo.color}">
+                      {{ playerInfo?.shipTypeInfo.Battleship.PVP.prInfo.value }} {{ playerInfo?.shipTypeInfo.Battleship.PVP.prInfo.name }}
                     </span>
                   </td>
-                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.Battleship?.wins)}">{{ playerInfo?.type?.Battleship?.wins }}%</td>
-                  <td class="value" :style="{color: getDamageColor('Battleship', playerInfo?.type?.Battleship?.damage)}">{{ playerInfo?.type?.Battleship?.damage }}</td>
-                  <td class="value">{{ playerInfo?.type?.Battleship?.hit }}</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.win }}%</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.damageData.color}">{{ playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.damage }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Battleship.PVP.shipInfo.hitRatioInfo.ratioMain }}%</td>
                 </tr>
                 <tr>
                   <td class="icon"><div class="icon-cv"></div></td>
                   <td class="name">航空母舰</td>
-                  <td class="value">{{ playerInfo?.type?.AirCarrier?.battles }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.battleInfo.battle }}</td>
                   <td class="value">
-                    <span :style="{color: playerInfo?.type?.AirCarrier?.pr?.color}">
-                      {{ playerInfo?.type?.AirCarrier?.pr?.value }} {{ playerInfo?.type?.AirCarrier?.pr?.name }}
+                    <span :style="{color: playerInfo?.shipTypeInfo.AirCarrier.PVP.prInfo.color}">
+                      {{ playerInfo?.shipTypeInfo.AirCarrier.PVP.prInfo.value }} {{ playerInfo?.shipTypeInfo.AirCarrier.PVP.prInfo.name }}
                     </span>
                   </td>
-                  <td class="value" :style="{color: getWinColor(playerInfo?.type?.AirCarrier?.wins)}">{{ playerInfo?.type?.AirCarrier?.wins }}%</td>
-                  <td class="value" :style="{color: getDamageColor('AirCarrier', playerInfo?.type?.AirCarrier?.damage)}">{{ playerInfo?.type?.AirCarrier?.damage }}</td>
-                  <td class="value">{{ playerInfo?.type?.AirCarrier?.hit }}</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.win }}%</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.damageData.color}">{{ playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.damage }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.AirCarrier.PVP.shipInfo.hitRatioInfo.ratioAtba }}%</td>
+                </tr>
+                <tr>
+                  <td class="icon"><div class="icon-ss"></div></td>
+                  <td class="name">潜艇</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.battleInfo.battle }}</td>
+                  <td class="value">
+                    <span :style="{color: playerInfo?.shipTypeInfo.Submarine.PVP.prInfo.color}">
+                      {{ playerInfo?.shipTypeInfo.Submarine.PVP.prInfo.value }} {{ playerInfo?.shipTypeInfo.Submarine.PVP.prInfo.name }}
+                    </span>
+                  </td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.winsData.color}">{{ playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.win }}%</td>
+                  <td class="value" :style="{color: playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.damageData.color}">{{ playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.damage }}</td>
+                  <td class="value">{{ playerInfo?.shipTypeInfo.Submarine.PVP.shipInfo.hitRatioInfo.ratioTpd }}%</td>
                 </tr>
               </tbody>
             </table>

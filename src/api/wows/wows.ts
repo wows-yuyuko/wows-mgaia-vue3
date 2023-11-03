@@ -24,7 +24,8 @@ const apiPath: string = import.meta.env.VITE_TARGET + import.meta.env.VITE_PUBLI
  * @returns 服务器列表
  */
 export function serverList () {
-  return request.get(apiPath + '/encyclopedia/server/list', {})
+  // return request.get(apiPath + '/encyclopedia/server/list', {})
+  return request.get(V3_BASE_URL + '/public/wows/encyclopedia/server/list', {})
 }
 
 /**
@@ -32,7 +33,8 @@ export function serverList () {
  * @returns 地区列表
  */
 export function nationList () {
-  return request.get(apiPath + '/encyclopedia/nation/list', {})
+  // return request.get(apiPath + '/encyclopedia/nation/list', {})
+  return request.get(V3_BASE_URL + '/public/wows/encyclopedia/nation/list', {})
 }
 
 /**
@@ -40,16 +42,8 @@ export function nationList () {
  * @returns
  */
 export function shipType () {
-  return request.get(apiPath + '/encyclopedia/ship/type', {})
-}
-
-/**
- * 查找用户-模糊查询
- * @param data
- * @returns
- */
-export function accountSearchUserList (data: { server: string, userName: string, limit:number }) {
-  return request.post(apiPath + '/account/search/user/list', data)
+  // return request.get(apiPath + '/encyclopedia/ship/type', {})
+  return request.get(V3_BASE_URL + '/public/wows/encyclopedia/ship/type', {})
 }
 
 /**
@@ -57,8 +51,9 @@ export function accountSearchUserList (data: { server: string, userName: string,
  * @param data
  * @returns
  */
-export function accountSearchUser (data: { server: string, userName: string}) {
-  return request.post(apiPath + '/account/search/user', data)
+export function accountSearchUserList (data: { server: string, userName: string, limit?:number, one?: boolean }) {
+  // return request.post(apiPath + '/account/search/user/list', data)
+  return request.post(V3_BASE_URL + `/public/wows/account/search/${data.server}/user`, data)
 }
 
 /**
@@ -67,7 +62,8 @@ export function accountSearchUser (data: { server: string, userName: string}) {
  * @returns
  */
 export function accountPlatformBindList (data: { platformType : string, platformId : string }) {
-  return request.get(apiPath + '/bind/account/platform/bind/list', data)
+  // return request.get(apiPath + '/bind/account/platform/bind/list', data)
+  return request.get(V3_BASE_URL + '/api/user/platform/bind/list', data)
 }
 
 /**
@@ -76,11 +72,12 @@ export function accountPlatformBindList (data: { platformType : string, platform
  * @returns
  */
 export async function accountUserInfo (data: { server: string, accountId: number }) {
-  const electronStore = useElectron()
-  if (data.server === 'cn' && electronStore.electronEnable) {
-    await cacheCheck(data.accountId.toString(), data.server)
-  }
-  return request.get(apiPath + '/account/v2/user/info', data)
+  // const electronStore = useElectron()
+  // if (data.server === 'cn' && electronStore.electronEnable) {
+  //   await cacheCheck(data.accountId.toString(), data.server)
+  // }
+  // return request.get(apiPath + '/account/v2/user/info', data)
+  return request.get(V3_BASE_URL + '/public/wows/account/user/info', data)
 }
 
 /**
@@ -89,7 +86,8 @@ export async function accountUserInfo (data: { server: string, accountId: number
  * @returns
  */
 export function accountShipInfoList (data: { server: string, accountId: string, shipType?: string, level?: string, county?: string }) {
-  return request.post(apiPath + '/account/ship/info/list', data)
+  // return request.post(apiPath + '/account/ship/info/list', data)
+  return request.get(V3_BASE_URL + '/public/wows/account/ship/info/list', data)
 }
 
 /**
@@ -98,11 +96,12 @@ export function accountShipInfoList (data: { server: string, accountId: string, 
  * @returns
  */
 export async function accountShipInfo (data: { server: string, accountId: string, shipId: string }) {
-  const electronStore = useElectron()
-  if (data.server === 'cn' && electronStore.electronEnable) {
-    await cacheCheck(data.accountId.toString(), data.server)
-  }
-  return request.get(apiPath + '/account/ship/info', data)
+  // const electronStore = useElectron()
+  // if (data.server === 'cn' && electronStore.electronEnable) {
+  //   await cacheCheck(data.accountId.toString(), data.server)
+  // }
+  // return request.get(apiPath + '/account/ship/info', data)
+  return request.get(V3_BASE_URL + '/public/wows/account/ship/info', data)
 }
 
 /**
@@ -231,7 +230,7 @@ export function getClanRoll (data: {clanId: string|number, server: string, count
  * 缓存检查
  */
 async function cacheCheck (accountId: string, server: string) {
-  await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+  await request.post(V3_BASE_URL + '/api/wows/cache/check', {
     accountId,
     server
   }).then(async data => {
@@ -246,7 +245,7 @@ async function cacheCheck (accountId: string, server: string) {
         })
       }
       data.data = bytesToBase64(pako.gzip(JSON.stringify(data.data)))
-      await request.post(import.meta.env.VITE_TARGET + '/api/wows/cache/check', {
+      await request.post(V3_BASE_URL + '/api/wows/cache/check', {
         accountId,
         server,
         data: data.data

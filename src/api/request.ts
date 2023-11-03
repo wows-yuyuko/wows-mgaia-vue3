@@ -20,7 +20,8 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // 发出请求前的处理
-    (config.headers as AxiosRequestHeaders).Authorization = 'WEB_API:wows_yuyuko'
+    (config.headers as AxiosRequestHeaders).Authorization = 'WEB_API:wows_yuyuko';
+    (config.headers as AxiosRequestHeaders)['Yuyuko-Client-Type'] = 'WEB;01'
     // config.headers['sessionKey'] = store.getters.key // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
     return config
   },
@@ -46,7 +47,7 @@ service.interceptors.response.use(
     return Promise.reject(response.data)
   },
   error => {
-    console.error(response.data.message)
+    console.error(error)
     return Promise.reject(error)
   }
 )

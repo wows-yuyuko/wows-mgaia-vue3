@@ -15,7 +15,7 @@ interface PlayerStore {
   realTimeResultServer: string
   serverList: { key: string, value: string }[]
   nationList: { nation: string, cn: string }[]
-  shipTypeList: { key: string, value: string }[]
+  shipTypeList: { shipType: string, typeName: string }[]
   playerShips: any[]
   avatarMap: {[key:number]:string}
   avgShip: {

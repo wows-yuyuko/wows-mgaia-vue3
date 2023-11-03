@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import lodash from 'lodash'
 defineProps<{pr: any, pvp:any, dwpDataVO:any}>()
 </script>
 
@@ -34,15 +35,15 @@ defineProps<{pr: any, pvp:any, dwpDataVO:any}>()
         <img src="@/assets/player/overview/battles.png">
       </div>
       <div class="title">场次</div>
-      <div class="value">{{ pvp?.battles }}</div>
+      <div class="value">{{ pvp?.PVP.shipInfo.battleInfo.battle }}</div>
     </div>
     <div>
       <div>
         <img src="@/assets/player/overview/wins.png">
       </div>
       <div class="title">胜率</div>
-      <div class="value">
-        {{ pvp?.wins }}%
+      <div class="value" :style="{color: pvp?.PVP.shipInfo.avgInfo.winsData.color}">
+        {{ pvp?.PVP.shipInfo.avgInfo.win }}%
         <el-tooltip
           effect="dark"
           content="距离上次统计的变化"
@@ -51,29 +52,29 @@ defineProps<{pr: any, pvp:any, dwpDataVO:any}>()
           <sup v-if="dwpDataVO?.wins">({{ dwpDataVO?.wins }})</sup>
         </el-tooltip>
       </div>
-      <div style="color: white;">KD: {{ pvp?.kd }}</div>
+      <div style="color: white;">KD: {{ pvp?.PVP.shipInfo.avgInfo.kd }}</div>
     </div>
     <div class="flag">
       <div>
         <img src="@/assets/player/overview/xp.png">
       </div>
       <div class="title">场均经验</div>
-      <div class="value">{{ pvp?.xp }}</div>
+      <div class="value">{{ pvp?.PVP.shipInfo.avgInfo.xp }}</div>
     </div>
     <div>
       <div>
         <img src="@/assets/player/overview/hit.png">
       </div>
       <div class="title">命中</div>
-      <div class="value">{{ pvp?.hit }}%</div>
+      <div class="value">{{ pvp?.PVP.shipInfo.hitRatioInfo.ratioMain }}%</div>
     </div>
     <div>
       <div>
         <img src="@/assets/player/overview/damage.png">
       </div>
       <div class="title">场均</div>
-      <div class="value">
-        {{ pvp?.damage }}
+      <div class="value" :style="{color: pvp?.PVP.shipInfo.avgInfo.damageData.color}">
+        {{ pvp?.PVP.shipInfo.avgInfo.damage }}
         <el-tooltip
           effect="dark"
           content="距离上次统计的变化"
