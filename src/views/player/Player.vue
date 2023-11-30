@@ -198,6 +198,7 @@ const recentDataComputed = computed(() => {
             </span>
             <span style="font-size: 18px;">{{  usePlayerInfo.playerInfo.userInfo.userName }}</span>
             <span style="font-size: 12px;margin-left: 30px;color: #999999;">注册时间: {{ dayjs.unix(usePlayerInfo.playerInfo.userInfo.accountCreateTime).format('YYYY-MM-DD') }}</span>
+            <span style="font-size: 12px;margin-left: 30px;color: #999999;">最后战斗: {{ dayjs.unix(usePlayerInfo.playerInfo.lastBattleTime).format('YYYY-MM-DD') }}</span>
 
           </div>
           <div><el-button :icon="Search" circle @click="usePlayerInfo.playerInfo = null"/></div>

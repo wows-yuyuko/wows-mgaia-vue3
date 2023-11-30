@@ -9,6 +9,10 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default ({ mode }:{mode:string}) => {
   return defineConfig({
+    base: './',
+    build: {
+      outDir: 'wowsv2'
+    },
     plugins: [
       vue(),
       AutoImport({
