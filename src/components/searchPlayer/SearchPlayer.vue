@@ -1,68 +1,76 @@
 <script setup lang="ts">
-// 搜索玩家
 import { Search } from '@element-plus/icons-vue'
-import PlayerItem from './components/PlayerItem.vue'
 import { ref } from 'vue'
-import { getPlayerListByUserName, getPlatformBindList, getPlayerByUUID } from '@/api/wowsPlayerInfo'
-import type { Account } from '@/types/player'
-import wowsBaseStore from '@/stores/wowsBaseStore'
-import wowsPlayerStore from '@/stores/wowsPlayerStore'
-import { ElMessage } from 'element-plus'
-const wowsPlayer = wowsPlayerStore()
+import { getPlatformApi } from '@/api/wowsV3/wowsBase'
+import { getPlayerListByUserName, getPlayerByAccountId, getPlatformBindList } from '@/api/wowsV3/wowsPlayer'
+import basicInfo from '@/stores/basicInfo'
+import type { Account } from '@/types/wowsPlayerType'
+import PlayerItem from './components/PlayerItem.vue'
+import playerInfo from '@/stores/playerInfo'
+// 搜索玩家
+const useBasicInfo = basicInfo()
+const usePlayerInfo = playerInfo()
 
-// wows基础信息
-const wowsBase = wowsBaseStore()
-// ==========搜索名==========
+// =========通过名字搜索=========
 const userName = ref('')
+const searchPlayerList = ref<Account[]>([])
 const userNameSearchLoading = ref(false)
-// 返回的账号列表
-const playerList = ref<Account[]>([])
-function searchPlayerListByUserName () {
+
+const searchPlayerListByUserName = () => {
   if (userName.value === '') return
   userNameSearchLoading.value = true
-  getPlayerListByUserName({ userName: userName.value }).then(response => {
+  getPlayerListByUserName({ userName: userName.value, server: useBasicInfo.useServerValue, limit: 5 }).then(response => {
+    searchPlayerList.value = response
     console.log(response)
-    playerList.value = response
-    userNameSearchLoading.value = false
-  }).catch(error => {
-    console.log(error)
     userNameSearchLoading.value = false
   })
-  return ''
 }
-
-// ==========搜uuid==========
+// =========通过uuid搜索=========
 const uuid = ref('')
+const searchUuidPlayerList = ref<Account[]>([])
 const uuidSearchLoading = ref(false)
-const uuidPlayer = ref<Account>()
-function searchPlayerByUUID () {
-  // 538294581
-  getPlayerByUUID({ accountId: uuid.value }).then(response => {
+const searchPlayerByUUID = () => {
+  uuidSearchLoading.value = true
+  // 先通过用户信息接口查询
+  getPlayerByAccountId({ server: useBasicInfo.useServerValue, accountId: uuid.value }).then(response => {
     console.log(response)
-    uuidPlayer.value = response
-  }).catch(error => {
-    console.log('error', error)
-    ElMessage.error({
-      message: error.message,
-      grouping: true
-    })
+    searchUuidPlayerList.value = [
+      {
+        accountId: response.userInfo.accountId,
+        userName: response.userInfo.userName,
+        server: useBasicInfo.useServerValue
+      }
+    ]
+    uuidSearchLoading.value = false
+  }).catch(err => {
+    console.log(err)
+    searchUuidPlayerList.value = []
+    uuidSearchLoading.value = false
   })
 }
 
-// ==========平台id==========
-// 选中的平台
-const selectPlatform = ref('QQ')
+// =========通过平台账号搜索=========
+// 获取平台列表
+const platformList = ref([])
+const platformType = ref('QQ')
+getPlatformApi().then(response => {
+  console.log(response)
+  platformList.value = response
+  platformType.value = response[0]
+})
 const platformId = ref('')
-const platformIdSearchLoading = ref(false)
-const platformBindPlayerList = ref<Account[]>([])
-function searchPlayerByPlatformId () {
-  getPlatformBindList({ platformId: platformId.value, platformType: selectPlatform.value }).then(response => {
+const searchPlatformPlayerList = ref<Account[]>([])
+const platformSearchLoading = ref(false)
+const searchPlayerByPlatform = () => {
+  platformSearchLoading.value = true
+  getPlatformBindList({ platformType: platformType.value, platformId: platformId.value }).then(response => {
     console.log(response)
-    platformBindPlayerList.value = response
-    platformIdSearchLoading.value = false
-  }).catch(error => {
-    console.log(error)
-    platformIdSearchLoading.value = false
+    searchPlatformPlayerList.value = response
+    platformSearchLoading.value = false
+  }).catch(err => {
+    console.log(err)
+    searchPlatformPlayerList.value = []
+    platformSearchLoading.value = false
   })
 }
 </script>
@@ -82,8 +90,9 @@ function searchPlayerByPlatformId () {
         </el-input>
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of playerList"
+            v-for="player of searchPlayerList"
             :key="player.accountId"
+            :server="player.server"
             :accountId="player.accountId"
             :userName="player.userName"/>
         </div>
@@ -100,61 +109,55 @@ function searchPlayerByPlatformId () {
         </el-input>
         <div class="play-list-div">
           <PlayerItem
-            v-if="uuidPlayer"
-            :key="uuidPlayer.accountId"
-            :accountId="uuidPlayer.accountId"
-            :userName="uuidPlayer.userName"
-            :server="uuidPlayer.server"/>
+            v-for="player of searchPlayerList"
+            :key="player.accountId"
+            :server="player.server"
+            :accountId="player.accountId"
+            :userName="player.userName"/>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="平台id">
+      <el-tab-pane label="平台账号">
         <el-input
           v-model="platformId"
-          :placeholder="`输入${selectPlatform}账号`"
-          @keyup.enter="searchPlayerByPlatformId"
+          :placeholder="`输入平台账号`"
+          @keyup.enter="searchPlayerByPlatform"
         >
           <template #prepend>
-            <el-select  v-model="selectPlatform" placeholder="绑定平台" style="width: 115px">
-              <el-option v-for="platform of wowsBase.platformList" :key="platform" :label="platform" :value="platform" />
+            <el-select v-model="platformType" placeholder="Select" style="width: 115px">
+              <el-option :label="item" :value="item"  v-for="item in platformList" :key="item"/>
             </el-select>
           </template>
           <template #append>
-            <el-button :icon="Search" :loading="platformIdSearchLoading" @click=" searchPlayerByPlatformId"/>
+            <el-button :icon="Search" :loading="platformSearchLoading" @click=" searchPlayerByPlatform"/>
           </template>
         </el-input>
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of platformBindPlayerList"
+            v-for="player of searchPlatformPlayerList"
             :key="player.accountId"
+            :server="player.server"
             :accountId="player.accountId"
-            :userName="player.userName"
-            :server="player.server"/>
+            :userName="player.userName"/>
         </div>
       </el-tab-pane>
       <el-tab-pane label="历史">
         <div class="play-list-div">
           <PlayerItem
-            v-for="player of wowsPlayer.accountHistory"
+            v-for="player of usePlayerInfo.historyPlayerAccountList"
             :key="player.accountId"
+            :server="player.server"
             :accountId="player.accountId"
-            :userName="player.userName"
-            :server="player.server"/>
+            :userName="player.userName"/>
         </div>
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .search-player{
-  display: flex;
-  justify-content: space-evenly;
-
-  .tabs{
-    width: 700px;
-  }
-}
-.play-list-div{
-  padding-top: 5px;
+  max-width: $mg-max-width;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 </style>

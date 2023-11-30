@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Layout from '@/views/layout/Layout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,13 +7,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'Layout',
-      component: () => import('@/views/layout/Lyout.vue'),
-      redirect: '/playerInfo',
+      component: Layout,
+      redirect: '/player',
       children: [
         {
-          path: '/playerInfo',
-          name: 'PlayerInfo',
-          component: () => import('@/views/player/PlayerInfo.vue')
+          path: '/player',
+          name: 'Player',
+          component: () => import('@/views/player/Player.vue')
+        },
+        {
+          path: '/clan',
+          name: 'Clan',
+          component: () => import('@/views/clan/Clan.vue')
         }
       ]
     }

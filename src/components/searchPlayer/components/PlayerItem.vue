@@ -1,47 +1,64 @@
 <script setup lang="ts">
+import type { Account } from '@/types/wowsPlayerType'
+import { getPlayerByAccountId } from '@/api/wowsV3/wowsPlayer'
+import basicInfo from '@/stores/basicInfo'
+import playerInfo from '@/stores/playerInfo'
+import { ref } from 'vue'
 // 玩家搜索展示
-import wowsBaseStore from '@/stores/wowsBaseStore'
-import wowsPlayerStore from '@/stores/wowsPlayerStore'
-import type { Account } from '@/types/player'
+const usePlayerInfo = playerInfo()
+const useBasicInfo = basicInfo()
 const props = defineProps<Account>()
-const server = props.server ? props.server : wowsBaseStore().server
-const wowsPlayer = wowsPlayerStore()
-function translateServer () {
-  return wowsBaseStore().serverList.find((serverItem) => {
-    return serverItem.keu === server
-  })?.value
-}
-// 点击用户
-function clickAccount () {
-  wowsPlayer.addAccountHistory({ accountId: props.accountId, server, userName: props.userName })
-  // 设置玩家信息
-  wowsPlayer.setPlayerInfo(server, props.accountId)
+const serverstr = ref('')
+useBasicInfo.getServerList().then(serverList => {
+  // serverList.find()
+  serverstr.value = serverList.find(serverItem => {
+    return serverItem.key === props.server
+  })!.value
+})
+
+// 点击事件
+const clickPlayerItem = () => {
+  // 设置服务器
+  useBasicInfo.useServerValue = props.server
+  // 查询数据
+  getPlayerByAccountId({ accountId: props.accountId, server: props.server }).then(response => {
+    console.log(response)
+    usePlayerInfo.playerInfo = response
+    usePlayerInfo.addHistoryPlayerAccount({
+      accountId: props.accountId,
+      server: props.server,
+      userName: response.userInfo.userName
+    })
+  }).catch(() => {
+    usePlayerInfo.playerInfo = null
+  })
 }
 </script>
 
 <template>
-  <div class="player-item" @click="clickAccount">
+  <div class="player-item" @click="clickPlayerItem">
     <span>{{ userName }}</span>
-    <span>{{ translateServer() }}</span>
+    <span>{{ serverstr }}</span>
     <span class="account-id">{{ accountId }}</span>
+    <slot></slot>
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .player-item {
   cursor: pointer;
-  padding: 2px 0;
-  border-bottom: 1px solid var(--el-color-primary-light-8);
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--el-border-color);
 
   span{
     padding: 0 5px
   }
   .account-id{
     font-size: 12px;
-    color: var(--el-color-primary);
+    color: var(--el-color-primary-light-5);
   }
 }
 .player-item:hover {
-  background-color: var(--el-color-primary-light-8);
+  background-color: var(--el-menu-hover-bg-color)
 }
 </style>
