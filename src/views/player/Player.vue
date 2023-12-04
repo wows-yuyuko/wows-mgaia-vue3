@@ -5,7 +5,7 @@ import { getRecentDayInfo } from '@/api/recent/wowsRecent'
 import basicInfo from '@/stores/basicInfo'
 import { dayjs } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
-import { ref, watch, nextTick, computed } from 'vue'
+import { ref, watch, nextTick, computed, onMounted } from 'vue'
 import lodash from 'lodash'
 import * as echarts from 'echarts'
 import type { Recentinfo } from '@/types/wowsPlayerType'
@@ -17,9 +17,7 @@ const useBasicInfo = basicInfo()
 // 各级战舰场次统计
 const fightCountEchart = ref<HTMLDivElement>()
 let battlesEchart!: echarts.ECharts
-watch(() => usePlayerInfo.playerInfo, () => {
-  console.log(usePlayerInfo.playerInfo)
-  // echarts.init(battlesDiv.value as HTMLElement)
+const buildRecentAndbattlesEchart = () => {
   if (lodash.isNil(usePlayerInfo.playerInfo)) return null
   // 获取近期数据
   getRecent()
@@ -133,6 +131,13 @@ watch(() => usePlayerInfo.playerInfo, () => {
     battlesEchart = echarts.init(fightCountEchart.value, 'dark')
     battlesEchart.setOption(option)
   })
+}
+onMounted(() => {
+  buildRecentAndbattlesEchart()
+})
+watch(() => usePlayerInfo.playerInfo, () => {
+  console.log(usePlayerInfo.playerInfo)
+  buildRecentAndbattlesEchart()
 })
 
 // recent相关
