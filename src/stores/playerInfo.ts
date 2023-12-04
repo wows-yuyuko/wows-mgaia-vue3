@@ -1,13 +1,14 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { PlayerInfo, Account } from '@/types/wowsPlayerType'
+import type { PlayerInfo, Account, PlayerShipList } from '@/types/wowsPlayerType'
 import wowsDB from '@/lib/database'
 import lodash from 'lodash'
 
 // 玩家信息
 export default defineStore('playerInfo', () => {
+  /** ============玩家战绩信息============ */
   const playerInfo = ref<PlayerInfo|null>(null)
-
+  const playerShipList = ref<PlayerShipList|null>(null)
   /** ============历史查询记录相关============ */
   // 历史查询得账号列表
   const historyPlayerAccountList = ref<Account[]>([])
@@ -41,6 +42,7 @@ export default defineStore('playerInfo', () => {
   }
   return {
     playerInfo,
+    playerShipList,
     historyPlayerAccountList,
     addHistoryPlayerAccount,
     delHistoryPlayerAccount

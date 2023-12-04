@@ -7,7 +7,7 @@ export interface Account {
   server: string
 }
 
-interface UserInfo{
+interface UserInfo {
   server: string // 服务器
   serverCn: string // 服务器中文
   clanInfo: {
@@ -22,7 +22,7 @@ interface UserInfo{
   userName: string // 用户名
   accountCreateTime: number // 十位时间戳 账号注册时间
 }
-interface DwpData{
+interface DwpData {
   damage: number // 对比上次记录场均变化
   wins: number // 对比上次记录胜率变化
   pr: number // 对比上次记录pr变化
@@ -5935,6 +5935,866 @@ export interface PlayerInfo {
   recordTime: 1700615462183
 }
 
+/**
+ * 玩家舰船列表信息
+ */
+export interface PlayerShipList {
+  userInfo: {
+    server: 'asia'
+    serverCn: '亚服'
+    clanInfo: {
+      clanId: 2000022706
+      tag: 'YU_RI'
+      name: '纷飞而下的洁白之雪'
+      description: '真っ白な雪(Yuki)が降り(fuRi)しきる,\nYU_RI公式Discordチャンネル:https://discord.gg/QUqbsSunYV\nQQグループ:912806416\nギルドを申し込む前に、まずグループに加入してください。'
+      color: '#b3b3b3'
+      activeLevel: -1
+    }
+    accountId: 2022515210
+    userName: 'JustOneSummer'
+    accountCreateTime: 0
+  }
+  shipInfo: [
+    {
+      rank: 0
+      shipInfo: {
+        shipId: number
+        nameCn: string
+        nameEnglish: string
+        nameNumbers: string
+        level: number
+        shipType: string
+        country: string
+        imgSmall: 'https://glossary-wows-global.gcdn.co/icons//vehicle/small/PGSC518_51a77b095f1a3be3c3ffa5851e974a84d82cb59c7b904974994398d59e7ead94.png'
+        imgLarge: 'https://glossary-wows-global.gcdn.co/icons//vehicle/large/PGSC518_2e25f5cda7495d10e863392a05ba4b42a61b60941f57630325a7bd32497eae76.png'
+        imgMedium: 'https://glossary-wows-global.gcdn.co/icons//vehicle/medium/PGSC518_8d0f8768b6877daabca08e8aee5510ed9d6cdd8dfbb3aac314e3f76fb749bf65.png'
+        shipIndex: 'PGSC518'
+        groupType: 'special'
+      }
+      typeInfo: {
+        PVP_DIV2: {
+          battle: true
+          prInfo: {
+            code: 5
+            value: 1610
+            nextValue: 140
+            name: '很好'
+            englishName: 'Very Good'
+            color: '#318000'
+            details: {
+              pr: 1610
+              originalServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 52.21556638469984
+              }
+              user: {
+                shipId: 3751720752
+                damage: 557869
+                frags: 6
+                wins: 5
+              }
+              userServer: {
+                shipId: 3751720752
+                damage: 435136.74439132033
+                frags: 5.470599485104879
+                wins: 4.177245310775987
+              }
+              two: {
+                shipId: 3751720752
+                damage: 1.2820544511366432
+                frags: 1.0967719381279055
+                wins: 1.1969610659688965
+              }
+              three: {
+                shipId: 3751720752
+                damage: 1.4700907518944053
+                frags: 1.1075243756976727
+                wins: 1.6565368865629884
+              }
+            }
+          }
+          battleInfo: {
+            battleInfo: {
+              battle: 8
+              wins: 5
+              losses: 3
+              survived: 6
+              winAndSurvived: 5
+            }
+            avgInfo: {
+              damage: 69734
+              damageData: {
+                code: 3
+                value: 83000
+                color: '#02C9B3'
+              }
+              scoutingDamage: 9394
+              win: 62.5
+              winsData: {
+                code: 6
+                value: 65
+                color: '#673ab7'
+              }
+              kd: 3
+              frags: 0.75
+              shipsSpotted: 0
+              planesKilled: 4
+              artAgro: 613431
+              tpdAgro: 13846
+              xp: 1838
+              basicXp: 0
+            }
+            fragsInfo: {
+              frags: 6
+              fragsByMain: 4
+              fragsByAtba: 0
+              fragsByPlanes: 0
+              fragsByTpd: 0
+              fragsByRam: 0
+              fragsByDbomb: 0
+            }
+            maxInfo: {
+              maxFrags: {
+                shipId: 3751720752
+                value: 2
+              }
+              maxFragsByMain: {
+                shipId: 3751720752
+                value: 2
+              }
+              maxFragsByTpd: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByDbomb: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByRam: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByAtba: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealtToBuildings: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByPlanes: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealt: {
+                shipId: 3751720752
+                value: 120437
+              }
+              maxScoutingDamage: {
+                shipId: 3751720752
+                value: 28154
+              }
+              maxPlanesKilled: {
+                shipId: 3751720752
+                value: 11
+              }
+              maxShipsSpotted: {
+                shipId: 3751720752
+                value: 1
+              }
+              maxTotalAgro: {
+                shipId: 3751720752
+                value: 1347600
+              }
+              maxSuppressionsCount: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxXp: {
+                shipId: 3751720752
+                value: 2669
+              }
+              maxBasicXp: {
+                shipId: 3751720752
+                value: 0
+              }
+            }
+            controlCapturedAndDroppedPointsInfo: {
+              gameContributionToCapture: 0
+              gameContributionToDefense: 100
+            }
+            hitRatioInfo: {
+              ratioMain: 27.09
+              ratioAtba: 0
+              ratioTpd: 0
+              ratioTbomb: 0
+            }
+            lastBattleTime: 1694876113
+            recordTime: 1701395742203
+          }
+        }
+        RANK_SOLO: {
+          battle: true
+          prInfo: {
+            code: 4
+            value: 1463
+            nextValue: 87
+            name: '好'
+            englishName: 'Good'
+            color: '#44B300'
+            details: {
+              pr: 1463
+              originalServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 52.21556638469984
+              }
+              user: {
+                shipId: 3751720752
+                damage: 61660
+                frags: 0
+                wins: 1
+              }
+              userServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 0.5221556638469984
+              }
+              two: {
+                shipId: 3751720752
+                damage: 1.133620652261881
+                frags: 0
+                wins: 1.9151377055502343
+              }
+              three: {
+                shipId: 3751720752
+                damage: 1.222701087103135
+                frags: 0
+                wins: 4.0504590185007805
+              }
+            }
+          }
+          battleInfo: {
+            battleInfo: {
+              battle: 1
+              wins: 1
+              losses: 0
+              survived: 1
+              winAndSurvived: 1
+            }
+            avgInfo: {
+              damage: 61660
+              damageData: {
+                code: 3
+                value: 83000
+                color: '#02C9B3'
+              }
+              scoutingDamage: 0
+              win: 100
+              winsData: {
+                code: 6
+                value: 65
+                color: '#673ab7'
+              }
+              kd: 0
+              frags: 0
+              shipsSpotted: 0
+              planesKilled: 4
+              artAgro: 435400
+              tpdAgro: 0
+              xp: 2101
+              basicXp: 0
+            }
+            fragsInfo: {
+              frags: 0
+              fragsByMain: 0
+              fragsByAtba: 0
+              fragsByPlanes: 0
+              fragsByTpd: 0
+              fragsByRam: 0
+              fragsByDbomb: 0
+            }
+            maxInfo: {
+              maxFrags: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByMain: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByTpd: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByDbomb: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByRam: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByAtba: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealtToBuildings: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByPlanes: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealt: {
+                shipId: 3751720752
+                value: 61660
+              }
+              maxScoutingDamage: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxPlanesKilled: {
+                shipId: 3751720752
+                value: 4
+              }
+              maxShipsSpotted: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxTotalAgro: {
+                shipId: 3751720752
+                value: 435400
+              }
+              maxSuppressionsCount: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxXp: {
+                shipId: 3751720752
+                value: 2101
+              }
+              maxBasicXp: {
+                shipId: 3751720752
+                value: 0
+              }
+            }
+            controlCapturedAndDroppedPointsInfo: {
+              gameContributionToCapture: 0
+              gameContributionToDefense: 100
+            }
+            hitRatioInfo: {
+              ratioMain: 30.12
+              ratioAtba: 0
+              ratioTpd: 0
+              ratioTbomb: 0
+            }
+            lastBattleTime: 1694876113
+            recordTime: 1701395742203
+          }
+        }
+        PVP_SOLO: {
+          battle: true
+          prInfo: {
+            code: 6
+            value: 1818
+            nextValue: 282
+            name: '非常好'
+            englishName: 'Great'
+            color: '#02C9B3'
+            details: {
+              pr: 1818
+              originalServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 52.21556638469984
+              }
+              user: {
+                shipId: 3751720752
+                damage: 807820
+                frags: 12
+                wins: 3
+              }
+              userServer: {
+                shipId: 3751720752
+                damage: 543920.9304891505
+                frags: 6.838249356381098
+                wins: 5.221556638469984
+              }
+              two: {
+                shipId: 3751720752
+                damage: 1.4851791036493558
+                frags: 1.754835101004649
+                wins: 0.5745413116650703
+              }
+              three: {
+                shipId: 3751720752
+                damage: 1.8086318394155931
+                frags: 1.8387056677829432
+                wins: 0
+              }
+            }
+          }
+          battleInfo: {
+            battleInfo: {
+              battle: 10
+              wins: 3
+              losses: 7
+              survived: 3
+              winAndSurvived: 1
+            }
+            avgInfo: {
+              damage: 80782
+              damageData: {
+                code: 3
+                value: 83000
+                color: '#02C9B3'
+              }
+              scoutingDamage: 14799
+              win: 30
+              winsData: {
+                code: 1
+                value: 40
+                color: '#f44336'
+              }
+              kd: 1.71
+              frags: 1.2
+              shipsSpotted: 0
+              planesKilled: 5
+              artAgro: 1048020
+              tpdAgro: 57567
+              xp: 1778
+              basicXp: 0
+            }
+            fragsInfo: {
+              frags: 12
+              fragsByMain: 11
+              fragsByAtba: 0
+              fragsByPlanes: 0
+              fragsByTpd: 0
+              fragsByRam: 0
+              fragsByDbomb: 0
+            }
+            maxInfo: {
+              maxFrags: {
+                shipId: 3751720752
+                value: 4
+              }
+              maxFragsByMain: {
+                shipId: 3751720752
+                value: 3
+              }
+              maxFragsByTpd: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByDbomb: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByRam: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByAtba: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealtToBuildings: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByPlanes: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealt: {
+                shipId: 3751720752
+                value: 138078
+              }
+              maxScoutingDamage: {
+                shipId: 3751720752
+                value: 37634
+              }
+              maxPlanesKilled: {
+                shipId: 3751720752
+                value: 10
+              }
+              maxShipsSpotted: {
+                shipId: 3751720752
+                value: 2
+              }
+              maxTotalAgro: {
+                shipId: 3751720752
+                value: 1805350
+              }
+              maxSuppressionsCount: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxXp: {
+                shipId: 3751720752
+                value: 3228
+              }
+              maxBasicXp: {
+                shipId: 3751720752
+                value: 0
+              }
+            }
+            controlCapturedAndDroppedPointsInfo: {
+              gameContributionToCapture: 0
+              gameContributionToDefense: 100
+            }
+            hitRatioInfo: {
+              ratioMain: 28.63
+              ratioAtba: 0
+              ratioTpd: 0
+              ratioTbomb: 0
+            }
+            lastBattleTime: 1694876113
+            recordTime: 1701395742203
+          }
+        }
+        PVP_DIV3: {
+          battle: true
+          prInfo: {
+            code: 7
+            value: 2142
+            nextValue: 308
+            name: '大佬水平'
+            englishName: 'Unicum'
+            color: '#D042F3'
+            details: {
+              pr: 2142
+              originalServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 52.21556638469984
+              }
+              user: {
+                shipId: 3751720752
+                damage: 1497274
+                frags: 23
+                wins: 11
+              }
+              userServer: {
+                shipId: 3751720752
+                damage: 979057.6748804707
+                frags: 12.308848841485977
+                wins: 9.398801949245971
+              }
+              two: {
+                shipId: 3751720752
+                damage: 1.529301121287667
+                frags: 1.868574413106802
+                wins: 1.1703619311695876
+              }
+              three: {
+                shipId: 3751720752
+                damage: 1.8821685354794448
+                frags: 1.96508268122978
+                wins: 1.5678731038986253
+              }
+            }
+          }
+          battleInfo: {
+            battleInfo: {
+              battle: 18
+              wins: 11
+              losses: 7
+              survived: 11
+              winAndSurvived: 9
+            }
+            avgInfo: {
+              damage: 83182
+              damageData: {
+                code: 4
+                value: 95000
+                color: '#A00DC5'
+              }
+              scoutingDamage: 12158
+              win: 61.11
+              winsData: {
+                code: 6
+                value: 65
+                color: '#673ab7'
+              }
+              kd: 3.29
+              frags: 1.28
+              shipsSpotted: 0
+              planesKilled: 9
+              artAgro: 782283
+              tpdAgro: 64393
+              xp: 2339
+              basicXp: 0
+            }
+            fragsInfo: {
+              frags: 23
+              fragsByMain: 20
+              fragsByAtba: 0
+              fragsByPlanes: 0
+              fragsByTpd: 1
+              fragsByRam: 0
+              fragsByDbomb: 0
+            }
+            maxInfo: {
+              maxFrags: {
+                shipId: 3751720752
+                value: 4
+              }
+              maxFragsByMain: {
+                shipId: 3751720752
+                value: 3
+              }
+              maxFragsByTpd: {
+                shipId: 3751720752
+                value: 1
+              }
+              maxFragsByDbomb: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByRam: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByAtba: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealtToBuildings: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByPlanes: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealt: {
+                shipId: 3751720752
+                value: 208289
+              }
+              maxScoutingDamage: {
+                shipId: 3751720752
+                value: 51228
+              }
+              maxPlanesKilled: {
+                shipId: 3751720752
+                value: 45
+              }
+              maxShipsSpotted: {
+                shipId: 3751720752
+                value: 1
+              }
+              maxTotalAgro: {
+                shipId: 3751720752
+                value: 2004567
+              }
+              maxSuppressionsCount: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxXp: {
+                shipId: 3751720752
+                value: 4639
+              }
+              maxBasicXp: {
+                shipId: 3751720752
+                value: 0
+              }
+            }
+            controlCapturedAndDroppedPointsInfo: {
+              gameContributionToCapture: 1667.72
+              gameContributionToDefense: 100
+            }
+            hitRatioInfo: {
+              ratioMain: 29.85
+              ratioAtba: 10.78
+              ratioTpd: 13.89
+              ratioTbomb: 0
+            }
+            lastBattleTime: 1694876113
+            recordTime: 1701395742203
+          }
+        }
+        PVP: {
+          battle: true
+          prInfo: {
+            code: 6
+            value: 1916
+            nextValue: 184
+            name: '非常好'
+            englishName: 'Great'
+            color: '#02C9B3'
+            details: {
+              pr: 1916
+              originalServer: {
+                shipId: 3751720752
+                damage: 54392.09304891504
+                frags: 0.6838249356381099
+                wins: 52.21556638469984
+              }
+              user: {
+                shipId: 3751720752
+                damage: 2862963
+                frags: 41
+                wins: 19
+              }
+              userServer: {
+                shipId: 3751720752
+                damage: 1958115.3497609415
+                frags: 24.617697682971954
+                wins: 18.797603898491943
+              }
+              two: {
+                shipId: 3751720752
+                damage: 1.4621013007990198
+                frags: 1.6654684986386714
+                wins: 1.010767122373735
+              }
+              three: {
+                shipId: 3751720752
+                damage: 1.7701688346650328
+                frags: 1.739409442931857
+                wins: 1.0358904079124496
+              }
+            }
+          }
+          battleInfo: {
+            battleInfo: {
+              battle: 36
+              wins: 19
+              losses: 17
+              survived: 20
+              winAndSurvived: 15
+            }
+            avgInfo: {
+              damage: 79527
+              damageData: {
+                code: 3
+                value: 83000
+                color: '#02C9B3'
+              }
+              scoutingDamage: 12277
+              win: 52.78
+              winsData: {
+                code: 4
+                value: 55
+                color: '#00bcd4'
+              }
+              kd: 2.56
+              frags: 1.14
+              shipsSpotted: 0
+              planesKilled: 7
+              artAgro: 818576
+              tpdAgro: 51264
+              xp: 2072
+              basicXp: 0
+            }
+            fragsInfo: {
+              frags: 41
+              fragsByMain: 35
+              fragsByAtba: 0
+              fragsByPlanes: 0
+              fragsByTpd: 1
+              fragsByRam: 0
+              fragsByDbomb: 0
+            }
+            maxInfo: {
+              maxFrags: {
+                shipId: 3751720752
+                value: 4
+              }
+              maxFragsByMain: {
+                shipId: 3751720752
+                value: 3
+              }
+              maxFragsByTpd: {
+                shipId: 3751720752
+                value: 1
+              }
+              maxFragsByDbomb: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByRam: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByAtba: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealtToBuildings: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxFragsByPlanes: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxDamageDealt: {
+                shipId: 3751720752
+                value: 208289
+              }
+              maxScoutingDamage: {
+                shipId: 3751720752
+                value: 51228
+              }
+              maxPlanesKilled: {
+                shipId: 3751720752
+                value: 45
+              }
+              maxShipsSpotted: {
+                shipId: 3751720752
+                value: 2
+              }
+              maxTotalAgro: {
+                shipId: 3751720752
+                value: 2004567
+              }
+              maxSuppressionsCount: {
+                shipId: 3751720752
+                value: 0
+              }
+              maxXp: {
+                shipId: 3751720752
+                value: 4639
+              }
+              maxBasicXp: {
+                shipId: 3751720752
+                value: 0
+              }
+            }
+            controlCapturedAndDroppedPointsInfo: {
+              gameContributionToCapture: 2839.87
+              gameContributionToDefense: 100
+            }
+            hitRatioInfo: {
+              ratioMain: 28.86
+              ratioAtba: 10.78
+              ratioTpd: 10.42
+              ratioTbomb: 0
+            }
+            lastBattleTime: 1694876113
+            recordTime: 1701395742203
+          }
+        }
+      }
+    }
+  ]
+}
+
+/**
+ * Recentinfo  近期数据
+ */
 export interface Recentinfo {
   userInfo: UserInfo
   battleTypeInfo: {

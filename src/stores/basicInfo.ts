@@ -1,7 +1,7 @@
-import { ref, computed, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { defineStore } from 'pinia'
-import { getServerListApi } from '@/api/wowsV3/wowsBase'
-import type { WowsServer } from '@/types/wowsBaseType'
+import { getServerListApi, getShipTypeApi, getNationApi } from '@/api/wowsV3/wowsBase'
+import type { WowsServer, ShipType, NationType } from '@/types/wowsBaseType'
 import wowsDB from '@/lib/database'
 import lodash from 'lodash'
 
@@ -32,7 +32,6 @@ export default defineStore('basicInfo', () => {
       }
     }).catch(wowsServerList => {
       console.log(wowsServerList)
-      debugger
     })
     // 数据库中无数据 则调用接口
     if (serverList.length === 0) {
@@ -44,11 +43,18 @@ export default defineStore('basicInfo', () => {
     }
     return serverList
   }
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment () {
-    count.value++
-  }
 
-  return { useServerValue, getServerList, count, doubleCount, increment }
+  // ======舰船种类信息======
+  const shipTypeList = ref<ShipType[]>([])
+  getShipTypeApi().then(response => {
+    shipTypeList.value = response
+  })
+
+  // ======舰船国家信息======
+  const nationList = ref<NationType[]>([])
+  getNationApi().then(response => {
+    nationList.value = response
+  })
+
+  return { useServerValue, getServerList, shipTypeList, nationList }
 })

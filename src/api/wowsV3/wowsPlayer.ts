@@ -53,7 +53,7 @@ export async function getPlayerByAccountId (data:{accountId:number|string, serve
       wowsDB.setWowsCache(
         'getPlayerByAccountId' + JSON.stringify(data),
         response,
-        HOUR_TIME
+        DAY_TIME
       )
       returnData = Promise.resolve(response)
     }).catch(err => {
@@ -80,6 +80,32 @@ export async function getPlatformBindList (data:{platformType:string, platformId
         'getPlatformBindList' + JSON.stringify(data),
         response,
         HOUR_TIME
+      )
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
+
+/**
+ * 查询用户船只信息列表
+ * @param data server 服务器  accountId 用户id
+ */
+export async function getPlayerShipList (data:{server:string, accountId:number}) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('getPlayerShipList' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/account/ship/info/list', data).then((response) => {
+      wowsDB.setWowsCache(
+        'getPlayerShipList' + JSON.stringify(data),
+        response,
+        DAY_TIME
       )
       returnData = Promise.resolve(response)
     }).catch(err => {

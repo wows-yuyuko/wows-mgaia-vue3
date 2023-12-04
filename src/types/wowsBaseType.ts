@@ -12,3 +12,11 @@ export interface ShipType {
   shipType: string // "Battleship"
   typeName: string // "战列舰"
 }
+
+/**
+ * 舰船国家
+ */
+export interface NationType {
+  nation: string
+  cn: string
+}

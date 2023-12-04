@@ -55,7 +55,8 @@ getShipTypeApi().then(shipTypeList => {
           router
         >
           <el-menu-item index="/player" route="/player" @click="openMenu = false">玩家</el-menu-item>
-          <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item>
+          <!-- <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item> -->
+          <el-menu-item index="/shipList" route="/shipList" @click="openMenu = false">舰船</el-menu-item>
         </el-menu>
       </div>
       <div class="main">

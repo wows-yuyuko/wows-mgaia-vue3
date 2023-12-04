@@ -83,7 +83,7 @@ class WowsDb extends Dexie {
         id: 'wowsServerListKey',
         data: wowsServerList,
         updateTime: new Date().getTime(), // 更新时间
-        periodOfValidity: SECOND_TIME * 5 // 有效期
+        periodOfValidity: WEEK_TIME // 有效期
       })
     }
   }

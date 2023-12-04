@@ -20,6 +20,11 @@ const router = createRouter({
           path: '/clan',
           name: 'Clan',
           component: () => import('@/views/clan/Clan.vue')
+        },
+        {
+          path: '/shipList',
+          name: 'ShipList',
+          component: () => import('@/views/shipList/ShipList.vue')
         }
       ]
     }

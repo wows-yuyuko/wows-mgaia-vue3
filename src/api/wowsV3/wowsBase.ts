@@ -52,8 +52,24 @@ export function getPrInfoApi () {
  * 获取地区列表
  * @returns
  */
-export function getNationApi () {
-  return request.get(BASE_URL + '/public/wows/encyclopedia/nation/list', {})
+export async function getNationApi () {
+  let returnData!:Promise<ShipType[]>
+  // 查询数据库中是否有数据
+  const dbdata = await wowsDB.getWowsCache('getNationApi')
+  console.log(dbdata)
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/encyclopedia/nation/list', {}).then((response) => {
+      console.log(response)
+      wowsDB.setWowsCache('getNationApi', response, WEEK_TIME)
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      returnData = Promise.reject(err)
+    })
+    return returnData
+  }
 }
 
 /**

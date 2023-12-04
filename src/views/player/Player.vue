@@ -376,7 +376,7 @@ const recentDataComputed = computed(() => {
           <el-empty v-if="recentData === null" description="所选时间段无数据" />
           <div v-else>
             <el-table :data="recentDataComputed" style="width: 100%">
-              <el-table-column prop="imgSmall" label="等级" width="120" >
+              <el-table-column prop="imgSmall" label="等级" width="130" >
                 <template #default="scope">
                   <img style="width: 100px;" :src="scope.row.imgSmall" />
                 </template>

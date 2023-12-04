@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Account } from '@/types/wowsPlayerType'
-import { getPlayerByAccountId } from '@/api/wowsV3/wowsPlayer'
+import { getPlayerByAccountId, getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
 import basicInfo from '@/stores/basicInfo'
 import playerInfo from '@/stores/playerInfo'
 import { ref } from 'vue'
@@ -29,6 +29,13 @@ const clickPlayerItem = () => {
       server: props.server,
       userName: response.userInfo.userName
     })
+  }).catch(() => {
+    usePlayerInfo.playerInfo = null
+  })
+
+  getPlayerShipList({ accountId: props.accountId, server: props.server }).then(response => {
+    console.log(response)
+    usePlayerInfo.playerShipList = response
   }).catch(() => {
     usePlayerInfo.playerInfo = null
   })
