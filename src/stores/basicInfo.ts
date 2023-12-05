@@ -1,7 +1,7 @@
 import { ref, watch } from 'vue'
 import { defineStore } from 'pinia'
-import { getServerListApi, getShipTypeApi, getNationApi } from '@/api/wowsV3/wowsBase'
-import type { WowsServer, ShipType, NationType } from '@/types/wowsBaseType'
+import { getServerListApi, getShipTypeApi, getNationApi, getShipInfoList } from '@/api/wowsV3/wowsBase'
+import type { WowsServer, ShipType, NationType, ShipInfo } from '@/types/wowsBaseType'
 import wowsDB from '@/lib/database'
 import lodash from 'lodash'
 
@@ -10,11 +10,15 @@ export default defineStore('basicInfo', () => {
   // ======服务器信息======（举个例子）
   // 当前选中服务器
   const useServerValue = ref('')
+  // 实时战绩当前选中服务器
+  const realTimeResultServer = ref('')
   wowsDB.getWowsCache('useServerValue').then(data => {
     if (lodash.isNil(data)) {
       useServerValue.value = 'eu'
+      realTimeResultServer.value = 'eu'
     } else {
       useServerValue.value = data
+      realTimeResultServer.value = data
     }
   })
   watch(useServerValue, () => {
@@ -56,5 +60,13 @@ export default defineStore('basicInfo', () => {
     nationList.value = response
   })
 
-  return { useServerValue, getServerList, shipTypeList, nationList }
+  // ======获取船只信息======
+  const shipInfoMap = ref<{[key:number]:ShipInfo}>({})
+  getShipInfoList().then(response => {
+    for (const item of response) {
+      shipInfoMap.value[item.shipId] = item
+    }
+  })
+
+  return { useServerValue, realTimeResultServer, getServerList, shipTypeList, nationList, shipInfoMap }
 })

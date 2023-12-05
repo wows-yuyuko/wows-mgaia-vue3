@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Account } from '@/types/wowsPlayerType'
-import { getPlayerByAccountId, getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
+import { getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
 import basicInfo from '@/stores/basicInfo'
 import playerInfo from '@/stores/playerInfo'
 import { ref } from 'vue'
@@ -20,24 +20,16 @@ useBasicInfo.getServerList().then(serverList => {
 const clickPlayerItem = () => {
   // 设置服务器
   useBasicInfo.useServerValue = props.server
-  // 查询数据
-  getPlayerByAccountId({ accountId: props.accountId, server: props.server }).then(response => {
-    console.log(response)
-    usePlayerInfo.playerInfo = response
-    usePlayerInfo.addHistoryPlayerAccount({
-      accountId: props.accountId,
-      server: props.server,
-      userName: response.userInfo.userName
-    })
-  }).catch(() => {
-    usePlayerInfo.playerInfo = null
-  })
+  usePlayerInfo.searchPlayerInfo(props.accountId, props.server)
 
+  usePlayerInfo.playerShipListLoading = true
   getPlayerShipList({ accountId: props.accountId, server: props.server }).then(response => {
     console.log(response)
     usePlayerInfo.playerShipList = response
+    usePlayerInfo.playerShipListLoading = false
   }).catch(() => {
     usePlayerInfo.playerInfo = null
+    usePlayerInfo.playerShipListLoading = false
   })
 }
 </script>

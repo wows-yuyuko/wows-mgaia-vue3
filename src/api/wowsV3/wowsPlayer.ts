@@ -13,7 +13,7 @@ const BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
  * @param data userName用户名模糊  limit返还条目
  * @returns
  */
-export async function getPlayerListByUserName (data:{userName:string, server:string, limit?:number}) {
+export async function getPlayerListByUserName (data:{userName:string, server:string, limit?:number, one?:boolean}) {
   let returnData!:Promise<Account[]>
   const dbdata = await wowsDB.getWowsCache('getPlayerListByUserName' + JSON.stringify(data))
   if (!lodash.isNil(dbdata)) {
@@ -104,6 +104,32 @@ export async function getPlayerShipList (data:{server:string, accountId:number})
     await request.get(BASE_URL + '/public/wows/account/ship/info/list', data).then((response) => {
       wowsDB.setWowsCache(
         'getPlayerShipList' + JSON.stringify(data),
+        response,
+        DAY_TIME
+      )
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
+
+/**
+ * 查询用户单独船信息
+ * @param data server 服务器  accountId 用户id  shipId 船只id
+ */
+export async function getPlayerShipInfo (data:{server:string, accountId:number, shipId: number}) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('getPlayerShipInfo' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/account/ship/info', data).then((response) => {
+      wowsDB.setWowsCache(
+        'getPlayerShipInfo' + JSON.stringify(data),
         response,
         DAY_TIME
       )

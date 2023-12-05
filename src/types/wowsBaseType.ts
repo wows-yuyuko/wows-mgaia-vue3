@@ -20,3 +20,18 @@ export interface NationType {
   nation: string
   cn: string
 }
+
+export interface ShipInfo {
+  shipId: number // 船只id
+  nameCn: string
+  nameEnglish: string
+  nameNumbers: string
+  level: number
+  shipType: string
+  country: string
+  imgSmall: string
+  imgLarge: string
+  imgMedium: string
+  shipIndex: 'PJSD111'
+  groupType: 'superShip'
+}

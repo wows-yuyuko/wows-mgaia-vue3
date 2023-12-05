@@ -176,7 +176,7 @@ const shipListData = computed(() => {
 </script>
 
 <template>
-  <div class="ship-list-page">
+  <div class="ship-list-page" v-loading="usePlayerInfo.playerShipListLoading">
     <SearchPlayer v-show="usePlayerInfo.playerShipList === null" />
     <div style="width: 100%; height: 100%;"  v-if="usePlayerInfo.playerShipList !== null">
       <div style="display: flex;flex-direction: column;height: 100%;">

@@ -95,3 +95,27 @@ export async function getPlatformApi () {
     return returnData
   }
 }
+
+/**
+ * 获取船只信息列表
+ * @returns
+ */
+export async function getShipInfoList () {
+  let returnData!:Promise<ShipType[]>
+  // 查询数据库中是否有数据
+  const dbdata = await wowsDB.getWowsCache('getShipInfoList')
+  console.log(dbdata)
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/encyclopedia/ship/search', {}).then((response) => {
+      console.log(response)
+      wowsDB.setWowsCache('getShipInfoList', response, WEEK_TIME)
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      returnData = Promise.reject(err)
+    })
+    return returnData
+  }
+}

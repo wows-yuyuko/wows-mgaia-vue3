@@ -11,7 +11,7 @@ export default ({ mode }:{mode:string}) => {
   return defineConfig({
     base: './',
     build: {
-      outDir: 'wowsv2'
+      outDir: 'wows'
     },
     plugins: [
       vue(),

@@ -181,7 +181,7 @@ const recentDataComputed = computed(() => {
 </script>
 
 <template>
-  <div class="player-page">
+  <div class="player-page"  v-loading="usePlayerInfo.playerInfoLoading">
     <SearchPlayer v-show="usePlayerInfo.playerInfo === null" />
     <div  v-if="usePlayerInfo.playerInfo !== null" class="player-info">
       <div class="portrait">

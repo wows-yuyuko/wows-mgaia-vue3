@@ -4,10 +4,12 @@ import { openTab } from '@/lib/commonUtils'
 import GitHub from '@/assets/icon/GitHub.vue'
 import { useRoute } from 'vue-router'
 import basicInfo from '@/stores/basicInfo'
+import electron from '@/stores/electron'
 import type { WowsServer } from '@/types/wowsBaseType'
 import { getShipTypeApi } from '@/api/wowsV3/wowsBase'
 // 布局文件
 const useBasicInfo = basicInfo()
+const useElectron = electron()
 const route = useRoute()
 const active = ref(route.path)
 // 左侧菜单栏是否展开（只在窄屏幕下生效）
@@ -54,6 +56,7 @@ getShipTypeApi().then(shipTypeList => {
           style="height:100%;"
           router
         >
+          <el-menu-item v-if="useElectron.electronEnable" index="/realRimeResults" route="/realRimeResults" @click="openMenu = false">实时战绩</el-menu-item>
           <el-menu-item index="/player" route="/player" @click="openMenu = false">玩家</el-menu-item>
           <!-- <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item> -->
           <el-menu-item index="/shipList" route="/shipList" @click="openMenu = false">舰船</el-menu-item>

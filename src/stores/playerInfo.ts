@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { PlayerInfo, Account, PlayerShipList } from '@/types/wowsPlayerType'
+import { getPlayerByAccountId } from '@/api/wowsV3/wowsPlayer'
 import wowsDB from '@/lib/database'
 import lodash from 'lodash'
 
@@ -8,7 +9,27 @@ import lodash from 'lodash'
 export default defineStore('playerInfo', () => {
   /** ============玩家战绩信息============ */
   const playerInfo = ref<PlayerInfo|null>(null)
+  const playerInfoLoading = ref(false)
   const playerShipList = ref<PlayerShipList|null>(null)
+  const playerShipListLoading = ref(false)
+
+  // 查询玩家信息
+  const searchPlayerInfo = (accountId:number, server:string) => {
+    playerInfoLoading.value = true
+    getPlayerByAccountId({ accountId, server }).then(response => {
+      console.log(response)
+      playerInfo.value = response
+      addHistoryPlayerAccount({
+        accountId,
+        server,
+        userName: response.userInfo.userName
+      })
+      playerInfoLoading.value = false
+    }).catch(() => {
+      playerInfo.value = null
+      playerInfoLoading.value = false
+    })
+  }
   /** ============历史查询记录相关============ */
   // 历史查询得账号列表
   const historyPlayerAccountList = ref<Account[]>([])
@@ -42,7 +63,10 @@ export default defineStore('playerInfo', () => {
   }
   return {
     playerInfo,
+    playerInfoLoading,
+    searchPlayerInfo,
     playerShipList,
+    playerShipListLoading,
     historyPlayerAccountList,
     addHistoryPlayerAccount,
     delHistoryPlayerAccount

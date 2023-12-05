@@ -28,4 +28,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchPlayer: typeof import('./src/components/searchPlayer/SearchPlayer.vue')['default']
   }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
+  }
 }
