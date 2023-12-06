@@ -256,12 +256,12 @@ const copyPlayerUrl = () => {
           <div class="data-card">
             <div><img src="@/assets/player/overview/wins.png" /></div>
             <div class="title">胜率</div>
-            <div class="value">{{ usePlayerInfo.playerInfo.battleTypeInfo.PVP.shipInfo.avgInfo.win }}</div>
+            <div class="value" :style="{color: usePlayerInfo.playerInfo.battleTypeInfo.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.battleTypeInfo.PVP.shipInfo.avgInfo.win }}%</div>
           </div>
           <div class="data-card">
             <div><img src="@/assets/player/overview/hit.png" /></div>
             <div class="title">命中</div>
-            <div class="value">{{ usePlayerInfo.playerInfo.battleTypeInfo.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
+            <div class="value">{{ usePlayerInfo.playerInfo.battleTypeInfo.PVP.shipInfo.hitRatioInfo.ratioMain }}%</div>
           </div>
         </div>
         <!-- 综合战绩分类 -->
