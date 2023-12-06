@@ -1,13 +1,19 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import useElectron from '@/store/electron'
+import electron from '@/stores/electron'
+import basicInfo from '@/stores/basicInfo'
 import lodash from 'lodash'
-import usePlayer from '@/store/player'
+import { ref, computed } from 'vue'
+import { setLocalStorage } from '@/lib/storage'
 import CombatRow from './component/CombatRow.vue'
-import { setLocalStorage } from '@/utils/storage'
-// 实时战绩页面
-const playerStore = usePlayer()
-const electronStore = useElectron()
+import type { WowsServer } from '@/types/wowsBaseType'
+
+// 实时战绩
+const useBasicInfo = basicInfo()
+const useElectron = electron()
+const serverList = ref<WowsServer[]>([])
+useBasicInfo.getServerList().then(response => {
+  serverList.value = response
+})
 
 // 选择对局信息文件夹目录
 const getDirectoryPath = () => {
@@ -15,7 +21,7 @@ const getDirectoryPath = () => {
     // 如果取消了没有选择 直接跳出
     if (lodash.isNil(response)) return
     // 保存选中的文件夹
-    electronStore.setTempArenaInfoJsonPath(response[0])
+    useElectron.setTempArenaInfoJsonPath(response[0])
   })
 }
 
@@ -23,7 +29,7 @@ const getDirectoryPath = () => {
 const showMatchupData = computed(() => {
   const left = []
   const right = []
-  for (const player of electronStore.currentMatchupData) {
+  for (const player of useElectron.currentMatchupData) {
     player.relation === 2 ? right.push(player) : left.push(player)
   }
   const matchupData = []
@@ -35,22 +41,21 @@ const showMatchupData = computed(() => {
 
 // 重载数据
 function reload () {
-  electronStore.setTempArenaInfoJsonRow(electronStore.tempArenaInfoJsonRow, true)
+  useElectron.setTempArenaInfoJsonRow(useElectron.tempArenaInfoJsonRow, true)
 }
 
 function serverChange () {
-  setLocalStorage('realTimeResultServer', playerStore.realTimeResultServer)
+  setLocalStorage('realTimeResultServer', useBasicInfo.realTimeResultServer)
 }
 </script>
+
 <template>
-  <div class="main-content">
-    <div style="text-align: left;width: 1130px; margin: 0 auto;padding: 10px 0 10px 0;">
-      <span style="padding-right: 20px; color: #fe7903;font-size: 14px;">双击跳转查询战绩详情 数据量较大请不要频繁重载数据 请注意右上角服务器匹配 卡住请重启</span>
-    </div>
-    <div style="text-align: left;width: 1130px; padding: 0px 0 10px 0;  margin: 0 auto;">
-      <el-select v-model="electronStore.tempArenaInfoJsonRow" size="small" style="margin-right: 5px;" @change="reload">
+  <div class="real-time-results">
+    <div style="padding: 20px;"><span style=" color: #fe7903;font-size: 14px;">双击跳转查询战绩详情 注意服务器选择 卡住请重启</span></div>
+    <div style="text-align: center;width: 1305px; padding: 0px 0 10px 0;  margin: 0 auto;">
+      <el-select v-model="useElectron.tempArenaInfoJsonRow" size="small" style="margin-right: 5px;" @change="reload">
         <el-option
-          v-for="item in electronStore.historyTempArenaInfoJsonRow"
+          v-for="item in useElectron.historyTempArenaInfoJsonRow"
           :key="item"
           :label="JSON.parse(item).dateTime"
           :value="item"
@@ -58,14 +63,14 @@ function serverChange () {
       </el-select>
       <!-- 服务器选择 -->
       <el-select
-        v-model="playerStore.realTimeResultServer"
+        v-model="useBasicInfo.realTimeResultServer"
         placeholder="Select"
         size="small"
         style="width:80px;margin-right: 5px;"
         @change="serverChange"
       >
         <el-option
-          v-for="item in playerStore.serverList"
+          v-for="item in serverList"
           :key="item.key"
           :label="item.value"
           :value="item.key"
@@ -73,7 +78,7 @@ function serverChange () {
       </el-select>
       <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
       <el-button size="small" @click="getDirectoryPath">选择replays文件夹位置</el-button>
-      <span style="padding-left: 10px;">{{ electronStore.tempArenaInfoJsonPath }}</span>
+      <span style="padding-left: 10px;">{{ useElectron.tempArenaInfoJsonPath }}</span>
     </div>
     <!-- 信息列表 -->
     <div class="combat-table">
@@ -107,22 +112,18 @@ function serverChange () {
   </div>
 </template>
 
-<style scoped lang="stylus">
-.main-content {
-  background-color: $global-v-page-background-color;
-  background-color: white;
-  min-height 100%
-  position: relative;
-  overflow auto
+<style scoped lang="scss">
+.real-time-results{
+  height: 100%;
 }
 .combat-table{
   .combat-row{
-    display: flex
-    justify-content: center
+    display: flex;
+    justify-content: center;
   }
 }
 .cell-title{
-  width 50px
-  text-align right
+  width: 50px;
+  text-align: right;
 }
 </style>

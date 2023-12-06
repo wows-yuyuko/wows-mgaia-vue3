@@ -1,6 +1,6 @@
 // 实时战绩相关
-import useElectron from '@/store/electron'
-import { shipInfo } from '@/api/wows/wows'
+import useElectron from '@/stores/electron'
+import basicInfo from '@/stores/basicInfo'
 
 // 开始获循环获取文件夹内容
 export function loopGetTempArenaInfoJson () {
@@ -25,6 +25,7 @@ function levelCompare (player: any, nextPlayer:any) {
 }
 // 实时战斗分类排序
 export async function sortBattleTeamData (dataJson: any) {
+  const useBasicInfo = basicInfo()
   const AirCarrier = [] // 航母
   const Battleship = [] // 战列
   const Cruiser = [] // 巡洋
@@ -34,9 +35,7 @@ export async function sortBattleTeamData (dataJson: any) {
   for (const player of dataJson.vehicles) {
     player.dateTime = dataJson.dateTime
     // 查询船只信息
-    await shipInfo({ shipId: player.shipId }).then(response => {
-      player.shipInfo = response.data
-    })
+    player.shipInfo = useBasicInfo.shipInfoMap[player.shipId]
     switch (player.shipInfo.shipType) {
       case 'AirCarrier':
         AirCarrier.push(player)

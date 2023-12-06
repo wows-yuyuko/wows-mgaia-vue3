@@ -1,79 +1,34 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/home/Home.vue'),
-    redirect: '/player',
-    children: [
-      {
-        // 战绩信息
-        path: 'player',
-        component: () => import('@/views/player/Player.vue')
-      },
-      {
-        // 舰队（还没做）
-        path: 'clan',
-        component: () => import('@/views/clan/Clan.vue')
-      },
-      {
-        // 单船数据
-        path: 'ships',
-        component: () => import('@/views/ships/Ships.vue')
-      },
-      {
-        // 单船服务器平均数据
-        path: 'serverShips',
-        component: () => import('@/views/serverShips/ServerShips.vue')
-      },
-      {
-        // 单船服务器平均数据 日度图表
-        path: 'serverShipsAvgEchart',
-        component: () => import('@/views/serverShipsAvgEchart/ServerShipsAvgEchart.vue')
-      },
-      {
-        // 排行榜
-        path: 'leaderboard',
-        component: () => import('@/views/leaderboard/Leaderboard.vue')
-      },
-      {
-        // 开箱模拟
-        path: 'container',
-        component: () => import('@/views/container/Container.vue')
-      },
-      {
-        // 代币兑换计算
-        path: 'tokens',
-        component: () => import('@/views/tokens/Tokens.vue')
-      },
-      {
-        // 相关下载
-        path: 'relatedDownloads',
-        component: () => import('@/views/relatedDownloads/RelatedDownloads.vue')
-      },
-      {
-        // 封号匹配
-        path: 'banLike',
-        component: () => import('@/views/banLike/BanLike.vue')
-      },
-      {
-        // 封号匹配
-        path: 'recentsIntro',
-        component: () => import('@/views/recents/RecentsIntro.vue')
-      }
-    ]
-  },
-  {
-    // 石蒜模拟
-    path: '/lycorisSimulator',
-    component: () => import('@/views/wonderful/LycorisSimulator.vue')
-  }
-]
+import { createRouter, createWebHistory } from 'vue-router'
+import Layout from '@/views/layout/Layout.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory('/v2'),
+  routes: [
+    {
+      path: '/',
+      name: 'Layout',
+      component: Layout,
+      redirect: '/player',
+      children: [
+        {
+          path: '/player',
+          name: 'Player',
+          component: () => import('@/views/player/Player.vue')
+        },
+        {
+          path: '/clan',
+          name: 'Clan',
+          component: () => import('@/views/clan/Clan.vue')
+        },
+        {
+          path: '/shipList',
+          name: 'ShipList',
+          component: () => import('@/views/shipList/ShipList.vue')
+        }
+      ]
+    }
+  ]
 })
 
 export default router
