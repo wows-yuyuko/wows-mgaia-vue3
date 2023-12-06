@@ -4,16 +4,18 @@ import SearchPlayer from '@/components/searchPlayer/SearchPlayer.vue'
 import { getRecentDayInfo } from '@/api/recent/wowsRecent'
 import basicInfo from '@/stores/basicInfo'
 import { dayjs } from 'element-plus'
-import { Search } from '@element-plus/icons-vue'
+import { Search, Promotion } from '@element-plus/icons-vue'
 import { ref, watch, nextTick, computed, onMounted } from 'vue'
 import lodash from 'lodash'
 import * as echarts from 'echarts'
 import type { Recentinfo } from '@/types/wowsPlayerType'
 import Avatar from './component/Avatar.vue'
+import { copyCommand } from '@/lib/commonUtils'
+import { useRoute } from 'vue-router'
 // 玩家信息页
-
 const usePlayerInfo = playerInfo()
 const useBasicInfo = basicInfo()
+const route = useRoute()
 
 // 各级战舰场次统计
 const fightCountEchart = ref<HTMLDivElement>()
@@ -134,6 +136,14 @@ const buildRecentAndbattlesEchart = () => {
   })
 }
 onMounted(() => {
+  // 判断有无url传参
+  console.log(route.query)
+  if (route.query.server && route.query.accountId) {
+    useBasicInfo.useServerValue = route.query.server as string
+    usePlayerInfo.searchPlayerInfo(parseInt(route.query.accountId as string), route.query.server as string)
+    usePlayerInfo.searchPlayerShipList(parseInt(route.query.accountId as string), route.query.server as string)
+  }
+  // 绘图
   buildRecentAndbattlesEchart()
 })
 watch(() => usePlayerInfo.playerInfo, () => {
@@ -179,6 +189,12 @@ const recentDataComputed = computed(() => {
   }
   return returnData
 })
+
+// 复制分享连接
+const copyPlayerUrl = () => {
+  if (!usePlayerInfo.playerInfo) return
+  copyCommand(`${window.location.href.split('?')[0]}?server=${usePlayerInfo.playerInfo.userInfo.server}&accountId=${usePlayerInfo.playerInfo.userInfo.accountId}`)
+}
 </script>
 
 <template>
@@ -209,7 +225,10 @@ const recentDataComputed = computed(() => {
             <span style="font-size: 12px;margin-left: 30px;color: #999999;">最后战斗: {{ dayjs.unix(usePlayerInfo.playerInfo.lastBattleTime).format('YYYY-MM-DD') }}</span>
 
           </div>
-          <div><el-button :icon="Search" circle @click="usePlayerInfo.playerInfo = null"/></div>
+          <div>
+            <el-button :icon="Promotion" @click="copyPlayerUrl()">复制分享链接</el-button>
+            <el-button :icon="Search" circle @click="usePlayerInfo.playerInfo = null"/>
+          </div>
         </div>
         <div class="pr-row" :style="{
           backgroundColor:usePlayerInfo.playerInfo.prInfo.color

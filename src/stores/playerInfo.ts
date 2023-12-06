@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { PlayerInfo, Account, PlayerShipList } from '@/types/wowsPlayerType'
-import { getPlayerByAccountId } from '@/api/wowsV3/wowsPlayer'
+import { getPlayerByAccountId, getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
 import wowsDB from '@/lib/database'
 import lodash from 'lodash'
 
@@ -29,6 +29,19 @@ export default defineStore('playerInfo', () => {
     }).catch(() => {
       playerInfo.value = null
       playerInfoLoading.value = false
+    })
+  }
+
+  // 查询玩家船列表
+  const searchPlayerShipList = (accountId:number, server:string) => {
+    playerShipListLoading.value = true
+    getPlayerShipList({ accountId, server }).then(response => {
+      console.log(response)
+      playerShipList.value = response
+      playerShipListLoading.value = false
+    }).catch(() => {
+      playerInfo.value = null
+      playerShipListLoading.value = false
     })
   }
   /** ============历史查询记录相关============ */
@@ -69,6 +82,7 @@ export default defineStore('playerInfo', () => {
     searchPlayerInfo,
     playerShipList,
     playerShipListLoading,
+    searchPlayerShipList,
     historyPlayerAccountList,
     addHistoryPlayerAccount,
     delHistoryPlayerAccount

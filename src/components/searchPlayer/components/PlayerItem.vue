@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { Account } from '@/types/wowsPlayerType'
-import { getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
 import basicInfo from '@/stores/basicInfo'
 import playerInfo from '@/stores/playerInfo'
 import { ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import { copyCommand } from '@/lib/commonUtils'
 // 玩家搜索展示
 const usePlayerInfo = playerInfo()
 const useBasicInfo = basicInfo()
@@ -22,39 +21,9 @@ const clickPlayerItem = () => {
   // 设置服务器
   useBasicInfo.useServerValue = props.server
   usePlayerInfo.searchPlayerInfo(props.accountId, props.server)
-
-  usePlayerInfo.playerShipListLoading = true
-  getPlayerShipList({ accountId: props.accountId, server: props.server }).then(response => {
-    console.log(response)
-    usePlayerInfo.playerShipList = response
-    usePlayerInfo.playerShipListLoading = false
-  }).catch(() => {
-    usePlayerInfo.playerInfo = null
-    usePlayerInfo.playerShipListLoading = false
-  })
+  usePlayerInfo.searchPlayerShipList(props.accountId, props.server)
 }
 
-// 复制文字信息
-const copyCommand = (text:string) => {
-  if (!navigator.clipboard) {
-    console.log('无权限复制')
-    ElMessage.error('复制失败！ 可能没开权限 请手打命令吧')
-    ElMessage.error(text)
-    return
-  }
-
-  navigator.clipboard.writeText(text).then(() => {
-    // 剪贴板设置成功
-    ElMessage({
-      message: '复制成功',
-      type: 'success'
-    })
-  }, () => {
-    // 剪贴板写入失败
-    ElMessage.error('复制失败！ 可能没开权限 请手打命令吧')
-    ElMessage.error(text)
-  })
-}
 </script>
 
 <template>
