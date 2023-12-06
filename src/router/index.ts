@@ -25,6 +25,11 @@ const router = createRouter({
           path: '/shipList',
           name: 'ShipList',
           component: () => import('@/views/shipList/ShipList.vue')
+        },
+        {
+          path: '/banLike',
+          name: 'BanLike',
+          component: () => import('@/views/banLike/BanLike.vue')
         }
       ]
     }

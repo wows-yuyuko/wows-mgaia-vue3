@@ -59,6 +59,7 @@ const goHome = () => {
           <el-menu-item index="/player" route="/player" @click="openMenu = false">玩家</el-menu-item>
           <!-- <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item> -->
           <el-menu-item index="/shipList" route="/shipList" @click="openMenu = false">舰船</el-menu-item>
+          <el-menu-item index="/banLike" route="/banLike" @click="openMenu = false">国服封禁模糊匹配 </el-menu-item>
         </el-menu>
       </div>
       <div class="main">

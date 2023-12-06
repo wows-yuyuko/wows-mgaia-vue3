@@ -142,3 +142,29 @@ export async function getPlayerShipInfo (data:{server:string, accountId:number, 
   }
   return returnData
 }
+
+/**
+ * 封号名单模糊查询
+ * @param data  accountId 用户id
+ */
+export async function searcBanCn (data:{ accountId:number|string }) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('searcBanCn' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.post(BASE_URL + '/public/wows/ban/cn/user', data).then((response) => {
+      wowsDB.setWowsCache(
+        'searcBanCn' + JSON.stringify(data),
+        response,
+        HOUR_TIME
+      )
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
