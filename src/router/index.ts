@@ -30,7 +30,13 @@ const router = createRouter({
           path: '/banLike',
           name: 'BanLike',
           component: () => import('@/views/banLike/BanLike.vue')
+        },
+        {
+          path: '/rankingList',
+          name: 'RankingList',
+          component: () => import('@/views/rankingList/RankingList.vue')
         }
+
       ]
     }
   ]

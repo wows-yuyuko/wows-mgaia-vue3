@@ -4,6 +4,7 @@ import { getPlayerShipList } from '@/api/wowsV3/wowsPlayer'
 import basicInfo from '@/stores/basicInfo'
 import playerInfo from '@/stores/playerInfo'
 import { ref } from 'vue'
+import { ElMessage } from 'element-plus'
 // 玩家搜索展示
 const usePlayerInfo = playerInfo()
 const useBasicInfo = basicInfo()
@@ -32,6 +33,28 @@ const clickPlayerItem = () => {
     usePlayerInfo.playerShipListLoading = false
   })
 }
+
+// 复制文字信息
+const copyCommand = (text:string) => {
+  if (!navigator.clipboard) {
+    console.log('无权限复制')
+    ElMessage.error('复制失败！ 可能没开权限 请手打命令吧')
+    ElMessage.error(text)
+    return
+  }
+
+  navigator.clipboard.writeText(text).then(() => {
+    // 剪贴板设置成功
+    ElMessage({
+      message: '复制成功',
+      type: 'success'
+    })
+  }, () => {
+    // 剪贴板写入失败
+    ElMessage.error('复制失败！ 可能没开权限 请手打命令吧')
+    ElMessage.error(text)
+  })
+}
 </script>
 
 <template>
@@ -39,6 +62,14 @@ const clickPlayerItem = () => {
     <span>{{ userName }}</span>
     <span>{{ serverstr }}</span>
     <span class="account-id">{{ accountId }}</span>
+    <el-button
+      link
+      type="info"
+      size="small"
+      @click.stop="copyCommand('wws 特殊绑定 '+ server +' '+ accountId)"
+    >
+      复制绑定命令
+    </el-button>
     <slot></slot>
   </div>
 </template>
