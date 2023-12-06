@@ -15,8 +15,8 @@ function goPlayer () {
 // props.matchupRow.overallPerformance
 </script>
 <template>
-  <!-- <div class="matchup-row" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color + '38'}" @dblclick="goPlayer"> -->
-  <div class="matchup-row" @dblclick="goPlayer">
+  <div class="matchup-row" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color + '38'}" @dblclick="goPlayer">
+  <!-- <div class="matchup-row" @dblclick="goPlayer"> -->
     <div class="pr-color" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color}"></div>
     <div style="width: 85px;">
       <img class="ship-img" :src="props.matchupRow.shipInfo.imgSmall" />

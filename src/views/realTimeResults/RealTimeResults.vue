@@ -128,13 +128,13 @@ function serverChange () {
   }
 
   /* 奇数行 */
-  .combat-row:nth-child(odd){
-    background: #0f1c25;
-  }
-  /* 偶数行 */
-  .combat-row:nth-child(even){
-    background: #293e4e;
-  }
+  // .combat-row:nth-child(odd){
+  //   background: #0f1c25;
+  // }
+  // /* 偶数行 */
+  // .combat-row:nth-child(even){
+  //   background: #293e4e;
+  // }
 
 }
 .cell-title{
