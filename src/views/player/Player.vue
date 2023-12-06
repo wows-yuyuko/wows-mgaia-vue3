@@ -9,6 +9,7 @@ import { ref, watch, nextTick, computed, onMounted } from 'vue'
 import lodash from 'lodash'
 import * as echarts from 'echarts'
 import type { Recentinfo } from '@/types/wowsPlayerType'
+import Avatar from './component/Avatar.vue'
 // 玩家信息页
 
 const usePlayerInfo = playerInfo()
@@ -191,17 +192,19 @@ const recentDataComputed = computed(() => {
       </div>
       <div class="data-view">
         <div class="name-time-row">
-          <div>
+          <div style="display: flex;align-items: center;">
+            <Avatar :account-id="usePlayerInfo.playerInfo.userInfo.accountId" />
             <span
               :style="{
                 color:usePlayerInfo.playerInfo.userInfo.clanInfo.color,
-                'font-size': '18px',
+                'font-size': '26px',
                 'font-weight': 600
               }"
+              v-if="usePlayerInfo.playerInfo.userInfo.clanInfo.tag"
             >
               [{{ usePlayerInfo.playerInfo.userInfo.clanInfo.tag }}]
             </span>
-            <span style="font-size: 18px;">{{  usePlayerInfo.playerInfo.userInfo.userName }}</span>
+            <span :class="usePlayerInfo.avatarMap[usePlayerInfo.playerInfo.userInfo.accountId]?'mirage-text':''" style="font-size: 24px;">{{  usePlayerInfo.playerInfo.userInfo.userName }}</span>
             <span style="font-size: 12px;margin-left: 30px;color: #999999;">注册时间: {{ dayjs.unix(usePlayerInfo.playerInfo.userInfo.accountCreateTime).format('YYYY-MM-DD') }}</span>
             <span style="font-size: 12px;margin-left: 30px;color: #999999;">最后战斗: {{ dayjs.unix(usePlayerInfo.playerInfo.lastBattleTime).format('YYYY-MM-DD') }}</span>
 
@@ -435,10 +438,10 @@ const recentDataComputed = computed(() => {
     }
     .portrait:after {
       content: ' ';
-      background: linear-gradient(180deg, transparent, transparent 30%, $mg-background-color) 0 0;
+      background: linear-gradient(180deg, transparent, #0c192178 10%, $mg-background-color) 0 0;
       display: block;
       width: 100%;
-      height: 500px;
+      height: 400px;
       position: absolute;
     }
 
@@ -506,6 +509,22 @@ const recentDataComputed = computed(() => {
         }
       }
     }
+  }
+}
+.mirage-text{
+  background: -webkit-linear-gradient(45deg, #00e9f5, #f78651, #f7d73c, #8d67ff, #549bff);
+  color: transparent;
+  /*设置字体颜色透明*/
+  -webkit-background-clip: text;
+  /*背景裁剪为文本形式*/
+  animation: ran 10s linear infinite;
+}
+@keyframes ran {
+  from {
+    backgroud-position: 0 0;
+  }
+  to {
+    background-position: 2000px 0;
   }
 }
 </style>

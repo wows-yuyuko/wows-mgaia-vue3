@@ -8,6 +8,7 @@ import lodash from 'lodash'
 // 玩家信息
 export default defineStore('playerInfo', () => {
   /** ============玩家战绩信息============ */
+  const avatarMap = ref<{[key:number]:string}>({}) // 用户头像对应表
   const playerInfo = ref<PlayerInfo|null>(null)
   const playerInfoLoading = ref(false)
   const playerShipList = ref<PlayerShipList|null>(null)
@@ -62,6 +63,7 @@ export default defineStore('playerInfo', () => {
     }
   }
   return {
+    avatarMap,
     playerInfo,
     playerInfoLoading,
     searchPlayerInfo,

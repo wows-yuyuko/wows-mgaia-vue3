@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router'
 import basicInfo from '@/stores/basicInfo'
 import electron from '@/stores/electron'
 import type { WowsServer } from '@/types/wowsBaseType'
-import { getShipTypeApi } from '@/api/wowsV3/wowsBase'
+import router from '@/router'
 // 布局文件
 const useBasicInfo = basicInfo()
 const useElectron = electron()
@@ -20,18 +20,17 @@ const initData = async () => {
 }
 // 初始化数据
 initData()
-
-// 做个测试
-getShipTypeApi().then(shipTypeList => {
-  console.log(shipTypeList)
-})
+const goHome = () => {
+  useElectron.electronEnable ? router.push('/realRimeResults') : router.push('/player')
+}
+// 跳首页
 
 </script>
 
 <template>
   <div class="layout">
     <div class="top-bar">
-      <div><img class="wows-logo" src="@/assets/wowslogo/home_logo_1.png"/></div>
+      <div @click="goHome"><img class="wows-logo" src="@/assets/wowslogo/home_logo_1.png"/></div>
       <div style="display: flex;">
         <el-select
           v-model="useBasicInfo.useServerValue"
