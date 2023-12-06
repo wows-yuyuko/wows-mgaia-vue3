@@ -15,6 +15,7 @@ function goPlayer () {
 // props.matchupRow.overallPerformance
 </script>
 <template>
+  <!-- <div class="matchup-row" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color + '38'}" @dblclick="goPlayer"> -->
   <div class="matchup-row" @dblclick="goPlayer">
     <div class="pr-color" :style="{'background-color': props.matchupRow.overallPerformance?.prInfo.color}"></div>
     <div style="width: 85px;">
@@ -41,8 +42,10 @@ function goPlayer () {
     </div>
     <!-- 伤害 -->
     <div class="number" style="width: 70px;">
-      <div class="text" :style="{'color': props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damageData.color}">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damage }}</div>
-      <div class="text" :style="{'color': props.matchupRow.shipPerformance?.typeInfo.PVP.battleInfo.avgInfo.damageData.color}">{{ props.matchupRow.shipPerformance?.typeInfo.PVP.battleInfo.avgInfo.damage }}</div>
+      <!-- <div class="text" :style="{'color': props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damageData.color}">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damage }}</div>
+      <div class="text" :style="{'color': props.matchupRow.shipPerformance?.typeInfo.PVP.battleInfo.avgInfo.damageData.color}">{{ props.matchupRow.shipPerformance?.typeInfo.PVP.battleInfo.avgInfo.damage }}</div> -->
+      <div class="text">{{ props.matchupRow.overallPerformance?.battleTypeInfo.PVP.shipInfo.avgInfo.damage }}</div>
+      <div class="text">{{ props.matchupRow.shipPerformance?.typeInfo.PVP.battleInfo.avgInfo.damage }}</div>
     </div>
     <!-- 命中 -->
     <div class="number">
@@ -69,7 +72,9 @@ function goPlayer () {
   height: 50px;
 }
 .text{
-  line-height: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 27px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

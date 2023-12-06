@@ -83,8 +83,8 @@ function serverChange () {
     <!-- 信息列表 -->
     <div class="combat-table">
       <div class="combat-row">
-        <div style="display:flex;">
-          <div style="width:239px;"></div>
+        <div style="display:flex;flex-grow: 1;">
+          <div style="width:240px;"></div>
           <div class="cell-title">场次</div>
           <div class="cell-title">pr</div>
           <div class="cell-title">胜率</div>
@@ -93,8 +93,8 @@ function serverChange () {
           <div class="cell-title">kd</div>
         </div>
         <div style="width: 5px;"></div>
-        <div style="display:flex;">
-          <div style="width:239px;"></div>
+        <div style="display:flex;flex-grow: 1;">
+          <div style="width:268px;"></div>
           <div class="cell-title">场次</div>
           <div class="cell-title">pr</div>
           <div class="cell-title">胜率</div>
@@ -105,7 +105,7 @@ function serverChange () {
       </div>
       <div v-for="item of showMatchupData" :key="item.left?.id+''+item.right?.id" class="combat-row">
         <CombatRow :matchupRow="item.left" v-if="item.left"/>
-        <div style="width: 5px;"></div>
+        <div style="width: 20px;"></div>
         <CombatRow :matchupRow="item.right" v-if="item.right" />
       </div>
     </div>
@@ -117,10 +117,25 @@ function serverChange () {
   height: 100%;
 }
 .combat-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   .combat-row{
     display: flex;
     justify-content: center;
+    margin-top: 5px;
+    padding: 0 5px;
   }
+
+  /* 奇数行 */
+  .combat-row:nth-child(odd){
+    background: #0f1c25;
+  }
+  /* 偶数行 */
+  .combat-row:nth-child(even){
+    background: #293e4e;
+  }
+
 }
 .cell-title{
   width: 50px;
