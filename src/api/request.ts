@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { AxiosRequestHeaders } from 'axios'
+import electron from '@/stores/electron'
 
 // 创建axios实例
 const service = axios.create({
@@ -19,7 +20,7 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // 发出请求前的处理
-    (config.headers as AxiosRequestHeaders)['Yuyuko-Client-Type'] = 'WEB;0.0.0';
+    (config.headers as AxiosRequestHeaders)['Yuyuko-Client-Type'] = electron().electronEnable ? 'WEB;TOOLS.0.0' : 'WEB;0.0.0';
     (config.headers as AxiosRequestHeaders).Authorization = 'WEB_API:wows_yuyuko'
     // config.headers['sessionKey'] = store.getters.key // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
     return config
