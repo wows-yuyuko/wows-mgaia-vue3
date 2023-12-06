@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Search } from '@element-plus/icons-vue'
+import { Search, Delete } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import { getPlatformApi } from '@/api/wowsV3/wowsBase'
 import { getPlayerListByUserName, getPlayerByAccountId, getPlatformBindList } from '@/api/wowsV3/wowsPlayer'
@@ -147,7 +147,10 @@ const searchPlayerByPlatform = () => {
             :key="player.accountId"
             :server="player.server"
             :accountId="player.accountId"
-            :userName="player.userName"/>
+            :userName="player.userName"
+          >
+            <el-button :icon="Delete" size="small" circle @click.stop="usePlayerInfo.delHistoryPlayerAccount(player)" />
+          </PlayerItem>
         </div>
       </el-tab-pane>
     </el-tabs>
