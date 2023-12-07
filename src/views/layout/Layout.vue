@@ -6,6 +6,7 @@ import { useRoute } from 'vue-router'
 import basicInfo from '@/stores/basicInfo'
 import electron from '@/stores/electron'
 import type { WowsServer } from '@/types/wowsBaseType'
+import WgLogo from '@/assets/wowslogo/log.svg'
 import router from '@/router'
 // 布局文件
 const useBasicInfo = basicInfo()
@@ -20,18 +21,23 @@ const initData = async () => {
 }
 // 初始化数据
 initData()
+
+// 跳首页
 const goHome = () => {
   useElectron.electronEnable ? router.push('/realRimeResults') : router.push('/player')
 }
-// 跳首页
 
+const wgOa = () => {
+  if (useBasicInfo.useServerValue === 'cn') { return }
+  window.open('https://api.worldoftanks.' + (useBasicInfo.useServerValue === 'na' ? 'com' : useBasicInfo.useServerValue) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://api.wows.shinoaki.com/public/wows/oauth/wows/yuyuko/success')
+}
 </script>
 
 <template>
   <div class="layout">
     <div class="top-bar">
       <div @click="goHome"><img class="wows-logo" src="@/assets/wowslogo/home_logo_1.png"/></div>
-      <div style="display: flex;">
+      <div style="display: flex;    align-items: center;">
         <el-select
           v-model="useBasicInfo.useServerValue"
           style="width: 100px;margin-right: 10px;"
@@ -44,7 +50,12 @@ const goHome = () => {
             :value="server.key"
           />
         </el-select>
-        <GitHub @click="openTab('https://github.com/wows-yuyuko/wows-mgaia-vue3')" />
+        <div style="padding-right: 10px;">
+          <el-tooltip class="item" effect="dark" content="授权wg账号(国服无效)" placement="bottom-end">
+            <img style="padding: 6px 4px; cursor: pointer;     display: block;" :src="WgLogo" @click="wgOa" />
+          </el-tooltip>
+        </div>
+        <GitHub style="cursor: pointer;" @click="openTab('https://github.com/wows-yuyuko/wows-mgaia-vue3')" />
       </div>
     </div>
     <div class="layout-body">
