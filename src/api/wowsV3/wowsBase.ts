@@ -108,7 +108,7 @@ export async function getShipInfoList () {
   if (!lodash.isNil(dbdata)) {
     return Promise.resolve(dbdata)
   } else {
-    await request.get(BASE_URL + '/public/wows/encyclopedia/ship/search', {}).then((response) => {
+    await request.get(BASE_URL + '/public/wows/encyclopedia/ship/search', { groupType: 'default' }).then((response) => {
       console.log(response)
       wowsDB.setWowsCache('getShipInfoList', response, HOUR_TIME)
       returnData = Promise.resolve(response)
@@ -154,7 +154,7 @@ export function rollContainerList (data: {shipId: number[], slotsId:number}) {
 }
 
 /**
- * 获取箱子列表
+ * 船排行榜
  * @returns
  */
 export async function getRankShipList (data:{shipId:number, type:number, page:number, desc:boolean}) {
