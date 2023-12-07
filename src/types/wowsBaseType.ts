@@ -43,10 +43,26 @@ export interface ShipInfo {
  * 开箱 箱子信息
  */
 export interface ContainerInfo {
-  key: string // 箱子编号
-  value: string // 箱子名
+  id: number
+  title: '超级补给箱'
+  shortTitle: '超级补给箱'
+  icons: {
+    defaultUrl: string
+  }
+  premium: false
 }
 
+/**
+ * 箱子内容物信息
+ */
+export interface ContainerContentInfo {
+  id: 3765352144
+  type: string
+  amount: 1
+  name: '矢矧'
+  cashBack: false
+  imageUrl: 'https:////wows-gloss-icons.wgcdn.co/icons/vehicle/small/PJSC505_f3444e89f551cae2620d8d24f4a80ff0b1713e631936fca70bb8fe01d57db7de.png'
+}
 export interface RankShipPlayer {
   sortIndex: 3
   accountId: 7050680327

@@ -134,7 +134,7 @@ export async function getContainerList () {
   } else {
     await request.get(BASE_URL + '/public/wows/roll/info', {}).then((response) => {
       console.log(response)
-      wowsDB.setWowsCache('getContainerList', response, WEEK_TIME)
+      wowsDB.setWowsCache('getContainerList', response, HOUR_TIME)
       returnData = Promise.resolve(response)
     }).catch(err => {
       console.log(err)
@@ -149,8 +149,8 @@ export async function getContainerList () {
  * @param data
  * @returns
  */
-export function rollContainerList (data: {shipId: number[], slotsId:number}) {
-  return request.post(BASE_URL + '/public/wows/roll/slots/user/list', data)
+export function rollContainerList (data: {shipId: number[], slotsId:number, rollCount:number, accountId?: number, server?: string}) {
+  return request.post(BASE_URL + '/public/wows/roll/slots/user', data)
 }
 
 /**
