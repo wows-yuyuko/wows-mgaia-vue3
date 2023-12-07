@@ -29,7 +29,7 @@ const goHome = () => {
 
 const wgOa = () => {
   if (useBasicInfo.useServerValue === 'cn') { return }
-  window.open('https://api.worldoftanks.' + (useBasicInfo.useServerValue === 'na' ? 'com' : useBasicInfo.useServerValue) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://api.wows.shinoaki.com/public/wows/oauth/wows/yuyuko/success')
+  window.open('https://api.worldoftanks.' + (useBasicInfo.useServerValue === 'na' ? 'com' : useBasicInfo.useServerValue) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://v3-api.wows.shinoaki.com:8443/public/wows/oauth/wows/yuyuko/success')
 }
 </script>
 
