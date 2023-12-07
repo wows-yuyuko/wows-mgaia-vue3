@@ -41,6 +41,13 @@
         提取码：zcyu <br />
       </li>
     </ul>
+    <h1>相关下载</h1>
+    <ul>
+      <li>
+        扫码添加QQ机器人<br />
+        <img src="@/assets/relatedDownloads/qqbot.png" style="width: 360px;" />
+      </li>
+    </ul>
   </div>
 </template>
 
