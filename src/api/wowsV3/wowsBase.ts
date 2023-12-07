@@ -1,7 +1,7 @@
 /**
  * wows基础数据
  */
-import wowsDB, { WEEK_TIME } from '@/lib/database'
+import wowsDB, { WEEK_TIME, HOUR_TIME } from '@/lib/database'
 import lodash from 'lodash'
 import request from '@/api/request'
 import type { ShipType } from '@/types/wowsBaseType'
@@ -110,7 +110,64 @@ export async function getShipInfoList () {
   } else {
     await request.get(BASE_URL + '/public/wows/encyclopedia/ship/search', {}).then((response) => {
       console.log(response)
-      wowsDB.setWowsCache('getShipInfoList', response, WEEK_TIME)
+      wowsDB.setWowsCache('getShipInfoList', response, HOUR_TIME)
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      returnData = Promise.reject(err)
+    })
+    return returnData
+  }
+}
+
+/**
+ * 获取箱子列表
+ * @returns
+ */
+export async function getContainerList () {
+  let returnData!:Promise<ShipType[]>
+  // 查询数据库中是否有数据
+  const dbdata = await wowsDB.getWowsCache('getContainerList')
+  console.log(dbdata)
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/roll/info', {}).then((response) => {
+      console.log(response)
+      wowsDB.setWowsCache('getContainerList', response, WEEK_TIME)
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      returnData = Promise.reject(err)
+    })
+    return returnData
+  }
+}
+
+/**
+ * 箱子抽奖-列表
+ * @param data
+ * @returns
+ */
+export function rollContainerList (data: {shipId: number[], slotsId:number}) {
+  return request.post(BASE_URL + '/public/wows/roll/slots/user/list', data)
+}
+
+/**
+ * 获取箱子列表
+ * @returns
+ */
+export async function getRankShipList (data:{shipId:number, type:number, page:number, desc:boolean}) {
+  let returnData!:Promise<ShipType[]>
+  // 查询数据库中是否有数据
+  const dbdata = await wowsDB.getWowsCache('getRankShipList' + JSON.stringify(data))
+  console.log(dbdata)
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/rank/ship/cn', data).then((response) => {
+      console.log(response)
+      wowsDB.setWowsCache('getRankShipList' + JSON.stringify(data), response, HOUR_TIME * 3)
       returnData = Promise.resolve(response)
     }).catch(err => {
       console.log(err)

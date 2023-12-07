@@ -5,7 +5,7 @@ import { getRecentDayInfo } from '@/api/recent/wowsRecent'
 import basicInfo from '@/stores/basicInfo'
 import { dayjs } from 'element-plus'
 import { Search, Promotion } from '@element-plus/icons-vue'
-import { ref, watch, nextTick, computed, onMounted } from 'vue'
+import { ref, watch, nextTick, computed, onMounted, onActivated } from 'vue'
 import lodash from 'lodash'
 import * as echarts from 'echarts'
 import type { Recentinfo } from '@/types/wowsPlayerType'
@@ -143,6 +143,10 @@ onMounted(() => {
     usePlayerInfo.searchPlayerInfo(parseInt(route.query.accountId as string), route.query.server as string)
     usePlayerInfo.searchPlayerShipList(parseInt(route.query.accountId as string), route.query.server as string)
   }
+  // 绘图
+  buildRecentAndbattlesEchart()
+})
+onActivated(() => {
   // 绘图
   buildRecentAndbattlesEchart()
 })
