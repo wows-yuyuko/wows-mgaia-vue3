@@ -27,28 +27,42 @@ const times = ref(10)
 const serverLoading = ref(false)
 
 // 内容物列表
-const containerContentInfoList = ref<ContainerContentInfo[]>([])
 // 统计
-const statistics = ref<{[key:string]:number}>({})
-const rollContainerListResponse = ref<any>()
+const rollContainerListResponse = ref<{
+  auth: boolean
+  rollCount: number
+  rollTotal: number
+  savePoint: number
+  savePointTotal: number
+  slotsList: ContainerContentInfo[]
+  slotsResultList: ContainerContentInfo[]
+}>()
+const slotsResultMap = ref<any>({})
 // 开箱
 const openContainer = (boom:boolean = false) => {
   serverLoading.value = true
-  statistics.value = {}
   const data:any = { slotsId: containerKey.value, shipId: [0], rollCount: boom ? '0' : times.value }
   if (shipsHook.value) {
     data.accountId = usePlayerInfo.playerInfo?.userInfo.accountId
     data.server = usePlayerInfo.playerInfo?.userInfo.server
   }
+  slotsResultMap.value = {}
   rollContainerList(data).then(response => {
     console.log('openContainer', response)
     rollContainerListResponse.value = response
-    containerContentInfoList.value = response.slotsList
-    for (const item of containerContentInfoList.value) {
-      if (statistics.value[item.name]) {
-        statistics.value[item.name] = statistics.value[item.name] + 1
+    for (const item of rollContainerListResponse.value!.slotsResultList) {
+      if (['ship', 'camoboost'].includes(item.type)) {
+        if (slotsResultMap.value[item.type]) {
+          slotsResultMap.value[item.type].push(item)
+        } else {
+          slotsResultMap.value[item.type] = [item]
+        }
       } else {
-        statistics.value[item.name] = 1
+        if (slotsResultMap.value.other) {
+          slotsResultMap.value.other.push(item)
+        } else {
+          slotsResultMap.value.other = [item]
+        }
       }
     }
     serverLoading.value = false
@@ -61,7 +75,8 @@ const openContainer = (boom:boolean = false) => {
 <template>
   <div class="open-container">
     <div>
-      <div>
+      <div style="display: flex;    align-items: center;">
+        <img v-if="containerMap[containerKey]" :src="containerMap[containerKey].icons.defaultUrl" style="width: 50px;margin-right: 10px;"/>
         <el-select v-model="containerKey" filterable placeholder="请选择圣诞箱子">
           <el-option
             v-for="item in containerList"
@@ -80,17 +95,28 @@ const openContainer = (boom:boolean = false) => {
         <!-- <el-button type="" style="margin-left:20px;" @click="boom">氪穿</el-button> -->
         <el-button type="" style="margin-left:20px;" :loading="serverLoading" @click="openContainer(true)">氪穿</el-button>
       </div>
-      <img v-if="containerMap[containerKey]" :src="containerMap[containerKey].icons.defaultUrl" style="width: 200px;"/>
+      <!-- <div class="container-background">
+        <img v-if="containerMap[containerKey]" :src="containerMap[containerKey].icons.defaultUrl" style="width: 100px;"/>
+      </div> -->
+      <div v-if="rollContainerListResponse">
+        <div style="padding-top: 20px;    font-weight: bold;">总计：{{ rollContainerListResponse?.rollTotal }}</div>
+        <div style="padding-top: 10px;    font-weight: bold;">每 {{ rollContainerListResponse?.savePoint }} 箱保底</div>
+        <div style="padding-top: 10px;    font-weight: bold;">共保底 {{ rollContainerListResponse?.savePointTotal }} 次</div>
+      </div>
     </div>
     <div style="padding-left: 50px;overflow-y: auto;">
-      <div v-for="(item,index) of containerContentInfoList" :key="index" class="container-content" :style="{backgroundColor: item.type==='ship'?'#ffcc6630':''}" >
+      <div style="font-weight: bolder;">详情：</div>
+      <div v-for="(item,index) of rollContainerListResponse?.slotsList" :key="index" class="container-content" :style="{backgroundColor: item.type==='ship'?'#ffcc6630':''}" >
         <img style=" width: 40px;" :src="item.imageUrl" />
         <div :style="{'padding-left': '10px', color: ['gold','wows_premium', 'ship'].includes(item.type)?'#fc6':'white'}">{{ item.name }} <span v-if="['camoboost', 'camouflage'].includes(item.type)">*{{ item.amount }}</span></div>
       </div>
     </div>
-    <div style="padding-left: 50px;overflow-y: auto;" v-if="containerContentInfoList.length>0">
-      <div>总计：{{ rollContainerListResponse.rollTotal }}</div>
-      <div v-for="(item,index) of statistics" :key="index">{{index }} {{ item }} 次</div>
+    <div v-for="(itemList, key) of slotsResultMap" :key="key" style="padding-left: 50px;overflow-y: auto;" >
+      <div style="font-weight: bolder;">合计：{{ itemList.length }}</div>
+      <div v-for="(item,index) of itemList" :key="index" class="container-content" :style="{backgroundColor: item.type==='ship'?'#ffcc6630':''}" >
+        <img style=" width: 40px;" :src="item.imageUrl" />
+        <div :style="{'padding-left': '10px', color: ['gold','wows_premium', 'ship'].includes(item.type)?'#fc6':'white'}">{{ item.name }} <span v-if="['camoboost', 'camouflage'].includes(item.type)">*{{ item.amount }}</span></div>
+      </div>
     </div>
   </div>
 </template>
@@ -104,5 +130,18 @@ const openContainer = (boom:boolean = false) => {
 }
 .container-content{
   display: flex;align-items: center;padding-right: 20px;padding-bottom: 5px;
+}
+
+.container-background{
+  width: 200px;
+  height: 190px;
+  background-image: url(@/assets/container/background.png);
+  background-size: 100%;
+  background-color: red;
+
+  img{
+    padding-left: 50px;
+    padding-top: 50px;
+  }
 }
 </style>
