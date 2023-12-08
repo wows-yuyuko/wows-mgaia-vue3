@@ -11,5 +11,6 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 <style lang='scss'>
 #app{
   height: 100%;
+  min-width: 1050px;
 }
 </style>
