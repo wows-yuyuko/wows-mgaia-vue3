@@ -9,16 +9,6 @@ import lodash from 'lodash'
 const usePlayerInfo = playerInfo()
 const useBasicInfo = basicInfo()
 
-// 转换船只类型
-const shipTypeMap = computed(() => {
-  const returnMap:{[key:string]:string} = {}
-  for (const item of useBasicInfo.shipTypeList) {
-    returnMap[item.shipType] = item.typeName
-    console.log(item)
-  }
-  return returnMap
-})
-
 // 转换国家类型
 const countryMap = computed(() => {
   const returnMap:{[key:string]:string} = {}
@@ -47,7 +37,7 @@ const shipListData = computed(() => {
       shipId: shipInfo.shipInfo.shipId,
       nameCn: shipInfo.shipInfo.nameCn,
       level: shipInfo.shipInfo.level,
-      shipType: shipTypeMap.value[shipInfo.shipInfo.shipType],
+      shipType: useBasicInfo.shipTypeMap[shipInfo.shipInfo.shipType],
       country: countryMap.value[shipInfo.shipInfo.country],
       imgSmall: shipInfo.shipInfo.imgSmall,
       prValue: shipInfo.typeInfo.PVP.prInfo.value,
@@ -183,7 +173,7 @@ const shipListData = computed(() => {
         <div style="padding: 20px;">
           <div style="display: flex;align-items: center;">
             类型：
-            <el-checkbox-group v-model="selectShipTypeList" size="mini">
+            <el-checkbox-group v-model="selectShipTypeList" >
               <el-checkbox-button v-for="shipType in useBasicInfo.shipTypeList" :key="shipType.shipType" :label="shipType.shipType">
                 {{ shipType.typeName }}
               </el-checkbox-button>
@@ -192,7 +182,7 @@ const shipListData = computed(() => {
 
           <div style="display: flex;align-items: center;">
             国家：
-            <el-checkbox-group style="margin-top: 10px;" v-model="selectNationList" size="mini">
+            <el-checkbox-group style="margin-top: 10px;" v-model="selectNationList" >
               <el-checkbox-button v-for="nation in useBasicInfo.nationList" :key="nation.nation" :label="nation.nation">
                 {{ nation.cn }}
               </el-checkbox-button>
@@ -201,7 +191,7 @@ const shipListData = computed(() => {
 
           <div style="display: flex;align-items: center;">
             等级：
-            <el-checkbox-group style="margin-top: 10px;" v-model="selectLevelList" size="mini">
+            <el-checkbox-group style="margin-top: 10px;" v-model="selectLevelList" >
               <el-checkbox-button v-for="index in 11" :key="index" :label="index">
                 {{ index }}
               </el-checkbox-button>

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { getContainerList, rollContainerList } from '@/api/wowsV3/wowsBase'
 import type { ContainerInfo, ContainerContentInfo } from '@/types/wowsBaseType'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import playerInfo from '@/stores/playerInfo'
+import basicInfo from '@/stores/basicInfo'
 // 开箱
 
 const usePlayerInfo = playerInfo()
+const useBasicInfo = basicInfo()
 
 const containerMap = ref<{[key:number]:ContainerInfo}>({})
 
@@ -13,12 +15,21 @@ const containerMap = ref<{[key:number]:ContainerInfo}>({})
 const containerList = ref<ContainerInfo[]>([])
 // 当前选中箱子
 const containerKey = ref(4285715376)
-getContainerList().then(response => {
-  for (const container of response) {
-    containerMap.value[container.id] = container
-  }
-  console.log(response)
-  containerList.value = response
+
+const pageGetContainerList = () => {
+  getContainerList({ server: useBasicInfo.useServerValue }).then(response => {
+    for (const container of response) {
+      containerMap.value[container.id] = container
+    }
+    console.log(response)
+    containerList.value = response
+  })
+}
+
+pageGetContainerList()
+
+watch(() => useBasicInfo.useServerValue, () => {
+  pageGetContainerList()
 })
 // 是否船库挂钩
 const shipsHook = ref(false)

@@ -124,17 +124,17 @@ export async function getShipInfoList () {
  * 获取箱子列表
  * @returns
  */
-export async function getContainerList () {
+export async function getContainerList (data: {server: string}) {
   let returnData!:Promise<ShipType[]>
   // 查询数据库中是否有数据
-  const dbdata = await wowsDB.getWowsCache('getContainerList')
+  const dbdata = await wowsDB.getWowsCache('getContainerList' + JSON.stringify(data))
   console.log(dbdata)
   if (!lodash.isNil(dbdata)) {
     return Promise.resolve(dbdata)
   } else {
-    await request.get(BASE_URL + '/public/wows/roll/info', {}).then((response) => {
+    await request.get(BASE_URL + '/public/wows/roll/info', data).then((response) => {
       console.log(response)
-      wowsDB.setWowsCache('getContainerList', response, HOUR_TIME)
+      wowsDB.setWowsCache('getContainerList' + JSON.stringify(data), response, HOUR_TIME)
       returnData = Promise.resolve(response)
     }).catch(err => {
       console.log(err)

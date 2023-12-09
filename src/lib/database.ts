@@ -53,9 +53,12 @@ class WowsDb extends Dexie {
 
   public constructor () {
     super('wows')
-    this.version(1).stores({
+    this.version(2).stores({
       wowsServerList: '&id',
       wowsCache: '&id'
+    }).upgrade(tx => {
+      tx.table('wowsServerList').clear()
+      tx.table('wowsCache').clear()
     })
     // ===============公共缓存表===============
     this.wowsCache = this.table('wowsCache')

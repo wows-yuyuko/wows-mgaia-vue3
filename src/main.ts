@@ -5,7 +5,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 import '@/assets/style/base.css'
 // import '@/assets/style/variable.scss'
 import electron from '@/stores/electron'
-import { loopGetTempArenaInfoJson } from '@/hooks/realTimeResults'
+// import { loopGetTempArenaInfoJson } from '@/hooks/realTimeResults'
 import lodash from 'lodash'
 
 import App from './App.vue'
@@ -24,5 +24,5 @@ if (!lodash.isNil(window.electronAPI)) {
   // 启用electron相关内容
   useElectron.setElectronEnable(true)
   // 循环获取实时战绩配置项
-  loopGetTempArenaInfoJson()
+  // loopGetTempArenaInfoJson()
 }

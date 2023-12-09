@@ -331,66 +331,18 @@ const copyPlayerUrl = () => {
           <div>命中</div>
           <div>胜率</div>
         </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.battle">
-          <div>驱逐舰</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Destroyer.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.battle">
-          <div>巡洋舰</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Cruiser.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.battle">
-          <div>战列舰</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Battleship.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.battle">
-          <div>航空母舰</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.AirCarrier.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.battle">
-          <div>辅助</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Auxiliary.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
-        <div class="table-row" v-if="usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.battle">
-          <div>潜艇</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.battleInfo.battle }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.prInfo.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.prInfo.name }} {{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.prInfo.value }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.xp }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.damageData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.damage }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.kd }}</div>
-          <div>{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
-          <div :style="{color: usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.winsData.color}">{{ usePlayerInfo.playerInfo.shipTypeInfo.Submarine.PVP.shipInfo.avgInfo.win }}</div>
-        </div>
+        <template v-for="(item, key) of usePlayerInfo.playerInfo.shipTypeInfo" :key="key">
+          <div class="table-row"  v-if="item.PVP.battle">
+            <div>{{ useBasicInfo.shipTypeMap[key] }}</div>
+            <div>{{ item.PVP.shipInfo.battleInfo.battle }}</div>
+            <div :style="{color: item.PVP.prInfo.color}">{{ item.PVP.prInfo.name }} {{ item.PVP.prInfo.value }}</div>
+            <div>{{ item.PVP.shipInfo.avgInfo.xp }}</div>
+            <div :style="{color: item.PVP.shipInfo.avgInfo.damageData.color}">{{ item.PVP.shipInfo.avgInfo.damage }}</div>
+            <div>{{ item.PVP.shipInfo.avgInfo.kd }}</div>
+            <div>{{ item.PVP.shipInfo.hitRatioInfo.ratioMain }}</div>
+            <div :style="{color: item.PVP.shipInfo.avgInfo.winsData.color}">{{ item.PVP.shipInfo.avgInfo.win }}</div>
+          </div>
+        </template>
 
         <!-- 场次数量 -->
         <div ref="fightCountEchart" style="height: 500px; margin-top: 50px;" />

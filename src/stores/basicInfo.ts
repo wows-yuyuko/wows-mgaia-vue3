@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { getServerListApi, getShipTypeApi, getNationApi, getShipInfoList } from '@/api/wowsV3/wowsBase'
 import type { WowsServer, ShipType, NationType, ShipInfo } from '@/types/wowsBaseType'
@@ -53,6 +53,15 @@ export default defineStore('basicInfo', () => {
   getShipTypeApi().then(response => {
     shipTypeList.value = response
   })
+  // 转换船只类型
+  const shipTypeMap = computed(() => {
+    const returnMap:{[key:string]:string} = {}
+    for (const item of shipTypeList.value) {
+      returnMap[item.shipType] = item.typeName
+      console.log(item)
+    }
+    return returnMap
+  })
 
   // ======舰船国家信息======
   const nationList = ref<NationType[]>([])
@@ -68,5 +77,5 @@ export default defineStore('basicInfo', () => {
     }
   })
 
-  return { useServerValue, realTimeResultServer, getServerList, shipTypeList, nationList, shipInfoMap }
+  return { useServerValue, realTimeResultServer, getServerList, shipTypeList, shipTypeMap, nationList, shipInfoMap }
 })
