@@ -5,6 +5,7 @@ import GitHub from '@/assets/icon/GitHub.vue'
 import { useRoute } from 'vue-router'
 import basicInfo from '@/stores/basicInfo'
 import electron from '@/stores/electron'
+import { getOauthPath } from '@/api/wowsV3/wowsBase'
 import type { WowsServer } from '@/types/wowsBaseType'
 import WgLogo from '@/assets/wowslogo/log.svg'
 import router from '@/router'
@@ -29,7 +30,10 @@ const goHome = () => {
 
 const wgOa = () => {
   if (useBasicInfo.useServerValue === 'cn') { return }
-  window.open('https://api.worldoftanks.' + (useBasicInfo.useServerValue === 'na' ? 'com' : useBasicInfo.useServerValue) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://v3-api.wows.shinoaki.com:8443/public/wows/oauth/wows/yuyuko/success')
+  getOauthPath({ server: useBasicInfo.useServerValue }).then(response => {
+    window.open(response)
+  })
+  // window.open('https://api.worldoftanks.' + (useBasicInfo.useServerValue === 'na' ? 'com' : useBasicInfo.useServerValue) + '/wot/auth/login/?application_id=907d9c6bfc0d896a2c156e57194a97cf&redirect_uri=https://v3-api.wows.shinoaki.com:8443/public/wows/oauth/wows/yuyuko/success')
 }
 </script>
 

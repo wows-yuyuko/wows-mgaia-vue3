@@ -6,7 +6,7 @@ import lodash from 'lodash'
 import request from '@/api/request'
 import type { Account } from '@/types/wowsPlayerType'
 
-const BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
+const BASE_URL = 'https://v3-api.wows.shinoaki.com'
 
 /**
  * 通过用户名查询用户账号信息列表

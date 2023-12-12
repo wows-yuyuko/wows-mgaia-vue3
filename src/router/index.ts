@@ -6,6 +6,16 @@ const router = createRouter({
   // history: createWebHistory('/v2'),
   routes: [
     {
+      path: '/ok',
+      name: 'Ok',
+      component: () => import('@/views/public/Ok.vue')
+    },
+    {
+      path: '/error',
+      name: 'Error',
+      component: () => import('@/views/public/Error.vue')
+    },
+    {
       path: '/',
       name: 'Layout',
       component: Layout,

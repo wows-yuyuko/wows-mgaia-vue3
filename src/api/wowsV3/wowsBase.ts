@@ -6,7 +6,7 @@ import lodash from 'lodash'
 import request from '@/api/request'
 import type { ShipType } from '@/types/wowsBaseType'
 
-const BASE_URL = 'https://v3-api.wows.shinoaki.com:8443'
+const BASE_URL = 'https://v3-api.wows.shinoaki.com'
 // const BASE_URL = ''
 /**
  * 获取服务器列表
@@ -175,4 +175,13 @@ export async function getRankShipList (data:{shipId:number, type:number, page:nu
     })
     return returnData
   }
+}
+
+/**
+ * 获取授权接口
+ * @param data
+ * @returns
+ */
+export function getOauthPath (data: {server: string}) {
+  return request.get(BASE_URL + `/public/wows/oauth/wows/${data.server}`, {})
 }
