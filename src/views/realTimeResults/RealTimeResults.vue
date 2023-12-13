@@ -51,8 +51,7 @@ function serverChange () {
 
 <template>
   <div>
-    <div style="padding: 20px;"><span style=" color: #fe7903;font-size: 14px;">服务器顶不住了，实时战绩暂停使用   服务器迁移后恢复   不好意思！ </span></div>
-    <div class="real-time-results" v-if="false">
+    <div class="real-time-results">
       <div style="padding: 20px;"><span style=" color: #fe7903;font-size: 14px;">双击跳转查询战绩详情 注意服务器选择 卡住请重启</span></div>
       <div style="text-align: center;width: 1305px; padding: 0px 0 10px 0;  margin: 0 auto;">
         <el-select v-model="useElectron.tempArenaInfoJsonRow" size="small" style="margin-right: 5px;" @change="reload">

@@ -39,7 +39,11 @@ service.interceptors.response.use(
     if (response?.data?.code === 200 || response?.data?.code === 201) {
       return Promise.resolve(response.data.data)
     }
-    return Promise.reject(response.data)
+    // 这种格式是代理毛子格式  直接返回
+    if (response?.data?.status === 'ok') {
+      return Promise.resolve(response)
+    }
+    return Promise.reject(response)
   },
   error => {
     return Promise.reject(error)

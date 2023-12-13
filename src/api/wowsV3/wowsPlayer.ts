@@ -7,6 +7,7 @@ import request from '@/api/request'
 import type { Account } from '@/types/wowsPlayerType'
 
 const BASE_URL = 'https://v3-api.wows.shinoaki.com'
+const PROXY_BASE_URL = 'https://dev-proxy.wows.shinoaki.com:7700'
 
 /**
  * 通过用户名查询用户账号信息列表
@@ -37,7 +38,6 @@ export async function getPlayerListByUserName (data:{userName:string, server:str
   }
   return returnData
 }
-
 /**
  * 通过用户accountId查询用户详细信息
  * @param data
@@ -60,6 +60,59 @@ export async function getPlayerByAccountId (data:{accountId:number|string, serve
       console.log(err)
       // returnData = Promise.reject(err)
       returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
+
+/**
+ * 实时战绩用户信息及单船查询
+ * @param data
+ * @returns
+ */
+export async function getRealTimeResults (data:{name:string, accountId:number|string, server:string, shipId: number}) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('getRealTimeResults' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    const proxyData = {
+      name: data.name,
+      user: {},
+      clan: {}
+    }
+    // await request.get(PROXY_BASE_URL + '/process/wows/user/uri', { accountId: data.accountId, server: data.server }).then((response) => {
+    //   console.log('uri', response)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
+
+    // 先走反代
+    await request.get(PROXY_BASE_URL + `/dev/wows/ships/stats/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
+      proxyData.user = response.data
+    }).catch(err => {
+      console.log(err)
+    })
+    await request.get(PROXY_BASE_URL + `/dev/wows/clans/accountinfo/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
+      proxyData.clan = response.data
+    }).catch(err => {
+      console.log(err)
+    })
+    // 走数据处理
+    await request.post(
+      PROXY_BASE_URL + `/process/wows/user/info?dataType=dev&battleType=PVP&server=${data.server}&accountId=${data.accountId}&shipId=${data.shipId}`,
+      proxyData
+    ).then((response) => {
+      returnData = Promise.resolve(response)
+      wowsDB.setWowsCache(
+        'getRealTimeResults' + JSON.stringify(data),
+        response,
+        DAY_TIME
+      )
+    }).catch(err => {
+      returnData = Promise.resolve(err.data)
+      console.log(err)
+      // returnData = Promise.reject(err)
     })
   }
   return returnData

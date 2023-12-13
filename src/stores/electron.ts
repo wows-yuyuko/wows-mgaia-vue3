@@ -4,7 +4,7 @@ import { ElNotification, ElMessageBox } from 'element-plus'
 import { defineStore } from 'pinia'
 import { setLocalStorage, getLocalStorage } from '@/lib/storage'
 import { sortBattleTeamData } from '@/hooks/realTimeResults'
-import { getPlayerListByUserName, getPlayerByAccountId, getPlayerShipInfo } from '@/api/wowsV3/wowsPlayer'
+import { getPlayerListByUserName, getRealTimeResults } from '@/api/wowsV3/wowsPlayer'
 import basicInfo from '@/stores/basicInfo'
 
 interface ElectronStore {
@@ -95,22 +95,26 @@ export default defineStore('electron', {
           ).catch((error) => {
             console.log(error)
           })
-          // 综合战绩
-          getPlayerByAccountId({ server: useBasicInfo.realTimeResultServer, accountId: player.accountId }).then(
-            response => {
-              player.overallPerformance = response
-            }
-          ).catch((error) => {
-            console.log(error)
+          getRealTimeResults({ name: player.name, server: useBasicInfo.realTimeResultServer, accountId: player.accountId, shipId: player.shipId }).then(response => {
+            player.overallPerformance = response.userInfo
+            player.shipPerformance = response.shipInfo
           })
-          // 单船战绩
-          getPlayerShipInfo({ server: useBasicInfo.realTimeResultServer, accountId: player.accountId, shipId: player.shipId }).then(
-            response => {
-              player.shipPerformance = response
-            }
-          ).catch((error) => {
-            console.log(error)
-          })
+          // // 综合战绩
+          // getPlayerByAccountId({ server: useBasicInfo.realTimeResultServer, accountId: player.accountId }).then(
+          //   response => {
+          //     player.overallPerformance = response
+          //   }
+          // ).catch((error) => {
+          //   console.log(error)
+          // })
+          // // 单船战绩
+          // getPlayerShipInfo({ server: useBasicInfo.realTimeResultServer, accountId: player.accountId, shipId: player.shipId }).then(
+          //   response => {
+          //     player.shipPerformance = response
+          //   }
+          // ).catch((error) => {
+          //   console.log(error)
+          // })
         }
       }
     }

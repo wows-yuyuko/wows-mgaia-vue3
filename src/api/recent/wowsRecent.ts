@@ -1,10 +1,9 @@
 /**
  * recent数据
  */
-import wowsDB, { DAY_TIME, HOUR_TIME } from '@/lib/database'
+import wowsDB, { DAY_TIME } from '@/lib/database'
 import lodash from 'lodash'
 import request from '@/api/request'
-import type { Account } from '@/types/wowsPlayerType'
 
 const BASE_URL = 'https://recent.wows.shinoaki.com:8890'
 
