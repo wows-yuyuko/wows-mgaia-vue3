@@ -88,19 +88,32 @@ export async function getRealTimeResults (data:{name:string, accountId:number|st
     // })
 
     // 先走反代
-    await request.get(PROXY_BASE_URL + `/dev/wows/ships/stats/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
-      proxyData.user = response.data
-    }).catch(err => {
-      console.log(err)
-    })
-    await request.get(PROXY_BASE_URL + `/dev/wows/clans/accountinfo/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
-      proxyData.clan = response.data
-    }).catch(err => {
-      console.log(err)
-    })
+    if (data.server === 'cn') {
+      await request.get(`https://vortex.wowsgame.cn/api/accounts/${data.accountId}/ships/pvp/`, { }).then((response) => {
+        proxyData.user = response.data
+      }).catch(err => {
+        console.log(err)
+      })
+      await request.get(`https://vortex.wowsgame.cn/api/accounts/${data.accountId}/clans/`, { }).then((response) => {
+        proxyData.clan = response.data
+      }).catch(err => {
+        console.log(err)
+      })
+    } else {
+      await request.get(PROXY_BASE_URL + `/dev/wows/ships/stats/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
+        proxyData.user = response.data
+      }).catch(err => {
+        console.log(err)
+      })
+      await request.get(PROXY_BASE_URL + `/dev/wows/clans/accountinfo/${data.server}/`, { account_id: data.accountId, server: data.server }).then((response) => {
+        proxyData.clan = response.data
+      }).catch(err => {
+        console.log(err)
+      })
+    }
     // 走数据处理
     await request.post(
-      PROXY_BASE_URL + `/process/wows/user/info?dataType=dev&battleType=PVP&server=${data.server}&accountId=${data.accountId}&shipId=${data.shipId}`,
+      PROXY_BASE_URL + `/process/wows/user/info?dataType=${data.server === 'cn' ? 'vortex-pvp' : 'dev'}&battleType=PVP&server=${data.server}&accountId=${data.accountId}&shipId=${data.shipId}`,
       proxyData
     ).then((response) => {
       returnData = Promise.resolve(response)
