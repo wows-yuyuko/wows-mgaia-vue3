@@ -96,6 +96,7 @@ export default defineStore('electron', {
             console.log(error)
           })
           getRealTimeResults({ name: player.name, server: useBasicInfo.realTimeResultServer, accountId: player.accountId, shipId: player.shipId }).then(response => {
+            player.clanInfo = response.clanInfo
             player.overallPerformance = response.userInfo
             player.shipPerformance = response.shipInfo
           })

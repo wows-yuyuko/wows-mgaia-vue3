@@ -110,9 +110,8 @@ export async function getRealTimeResults (data:{name:string, accountId:number|st
         DAY_TIME
       )
     }).catch(err => {
-      returnData = Promise.resolve(err.data)
       console.log(err)
-      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
     })
   }
   return returnData
