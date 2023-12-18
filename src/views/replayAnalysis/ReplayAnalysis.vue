@@ -87,8 +87,7 @@ const analysis = (file:File) => {
         </div>
         <template #tip>
           <div class="el-upload__tip">
-            上传成功后自动解析当局双方数据
-          </div>
+            上传成功后自动解析当局双方数据;  国服浏览器会存在跨域问题，建议用“wows憨批伴侣 实时战绩软件”打开查询，后续优化          </div>
         </template>
       </el-upload>
     </div>
