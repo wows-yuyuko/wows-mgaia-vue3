@@ -55,8 +55,12 @@ const router = createRouter({
           path: '/other',
           name: 'Other',
           component: () => import('@/views/other/Other.vue')
+        },
+        {
+          path: '/replayAnalysis',
+          name: 'ReplayAnalysis',
+          component: () => import('@/views/replayAnalysis/ReplayAnalysis.vue')
         }
-
       ]
     }
   ]

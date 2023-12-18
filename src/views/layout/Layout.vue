@@ -77,6 +77,7 @@ const wgOa = () => {
           <el-menu-item index="/banLike" route="/banLike" @click="openMenu = false">国服封禁模糊匹配 </el-menu-item>
           <el-menu-item index="/openContainer" route="/openContainer" @click="openMenu = false">开箱模拟 </el-menu-item>
           <el-menu-item index="/rankingList" route="/rankingList" @click="openMenu = false">国服排行榜 </el-menu-item>
+          <el-menu-item index="/replayAnalysis" route="/replayAnalysis" @click="openMenu = false">replay战绩解析 </el-menu-item>
           <el-menu-item index="/other" route="/other" @click="openMenu = false">其他 </el-menu-item>
         </el-menu>
       </div>
