@@ -54,12 +54,14 @@ reader.onload = function (event) {
   // 如果是HTML数据，可以直接插入到页面中
   // 甚至字幕文件，各种滤镜，自定义文件格式，都可以玩弄于鼓掌之间……
 
-  console.log('event.target?.result', event.target?.result)
+  // console.log('event.target?.result', event.target?.result)
   // let fileContent = toChineseWords(event.target?.result)
   let fileContent = event.target?.result as string
-  const result = fileContent.match(/{.*[\]}"]}/)
+  // 有时候在第一行有时候在第二行
+  fileContent = fileContent.split('\n')[0].length > 300 ? fileContent.split('\n')[0] : fileContent.split('\n')[1]
+  const result = fileContent.match(/{".*}/)
   fileContent = result![0]
-  console.log('fileContent', fileContent)
+  // console.log('fileContent', fileContent)
   useReplay.setTempArenaInfoJsonRow(fileContent)
 }
 const analysis = (file:File) => {
