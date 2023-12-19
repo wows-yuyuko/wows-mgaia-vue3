@@ -46,9 +46,11 @@ const shipListData = computed(() => {
       prColor: shipInfo.typeInfo.PVP.prInfo.color,
       battle: shipInfo.typeInfo.PVP.battleInfo.battleInfo.battle, // 战斗场次
       damage: shipInfo.typeInfo.PVP.battleInfo.avgInfo.damage, // 场均伤害
+      serverDamage: Math.floor(shipInfo.typeInfo.PVP.prInfo.details.originalServer.damage),
       damageColor: shipInfo.typeInfo.PVP.battleInfo.avgInfo.damageData.color,
       win: shipInfo.typeInfo.PVP.battleInfo.avgInfo.win,
       winColor: shipInfo.typeInfo.PVP.battleInfo.avgInfo.winsData.color,
+      serverWin: Math.floor(shipInfo.typeInfo.PVP.prInfo.details.originalServer.wins) + '%',
       kd: shipInfo.typeInfo.PVP.battleInfo.avgInfo.kd,
       xp: shipInfo.typeInfo.PVP.battleInfo.avgInfo.xp,
       ratioMain: shipInfo.typeInfo.PVP.battleInfo.hitRatioInfo.ratioMain, // 主炮命中率
@@ -220,11 +222,13 @@ const shipListData = computed(() => {
                 <div :style="{color: scope.row.damageColor}">{{ scope.row.damage }}</div>
               </template>
             </el-table-column>
+            <el-table-column align="right" width="120" prop="serverDamage" label="服务器场均" sortable />
             <el-table-column align="right" prop="win" label="胜率" sortable >
               <template #default="scope">
                 <div :style="{color: scope.row.winColor}">{{ scope.row.win }}%</div>
               </template>
             </el-table-column>
+            <el-table-column align="center" width="120" prop="serverWin" label="服务器胜率" sortable />
             <el-table-column align="right" prop="kd" label="kd" sortable />
             <el-table-column align="right" prop="xp" label="经验" sortable />
             <el-table-column align="right" width="120" prop="ratioMain" label="主炮命中" sortable />
