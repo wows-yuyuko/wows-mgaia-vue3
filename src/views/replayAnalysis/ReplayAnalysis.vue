@@ -60,8 +60,10 @@ reader.onload = function (event) {
   // let fileContent = toChineseWords(event.target?.result)
   let fileContent = event.target?.result as string
   // 有时候在第一行有时候在第二行
-  fileContent = fileContent.split('\n')[0].length > 300 ? fileContent.split('\n')[0] : fileContent.split('\n')[1]
-  const result = fileContent.match(/{".*}/)
+  // fileContent = fileContent.split('\n')[0].length > 300 ? fileContent.split('\n')[0] : fileContent.split('\n')[1]
+  let result = fileContent.match(/{".*}\x00\x00/)
+  fileContent = result![0]
+  result = fileContent.match(/{".*}/)
   fileContent = result![0]
   // console.log('fileContent', fileContent)
   useReplay.setTempArenaInfoJsonRow(fileContent)
