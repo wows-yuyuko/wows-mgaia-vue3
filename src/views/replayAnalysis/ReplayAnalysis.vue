@@ -6,6 +6,8 @@ import basicInfo from '@/stores/basicInfo'
 import { ref, computed } from 'vue'
 import CombatRow from '@/views/realTimeResults/component/CombatRow.vue'
 import type { WowsServer } from '@/types/wowsBaseType'
+import { uploadReplaysToVideo, loopReplaysToVideo } from '@/api/wowsV3/wowsPlayer'
+import { ElMessage } from 'element-plus'
 
 // replay战绩解析
 
@@ -68,13 +70,55 @@ const analysis = (file:File) => {
   reader.readAsText(file)
 }
 
+// 生成小地图简报
+const toVideoLoading = ref(false)
+// 循环次数
+let loopCount = 0
+// 生成key
+const toVideoValue = ref('')
+// 视频地址
+const videoUrl = ref<null|string>(null)
+const toVideo = () => {
+  if (replayLsit.value.length < 1) return
+  toVideoLoading.value = true
+  videoUrl.value = null
+  uploadReplaysToVideo(replayLsit.value[0].raw!).then((response:any) => {
+    console.log(response)
+    toVideoValue.value = response.value
+    getReplaysToVideo(toVideoValue.value)
+  }).catch(err => {
+    toVideoLoading.value = false
+    ElMessage.error(err.message)
+    console.log('err', err)
+  })
+}
+
+function getReplaysToVideo (name: string) {
+  if (loopCount > 10) {
+    ElMessage.error('渲染超时')
+    toVideoLoading.value = false
+    loopCount = 0
+    return
+  }
+  loopCount++
+  setTimeout(() => {
+    loopReplaysToVideo({ name }).then(response => {
+      console.log(response)
+      videoUrl.value = response
+      toVideoLoading.value = false
+    }).catch(err => {
+      console.log('err', err)
+      getReplaysToVideo(name)
+    })
+  }, 5000)
+}
 </script>
 
 <template>
   <div class="replay-analysis">
-    <div style="padding: 20px 0;">
+    <div style="padding: 20px 0;    display: flex;    justify-content: center;">
       <el-upload
-        style="width: 400px;    margin: 0 auto;"
+        style="width: 400px;    margin: 0 10px;"
         v-model:file-list="replayLsit"
         drag
         :limit="2"
@@ -92,6 +136,7 @@ const analysis = (file:File) => {
             上传成功后自动解析当局双方数据;  国服浏览器会存在跨域问题，建议用“wows憨批伴侣 实时战绩软件”打开查询，后续优化          </div>
         </template>
       </el-upload>
+      <video controls style="width: 427px;    margin: 0 10px;" v-if="videoUrl" :src="videoUrl"></video>
     </div>
     <div style="text-align: center;width: 1305px; padding: 0px 0 10px 0;  margin: 0 auto;">
         <el-select v-model="useReplay.tempArenaInfoJsonRow" size="small" style="margin-right: 5px;" @change="reload">
@@ -117,6 +162,7 @@ const analysis = (file:File) => {
           />
         </el-select>
         <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
+        <el-button size="small" style="margin-right: 5px;" @click="toVideo" :loading="toVideoLoading">生成小地图简报视频(莱服不可用)</el-button>
       </div>
       <!-- 信息列表 -->
       <div class="combat-table">

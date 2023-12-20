@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { AxiosRequestHeaders } from 'axios'
+import type { AxiosRequestHeaders, AxiosRequestConfig } from 'axios'
 import electron from '@/stores/electron'
 
 // 创建axios实例
@@ -63,6 +63,13 @@ export default {
       method: 'get',
       url,
       params: data
+    })
+  },
+  // 自定义请求头的链接  用于上传下载等操作
+  customService (url: string, config: AxiosRequestConfig) {
+    return service({
+      url,
+      ...config
     })
   }
 }

@@ -72,8 +72,8 @@ const wgOa = () => {
         >
           <el-menu-item v-if="useElectron.electronEnable" index="/realRimeResults" route="/realRimeResults" @click="openMenu = false">实时战绩</el-menu-item>
           <el-menu-item index="/player" route="/player" @click="openMenu = false">玩家</el-menu-item>
-          <!-- <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item> -->
           <el-menu-item index="/shipList" route="/shipList" @click="openMenu = false">舰船</el-menu-item>
+          <el-menu-item index="/clan" route="/clan" @click="openMenu = false">舰队</el-menu-item>
           <el-menu-item index="/banLike" route="/banLike" @click="openMenu = false">国服封禁模糊匹配 </el-menu-item>
           <el-menu-item index="/openContainer" route="/openContainer" @click="openMenu = false">开箱模拟 </el-menu-item>
           <el-menu-item index="/rankingList" route="/rankingList" @click="openMenu = false">国服排行榜 </el-menu-item>

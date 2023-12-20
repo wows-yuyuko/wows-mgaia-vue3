@@ -233,3 +233,28 @@ export async function searcBanCn (data:{ accountId:number|string }) {
   }
   return returnData
 }
+
+/**
+ * 上传文件转小地图简报视频
+ * @param file
+ * @returns
+ */
+export function uploadReplaysToVideo (file:File) {
+  const formData = new FormData()
+  formData.append('file', file)
+  return request.customService(BASE_URL + '/public/wows/encyclopedia/upload/replays/video', {
+    method: 'post',
+    // 定义上传头
+    headers: { 'Content-Type': 'multipart/form-data' },
+    data: formData
+  })
+}
+
+/**
+ * 循环获取小地图简报视频生成结果
+ * @param data
+ * @returns
+ */
+export function loopReplaysToVideo (data: {name: string}) {
+  return request.get(BASE_URL + '/public/wows/encyclopedia/loop/replays', data)
+}
