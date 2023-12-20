@@ -29,6 +29,7 @@ const searchRank = () => {
 // 跳转到用户详情战绩
 function goPlayer (accountId: number) {
   usePlayerInfo.searchPlayerInfo(accountId, 'cn')
+  usePlayerInfo.searchPlayerShipList(accountId, 'cn')
   router.push('/player')
 }
 </script>

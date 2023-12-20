@@ -10,6 +10,7 @@ const useBasicInfo = basicInfo()
 function goPlayer () {
   if (lodash.isNil(props.matchupRow.accountId)) return
   usePlayerInfo.searchPlayerInfo(props.matchupRow.accountId, useBasicInfo.realTimeResultServer)
+  usePlayerInfo.searchPlayerShipList(props.matchupRow.accountId, useBasicInfo.realTimeResultServer)
   router.push('/player')
 }
 // props.matchupRow.overallPerformance
