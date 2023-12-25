@@ -18,8 +18,8 @@ import { useRoute } from 'vue-router'
 const usePlayerInfo = playerInfo()
 const useBasicInfo = basicInfo()
 const route = useRoute()
-getRealTimeResults({ name: 'JustOneSummer', accountId: 2022515210, server: 'eu', shipId: 3764336336 }).then(ttt => {
-  console.log(ttt)
+getRealTimeResults({ name: 'missile_gaia', accountId: 558241106, server: 'eu', shipId: 3760142032 }).then(ttt => {
+  console.log('ttt', ttt)
 })
 // getRealTimeResults({ name: 'WiRa2525', accountId: 2014655684, server: 'asia', shipId: 3760142320 }).then(ttt => {
 //   console.log(ttt)

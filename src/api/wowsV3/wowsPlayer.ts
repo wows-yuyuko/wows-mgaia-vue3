@@ -120,7 +120,7 @@ export async function getRealTimeResults (data:{name:string, accountId:number|st
       wowsDB.setWowsCache(
         'getRealTimeResults' + JSON.stringify(data),
         response,
-        DAY_TIME
+        HOUR_TIME
       )
     }).catch(err => {
       console.log(err)
