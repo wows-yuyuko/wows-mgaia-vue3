@@ -258,3 +258,55 @@ export function uploadReplaysToVideo (file:File) {
 export function loopReplaysToVideo (data: {name: string}) {
   return request.get(BASE_URL + '/public/wows/encyclopedia/loop/replays', data)
 }
+
+/**
+ * 公会查询  通过tag
+ * @param data server 服务器  tag 公会tag
+ */
+export async function getClanListByTag (data:{server:string, tag:string}) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('getClanListByTag' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + `/public/wows/clan/search/${data.server}`, { tag: data.tag }).then((response) => {
+      wowsDB.setWowsCache(
+        'getClanListByTag' + JSON.stringify(data),
+        response,
+        HOUR_TIME
+      )
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
+
+/**
+ * 公会详情信息查询
+ * @param data server 服务器  accountId
+ */
+export async function getClanInfoById (data:{server:string, accountId:number}) {
+  let returnData!:Promise<{}>
+  const dbdata = await wowsDB.getWowsCache('getClanInfoById' + JSON.stringify(data))
+  if (!lodash.isNil(dbdata)) {
+    return Promise.resolve(dbdata)
+  } else {
+    await request.get(BASE_URL + '/public/wows/clan/info', data).then((response) => {
+      wowsDB.setWowsCache(
+        'getClanInfoById' + JSON.stringify(data),
+        response,
+        HOUR_TIME
+      )
+      returnData = Promise.resolve(response)
+    }).catch(err => {
+      console.log(err)
+      // returnData = Promise.reject(err)
+      returnData = Promise.reject(err)
+    })
+  }
+  return returnData
+}
