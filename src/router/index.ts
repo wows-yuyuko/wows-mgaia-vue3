@@ -16,6 +16,11 @@ const router = createRouter({
       component: () => import('@/views/public/Error.vue')
     },
     {
+      path: '/cutting',
+      name: 'Cutting',
+      component: () => import('@/views/public/Cutting.vue')
+    },
+    {
       path: '/',
       name: 'Layout',
       component: Layout,
