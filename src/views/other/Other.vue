@@ -10,7 +10,7 @@
       <li><a href="https://armory.worldofwarships.asia/zh-sg/" target="_Blank">亚服 https://armory.worldofwarships.asia/zh-sg/</a></li>
       <li><a href="https://armory.worldofwarships.eu/zh-sg/" target="_Blank">欧服 https://armory.worldofwarships.eu/zh-sg/</a></li>
       <li><a href="https://armory.worldofwarships.com/zh-sg/" target="_Blank">美服 https://armory.worldofwarships.com/zh-sg/</a></li>
-      <li><a href="https://armory.worldofwarships.ru/zh-sg/" target="_Blank">毛服 https://armory.worldofwarships.ru/zh-sg/</a></li>
+      <li><a href="https://armory.korabli.su/ru/" target="_Blank">毛服 https://armory.korabli.su/ru/</a></li>
     </ul>
     <h1>相关教程</h1>
     <p>@本心  yuyuko战绩bot搭建：</p>
