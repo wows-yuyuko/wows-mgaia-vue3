@@ -164,7 +164,7 @@ function getReplaysToVideo (name: string) {
           />
         </el-select>
         <el-button size="small" style="margin-right: 5px;" @click="reload">重载数据</el-button>
-        <el-button size="small" style="margin-right: 5px;" @click="toVideo" :loading="toVideoLoading">生成小地图简报视频(俄服不可用)</el-button>
+        <!-- <el-button size="small" style="margin-right: 5px;" @click="toVideo" :loading="toVideoLoading">生成小地图简报视频(俄服不可用)</el-button> -->
       </div>
       <!-- 信息列表 -->
       <div class="combat-table">
