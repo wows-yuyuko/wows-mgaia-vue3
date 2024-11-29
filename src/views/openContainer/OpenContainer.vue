@@ -14,7 +14,7 @@ const containerMap = ref<{[key:number]:ContainerInfo}>({})
 // 箱子列表
 const containerList = ref<ContainerInfo[]>([])
 // 当前选中箱子
-const containerKey = ref(4285715376)
+const containerKey = ref(4046640048)
 
 const pageGetContainerList = () => {
   getContainerList({ server: useBasicInfo.useServerValue }).then(response => {
