@@ -7,7 +7,8 @@ import request from '@/api/request'
 import type { Account } from '@/types/wowsPlayerType'
 
 const BASE_URL = 'https://v3-api.wows.shinoaki.com'
-const PROXY_BASE_URL = 'https://dev-proxy.wows.shinoaki.com:7700'
+const PROXY_SHINOAKI_BASE_URL = 'https://dev-proxy.wows.shinoaki.com:7700'
+const PROXY_BASE_URL = '/proxyWows'
 
 /**
  * 通过用户名查询用户账号信息列表
