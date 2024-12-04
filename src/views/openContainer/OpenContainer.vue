@@ -18,6 +18,11 @@ const containerKey = ref(4046640048)
 
 const pageGetContainerList = () => {
   getContainerList({ server: useBasicInfo.useServerValue }).then(response => {
+    if (useBasicInfo.useServerValue === 'ru') {
+      containerKey.value = 4070757296
+    } else {
+      containerKey.value = 4046640048
+    }
     for (const container of response) {
       containerMap.value[container.id] = container
     }
@@ -94,6 +99,12 @@ const openContainer = (boom:boolean = false) => {
             :key="item.id"
             :label="item.shortTitle"
             :value="item.id">
+            <div style="display: flex;align-items: center;">
+              <img style="height: 30px; margin-right: 5px;" :src="item.icons.defaultUrl"/>
+              <span style="">
+                {{ item.shortTitle }}
+              </span>
+            </div>
           </el-option>
         </el-select>
       </div>
