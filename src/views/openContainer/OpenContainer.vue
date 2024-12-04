@@ -58,6 +58,7 @@ const slotsResultMap = ref<any>({})
 const openContainer = (boom:boolean = false) => {
   serverLoading.value = true
   const data:any = { slotsId: containerKey.value, shipId: [0], rollCount: boom ? '0' : times.value }
+  data.server = useBasicInfo.useServerValue
   if (shipsHook.value) {
     data.accountId = usePlayerInfo.playerInfo?.userInfo.accountId
     data.server = usePlayerInfo.playerInfo?.userInfo.server
